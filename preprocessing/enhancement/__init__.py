@@ -1,0 +1,2 @@
+"""Classical image enhancement methods."""
+

@@ -1,0 +1,14 @@
+numpy
+pandas
+scipy
+matplotlib
+opencv-python
+Pillow
+scikit-image
+scikit-fuzzy
+scikit-learn
+
+# Optional but required for perceptual/deep-IQA extraction scripts:
+torch
+torchvision
+pyiqa
