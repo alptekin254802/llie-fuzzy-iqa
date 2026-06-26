@@ -10,7 +10,8 @@ manuscript captions. SVG text stays editable (svg.fonttype=none).
 
 Inputs expected in results/ (same folder as your other CSVs):
   nr_features.csv, perceptual_metrics.csv, modern_nriqa.csv,
-  fuzzy_enhancement_results.csv, deep_zerodce_all.csv, deep_sci_all.csv
+  clipiqa_plus_scores.csv, fuzzy_enhancement_results.csv,
+  deep_zerodce_all.csv, deep_sci_all.csv
 Outputs (results/figures/, each as .pdf and .svg):
   fig2_correlation_matrix, fig3_main_alignment, fig4_generalization,
   fig4b_within_method, fig5_rule_heatmap, figS_membership_functions
@@ -26,6 +27,7 @@ import os
 from pathlib import Path
 
 import matplotlib as mpl
+mpl.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
@@ -138,8 +140,10 @@ def load_data():
     nf = pd.read_csv(RESULTS / "nr_features.csv")[["filename", "method", "entropy", "contrast", "sharpness"]]
     pc = pd.read_csv(RESULTS / "perceptual_metrics.csv")[["filename", "method", "lpips", "niqe", "brisque"]]
     mo = pd.read_csv(RESULTS / "modern_nriqa.csv")[["filename", "method", "musiq", "maniqa", "clipiqa"]]
+    cp = pd.read_csv(RESULTS / "clipiqa_plus_scores.csv")[["filename", "method", "clipiqa_plus"]]
     fz = pd.read_csv(RESULTS / "fuzzy_enhancement_results.csv")[["filename", "method", "psnr", "ssim", "fuzzy_score"]]
     classical = (nf.merge(pc, on=["filename", "method"]).merge(mo, on=["filename", "method"])
+                 .merge(cp, on=["filename", "method"])
                  .merge(fz, on=["filename", "method"]).dropna().reset_index(drop=True))
     cols = ["filename", "method", "entropy", "contrast", "sharpness", "lpips", "niqe",
             "brisque", "musiq", "maniqa", "clipiqa", "psnr", "ssim"]
@@ -193,11 +197,11 @@ def fig_correlation_matrix(df):
 
 
 def fig_main_alignment(sc):
-    order = ["psnr", "ssim", "entropy", "clipiqa", "musiq", "maniqa",
+    order = ["psnr", "ssim", "entropy", "clipiqa", "clipiqa_plus", "musiq", "maniqa",
              "fuzzy_handtuned", "fr_fuzzy_free", "nr_fuzzy_mono", "nr_fuzzy_free"]
-    nice = ["PSNR", "SSIM", "Entropy", "CLIP-IQA", "MUSIQ", "MANIQA",
+    nice = ["PSNR", "SSIM", "Entropy", "CLIP-IQA", "CLIP-IQA+", "MUSIQ", "MANIQA",
             "Fuzzy$_{hand}$", "FR-Fuzzy$_{cal}$", "NR-Fuzzy$_{mono}$", "NR-Fuzzy$_{free}$"]
-    colors = [BLUE, BLUE, GREEN, GRAY, GRAY, GRAY, BLUE, PURPLE, ORANGE, RED]
+    colors = [BLUE, BLUE, GREEN, GRAY, GRAY, GRAY, GRAY, BLUE, PURPLE, ORANGE, RED]
     vals = sc.loc[order, "lpips_mean"].to_numpy(); errs = sc.loc[order, "lpips_std"].to_numpy()
     fig, ax = plt.subplots(figsize=(6.4, 3.4))
     ax.bar(range(len(order)), vals, yerr=errs, capsize=3, edgecolor="black", linewidth=0.6, color=colors)
@@ -302,7 +306,7 @@ def main():
     classical, expanded = load_data()
     print(f"classical n={len(classical)} | expanded n={len(expanded)} (methods: {sorted(expanded['method'].unique())})")
 
-    single = ["psnr", "ssim", "entropy", "musiq", "maniqa", "clipiqa"]
+    single = ["psnr", "ssim", "entropy", "musiq", "maniqa", "clipiqa", "clipiqa_plus"]
     print("Running 5-fold CV on classical set (~45s)...")
     sc = cv_summary(classical, single)
     # add hand-tuned fuzzy as a 'single' column (from fuzzy_score)

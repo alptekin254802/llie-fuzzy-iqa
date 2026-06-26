@@ -15,7 +15,7 @@ only the enhanced image.
 ## Repository Layout
 
 ```text
-llie-fuzzy-nr-iqa/
+llie-fuzzy-iqa/
 |-- analysis/                  # calibration, validation, figures, runtime, realtime scripts
 |-- evaluation/                # optional raw-image metric/feature extraction scripts
 |-- preprocessing/             # classical LLIE operators used by extractors
@@ -23,8 +23,8 @@ llie-fuzzy-nr-iqa/
 |   `-- figures/               # paper-ready PDF/SVG figures
 |-- models/                    # optional pretrained weights, not tracked
 |-- requirements.txt
-|-- LICENSE        # MIT
-└-- README.md
+|-- LICENSE
+`-- README.md
 ```
 
 The `results/` CSV files are included so the paper tables and figures can be
@@ -114,6 +114,7 @@ These require the external RLIE dataset path.
 
 | Step | Command | Produces |
 |---|---|---|
+| CLIP-IQA+ baseline audit | `python -m analysis.clipiqa_plus_audit` | `results/clipiqa_plus_scores.csv`, `results/clipiqa_plus_summary.csv`, `results/clipiqa_plus_runtime.csv` |
 | Assessor runtime sweep | `python -m analysis.benchmark_runtime --sweep` | `results/runtime_results.csv` |
 | Runtime sweep plus deep NR-IQA baselines | `python -m analysis.benchmark_runtime --sweep --deep` | `results/runtime_results.csv`, `results/runtime_deep.csv` |
 | Synthetic realtime sanity check | `python -m analysis.realtime_pipeline_demo --source synth --enhancer gamma --assessor real --frames 600 --plot` | `results/pipeline_log.csv`, `results/figures/fig6_pipeline_fps.{png,pdf,svg}`, `results/figures/fig6_pipeline_score.{png,pdf,svg}` |
@@ -160,6 +161,9 @@ Important included CSVs:
 - `results/nr_features.csv`
 - `results/fuzzy_enhancement_results.csv`
 - `results/nr_fuzzy_scores.csv`
+- `results/clipiqa_plus_scores.csv`
+- `results/clipiqa_plus_summary.csv`
+- `results/clipiqa_plus_runtime.csv`
 - `results/reference_free_summary.csv`
 - `results/significance_tests.csv`
 - `results/reviewer_experiments.csv`

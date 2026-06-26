@@ -1,0 +1,2 @@
+method,device,ms_per_image,mean_ms_per_image,p95_ms_per_image,img_per_s,params_M,n
+clipiqa+,cuda,38.645199998427415,38.8889239999844,42.33781499824545,25.876434849365324,0.008192,300
