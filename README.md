@@ -35,8 +35,8 @@ not included.
 ## Installation
 
 ```bash
-git clone https://github.com/alptekin254802/llie-fuzzy-nr-iqa.git
-cd llie-fuzzy-nr-iqa
+git clone https://github.com/alptekin254802/llie-fuzzy-iqa.git
+cd llie-fuzzy-iqa
 python -m venv .venv
 source .venv/bin/activate  # Windows: .venv\Scripts\activate
 pip install -r requirements.txt
