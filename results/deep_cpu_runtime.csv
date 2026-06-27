@@ -1,0 +1,2 @@
+method,device,threads,input_size,ms_per_image,mean_ms_per_image,p95_ms_per_image,img_per_s,params_M_pyiqa,n,warmup
+clipiqa+,cpu,single,256x256,884.4073000036587,897.6693566675143,991.8489400017279,1.1307007529176467,0.008192,30,3

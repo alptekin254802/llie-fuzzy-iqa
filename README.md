@@ -99,7 +99,8 @@ These commands use the CSVs already in `results/`.
 | 6. Main reference-free calibrated fuzzy model | `python -m analysis.reference_free_fuzzy` | `results/reference_free_summary.csv`, `results/nr_fuzzy_scores.csv`, `results/nr_rule_table_{free,mono}.csv`, `results/figures/reference_free_alignment.png` |
 | 7. Significance tests | `python -m analysis.significance_tests` | `results/significance_tests.csv` |
 | 8. Leakage, learned-fusion, algorithm-disjoint, seed-stability checks | `python -m analysis.reviewer_experiments` | `results/reviewer_experiments.csv` |
-| 9. Broadened calibration pool stress test | `python -m analysis.tier3_broaden` | `results/tier3_broaden.csv` |
+| 9. Preprocessing sensitivity audit | `python -m analysis.preprocessing_sensitivity` | `results/preprocessing_sensitivity.csv` |
+| 10. Broadened calibration pool stress test | `python -m analysis.tier3_broaden` | `results/tier3_broaden.csv` |
 
 ## Human-Opinion Validation
 
@@ -115,6 +116,7 @@ These require the external RLIE dataset path.
 | Step | Command | Produces |
 |---|---|---|
 | CLIP-IQA+ baseline audit | `python -m analysis.clipiqa_plus_audit` | `results/clipiqa_plus_scores.csv`, `results/clipiqa_plus_summary.csv`, `results/clipiqa_plus_runtime.csv` |
+| CLIP-IQA+ single-thread CPU timing | `python -m analysis.deep_cpu_runtime --metrics clipiqa+ --n 30` | `results/deep_cpu_runtime.csv` |
 | Assessor runtime sweep | `python -m analysis.benchmark_runtime --sweep` | `results/runtime_results.csv` |
 | Runtime sweep plus deep NR-IQA baselines | `python -m analysis.benchmark_runtime --sweep --deep` | `results/runtime_results.csv`, `results/runtime_deep.csv` |
 | Synthetic realtime sanity check | `python -m analysis.realtime_pipeline_demo --source synth --enhancer gamma --assessor real --frames 600 --plot` | `results/pipeline_log.csv`, `results/figures/fig6_pipeline_fps.{png,pdf,svg}`, `results/figures/fig6_pipeline_score.{png,pdf,svg}` |
@@ -164,6 +166,8 @@ Important included CSVs:
 - `results/clipiqa_plus_scores.csv`
 - `results/clipiqa_plus_summary.csv`
 - `results/clipiqa_plus_runtime.csv`
+- `results/deep_cpu_runtime.csv`
+- `results/preprocessing_sensitivity.csv`
 - `results/reference_free_summary.csv`
 - `results/significance_tests.csv`
 - `results/reviewer_experiments.csv`
