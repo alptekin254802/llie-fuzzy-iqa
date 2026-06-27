@@ -180,7 +180,7 @@ def cv_summary(df, models_single):
 # ----------------------------- figures ---------------------------------------
 def fig_correlation_matrix(df):
     cols = ["psnr", "ssim", "entropy", "lpips", "niqe", "musiq", "maniqa", "fuzzy_score", "nr_fuzzy_free"]
-    labels = ["PSNR", "SSIM", "Entropy", "LPIPS", "NIQE", "MUSIQ", "MANIQA", "Fuzzy$_{hand}$", "NR-Fuzzy"]
+    labels = ["PSNR", "SSIM", "Entropy", "LPIPS", "NIQE", "MUSIQ", "MANIQA", "Fuzzy$_{\\mathrm{hand}}$", "NR-free"]
     have = [c for c in cols if c in df.columns]
     labels = [labels[cols.index(c)] for c in have]
     M = df[have].corr(method="spearman").to_numpy()
@@ -200,7 +200,7 @@ def fig_main_alignment(sc):
     order = ["psnr", "ssim", "entropy", "clipiqa", "clipiqa_plus", "musiq", "maniqa",
              "fuzzy_handtuned", "fr_fuzzy_free", "nr_fuzzy_mono", "nr_fuzzy_free"]
     nice = ["PSNR", "SSIM", "Entropy", "CLIP-IQA", "CLIP-IQA+", "MUSIQ", "MANIQA",
-            "Fuzzy$_{hand}$", "FR-Fuzzy$_{cal}$", "NR-Fuzzy$_{mono}$", "NR-Fuzzy$_{free}$"]
+            "Fuzzy$_{\\mathrm{hand}}$", "FR-calibrated", "NR-mono", "NR-free"]
     colors = [BLUE, BLUE, GREEN, GRAY, GRAY, GRAY, GRAY, BLUE, PURPLE, ORANGE, RED]
     vals = sc.loc[order, "lpips_mean"].to_numpy(); errs = sc.loc[order, "lpips_std"].to_numpy()
     fig, ax = plt.subplots(figsize=(6.4, 3.4))
@@ -217,7 +217,7 @@ def fig_main_alignment(sc):
 
 def fig_generalization(sc):
     order = ["psnr", "ssim", "fuzzy_handtuned", "fr_fuzzy_free", "nr_fuzzy_free"]
-    nice = ["PSNR", "SSIM", "Fuzzy$_{hand}$", "FR-Fuzzy$_{cal}$", "NR-Fuzzy$_{free}$"]
+    nice = ["PSNR", "SSIM", "Fuzzy$_{\\mathrm{hand}}$", "FR-calibrated", "NR-free"]
     x = np.arange(len(order)); w = 0.38
     fig, ax = plt.subplots(figsize=(5.4, 3.2))
     ax.bar(x - w/2, sc.loc[order, "lpips_mean"], w, yerr=sc.loc[order, "lpips_std"], capsize=3,
@@ -317,7 +317,7 @@ def main():
         fh_n.append(rho(classical["fuzzy_score"].to_numpy()[te], niqe[te]))
     sc.loc["fuzzy_handtuned"] = [np.mean(fh_l), np.std(fh_l), np.mean(fh_n), np.std(fh_n)]
 
-    # all-data classical NR-Fuzzy score (so the correlation matrix can include it)
+    # all-data classical NR-free score (so the correlation matrix can include it)
     arrs_c, _ = orient(classical, NR_FEATURES, tgt)
     fc, sc_, _ = build_firing(arrs_c)
     classical["nr_fuzzy_free"] = (fc @ calibrate(fc, sc_, tgt, np.arange(len(classical)), 0.0)) / sc_

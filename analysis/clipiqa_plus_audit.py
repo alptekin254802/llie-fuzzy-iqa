@@ -13,7 +13,7 @@ Outputs:
   results/clipiqa_plus_summary.csv
       5-fold image-group Spearman with -LPIPS and -NIQE, plus overall
       correlations, parameter count, timing, and a Williams-test comparison
-      against NR-Fuzzy.
+      against NR-free.
 
   results/clipiqa_plus_runtime.csv
       standalone timing row for CLIP-IQA+.
@@ -211,7 +211,7 @@ def summarize(scores: pd.DataFrame) -> pd.DataFrame:
     df["minus_niqe"] = -df["niqe"].to_numpy(float)
 
     rows = []
-    for model, col in [("CLIP-IQA+", "clipiqa_plus"), ("NR-Fuzzy", "nr_fuzzy_free")]:
+    for model, col in [("CLIP-IQA+", "clipiqa_plus"), ("NR-free", "nr_fuzzy_free")]:
         lp_folds, lp_mean, lp_std = cv_spearman(df, col, "minus_lpips")
         nq_folds, nq_mean, nq_std = cv_spearman(df, col, "minus_niqe")
         rows.append({
@@ -254,7 +254,7 @@ def summarize(scores: pd.DataFrame) -> pd.DataFrame:
     t_val, df_val, p_val = williams_test(r_nr, r_plus, r_between, len(df))
 
     rows.append({
-        "model": "Williams NR-Fuzzy vs CLIP-IQA+",
+        "model": "Williams NR-free vs CLIP-IQA+",
         "lpips_mean": r_nr,
         "lpips_std": np.nan,
         "niqe_mean": r_plus,
@@ -317,7 +317,7 @@ def print_summary(summary: pd.DataFrame, runtime: dict):
         model = row["model"]
         if model.startswith("Williams"):
             print(
-                f"  Williams NR-Fuzzy vs CLIP-IQA+: "
+                f"  Williams NR-free vs CLIP-IQA+: "
                 f"t={row['williams_t']:.3f}, df={row['williams_df']:.0f}, "
                 f"p={row['williams_p']:.3e}"
             )
