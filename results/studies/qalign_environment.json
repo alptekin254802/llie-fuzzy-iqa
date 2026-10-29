@@ -1,0 +1,88 @@
+{
+  "versions": {
+    "torch": "2.7.1+cu118",
+    "torchvision": "0.22.1+cu118",
+    "pyiqa": "0.1.15.post2",
+    "transformers": "4.36.1",
+    "accelerate": "0.26.1",
+    "bitsandbytes": "0.49.2",
+    "huggingface-hub": "0.36.0",
+    "tokenizers": "0.15.2",
+    "numpy": "2.4.4",
+    "opencv-python": "4.13.0.92"
+  },
+  "implementation_sha256": {
+    "archs\\qalign_arch.py": "a7ed43060ac524fa3abc9e440c610dde890f3bd3fb4439175d1ef40ae6b499f4",
+    "archs\\q_align\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "archs\\q_align\\cmp_modelling_mplug_owl2.py": "ce52a45be6ceb2e96b0fd7ef3bfb0d4f31988c1410d01053e99fe314a744e39d",
+    "archs\\q_align\\configuration_mplug_owl2.py": "4854bb37aeb724e83d515e49bbcfa25d5bfdeb94ba136f0b3762aee3688d7868",
+    "archs\\q_align\\modeling_attn_mask_utils.py": "a855d14e58d5f7feac5a3097d2546b6e00dfc4e63434445ebfd935c8a1287396",
+    "archs\\q_align\\modeling_llama2.py": "4e6f3044b5fccc3301461b7d0d914befc3fec79d1f04185e297f24e9aa5c832f",
+    "archs\\q_align\\modeling_mplug_owl2.py": "2e47a17d081d3ce21393d8f40d1a0fb4b823bc2ffdba7efc184d7fe72dcaa6ef",
+    "archs\\q_align\\visual_encoder.py": "252fc2a11c47f60a7fdc27bce4e79cf588d0d7e1eeeea133a2cf6bc6a147dc88"
+  },
+  "gpu": "NVIDIA GeForce GTX 1060 6GB",
+  "compute_capability": [
+    6,
+    1
+  ],
+  "free_total_before_load_bytes": [
+    5449449472,
+    6442188800
+  ],
+  "nvidia_smi": "name, driver_version, memory.used [MiB], memory.free [MiB], utilization.gpu [%]\r\nNVIDIA GeForce GTX 1060 6GB, 582.28, 1074 MiB, 4956 MiB, 2 %",
+  "model_revision": "dcc603b95aa0ebd82afa696d4a1e20d11fc80ddb",
+  "model_load_seconds": 44.390654399991035,
+  "device_map": {
+    "": "0"
+  },
+  "quantization_config": {
+    "quant_method": "bitsandbytes",
+    "load_in_8bit": false,
+    "load_in_4bit": true,
+    "llm_int8_threshold": 6.0,
+    "llm_int8_skip_modules": null,
+    "llm_int8_enable_fp32_cpu_offload": false,
+    "llm_int8_has_fp16_weight": false,
+    "bnb_4bit_quant_type": "nf4",
+    "bnb_4bit_use_double_quant": false,
+    "bnb_4bit_compute_dtype": "float16"
+  },
+  "internal_processor": {
+    "_processor_class": null,
+    "feature_extractor_type": "CLIPFeatureExtractor",
+    "do_resize": true,
+    "size": {
+      "shortest_edge": 448
+    },
+    "resample": 3,
+    "do_center_crop": true,
+    "crop_size": {
+      "height": 448,
+      "width": 448
+    },
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "do_convert_rgb": true,
+    "image_processor_type": "CLIPImageProcessor"
+  },
+  "linear4bit_modules": 427,
+  "memory_after_load": [
+    218865664,
+    6442188800
+  ],
+  "peak_cuda_allocated_bytes": 5227699200,
+  "peak_cuda_reserved_bytes": 5345640448,
+  "recorded_timing_condition": "Windows WDDM; an interval of concurrent desktop GPU activity during RLIE scoring is retained in all latency summaries."
+}

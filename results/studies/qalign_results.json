@@ -1,0 +1,400 @@
+{
+  "plan_sha256": "8813b8271d67b093a3ce3891b6ab8e8f98f386c6cc4f930b165df2fad705775a",
+  "raw_scores_sha256": "2d6eb1d3a978c162365b9c455fc40754e99c654dc5484f7b8b7009c6087981da",
+  "manifest_sha256": "b6c8b4e5a76b5e7c86382b76cac59df3ce02e3f62ea569109d0eba9b6406c548",
+  "script_sha256": "ff62b1a409848ee0d45f1c427c4324f1b8a36d4d49edc0eafbfd27f95d2ed274",
+  "metric": "Q-Align / OneAlign, 4-bit NF4",
+  "orientation": "higher is better",
+  "comparison_direction": "Q-Align minus NR-free",
+  "uncertainty": "paired whole-scene bootstrap, percentile 95% CI; null-centered two-sided p-values, unadjusted",
+  "replicates": 2000,
+  "seed": 20261018,
+  "quantization_caveat": "4-bit quantization can change scores, rankings and ties relative to full precision; no full-precision equivalence is claimed.",
+  "datasets": {
+    "squarelol": {
+      "n_images": 2900,
+      "n_scenes": 290,
+      "excluded_constant_target_scenes": 0,
+      "valid_pairs": 12976,
+      "target_tied_pairs_skipped": 74,
+      "metrics": {
+        "qalign": {
+          "within_scene_srcc": 0.45471426837283674,
+          "pooled_srcc": 0.17050196559152356,
+          "pair_accuracy": 0.6711236128236745,
+          "constant_prediction_scenes": 0,
+          "prediction_tied_pairs": 103,
+          "within_scene_srcc_ci95": [
+            0.4222245517072348,
+            0.4858316819258063
+          ],
+          "pooled_srcc_ci95": [
+            0.15071363891227413,
+            0.19288930771370064
+          ],
+          "pair_accuracy_ci95": [
+            0.6583107495082017,
+            0.6841968391384835
+          ]
+        },
+        "nr_free": {
+          "within_scene_srcc": 0.3807262000153577,
+          "pooled_srcc": 0.30367957254998895,
+          "pair_accuracy": 0.6433800863131935,
+          "constant_prediction_scenes": 0,
+          "prediction_tied_pairs": 15,
+          "within_scene_srcc_ci95": [
+            0.3544478973496138,
+            0.40625543636989087
+          ],
+          "pooled_srcc_ci95": [
+            0.2810215685174991,
+            0.3262154617317075
+          ],
+          "pair_accuracy_ci95": [
+            0.6328430231565385,
+            0.6534173228903982
+          ]
+        }
+      },
+      "qalign_minus_nr_free": {
+        "within_scene_srcc": {
+          "estimate": 0.07398806835747906,
+          "ci95": [
+            0.03410740548868869,
+            0.11089810453643088
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        },
+        "pooled_srcc": {
+          "estimate": -0.1331776069584654,
+          "ci95": [
+            -0.15686012619700285,
+            -0.10730243374164986
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        },
+        "pair_accuracy": {
+          "estimate": 0.027743526510480954,
+          "ci95": [
+            0.011685248086791177,
+            0.04303221181375585
+          ],
+          "p_two_sided_null_centered": 0.0009995002498750624,
+          "replicates": 2000,
+          "seed": 20261018
+        }
+      },
+      "inference_ms": {
+        "n": 2900,
+        "median": 1183.5644499806222,
+        "p95": 1223.1211350357626,
+        "mean": 1182.637642931759
+      },
+      "prepare_ms": {
+        "n": 2900,
+        "median": 17.99989998107776,
+        "p95": 19.486500008497387,
+        "mean": 18.042934379291495
+      },
+      "h2d_ms": {
+        "n": 2900,
+        "median": 0.3199500206392258,
+        "p95": 0.3631099709309637,
+        "mean": 0.3230332068753718
+      }
+    },
+    "lieq": {
+      "n_images": 1000,
+      "n_scenes": 100,
+      "excluded_constant_target_scenes": 0,
+      "valid_pairs": 4500,
+      "target_tied_pairs_skipped": 0,
+      "metrics": {
+        "qalign": {
+          "within_scene_srcc": 0.550729203832652,
+          "pooled_srcc": 0.8232035393970628,
+          "pair_accuracy": 0.7124444444444444,
+          "constant_prediction_scenes": 0,
+          "prediction_tied_pairs": 18,
+          "within_scene_srcc_ci95": [
+            0.4898564725979962,
+            0.6038696211203922
+          ],
+          "pooled_srcc_ci95": [
+            0.7675705867258517,
+            0.8618392830381293
+          ],
+          "pair_accuracy_ci95": [
+            0.6872166666666666,
+            0.7351111111111112
+          ]
+        },
+        "nr_free": {
+          "within_scene_srcc": 0.09471993462338975,
+          "pooled_srcc": 0.5054932969317566,
+          "pair_accuracy": 0.5334444444444445,
+          "constant_prediction_scenes": 0,
+          "prediction_tied_pairs": 31,
+          "within_scene_srcc_ci95": [
+            0.009859672656303381,
+            0.18365275623373764
+          ],
+          "pooled_srcc_ci95": [
+            0.4019993479904625,
+            0.5853909547960021
+          ],
+          "pair_accuracy_ci95": [
+            0.5022194444444444,
+            0.567
+          ]
+        }
+      },
+      "qalign_minus_nr_free": {
+        "within_scene_srcc": {
+          "estimate": 0.45600926920926227,
+          "ci95": [
+            0.35552177280995945,
+            0.5470538710840244
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        },
+        "pooled_srcc": {
+          "estimate": 0.3177102424653062,
+          "ci95": [
+            0.23387408314192323,
+            0.40676444136822676
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        },
+        "pair_accuracy": {
+          "estimate": 0.17899999999999994,
+          "ci95": [
+            0.13822222222222225,
+            0.21578055555555556
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        }
+      },
+      "inference_ms": {
+        "n": 1000,
+        "median": 1194.7808000259101,
+        "p95": 1264.3724700406892,
+        "mean": 1204.532126999111
+      },
+      "prepare_ms": {
+        "n": 1000,
+        "median": 24.111649981932715,
+        "p95": 27.06788497744128,
+        "mean": 23.746113000030164
+      },
+      "h2d_ms": {
+        "n": 1000,
+        "median": 0.32714998815208673,
+        "p95": 0.3846449602860956,
+        "mean": 0.3339229018893093
+      }
+    },
+    "rlie": {
+      "n_images": 1540,
+      "n_scenes": 154,
+      "excluded_constant_target_scenes": 0,
+      "valid_pairs": 6930,
+      "target_tied_pairs_skipped": 0,
+      "metrics": {
+        "qalign": {
+          "within_scene_srcc": 0.41771957820654965,
+          "pooled_srcc": 0.23714975216319328,
+          "pair_accuracy": 0.6584415584415585,
+          "constant_prediction_scenes": 0,
+          "prediction_tied_pairs": 32,
+          "within_scene_srcc_ci95": [
+            0.3684251662439791,
+            0.4672463015570474
+          ],
+          "pooled_srcc_ci95": [
+            0.19977429557531515,
+            0.27940705398380217
+          ],
+          "pair_accuracy_ci95": [
+            0.6389574314574314,
+            0.6777795815295815
+          ]
+        },
+        "nr_free": {
+          "within_scene_srcc": 0.13543554242794656,
+          "pooled_srcc": 0.10616404225469477,
+          "pair_accuracy": 0.5497835497835498,
+          "constant_prediction_scenes": 0,
+          "prediction_tied_pairs": 18,
+          "within_scene_srcc_ci95": [
+            0.0722792383234966,
+            0.19485786294699142
+          ],
+          "pooled_srcc_ci95": [
+            0.05806960067581185,
+            0.15349340215616
+          ],
+          "pair_accuracy_ci95": [
+            0.5243109668109668,
+            0.5731619769119769
+          ]
+        }
+      },
+      "qalign_minus_nr_free": {
+        "within_scene_srcc": {
+          "estimate": 0.28228403577860306,
+          "ci95": [
+            0.21741361772697348,
+            0.34642728050035987
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        },
+        "pooled_srcc": {
+          "estimate": 0.1309857099084985,
+          "ci95": [
+            0.07875782599999223,
+            0.1863213523227169
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        },
+        "pair_accuracy": {
+          "estimate": 0.10865800865800868,
+          "ci95": [
+            0.08275432900432894,
+            0.1352831890331891
+          ],
+          "p_two_sided_null_centered": 0.0004997501249375312,
+          "replicates": 2000,
+          "seed": 20261018
+        }
+      },
+      "inference_ms": {
+        "n": 1540,
+        "median": 1157.3328000085894,
+        "p95": 1640.5300349899335,
+        "mean": 1303.672453636181
+      },
+      "prepare_ms": {
+        "n": 1540,
+        "median": 23.677949997363612,
+        "p95": 32.525690030888654,
+        "mean": 25.00778396142187
+      },
+      "h2d_ms": {
+        "n": 1540,
+        "median": 0.3311499895062297,
+        "p95": 0.3832750080619006,
+        "mean": 0.33820116814594814
+      }
+    }
+  },
+  "timing_all_images_ms": {
+    "n": 5440,
+    "median": 1182.7669499907643,
+    "p95": 1278.5080349975035,
+    "mean": 1220.9258952391417
+  },
+  "environment": {
+    "versions": {
+      "torch": "2.7.1+cu118",
+      "torchvision": "0.22.1+cu118",
+      "pyiqa": "0.1.15.post2",
+      "transformers": "4.36.1",
+      "accelerate": "0.26.1",
+      "bitsandbytes": "0.49.2",
+      "huggingface-hub": "0.36.0",
+      "tokenizers": "0.15.2",
+      "numpy": "2.4.4",
+      "opencv-python": "4.13.0.92"
+    },
+    "implementation_sha256": {
+      "archs\\qalign_arch.py": "a7ed43060ac524fa3abc9e440c610dde890f3bd3fb4439175d1ef40ae6b499f4",
+      "archs\\q_align\\__init__.py": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "archs\\q_align\\cmp_modelling_mplug_owl2.py": "ce52a45be6ceb2e96b0fd7ef3bfb0d4f31988c1410d01053e99fe314a744e39d",
+      "archs\\q_align\\configuration_mplug_owl2.py": "4854bb37aeb724e83d515e49bbcfa25d5bfdeb94ba136f0b3762aee3688d7868",
+      "archs\\q_align\\modeling_attn_mask_utils.py": "a855d14e58d5f7feac5a3097d2546b6e00dfc4e63434445ebfd935c8a1287396",
+      "archs\\q_align\\modeling_llama2.py": "4e6f3044b5fccc3301461b7d0d914befc3fec79d1f04185e297f24e9aa5c832f",
+      "archs\\q_align\\modeling_mplug_owl2.py": "2e47a17d081d3ce21393d8f40d1a0fb4b823bc2ffdba7efc184d7fe72dcaa6ef",
+      "archs\\q_align\\visual_encoder.py": "252fc2a11c47f60a7fdc27bce4e79cf588d0d7e1eeeea133a2cf6bc6a147dc88"
+    },
+    "gpu": "NVIDIA GeForce GTX 1060 6GB",
+    "compute_capability": [
+      6,
+      1
+    ],
+    "free_total_before_load_bytes": [
+      5449449472,
+      6442188800
+    ],
+    "nvidia_smi": "name, driver_version, memory.used [MiB], memory.free [MiB], utilization.gpu [%]\r\nNVIDIA GeForce GTX 1060 6GB, 582.28, 1074 MiB, 4956 MiB, 2 %",
+    "model_revision": "dcc603b95aa0ebd82afa696d4a1e20d11fc80ddb",
+    "model_load_seconds": 44.390654399991035,
+    "device_map": {
+      "": "0"
+    },
+    "quantization_config": {
+      "quant_method": "bitsandbytes",
+      "load_in_8bit": false,
+      "load_in_4bit": true,
+      "llm_int8_threshold": 6.0,
+      "llm_int8_skip_modules": null,
+      "llm_int8_enable_fp32_cpu_offload": false,
+      "llm_int8_has_fp16_weight": false,
+      "bnb_4bit_quant_type": "nf4",
+      "bnb_4bit_use_double_quant": false,
+      "bnb_4bit_compute_dtype": "float16"
+    },
+    "internal_processor": {
+      "_processor_class": null,
+      "feature_extractor_type": "CLIPFeatureExtractor",
+      "do_resize": true,
+      "size": {
+        "shortest_edge": 448
+      },
+      "resample": 3,
+      "do_center_crop": true,
+      "crop_size": {
+        "height": 448,
+        "width": 448
+      },
+      "do_rescale": true,
+      "rescale_factor": 0.00392156862745098,
+      "do_normalize": true,
+      "image_mean": [
+        0.48145466,
+        0.4578275,
+        0.40821073
+      ],
+      "image_std": [
+        0.26862954,
+        0.26130258,
+        0.27577711
+      ],
+      "do_convert_rgb": true,
+      "image_processor_type": "CLIPImageProcessor"
+    },
+    "linear4bit_modules": 427,
+    "memory_after_load": [
+      218865664,
+      6442188800
+    ],
+    "peak_cuda_allocated_bytes": 5227699200,
+    "peak_cuda_reserved_bytes": 5345640448,
+    "recorded_timing_condition": "Windows WDDM; an interval of concurrent desktop GPU activity during RLIE scoring is retained in all latency summaries."
+  }
+}

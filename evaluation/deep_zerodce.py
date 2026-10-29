@@ -1,24 +1,9 @@
-"""
-Step 2a - Zero-DCE (deep low-light enhancement) end-to-end.
+"""Enhance LOL images with Zero-DCE and compute the comparison metrics.
 
-Place at: evaluation/deep_zerodce.py     Run: python -m evaluation.deep_zerodce
-
-Runs the Zero-DCE curve-estimation network on the LOL low-light images, saves the
-enhanced outputs (so you can eyeball them), and computes the FULL column set used
-elsewhere so the deep method drops straight into the existing analysis:
-  psnr, ssim, entropy            (vs the paired reference, via evaluation.metrics)
-  lpips, niqe, brisque           (pyiqa)
-  musiq, maniqa, clipiqa         (pyiqa, modern NR-IQA)
-  brightness, contrast, colorfulness, sharpness, noise   (no-reference features)
-
-Output: results/deep_zerodce_all.csv   (method = "zerodce")
-        results/enhanced_deep/zerodce/<filename>.png  (saved enhanced images)
-
-WEIGHTS (one-time download, ~few hundred KB):
-  Get "Epoch99.pth" from the official Zero-DCE repo
-    https://github.com/Li-Chongyi/Zero-DCE  ->  Zero-DCE_code/snapshots/Epoch99.pth
-  and place it at:  models/zerodce_Epoch99.pth   (under the project root)
-"""
+Run ``python -m evaluation.deep_zerodce``. Obtain Epoch99.pth from
+https://github.com/Li-Chongyi/Zero-DCE and save it as models/zerodce_Epoch99.pth.
+Outputs are results/deep_zerodce_all.csv and results/enhanced_deep/zerodce/.
+The CSV includes reference metrics, pretrained IQA scores and image statistics."""
 from __future__ import annotations
 
 import sys

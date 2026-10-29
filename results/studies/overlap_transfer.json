@@ -1,0 +1,135 @@
+{
+  "overlap (229 scenes)": {
+    "NR-free fuzzy (LOL-frozen)": {
+      "srcc": 0.325,
+      "within_scene_srcc": 0.379,
+      "pair_acc": 0.642,
+      "top1": 0.109,
+      "scenes": 229
+    },
+    "Linear (LOL-trained)": {
+      "srcc": 0.252,
+      "within_scene_srcc": 0.312,
+      "pair_acc": 0.613,
+      "top1": 0.07,
+      "scenes": 229
+    },
+    "entropy": {
+      "srcc": 0.28,
+      "within_scene_srcc": 0.304,
+      "pair_acc": 0.611,
+      "top1": 0.061,
+      "scenes": 229
+    },
+    "contrast": {
+      "srcc": 0.303,
+      "within_scene_srcc": 0.32,
+      "pair_acc": 0.616,
+      "top1": 0.035,
+      "scenes": 229
+    }
+  },
+  "no overlap (61 scenes)": {
+    "NR-free fuzzy (LOL-frozen)": {
+      "srcc": 0.338,
+      "within_scene_srcc": 0.386,
+      "pair_acc": 0.646,
+      "top1": 0.279,
+      "scenes": 61
+    },
+    "Linear (LOL-trained)": {
+      "srcc": 0.252,
+      "within_scene_srcc": 0.232,
+      "pair_acc": 0.579,
+      "top1": 0.262,
+      "scenes": 61
+    },
+    "entropy": {
+      "srcc": 0.23,
+      "within_scene_srcc": 0.207,
+      "pair_acc": 0.57,
+      "top1": 0.18,
+      "scenes": 61
+    },
+    "contrast": {
+      "srcc": 0.263,
+      "within_scene_srcc": 0.253,
+      "pair_acc": 0.586,
+      "top1": 0.344,
+      "scenes": 61
+    }
+  },
+  "all (290)": {
+    "NR-free fuzzy (LOL-frozen)": {
+      "srcc": 0.304,
+      "within_scene_srcc": 0.381,
+      "pair_acc": 0.643,
+      "top1": 0.145,
+      "scenes": 290
+    },
+    "Linear (LOL-trained)": {
+      "srcc": 0.241,
+      "within_scene_srcc": 0.295,
+      "pair_acc": 0.606,
+      "top1": 0.11,
+      "scenes": 290
+    },
+    "entropy": {
+      "srcc": 0.262,
+      "within_scene_srcc": 0.284,
+      "pair_acc": 0.602,
+      "top1": 0.086,
+      "scenes": 290
+    },
+    "contrast": {
+      "srcc": 0.281,
+      "within_scene_srcc": 0.306,
+      "pair_acc": 0.61,
+      "top1": 0.1,
+      "scenes": 290
+    }
+  },
+  "mean_rank_by_method (1=best)": {
+    "MF": {
+      "r_hum": 2.3,
+      "r_pred": 4.02
+    },
+    "CRM": {
+      "r_hum": 3.23,
+      "r_pred": 4.29
+    },
+    "Zero": {
+      "r_hum": 3.37,
+      "r_pred": 6.06
+    },
+    "Enlightengan": {
+      "r_hum": 3.63,
+      "r_pred": 3.71
+    },
+    "SRIE": {
+      "r_hum": 4.78,
+      "r_pred": 7.41
+    },
+    "Semi": {
+      "r_hum": 5.75,
+      "r_pred": 3.14
+    },
+    "Self_Supervised": {
+      "r_hum": 7.52,
+      "r_pred": 4.49
+    },
+    "MR": {
+      "r_hum": 7.67,
+      "r_pred": 7.21
+    },
+    "RetinexNet": {
+      "r_hum": 8.06,
+      "r_pred": 6.59
+    },
+    "JED": {
+      "r_hum": 8.68,
+      "r_pred": 8.08
+    }
+  },
+  "_status": "Historical low-light partition, superseded. Use overlap_transfer_verified.json and the normal-light classification record for the current partition; historical numbers are preserved."
+}

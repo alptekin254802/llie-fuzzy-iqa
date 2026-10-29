@@ -1,26 +1,11 @@
-"""
-Step 3 - Cross-dataset feature + NR-anchor collector (unpaired datasets).
+"""Collect image features and no-reference scores on unpaired low-light datasets.
 
-Place at: evaluation/cross_dataset.py     Run: python -m evaluation.cross_dataset
-
-Addresses the "single dataset (LOL)" critique. Takes images from unpaired
-real-world low-light datasets (LIME, DICM, ...), applies the SAME 5 classical
-enhancement methods, and computes no-reference features + modern NR anchors.
-There is NO ground truth here, so no PSNR/SSIM/LPIPS - the reference-free model
-(trained on LOL) will be applied to these rows in the FINAL evaluation and its
-score correlated against the NR anchors (MUSIQ / -NIQE) to demonstrate
-cross-dataset generalisation with no changes to the model.
-
-Data layout (you create this):
-  datasets/unpaired/lime/*.png|jpg|bmp
-  datasets/unpaired/dicm/*.png|jpg|bmp
-  (optionally npe/, mef/, vv/ for more images)
-Easiest single source for all of these: https://github.com/baidut/BIMEF  (data/ folder).
-
-Output: results/cross_dataset.csv
-  columns: dataset, filename, method, brightness, contrast, entropy,
-           colorfulness, sharpness, noise, niqe, brisque, musiq, maniqa, clipiqa
-"""
+Run ``python -m evaluation.cross_dataset``. Place LIME, DICM, NPE, MEF and VV
+images under datasets/unpaired/<dataset>/. The BIMEF repository provides these
+collections: https://github.com/baidut/BIMEF . Each input receives the five
+classical enhancement operators. Results are written to results/cross_dataset.csv.
+There are no paired references or human labels in this comparison; correlations
+with MUSIQ and negative NIQE measure agreement between objective scores."""
 from __future__ import annotations
 
 import sys

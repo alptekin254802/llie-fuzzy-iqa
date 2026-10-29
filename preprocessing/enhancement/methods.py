@@ -1,10 +1,7 @@
-"""
-Classical image enhancement methods.
+"""Classical enhancement operators for RGB arrays.
 
-Each function accepts a numpy array of RGB images (uint8 [0, 255] or float32 [0, 1])
-and returns an enhanced RGB array of the same dtype range. Modularizing the functions
-allows us to attach them to different lines (notebooks, scripts, etc.) without repetition.
-"""
+Inputs are uint8 in [0,255] or float32 in [0,1]. Outputs retain the corresponding
+range and are returned as uint8 or float32."""
 
 from __future__ import annotations
 
@@ -41,13 +38,7 @@ def apply_clahe(
     clip_limit: float = 2.0,
     tile_grid_size: Tuple[int, int] = (8, 8),
 ) -> np.ndarray:
-    """
-    Applies Contrast-Limited Adaptive Histogram Equalization (CLAHE).
-
-    CLAHE, small squares are individually equalized to increase local contrast,
-    while limiting noise amplification through clipping limit. We work on the
-    lightness channel in the LAB color space to preserve natural colors.
-    """
+    """Apply CLAHE to the LAB lightness channel."""
     img_float, original_dtype = _to_float(img)
     img_uint8 = _restore_dtype(img_float, "uint8")
 
@@ -63,22 +54,14 @@ def apply_clahe(
 
 
 def apply_gamma_correction(img: np.ndarray, gamma: float = 1.5) -> np.ndarray:
-    """
-    Applies gamma correction to brighten or darken the image.
-
-    gamma > 1 values compress highlights and emphasize mid-tones, which can
-    brighten dull images cleanly without over-saturating bright pixels.
-    """
+    """Apply x ** (1/gamma); gamma above one brightens values between zero and one."""
     img_float, original_dtype = _to_float(img)
     corrected = np.power(img_float, 1.0 / gamma)
     return _restore_dtype(corrected, original_dtype)
 
 
 def apply_log_transform(img: np.ndarray, c: float = 1.0) -> np.ndarray:
-    """
-    Applies logarithmic transformation, which emphasizes darker densities over
-    lighter ones. This is useful when details are hidden in deep shadows.
-    """
+    """Apply c * log(1+x), normalized by the maximum transformed value."""
     img_float, original_dtype = _to_float(img)
     transformed = c * np.log1p(img_float)
     transformed /= transformed.max() + 1e-8  # normalize back to [0, 1] range
@@ -86,12 +69,7 @@ def apply_log_transform(img: np.ndarray, c: float = 1.0) -> np.ndarray:
 
 
 def apply_retinex(img: np.ndarray, sigma: float = 50.0) -> np.ndarray:
-    """
-    Applies Single-Scale Retinex (SSR).
-
-    SSR, brightens the image as a blurred version of itself, and subtracts the
-    log domain, which provides a better dynamic range and color stability.
-    """
+    """Subtract the log Gaussian surround from each log RGB channel, then normalize globally."""
     img_float, original_dtype = _to_float(img)
     eps = 1e-8
 
@@ -108,12 +86,7 @@ def apply_retinex(img: np.ndarray, sigma: float = 50.0) -> np.ndarray:
 
 
 def histogram_equalization(img: np.ndarray) -> np.ndarray:
-    """
-    Applies histogram equalization per channel.
-
-    Equalizing each RGB channel individually can increase global contrast and
-    work well for quick, simple enhancements.
-    """
+    """Equalize each RGB channel independently."""
     img_float, original_dtype = _to_float(img)
     img_uint8 = _restore_dtype(img_float, "uint8")
     channels = cv2.split(img_uint8)

@@ -1,0 +1,100 @@
+{
+  "section": "C",
+  "amendment": 1,
+  "created_utc": "2026-10-23T12:22:50.265714+00:00",
+  "declaration": "Amendment recorded before data collection.",
+  "reason": "Bit-equal candidate lookup tables in the resized uint8 domain; reference exposure and dark-level QC exclude the short-exposure plateau observed in the preliminary sweep; timing separates camera wait from processing latency.",
+  "base_plan_sha256": "487fc2dee0941b13b1e052ac8eeed0b326e4774e6e0e0eb6af4cd228f3b391bc",
+  "scientific_scene_metadata_found": [],
+  "changes": {
+    "candidate_route": {
+      "input": "RGB uint8, cv2 INTER_LINEAR 256x256, exactly resize_input before float32 /255",
+      "table": "For each uint8 v, float32(v)/255.0 -> exact original apply_gamma_correction(gamma=1/g): float32 input copy, np.power(input,1.0/(1/g)), clip 0..1, float32, caller clip 0..1 and float32, rgb8 clip(image*255,0,255).astype(uint8). cv2.LUT on RGB uint8 input.",
+      "gamma_scalar_types": "Nine grid values remain numpy.float64, so float64 power under installed NumPy 2.4.4; separate default 2/3 remains Python float, preserving original float32 power behavior. Never replace reciprocal expression by g.",
+      "features_and_models": "Same gray8, entropy, gray.astype(float) std/255, Laplacian CV_64F variance/255**2 and A bit-equal batched inference; original tie/top1 rules unchanged.",
+      "scientific_metrics": "Keep exact float32 gamma candidates offline in NPZ and score LPIPS/PSNR/SSIM/CLIP-IQA+/NIQE on those float32 candidates. Table images only supply classical features and NR scores."
+    },
+    "equality": {
+      "old_dry_run": "All 20 inputs x (9 numpy.float64 grid + Python default) = 200 candidates from dry_run_001",
+      "random": {
+        "frames": 1000,
+        "shape": [
+          256,
+          256,
+          3
+        ],
+        "dtype": "uint8",
+        "distribution": "numpy Generator.integers(0,256,dtype=uint8)",
+        "seed": 20261023,
+        "gammas": 9
+      },
+      "require": "Exact dtype, shape and bytes for RGB8, 3 features, brightness, NR-free and NR-mono; all four selected gammas identical. Sequential previous-gamma state per selector, reset at each dataset start; additionally independent-frame previous=2/3 checks.",
+      "failure": "Stop table activation on first mismatch, preserve diagnostic, no table-path timings; float path remains usable.",
+      "startup_selftest": "Every live session: all 256 input values arranged in a tiled RGB test frame plus 3 random 256x256 uint8 frames (seed 20261024), all 10 gammas; exact same comparisons. Require valid full-validation certificate bound to implementation hashes. Failure aborts live session.",
+      "new_dry_run": "Also verify all 200 candidates in dry_run_2 against original float route; never scientific analysis."
+    },
+    "E0": {
+      "constraint": "E0 - 4 >= -7",
+      "candidate_order": [
+        -3,
+        -2,
+        -1
+      ],
+      "luminance_range": [
+        0.35,
+        0.55
+      ],
+      "clipping_fraction_max": 0.01,
+      "no_valid_E0": "Reject attempt; adjust diffuse illumination or scene outside capture, keep camera fixed, then retry. Never relax threshold or accept plateau."
+    },
+    "QC": {
+      "retain_all_original_QC": true,
+      "stop_luminance": "At native resolution, each raw frame gray8 = cv2.cvtColor(BGR uint8,COLOR_BGR2GRAY), mean(gray8)/255. Reference baseline is mean of 16 beginning raw-frame luminances; stop is mean of its five raw-frame luminances.",
+      "stop_max_ratio_to_previous": 0.9,
+      "first_previous": "beginning reference at E0",
+      "black_floor": 0.074,
+      "minimum_above_black_floor": 0.01,
+      "darkest_stop_min_luminance": 0.084,
+      "boundary": "<= 0.90 * previous and >= 0.084 inclusive, no tolerance adjustment",
+      "failure": "Entire scene excluded from analysis and publishable data; reasons retained; dry_run remains excluded regardless of QC."
+    },
+    "timing": {
+      "single_thread": true,
+      "exposures": [
+        -3,
+        -4,
+        -5,
+        -6,
+        -7
+      ],
+      "warmup_frames_each": 12,
+      "capture_only_frames_each": 120,
+      "live_frames_each": 120,
+      "columns": [
+        "capture_wait_ms",
+        "resize_ms",
+        "candidate_search_ms",
+        "selection_ms",
+        "full_resolution_lut_ms",
+        "processing_ms",
+        "display_ms",
+        "total_ms",
+        "camera_frame_interval_ms",
+        "capture_only_baseline_interval_ms"
+      ],
+      "processing": "resize + 9 candidate features / batched NR-free prediction + selection + full-resolution precomputed LUT application; excludes capture/display/logging",
+      "camera_interval": "Host capture-completion timestamps: capture-only acquisition baseline independently per exposure, plus observed live capture-completion intervals. Host delivery interval, not sensor timestamp or photon-to-screen latency.",
+      "claim": "Report processing median and p95 against capture-only camera median separately per exposure; only claim measured processing keeps up when processing p95 < camera baseline median. FPS from capture-only delivery intervals; do not infer camera fps from requested FPS.",
+      "display": true,
+      "warmup_excluded": true,
+      "resource_idle_check": "Inspect workload state before timing. Do not time while a separate model-evaluation worker is active or a Python process cannot be inspected. A confirmed pause with no active worker permits a stale running-state record. Do not interrupt other workloads."
+    },
+    "dry_run": {
+      "scene_id": "dry_run_2",
+      "scientific": false,
+      "excluded_from_all_analyses": true,
+      "repeat_rule": "Exactly one new dry-run attempt. QC failure is reported without tuning/repeating for a pass; timing and equality may still be assessed as engineering tests."
+    }
+  },
+  "unchanged": "Published models, fixed gamma, 9-candidate set, resolution, primary/secondary hypotheses, bootstrap, tie and top-1 rules."
+}

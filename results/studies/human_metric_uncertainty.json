@@ -1,0 +1,305 @@
+{
+  "squarelol": {
+    "musiq": {
+      "within_scene_srcc": -0.03048256349006241,
+      "difference": -0.4112087635054201,
+      "bootstrap_mean_difference": -0.4114727881222313,
+      "ci95": [
+        -0.45499844995653627,
+        -0.3669763438597304
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "clipiqa": {
+      "within_scene_srcc": 0.3823909664550173,
+      "difference": 0.0016647664396596538,
+      "bootstrap_mean_difference": 0.0018600144668519194,
+      "ci95": [
+        -0.04710641086049598,
+        0.05096943397404819
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "clipiqa+": {
+      "within_scene_srcc": 0.4761169407724969,
+      "difference": 0.09539074075713924,
+      "bootstrap_mean_difference": 0.09587103178572477,
+      "ci95": [
+        0.05492960366555054,
+        0.13671695779906182
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "niqe": {
+      "within_scene_srcc": 0.10480734307694378,
+      "difference": -0.2759188569384139,
+      "bootstrap_mean_difference": -0.27530277920091656,
+      "ci95": [
+        -0.3165839454851609,
+        -0.23344308122753202
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "brisque": {
+      "within_scene_srcc": 0.10814879063652603,
+      "difference": -0.2725774093788316,
+      "bootstrap_mean_difference": -0.27179269967078973,
+      "ci95": [
+        -0.3179698643672275,
+        -0.22338370584479672
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "lpips": {
+      "within_scene_srcc": 0.37004376383234716,
+      "difference": -0.010682436183010516,
+      "bootstrap_mean_difference": -0.010067553674833814,
+      "ci95": [
+        -0.04681528948031208,
+        0.027553180762933744
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "lpips-vgg": {
+      "within_scene_srcc": 0.32924432240946594,
+      "difference": -0.05148187760589177,
+      "bootstrap_mean_difference": -0.05137614876505036,
+      "ci95": [
+        -0.09724651826049745,
+        -0.004939993682209314
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "dists": {
+      "within_scene_srcc": 0.40418431217432743,
+      "difference": 0.023458112158969736,
+      "bootstrap_mean_difference": 0.023911063676380594,
+      "ci95": [
+        -0.00811142017723087,
+        0.05445211267329943
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "maniqa": {
+      "within_scene_srcc": 0.11756965755149995,
+      "difference": -0.2631565424638578,
+      "bootstrap_mean_difference": -0.26267998208455945,
+      "ci95": [
+        -0.30874687933591294,
+        -0.22015157944575564
+      ],
+      "replicates": 2000,
+      "seed": 7
+    }
+  },
+  "lieq": {
+    "musiq": {
+      "within_scene_srcc": 0.1709090909090909,
+      "difference": 0.07618915628570115,
+      "bootstrap_mean_difference": 0.07395828750133888,
+      "ci95": [
+        -0.01604644035541814,
+        0.16534409405896638
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "clipiqa": {
+      "within_scene_srcc": 0.2196363636363636,
+      "difference": 0.1249164290129739,
+      "bootstrap_mean_difference": 0.12540677234982375,
+      "ci95": [
+        0.009802465264025425,
+        0.23575966709246068
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "clipiqa+": {
+      "within_scene_srcc": 0.3939393939393939,
+      "difference": 0.2992194593160042,
+      "bootstrap_mean_difference": 0.2988765905316419,
+      "ci95": [
+        0.18755399513422846,
+        0.41001671761857816
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "niqe": {
+      "within_scene_srcc": 0.04133333333333335,
+      "difference": -0.05338660129005643,
+      "bootstrap_mean_difference": -0.05244019734714596,
+      "ci95": [
+        -0.17466025730398446,
+        0.06067884452316601
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "brisque": {
+      "within_scene_srcc": 0.14193939393939395,
+      "difference": 0.047219459316004214,
+      "bootstrap_mean_difference": 0.047608832955884355,
+      "ci95": [
+        -0.08463784365235069,
+        0.18520001482786863
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "lpips": {
+      "within_scene_srcc": 0.36036363636363644,
+      "difference": 0.26564370174024665,
+      "bootstrap_mean_difference": 0.26462586325891463,
+      "ci95": [
+        0.14802124023199312,
+        0.38088526843521653
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "lpips-vgg": {
+      "within_scene_srcc": 0.6676363636363635,
+      "difference": 0.5729164290129739,
+      "bootstrap_mean_difference": 0.5719371359861873,
+      "ci95": [
+        0.47309036119252207,
+        0.669884572245549
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "dists": {
+      "within_scene_srcc": 0.23163636363636364,
+      "difference": 0.13691642901297388,
+      "bootstrap_mean_difference": 0.13520816628921767,
+      "ci95": [
+        0.03105022854294548,
+        0.2418847129900695
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "maniqa": {
+      "within_scene_srcc": 0.24509090909090914,
+      "difference": 0.15037097446751935,
+      "bootstrap_mean_difference": 0.14900452992558133,
+      "ci95": [
+        0.05453664072654897,
+        0.23708406563176412
+      ],
+      "replicates": 2000,
+      "seed": 7
+    }
+  },
+  "rlie": {
+    "musiq": {
+      "within_scene_srcc": 0.19102715466351827,
+      "difference": 0.055591612235571734,
+      "bootstrap_mean_difference": 0.056854109597338,
+      "ci95": [
+        -0.011527766749384464,
+        0.12457317726347335
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "clipiqa": {
+      "within_scene_srcc": 0.1593860684769776,
+      "difference": 0.023950526049031,
+      "bootstrap_mean_difference": 0.02505438507943166,
+      "ci95": [
+        -0.057975737104163955,
+        0.10816178744466742
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "clipiqa+": {
+      "within_scene_srcc": 0.31751279024006296,
+      "difference": 0.18207724781211646,
+      "bootstrap_mean_difference": 0.18344143742102947,
+      "ci95": [
+        0.11370712595214308,
+        0.2507878146819215
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "niqe": {
+      "within_scene_srcc": 0.14002361275088548,
+      "difference": 0.004588070322938934,
+      "bootstrap_mean_difference": 0.005531402001903128,
+      "ci95": [
+        -0.0721521616605471,
+        0.08527471045094732
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "brisque": {
+      "within_scene_srcc": -0.052184179456906725,
+      "difference": -0.18761972188485332,
+      "bootstrap_mean_difference": -0.1868162957548855,
+      "ci95": [
+        -0.27451898605086,
+        -0.10217143562260615
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "lpips": {
+      "within_scene_srcc": -0.05887445887445887,
+      "difference": -0.19431000130240542,
+      "bootstrap_mean_difference": -0.19298402499534206,
+      "ci95": [
+        -0.2911289887425126,
+        -0.0851127201317128
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "lpips-vgg": {
+      "within_scene_srcc": -0.0508461235733963,
+      "difference": -0.18628166600134283,
+      "bootstrap_mean_difference": -0.1849362878839686,
+      "ci95": [
+        -0.2888678094372569,
+        -0.0776641453860156
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "dists": {
+      "within_scene_srcc": -0.0799685163321527,
+      "difference": -0.21540405876009924,
+      "bootstrap_mean_difference": -0.21453880657739638,
+      "ci95": [
+        -0.3167424447340229,
+        -0.10903052725454528
+      ],
+      "replicates": 2000,
+      "seed": 7
+    },
+    "maniqa": {
+      "within_scene_srcc": 0.4059818968909878,
+      "difference": 0.27054635446304126,
+      "bootstrap_mean_difference": 0.2705667817736465,
+      "ci95": [
+        0.20517498567815423,
+        0.33496702663228023
+      ],
+      "replicates": 2000,
+      "seed": 7
+    }
+  }
+}

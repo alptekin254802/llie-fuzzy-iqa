@@ -1,0 +1,248 @@
+{
+  "analysis_framework": "exploratory",
+  "hypothesis_test_performed": false,
+  "p_values_computed": false,
+  "preregistered_primary_hypothesis": false,
+  "reporting_decision": "Reporting is descriptive; no confirmatory claim.",
+  "n_scenes": 21,
+  "target_scenes": 30,
+  "minimum_scenes": 20,
+  "rooms": [
+    "room1"
+  ],
+  "overall": {
+    "n_scenes": 21,
+    "unit": "scene, equal weight",
+    "interpretation": "descriptive only",
+    "scene_mean_metrics_by_selector": {
+      "fuzzy": {
+        "lpips": {
+          "mean": 0.27876345393735735,
+          "descriptive_bootstrap_interval95": [
+            0.2662851108827939,
+            0.29124532245343465
+          ]
+        },
+        "psnr": {
+          "mean": 15.185277382294007,
+          "descriptive_bootstrap_interval95": [
+            14.411764367593735,
+            15.875653839200291
+          ]
+        },
+        "ssim": {
+          "mean": 0.7773969979513259,
+          "descriptive_bootstrap_interval95": [
+            0.760431978262606,
+            0.7946847480819338
+          ]
+        }
+      },
+      "fixed": {
+        "lpips": {
+          "mean": 0.32434551133995965,
+          "descriptive_bootstrap_interval95": [
+            0.31095919283993906,
+            0.33815372321222514
+          ]
+        },
+        "psnr": {
+          "mean": 13.776925105271511,
+          "descriptive_bootstrap_interval95": [
+            13.389275646938465,
+            14.161739904078527
+          ]
+        },
+        "ssim": {
+          "mean": 0.727490186123621,
+          "descriptive_bootstrap_interval95": [
+            0.7129050006291696,
+            0.7414194067319233
+          ]
+        }
+      },
+      "nr_mono": {
+        "lpips": {
+          "mean": 0.2789182203334002,
+          "descriptive_bootstrap_interval95": [
+            0.26446132773223024,
+            0.29291533303535766
+          ]
+        },
+        "psnr": {
+          "mean": 14.987926789199868,
+          "descriptive_bootstrap_interval95": [
+            14.284849424463252,
+            15.6354034541468
+          ]
+        },
+        "ssim": {
+          "mean": 0.7789050957986287,
+          "descriptive_bootstrap_interval95": [
+            0.7661336229067474,
+            0.7939042286929631
+          ]
+        }
+      },
+      "entropy": {
+        "lpips": {
+          "mean": 0.27553703198652896,
+          "descriptive_bootstrap_interval95": [
+            0.26203659648630057,
+            0.28879889625235505
+          ]
+        },
+        "psnr": {
+          "mean": 15.319741915663629,
+          "descriptive_bootstrap_interval95": [
+            14.592062783321046,
+            15.980438892236936
+          ]
+        },
+        "ssim": {
+          "mean": 0.7903610726197561,
+          "descriptive_bootstrap_interval95": [
+            0.7772654553893069,
+            0.8042580289677494
+          ]
+        }
+      },
+      "brightness": {
+        "lpips": {
+          "mean": 0.27749142935943033,
+          "descriptive_bootstrap_interval95": [
+            0.2653903208987876,
+            0.28946658720306706
+          ]
+        },
+        "psnr": {
+          "mean": 17.74828275488764,
+          "descriptive_bootstrap_interval95": [
+            17.22655887969974,
+            18.271370395449523
+          ]
+        },
+        "ssim": {
+          "mean": 0.7943181693553925,
+          "descriptive_bootstrap_interval95": [
+            0.78358765745092,
+            0.8047912328264542
+          ]
+        }
+      },
+      "default": {
+        "lpips": {
+          "mean": 0.2730576904667985,
+          "descriptive_bootstrap_interval95": [
+            0.2604035906455967,
+            0.2851052535048109
+          ]
+        },
+        "psnr": {
+          "mean": 15.59414628662178,
+          "descriptive_bootstrap_interval95": [
+            15.207523190005888,
+            15.947272623300753
+          ]
+        },
+        "ssim": {
+          "mean": 0.7693473778310276,
+          "descriptive_bootstrap_interval95": [
+            0.756107738997255,
+            0.7836398663158928
+          ]
+        }
+      },
+      "oracle": {
+        "lpips": {
+          "mean": 0.26419520315137657,
+          "descriptive_bootstrap_interval95": [
+            0.25248634392949976,
+            0.27535547937266525
+          ]
+        },
+        "psnr": {
+          "mean": 16.882709194456762,
+          "descriptive_bootstrap_interval95": [
+            16.30936510091148,
+            17.409190041920656
+          ]
+        },
+        "ssim": {
+          "mean": 0.7986053515048255,
+          "descriptive_bootstrap_interval95": [
+            0.7884403149961007,
+            0.8095376906224658
+          ]
+        }
+      },
+      "clipiqa+": {
+        "lpips": {
+          "mean": 0.3190887998612154,
+          "descriptive_bootstrap_interval95": [
+            0.2970460648748225,
+            0.34333211150419496
+          ]
+        },
+        "psnr": {
+          "mean": 13.950893139574415,
+          "descriptive_bootstrap_interval95": [
+            13.19567507902731,
+            14.624323855948013
+          ]
+        },
+        "ssim": {
+          "mean": 0.7299130545485587,
+          "descriptive_bootstrap_interval95": [
+            0.7194329024673927,
+            0.7402294235641049
+          ]
+        }
+      },
+      "niqe": {
+        "lpips": {
+          "mean": 0.2836173585483006,
+          "descriptive_bootstrap_interval95": [
+            0.2697891959525822,
+            0.2978116014657453
+          ]
+        },
+        "psnr": {
+          "mean": 15.124491045812404,
+          "descriptive_bootstrap_interval95": [
+            14.558874881933328,
+            15.66861109190494
+          ]
+        },
+        "ssim": {
+          "mean": 0.7652783886307762,
+          "descriptive_bootstrap_interval95": [
+            0.7530883186576621,
+            0.7778355487507014
+          ]
+        }
+      }
+    },
+    "bootstrap_replicates": 2000,
+    "seed": 20261018,
+    "interval_method": "descriptive percentile 2.5/97.5; linear quantiles; scene resampling",
+    "interval_unavailable_reason": null,
+    "scene_mean_lpips_difference_fuzzy_minus_fixed": {
+      "mean": -0.04558205740260227,
+      "descriptive_bootstrap_interval95": [
+        -0.05626348097897357,
+        -0.03490227180133973
+      ]
+    },
+    "scene_mean_lpips_difference_fuzzy_minus_default": {
+      "mean": 0.005705763470558895,
+      "descriptive_bootstrap_interval95": [
+        0.0017900947612222516,
+        0.010322416477969708
+      ]
+    }
+  },
+  "by_room": {},
+  "room_interpretation": "Viewing directions within a room may be dependent; descriptive scene bootstrap is not evidence from independent rooms.",
+  "amendment_3_sha256": "f7da873553e449d4f4d2beaaf443d8d7e6e27d5957469b498f916fe87fd64afe"
+}

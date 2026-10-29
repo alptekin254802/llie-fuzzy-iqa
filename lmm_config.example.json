@@ -1,0 +1,16 @@
+{
+  "vqa2": {
+    "source": "third_party/vqa2",
+    "checkpoint": "third_party/vqa2_weights",
+    "slowfast": "third_party/slowfast/slowfast.pth"
+  },
+  "vital": {
+    "source": "third_party/vital",
+    "checkpoint": "third_party/vital_weights"
+  },
+  "datasets": {
+    "squarelol": "data/SQUARE-LOL/enhancement",
+    "lieq": "data/LIEQ/dataset/Enhancement",
+    "rlie": "data/RLIE/enhancement"
+  }
+}

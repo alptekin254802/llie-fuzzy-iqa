@@ -1,0 +1,73 @@
+{
+  "top1_chance": {
+    "squarelol": {
+      "chance_top1": 0.10379310344827584,
+      "scenes": 290,
+      "outputs_per_scene": [
+        10
+      ],
+      "scenes_with_tied_best": 11,
+      "formula": "mean_scene(number of target maxima / number of candidates); same eligible scenes as within_group",
+      "source_sha256": "599ad5464f2940030dfa2ad43968236cf1c318e47d9255a57c2ec91a4f526fa1"
+    },
+    "lieq": {
+      "chance_top1": 0.09999999999999998,
+      "scenes": 100,
+      "outputs_per_scene": [
+        10
+      ],
+      "scenes_with_tied_best": 0,
+      "formula": "mean_scene(number of target maxima / number of candidates); same eligible scenes as within_group",
+      "source_sha256": "b71507c9c9498fef52ee865e850d63c343f2c2efe3abbe244d3b3bdefe16a9c8"
+    },
+    "rlie": {
+      "chance_top1": 0.09999999999999999,
+      "scenes": 154,
+      "outputs_per_scene": [
+        10
+      ],
+      "scenes_with_tied_best": 0,
+      "formula": "mean_scene(number of target maxima / number of candidates); same eligible scenes as within_group",
+      "source_sha256": "ee095d2ad8caf07adbc70e00964fd4c198cd15fe2706c097997fa2b8c0017e57"
+    }
+  },
+  "lieq_seed_range": {
+    "values": {
+      "42": 0.095,
+      "1": 0.043,
+      "2": 0.069,
+      "3": 0.03,
+      "4": -0.016
+    },
+    "min": -0.016,
+    "max": 0.095
+  },
+  "overlap_existing_metrics": {
+    "LPIPS-Alex": {
+      "no overlap (61 scenes)": {
+        "pooled_srcc": 0.2945553699849808,
+        "within_scene_srcc": 0.47408176057500984,
+        "scenes": 61
+      },
+      "all (290)": {
+        "pooled_srcc": 0.19992062291683405,
+        "within_scene_srcc": 0.37004376383234716,
+        "scenes": 290
+      }
+    },
+    "Q-Align (fp16)": {
+      "no overlap (61 scenes)": {
+        "pooled_srcc": 0.1858501076889578,
+        "within_scene_srcc": 0.3923433741631622,
+        "scenes": 61
+      },
+      "all (290)": {
+        "pooled_srcc": 0.17989111921651985,
+        "within_scene_srcc": 0.473048692890342,
+        "scenes": 290
+      }
+    }
+  },
+  "RF": "NOT ADDED: no stored per-image predictions from the LOL-trained RF transfer baseline. Human-calibration RF records belong to a different training protocol. No fit or inference run.",
+  "new_model_runs": false
+}

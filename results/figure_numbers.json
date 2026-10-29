@@ -1,0 +1,68 @@
+{
+  "psnr": {
+    "lpips_mean": 0.574,
+    "lpips_std": 0.049,
+    "niqe_mean": 0.091,
+    "niqe_std": 0.048
+  },
+  "ssim": {
+    "lpips_mean": 0.543,
+    "lpips_std": 0.032,
+    "niqe_mean": 0.142,
+    "niqe_std": 0.077
+  },
+  "entropy": {
+    "lpips_mean": 0.488,
+    "lpips_std": 0.033,
+    "niqe_mean": 0.128,
+    "niqe_std": 0.062
+  },
+  "musiq": {
+    "lpips_mean": 0.692,
+    "lpips_std": 0.037,
+    "niqe_mean": 0.426,
+    "niqe_std": 0.092
+  },
+  "maniqa": {
+    "lpips_mean": 0.777,
+    "lpips_std": 0.031,
+    "niqe_mean": 0.464,
+    "niqe_std": 0.105
+  },
+  "clipiqa": {
+    "lpips_mean": 0.209,
+    "lpips_std": 0.023,
+    "niqe_mean": 0.047,
+    "niqe_std": 0.089
+  },
+  "clipiqa_plus": {
+    "lpips_mean": 0.601,
+    "lpips_std": 0.062,
+    "niqe_mean": 0.324,
+    "niqe_std": 0.128
+  },
+  "fr_fuzzy_free": {
+    "lpips_mean": 0.764,
+    "lpips_std": 0.03,
+    "niqe_mean": 0.337,
+    "niqe_std": 0.046
+  },
+  "nr_fuzzy_free": {
+    "lpips_mean": 0.753,
+    "lpips_std": 0.021,
+    "niqe_mean": 0.425,
+    "niqe_std": 0.045
+  },
+  "nr_fuzzy_mono": {
+    "lpips_mean": 0.751,
+    "lpips_std": 0.02,
+    "niqe_mean": 0.409,
+    "niqe_std": 0.048
+  },
+  "fuzzy_handtuned": {
+    "lpips_mean": 0.53,
+    "lpips_std": 0.026,
+    "niqe_mean": 0.141,
+    "niqe_std": 0.069
+  }
+}

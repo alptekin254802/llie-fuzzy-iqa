@@ -1,0 +1,71 @@
+{
+  "LOL_5fold_vs_-LPIPS": {
+    "BRISQUE-36+SVR": {
+      "foldmean": 0.885,
+      "std": 0.019,
+      "within_scene_srcc": 0.739
+    }
+  },
+  "zero_shot": {
+    "squarelol": {
+      "NR-free fuzzy (LOL-frozen)": {
+        "srcc": 0.304,
+        "within_scene_srcc": 0.381,
+        "pair_acc": 0.643,
+        "top1": 0.145
+      },
+      "BRISQUE-36+SVR (LOL -LPIPS trained)": {
+        "srcc": 0.048,
+        "within_scene_srcc": 0.081,
+        "pair_acc": 0.535,
+        "top1": 0.124
+      },
+      "BRISQUE-36+SVR (MOS-cal, 256)": {
+        "srcc": 0.653,
+        "within_scene_srcc": 0.715,
+        "pair_acc": 0.788,
+        "top1": 0.293
+      }
+    },
+    "lieq": {
+      "NR-free fuzzy (LOL-frozen)": {
+        "srcc": 0.505,
+        "within_scene_srcc": 0.095,
+        "pair_acc": 0.53,
+        "top1": 0.11
+      },
+      "BRISQUE-36+SVR (LOL -LPIPS trained)": {
+        "srcc": 0.366,
+        "within_scene_srcc": 0.004,
+        "pair_acc": 0.506,
+        "top1": 0.05
+      },
+      "BRISQUE-36+SVR (MOS-cal, 256)": {
+        "srcc": 0.578,
+        "within_scene_srcc": 0.34,
+        "pair_acc": 0.635,
+        "top1": 0.18
+      }
+    },
+    "rlie": {
+      "NR-free fuzzy (LOL-frozen)": {
+        "srcc": 0.106,
+        "within_scene_srcc": 0.135,
+        "pair_acc": 0.548,
+        "top1": 0.11
+      },
+      "BRISQUE-36+SVR (LOL -LPIPS trained)": {
+        "srcc": 0.062,
+        "within_scene_srcc": 0.056,
+        "pair_acc": 0.518,
+        "top1": 0.058
+      },
+      "BRISQUE-36+SVR (MOS-cal, 256)": {
+        "srcc": 0.236,
+        "within_scene_srcc": 0.285,
+        "pair_acc": 0.608,
+        "top1": 0.253
+      }
+    }
+  }
+}

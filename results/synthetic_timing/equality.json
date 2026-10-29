@@ -1,0 +1,69 @@
+{
+  "passed": true,
+  "candidate_count": 4000,
+  "expected_candidates": 4000,
+  "frames_completed": 400,
+  "failure": null,
+  "plan_sha256": "d129f7a7aa6b6857a4d33d9ca6d458682d024ef72cf840e812b56c6701c7590c",
+  "code_sha256": {
+    "optimized_loop.py": "42426038313e92aaba573446f80f0b7e9e597eb0fd948ed46f056b7548e3aaf3",
+    "loop_audit.py": "c33cf80ca1569688b88166edc240ddb6a82f0e87700bb90284b8e4032ba189b4"
+  },
+  "numpy": "2.4.4",
+  "opencv": "4.13.0",
+  "pandas": "3.0.2",
+  "torch": "2.7.1+cu118",
+  "threadpools": [
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "version": "0.3.31.188.0",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell",
+      "library": "libscipy_openblas64_-63c857e738469261263c764a36be9436.dll"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libiomp",
+      "version": null,
+      "library": "libiomp5md.dll"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "libiomp",
+      "version": null,
+      "library": "libiompstubs5md.dll"
+    },
+    {
+      "user_api": "blas",
+      "internal_api": "openblas",
+      "num_threads": 1,
+      "prefix": "libscipy_openblas",
+      "version": "0.3.30",
+      "threading_layer": "pthreads",
+      "architecture": "Haswell",
+      "library": "libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll"
+    },
+    {
+      "user_api": "openmp",
+      "internal_api": "openmp",
+      "num_threads": 1,
+      "prefix": "vcomp",
+      "version": null,
+      "library": "vcomp140.dll"
+    }
+  ],
+  "features_compared": 12000,
+  "scores_compared": 8000,
+  "brightness_compared": 4000,
+  "image_arrays_compared": 4000,
+  "selector_decisions_compared": 1600,
+  "original_sha256": "39eb6b4feacb9611bf7d842455e9415c6a75b009e93fbc7a22b435255309d86f",
+  "optimized_sha256": "39eb6b4feacb9611bf7d842455e9415c6a75b009e93fbc7a22b435255309d86f"
+}

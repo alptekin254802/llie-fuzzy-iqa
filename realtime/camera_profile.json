@@ -1,0 +1,28 @@
+{
+  "camera": "USB Camera",
+  "backend": "DSHOW",
+  "resolution": [
+    640,
+    480
+  ],
+  "fourcc": "MJPG",
+  "fps_request": 30,
+  "controls": {
+    "AUTO_EXPOSURE": 0.25,
+    "GAIN": 0,
+    "AUTO_WB": 0,
+    "WB_TEMPERATURE": 4600,
+    "AUTOFOCUS": 0,
+    "FOCUS": 1,
+    "BRIGHTNESS": 0,
+    "CONTRAST": 32,
+    "SATURATION": 64,
+    "GAMMA": 100,
+    "SHARPNESS": 4,
+    "BACKLIGHT": 1
+  },
+  "model_sha256": {
+    "nr_free": "6f9cb7131acddf043415b77118f91ec7d2b2e392f3ab5cd8e8a399a1257ea65a",
+    "nr_mono": "c8cda18d6f9c5b87d8a8e203c34a796563a62ef4134b013f8e4daf62af000453"
+  }
+}

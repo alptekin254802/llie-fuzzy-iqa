@@ -1,0 +1,87 @@
+{
+  "feature_order": [
+    "entropy",
+    "contrast",
+    "sharpness"
+  ],
+  "rules": 27,
+  "target": "negative LPIPS, uncentered and unscaled",
+  "optimizer": {
+    "popsize": 8,
+    "maxiter": 40,
+    "seed": 42,
+    "bounds": [
+      0.0,
+      100.0
+    ],
+    "tol": 0.001,
+    "polish": false,
+    "workers": 1,
+    "updating": "deferred"
+  },
+  "only_intervention": "Remove 231 shared scenes from LOL before orientation, membership fitting, and DE calibration.",
+  "feature_extraction_performed": false,
+  "training_shared_scenes_removed": 231,
+  "clean_training_scenes": 254,
+  "clean_training_images": 1270,
+  "test_scenes_all": 290,
+  "test_scenes_nonshared": 59,
+  "clean_model_refits_during_test": 0,
+  "environment": {
+    "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+    "threads": 1,
+    "packages": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.2",
+      "scipy": "1.17.1",
+      "threadpoolctl": "3.6.0"
+    }
+  },
+  "positive_control_gates": [
+    {
+      "subset": "all_290",
+      "expected": 0.381,
+      "value": 0.3807262000153577,
+      "status": "PASS"
+    },
+    {
+      "subset": "nonshared_59",
+      "expected": 0.391,
+      "value": 0.3909675923098774,
+      "status": "PASS"
+    }
+  ],
+  "random_control": {
+    "subset_seeds": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20
+    ],
+    "subset_rng": "numpy.random.default_rng(seed).choice(sorted LOL scene IDs, size=231, replace=False)",
+    "selection_uses_overlap_labels": false,
+    "optimizer_seed": 42,
+    "refits_during_test": 0,
+    "random_subsets": 20,
+    "unique_subsets": 20
+  },
+  "inference": "Fit orientation, membership breakpoints and consequents after scene removal; freeze one model for both test subsets.",
+  "intervals": "Minimum and maximum over 20 random subsets, not confidence intervals.",
+  "source_calibration_commit": "8205c5aa421c74b9745122e280e33ca6d3fabdee"
+}

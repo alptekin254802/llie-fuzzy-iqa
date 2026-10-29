@@ -1,0 +1,236 @@
+{
+  "session": {
+    "id": "mjpg_1",
+    "exposure": -6,
+    "total_frames": 2000,
+    "warmup_frames": 50
+  },
+  "status": "completed",
+  "started_utc": "2026-10-23T19:51:41.520830+00:00",
+  "plan_sha256": "0d66986931e01cdc7b1a5bef1cfe603027b10da14802f5042bd8ddd1875cddc1",
+  "display_enabled": false,
+  "requests": [
+    {
+      "property": "FRAME_WIDTH",
+      "requested": 640,
+      "set_return": true,
+      "readback": 640.0
+    },
+    {
+      "property": "FRAME_HEIGHT",
+      "requested": 480,
+      "set_return": true,
+      "readback": 480.0
+    },
+    {
+      "property": "FPS",
+      "requested": 30,
+      "set_return": true,
+      "readback": 30.00003000003
+    },
+    {
+      "property": "FOURCC",
+      "requested": 1196444237,
+      "set_return": true,
+      "readback": 1196444237.0
+    },
+    {
+      "property": "AUTO_EXPOSURE",
+      "requested": 0.25,
+      "set_return": true,
+      "readback": -1.0
+    },
+    {
+      "property": "GAIN",
+      "requested": 0,
+      "set_return": true,
+      "readback": 0.0
+    },
+    {
+      "property": "AUTO_WB",
+      "requested": 0,
+      "set_return": true,
+      "readback": 0.0
+    },
+    {
+      "property": "WB_TEMPERATURE",
+      "requested": 4600,
+      "set_return": true,
+      "readback": 4600.0
+    },
+    {
+      "property": "AUTOFOCUS",
+      "requested": 0,
+      "set_return": true,
+      "readback": 2.0
+    },
+    {
+      "property": "FOCUS",
+      "requested": 1,
+      "set_return": true,
+      "readback": 1.0
+    },
+    {
+      "property": "BRIGHTNESS",
+      "requested": 0,
+      "set_return": true,
+      "readback": 0.0
+    },
+    {
+      "property": "CONTRAST",
+      "requested": 32,
+      "set_return": true,
+      "readback": 32.0
+    },
+    {
+      "property": "SATURATION",
+      "requested": 64,
+      "set_return": true,
+      "readback": 64.0
+    },
+    {
+      "property": "GAMMA",
+      "requested": 100,
+      "set_return": true,
+      "readback": 100.0
+    },
+    {
+      "property": "SHARPNESS",
+      "requested": 4,
+      "set_return": true,
+      "readback": 4.0
+    },
+    {
+      "property": "BACKLIGHT",
+      "requested": 1,
+      "set_return": true,
+      "readback": 1.0
+    },
+    {
+      "property": "EXPOSURE",
+      "requested": -6,
+      "set_return": true,
+      "readback": -6.0
+    }
+  ],
+  "after_request_readbacks": {
+    "controls": {
+      "AUTO_EXPOSURE": -1.0,
+      "GAIN": 0.0,
+      "AUTO_WB": 0.0,
+      "WB_TEMPERATURE": 4600.0,
+      "AUTOFOCUS": 2.0,
+      "FOCUS": 1.0,
+      "BRIGHTNESS": 0.0,
+      "CONTRAST": 32.0,
+      "SATURATION": 64.0,
+      "GAMMA": 100.0,
+      "SHARPNESS": 4.0,
+      "BACKLIGHT": 1.0,
+      "EXPOSURE": -6.0
+    },
+    "backend": "DSHOW",
+    "width": 640.0,
+    "height": 480.0,
+    "fps": 30.00003000003,
+    "fourcc_numeric": 1196444237.0,
+    "fourcc_text": "MJPG"
+  },
+  "after_settle_readbacks": {
+    "controls": {
+      "AUTO_EXPOSURE": -1.0,
+      "GAIN": 0.0,
+      "AUTO_WB": 0.0,
+      "WB_TEMPERATURE": 4600.0,
+      "AUTOFOCUS": 2.0,
+      "FOCUS": 1.0,
+      "BRIGHTNESS": 0.0,
+      "CONTRAST": 32.0,
+      "SATURATION": 64.0,
+      "GAMMA": 100.0,
+      "SHARPNESS": 4.0,
+      "BACKLIGHT": 1.0,
+      "EXPOSURE": -6.0
+    },
+    "backend": "DSHOW",
+    "width": 640.0,
+    "height": 480.0,
+    "fps": 30.00003000003,
+    "fourcc_numeric": 1196444237.0,
+    "fourcc_text": "MJPG"
+  },
+  "after_selftest_readbacks": {
+    "controls": {
+      "AUTO_EXPOSURE": -1.0,
+      "GAIN": 0.0,
+      "AUTO_WB": 0.0,
+      "WB_TEMPERATURE": 4600.0,
+      "AUTOFOCUS": 2.0,
+      "FOCUS": 1.0,
+      "BRIGHTNESS": 0.0,
+      "CONTRAST": 32.0,
+      "SATURATION": 64.0,
+      "GAMMA": 100.0,
+      "SHARPNESS": 4.0,
+      "BACKLIGHT": 1.0,
+      "EXPOSURE": -6.0
+    },
+    "backend": "DSHOW",
+    "width": 640.0,
+    "height": 480.0,
+    "fps": 30.00003000003,
+    "fourcc_numeric": 1196444237.0,
+    "fourcc_text": "MJPG"
+  },
+  "before_timing_readbacks": {
+    "controls": {
+      "AUTO_EXPOSURE": -1.0,
+      "GAIN": 0.0,
+      "AUTO_WB": 0.0,
+      "WB_TEMPERATURE": 4600.0,
+      "AUTOFOCUS": 2.0,
+      "FOCUS": 1.0,
+      "BRIGHTNESS": 0.0,
+      "CONTRAST": 32.0,
+      "SATURATION": 64.0,
+      "GAMMA": 100.0,
+      "SHARPNESS": 4.0,
+      "BACKLIGHT": 1.0,
+      "EXPOSURE": -6.0
+    },
+    "backend": "DSHOW",
+    "width": 640.0,
+    "height": 480.0,
+    "fps": 30.00003000003,
+    "fourcc_numeric": 1196444237.0,
+    "fourcc_text": "MJPG"
+  },
+  "measurement_started_utc": "2026-10-23T19:52:11.149213+00:00",
+  "final_camera_readbacks": {
+    "controls": {
+      "AUTO_EXPOSURE": -1.0,
+      "GAIN": 0.0,
+      "AUTO_WB": 0.0,
+      "WB_TEMPERATURE": 4600.0,
+      "AUTOFOCUS": 2.0,
+      "FOCUS": 1.0,
+      "BRIGHTNESS": 0.0,
+      "CONTRAST": 32.0,
+      "SATURATION": 64.0,
+      "GAMMA": 100.0,
+      "SHARPNESS": 4.0,
+      "BACKLIGHT": 1.0,
+      "EXPOSURE": -6.0
+    },
+    "backend": "DSHOW",
+    "width": 640.0,
+    "height": 480.0,
+    "fps": 30.00003000003,
+    "fourcc_numeric": 1196444237.0,
+    "fourcc_text": "MJPG"
+  },
+  "rows": 2000,
+  "retained_rows": 1950,
+  "frames_sha256": "cb5a2678a1e0a319d46219892c3c43c8629f4e333562a9775c31680b1ae5abf2",
+  "finished_utc": "2026-10-23T19:53:19.222262+00:00"
+}

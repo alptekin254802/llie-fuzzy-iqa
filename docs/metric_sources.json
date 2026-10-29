@@ -1,0 +1,55 @@
+{
+  "bpri": {
+    "downloads": [
+      {
+        "url": "https://drive.google.com/uc?export=download&id=1hox6cXcuE3vr1iIsvZkgOgtLLTLE1Nnb",
+        "sha256": "1be25e42124875e13ee10a1ce6590fd4ffee6e73481056bee5fc261783e52b5f"
+      }
+    ],
+    "files": {
+      "BPRI.rar": "1be25e42124875e13ee10a1ce6590fd4ffee6e73481056bee5fc261783e52b5f",
+      "release\\BPRI\\align.m": "1a9d86f5ed53264331c03f56314478d68af097b408739fb2f5949f976a54ace5",
+      "release\\BPRI\\BPRI.m": "a3960f06421dffa3a2521ee5a4ca099576d95a217361034d7a88c5849ebf6148",
+      "release\\BPRI\\classifyType.m": "43eb72e479f839a56d15f0e0cefb0f880e2b68b4ebbfb724292a2e4ac87d286f",
+      "release\\BPRI\\demo.m": "2c53aea8335f18eebddbbec66de75ee5a850b2ff398320bf1f6e5c21ab591e40",
+      "release\\BPRI\\LSSn.m": "02ae9cbf466a226eb9f24157eaafd782c7bd168aaaeb844b86a18a62f3f61238",
+      "release\\BPRI\\LSSs.m": "2b212da59abca71b717f637a89711ec096041963069c706e34f3658cd2a98691",
+      "release\\BPRI\\PSS.m": "9a5e8f460507954866df66f5d943f752cfcefc585b7fe1137db0f03c29024e55"
+    }
+  },
+  "bmpri": {
+    "downloads": [
+      {
+        "url": "https://drive.google.com/uc?export=download&id=1C_NxTLvnBOJDGhqqtixCkra0LIMP6loF",
+        "sha256": "bcffce9b77e57918b022438d4a6a418ed7880b466768fdb624c171a6f4abad94"
+      }
+    ],
+    "files": {
+      "BMPRI.zip": "bcffce9b77e57918b022438d4a6a418ed7880b466768fdb624c171a6f4abad94",
+      "release\\BMPRI\\BMPRI.m": "beddfc322335b8515c27fb3a01b623f2e3c0a8c4d3235ae3e144cac54ca292c6",
+      "release\\BMPRI\\BMPRI_feature.m": "beaec0f3356f2c12ef2fe170e052da7bcbcfbb526440ea785f80c06e6fe91917",
+      "release\\BMPRI\\BMPRI_score.m": "9a380be84ca1b48a230fd93037c5d630bbfc97f47c339c76a05a5f1431f569e4",
+      "release\\BMPRI\\demo.m": "45abcdc32f64e4e71f6abf883e5c8c1681d64bf5528dfceec24b395775ea96b8",
+      "release\\BMPRI\\LBPgb.m": "4d3a44375ba72c2c37bff31a8b8bf829ffa45af284018cb428e0cf0da8a62118",
+      "release\\BMPRI\\LBPjp2k.m": "b5579346e95533d52bb751366d18a8979d5028a32230ffcedd36f1175266ed7a",
+      "release\\BMPRI\\LBPjpeg.m": "fc90370d776cdb0dfd0aa62e4b6299215de1afe7da0a4a6fd39c34b6fca99e27",
+      "release\\BMPRI\\LBPwn.m": "39289c7127548fe695c1aaf1919706382f6d216f75ee63a1ef65b0860ed144e4"
+    }
+  },
+  "stairiqa": {
+    "downloads": [
+      {
+        "url": "https://codeload.github.com/sunwei925/StairIQA/zip/0ed6d099fd057bb85c3675788c539cd70c346db9",
+        "sha256": "250577a20170381b2f6cc62a499a2b997510bbb8d17367caeac5d5502a51125f"
+      },
+      {
+        "url": "https://drive.google.com/uc?export=download&id=1fKENSrGXao8po7R4yzK_YvxDxvzV4wTs",
+        "sha256": "951cc78b49816ba2cf807672a8120190176eb17f51133637b09ba01cdf888f81"
+      }
+    ],
+    "files": {
+      "ResNet_staircase_50-EXP1-Koniq10k.pkl": "951cc78b49816ba2cf807672a8120190176eb17f51133637b09ba01cdf888f81",
+      "source.zip": "250577a20170381b2f6cc62a499a2b997510bbb8d17367caeac5d5502a51125f"
+    }
+  }
+}

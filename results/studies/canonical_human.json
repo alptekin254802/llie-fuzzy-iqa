@@ -1,0 +1,101 @@
+{
+  "squarelol": {
+    "nr_free": {
+      "pooled_srcc": 0.303679572549989,
+      "within": {
+        "groups": 290,
+        "mean_srcc": 0.3807262000153577,
+        "mean_krcc": 0.2860560169500554,
+        "top1": 0.14482758620689656,
+        "pair_acc": 0.6433800863131935,
+        "pairs": 12976
+      }
+    },
+    "nr_mono": {
+      "pooled_srcc": 0.2937660838826675,
+      "within": {
+        "groups": 290,
+        "mean_srcc": 0.4072842996172031,
+        "mean_krcc": 0.2983751841863172,
+        "top1": 0.1482758620689655,
+        "pair_acc": 0.6495067817509248,
+        "pairs": 12976
+      }
+    },
+    "outside_lol_range": {
+      "n": 2900,
+      "any_fraction": 0.002413793103448276,
+      "by_feature": {
+        "entropy": 0.0,
+        "contrast": 0.0,
+        "sharpness": 0.002413793103448276
+      }
+    }
+  },
+  "lieq": {
+    "nr_free": {
+      "pooled_srcc": 0.5054932969317566,
+      "within": {
+        "groups": 100,
+        "mean_srcc": 0.09471993462338975,
+        "mean_krcc": 0.06583900708109362,
+        "top1": 0.11,
+        "pair_acc": 0.5334444444444445,
+        "pairs": 4500
+      }
+    },
+    "nr_mono": {
+      "pooled_srcc": 0.4532630182415875,
+      "within": {
+        "groups": 100,
+        "mean_srcc": -0.02026889647985216,
+        "mean_krcc": -0.009752472349093653,
+        "top1": 0.135,
+        "pair_acc": 0.49544444444444447,
+        "pairs": 4500
+      }
+    },
+    "outside_lol_range": {
+      "n": 1000,
+      "any_fraction": 0.001,
+      "by_feature": {
+        "entropy": 0.001,
+        "contrast": 0.0,
+        "sharpness": 0.0
+      }
+    }
+  },
+  "rlie": {
+    "nr_free": {
+      "pooled_srcc": 0.10616404225469477,
+      "within": {
+        "groups": 154,
+        "mean_srcc": 0.13543554242794656,
+        "mean_krcc": 0.09981061376127859,
+        "top1": 0.11038961038961038,
+        "pair_acc": 0.5497835497835498,
+        "pairs": 6930
+      }
+    },
+    "nr_mono": {
+      "pooled_srcc": 0.14067566711886295,
+      "within": {
+        "groups": 154,
+        "mean_srcc": 0.20575913899882892,
+        "mean_krcc": 0.161671118343598,
+        "top1": 0.07142857142857142,
+        "pair_acc": 0.5806637806637807,
+        "pairs": 6930
+      }
+    },
+    "outside_lol_range": {
+      "n": 1540,
+      "any_fraction": 0.016883116883116882,
+      "by_feature": {
+        "entropy": 0.0012987012987012987,
+        "contrast": 0.015584415584415584,
+        "sharpness": 0.0
+      }
+    }
+  }
+}

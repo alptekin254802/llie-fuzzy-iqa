@@ -1,0 +1,67 @@
+{
+  "purpose": "Portable distribution copy; historical plan/source hashes identify the private originals, distribution hashes identify these path-redacted copies. Scientific definitions unchanged. Amendment 3 supersedes the confirmatory plan. Public runtime validation uses distribution hashes and model hashes; historical equality certificates stay private, and analysis runs a fresh synthetic bit-equality check.",
+  "original_sha256": {
+    "capture_gui.py": "0295534af36204994e8763cbdfb262932b2b067ec030ef9c5fc5fd6cb79d9534",
+    "capture.py": "4140f094dcfc67283a9a592e015acf49aec67713ca632828c66570bc858ad28b",
+    "c_common.py": "c5c23589f341b1c806787d1afb38a4ba0fd8006a6f9dbc8370714126e422b29c",
+    "c_exploratory.py": "bde7d9b32ca208e9561bea26ff9158003a7fdacb484bccc32bc61aeee1dd6f66",
+    "lut_candidates.py": "e89cb3fbb3d2d4238a8fdb105b75cf46e77742312ca88a47d6b2275f3c6d014f",
+    "analyze.py": "c0e81c9b161482553da743df4e7412ee27cbe772097a2edc774729f923a86c92",
+    "descriptive.py": "f1bcbcec8734740bfab5bfb215f97ea666f155c40dec021457f148610984f1fd",
+    "verify.py": "a4944b67f617737d8c2d20a60e51e01b7feee52c22be1bcbc4c13b91d8eb0472",
+    "export_derived.py": "2f16d337e5c01a6aec2edce8c487f7e8e25caed0eebd9deb1ad4f8de399d9077",
+    "PLAN.json": "487fc2dee0941b13b1e052ac8eeed0b326e4774e6e0e0eb6af4cd228f3b391bc",
+    "PLAN_AMENDMENT_1.json": "da17de4feb4ebba476025ebf2abdaaf671d09b301aff93c44975b839a40389e6",
+    "PLAN_AMENDMENT_3.json": "f7da873553e449d4f4d2beaaf443d8d7e6e27d5957469b498f916fe87fd64afe"
+  },
+  "distribution_plan_sha256": {
+    "PLAN.json": "dbf047586fe2810ae3637658b59bda1a9a1bfbbfd778fb68760b2f9497769f5c",
+    "PLAN_AMENDMENT_1.json": "f576db23e9f2d3e7a19b18238467f90c227de5b25748959cd5e91fd62f0f7dc5",
+    "PLAN_AMENDMENT_3.json": "23bb1fcfc8eb021e0e3ed870dea0f58dc889e98681ab04e244b778fafc03fefc"
+  },
+  "original_role": "private original",
+  "previous_distribution_sha256": {
+    "capture_gui.py": "4b867dc2745c4da9196d7a058a245980c647427f8df8c06c296477b437ab577e",
+    "capture.py": "4140f094dcfc67283a9a592e015acf49aec67713ca632828c66570bc858ad28b",
+    "c_common.py": "ecafa974cedfdb20a42bc5a4047ce9d0e6cebbc582174df49b18dd68724a15ad",
+    "c_exploratory.py": "bf7f07356102ec3bfb890f0101ebd2f6e5ff2f6b59ba8ccb955dfbd842984923",
+    "lut_candidates.py": "cb83fa70f64abaeaa3c0e10067a7b6e5ddc0af95c4583d879e51e0f5197a6e02",
+    "analyze.py": "d9d4384c234e0e54aa935e07c3580e49aae9b5565a4083bd21eff675b83065a5",
+    "descriptive.py": "f1bcbcec8734740bfab5bfb215f97ea666f155c40dec021457f148610984f1fd",
+    "verify.py": "e2421e6f984e896e15524714a8d3b1864dc53c0f491847e9d307a10602c128a6",
+    "export_derived.py": "16f1f339ff655571aa4d3f88884d1e441700ac597f203b0c3424395858bf5dc2",
+    "PLAN.json": "3fa72cd16871ffdc2322457b7a3d7edebda6174b4c1a5ec1572f3bd8f23c2ff3",
+    "PLAN_AMENDMENT_1.json": "4c84733536224a48e085552d54c649ee654acabbdff1396016ede849ba1aa7f9",
+    "PLAN_AMENDMENT_3.json": "fe56d0ddb8518da834e14722724747cd06275a77c962002aaae716f68a9a3492"
+  },
+  "private_original_records": {
+    "frozen_sources_sha256": {
+      "PLAN.json": "487fc2dee0941b13b1e052ac8eeed0b326e4774e6e0e0eb6af4cd228f3b391bc",
+      "PLAN_AMENDMENT_1.json": "da17de4feb4ebba476025ebf2abdaaf671d09b301aff93c44975b839a40389e6",
+      "c_common.py": "c5c23589f341b1c806787d1afb38a4ba0fd8006a6f9dbc8370714126e422b29c",
+      "lut_candidates.py": "e89cb3fbb3d2d4238a8fdb105b75cf46e77742312ca88a47d6b2275f3c6d014f",
+      "lut_validate.py": "c0847b7d4558f85a9039d73b2640efdf39a834cf511635d4a6cc6c2b5521255b",
+      "equality.json": "ecac864b6f0c3731e0e65ae8b4279c4c7d2b3a973b7a052136a0c944ecd82d6d"
+    },
+    "before_code_sha256": {
+      "capture.py": "eb7d566e1f4bf5c5c4b31dbf549ec086790b1f04e6828194d98a7589f32c8b41",
+      "analyze.py": "8538c5f53d639f73d2df4fd3d04300f18ab6f2ca134f2ed7257e74421212486e",
+      "verify.py": "13ca8909c9bbca6ea17c90a3a03b5c60b53015de4c09733d91e66a68c16442ba",
+      "README.md": "4cc5eed553b3030e6e5a6bcc06a6fedb4c5ab26ca5f62f92efa335410d6187c7",
+      "capture_instructions.md": "7b791a9be740c142b57c2d8e5356579906361ff20d9a1fbff1191158cf8e21e0",
+      "READY.json": "931dc03d10e68a66b1f5e90df57c44b537162107e1141bd9df9267ffd03f0074"
+    },
+    "capture_record_inventory_sha256": "605cc1d754c89e3814568636f71207414e49be57042de6a58e6fb3dc72aa8439"
+  },
+  "distribution_source_sha256": {
+    "analyze.py": "b65aa57cd3edbada40d0606dc500bd799d845d48987f1be943a3788d41a3860f",
+    "capture.py": "af80bfbc74698c03fc5024ab5f453d2a90f2077659d656e6726899b62ef09855",
+    "capture_gui.py": "ba311d4b3f1c9e94deffa1a9281fcda2112995244c52af43f6d1c00154f77127",
+    "c_common.py": "fe5bee206b560b06f0b758e9cc696c1d9033c60a122f1b7d1a8adee06c6f78f8",
+    "c_exploratory.py": "159fc98229fa9566f0cea1470ff45823a258706b73f37c3c575f12d1ad2f6e68",
+    "descriptive.py": "9545e88ecf0bdd1d90a859efdc56f43dafba1241a7c5ceb281b16f060aac6859",
+    "export_derived.py": "16f1f339ff655571aa4d3f88884d1e441700ac597f203b0c3424395858bf5dc2",
+    "lut_candidates.py": "cb83fa70f64abaeaa3c0e10067a7b6e5ddc0af95c4583d879e51e0f5197a6e02",
+    "verify.py": "56af433631407da791b46939a1f9d31a56587e1e1177e3c0056ec4ecdeddebb8"
+  }
+}

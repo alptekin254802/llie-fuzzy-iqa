@@ -1,0 +1,31 @@
+{
+  "created_utc": "2026-10-23T00:40:59.230637+00:00",
+  "checkpoint_headers": "Both supplied checkpoints store floating tensors in BF16, verified without scoring. Training precision is not inferred solely from storage dtype.",
+  "vqa2_runtime_casts": "Official encode_images .half() becomes .to(requested_dtype); two discarded .cuda() copies become discarded copies to input_ids.device. Python methods are adapted in memory, source files unchanged. Adapted method text and hashes are written to the chosen inference work directory. Forward algebra, motion branch including zero multiplication, official prompt, token position and five-level equation unchanged.",
+  "shared_implementation": "Prior strictly matched checkpoint keys, NUM=0 batch-one fix, offload-aware vision device, legacy torchvision import alias, VITAL image_flags=[n,1] and omission of redundant pretrained SlowFast initialization retained.",
+  "candidate": "Only NF4 weights with FP32 compute and FP32 nonquantized modules. llm_int8_enable_fp32_cpu_offload=True is the installed Transformers switch required for automatic mixed GPU/CPU mapping. Double quantization remains default False. GPU out-of-memory may select auto map, never another dtype.",
+  "diagnostic_hooks": "The original diagnostic used module hooks to record the first nonfinite fp16 activation, without changing tensors. It found the boundaries reported in the technical notes. The public inference runner stops on nonfinite quality logits.",
+  "cpu_reference_amendment": "8 threads only for bf16 CPU, before any valid score; VQA2 first 20 runtime cap from initial >22min call, VITAL retains per-model 60s trigger. First one-thread attempt preserved and excluded from reference timings. Candidate and cost one-thread protocol unchanged.",
+  "gpu_fit_interpretation": "Before any all-GPU candidate score, compare allocated bytes with the physical GTX1060 VRAM. Windows WDDM may otherwise use shared host memory while all tensors still claim CUDA. A physical overcommit is recorded and invokes only the already-prespecified auto-map fallback. No precision, prompt, acceptance threshold or max_memory change.",
+  "cpu_offload_buffers": {
+    "utc": "2026-10-23T02:54:41.199045+00:00",
+    "scope": "Only the already-planned NF4/FP32 auto-map route, before its first candidate call; not a second candidate precision configuration.",
+    "reason": "The actual fp16 diagnostic warned about 369245656 bytes of offloaded-layer buffers. Installed Qwen2 4.44 stores full cos_cached/sin_cached RoPE buffers per layer; FP32 buffers need more memory. Use documented offload_buffers=True so CPU-mapped module buffers follow their weights, as required by the remainder-on-CPU policy.",
+    "unchanged": "NF4, float32 compute/nonquantized modules, max_memory, official forward/prompt, seeds, concordance and direction thresholds unchanged. Original fp16 diagnostic stays unchanged."
+  },
+  "nf4_metadata_transfer_compatibility": {
+    "utc": "2026-10-23T06:36:14.973824+00:00",
+    "observed_error": "Cannot copy out of meta tensor; no data! in Params4bit.to -> QuantState.to at first candidate forward, before any five-level logit or score.",
+    "cause": "bitsandbytes 0.49.2 mutates shared NF4 QuantState in place when Accelerate 0.34.2 parks Params4bit on meta; CPU weight map shares that metadata.",
+    "repair": "Runtime-only Params4bit.to(meta) wrapper keeps the same quantization metadata on CPU while packed weight data follows unchanged Accelerate dispatch. No quantization, precision, prompt, CPU thread, max_memory, device-map rule or acceptance threshold change.",
+    "before_adapter_sha256": "d2631ae349a0178cd3d89a36d07f94d055cd94e9b048efd2379a861fd0b7a8f4",
+    "patched_adapter_sha256": "25cca25128d76f5117c45ec44e8405a168b3b2bbb3d24c432d8fead73e1c9a0a",
+    "validation": "Synthetic fixed-seed NF4 float32 layer, CPU and CUDA quantization then repeated Accelerate meta/restore; raw packed weights, metadata and forward outputs checked. See nf4_meta_compat_test.json."
+  },
+  "serial_execution_recovery_order": {
+    "utc": "2026-10-23T06:46:51.657680+00:00",
+    "observed_sequence": "VQA2 CPU reference on 20 images and fp16 diagnosis -> VQA2 GPU-memory guard -> VQA2 auto-map metadata exception before scores -> VITAL first CPU diagnosis -> pause inference -> synthetic metadata round-trip repair -> resume VQA2 identical NF4/float32 candidate -> remaining model phases.",
+    "exception_disclosure": "VITAL first CPU diagnostic completed during recovery before the VQA2 candidate retry. No model inference overlapped. Full evaluation order remains VQA2 then VITAL and dataset order SQUARE-LOL, RLIE, LIEQ."
+  },
+  "distribution": "Portable inference and metadata-compatibility code are in analysis/lmm_extra. External author sources and checkpoints are verified by SHA-256 before loading."
+}

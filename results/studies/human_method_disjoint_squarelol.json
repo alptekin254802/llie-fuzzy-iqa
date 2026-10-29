@@ -1,0 +1,25 @@
+{
+  "(a) method-mean baseline, scene-disjoint": 0.756,
+  "(b) scene and method disjoint, within-scene SRCC over unseen methods [mean, sd]": {
+    "fuzzy LOL prior (no labels)": [
+      0.344,
+      0.196
+    ],
+    "fuzzy LS": [
+      0.016,
+      0.279
+    ],
+    "linear-3f": [
+      0.068,
+      0.31
+    ],
+    "BRISQUE-SVR": [
+      0.193,
+      0.255
+    ],
+    "BRISQUE-SVR (not demeaned)": [
+      0.136,
+      0.219
+    ]
+  }
+}

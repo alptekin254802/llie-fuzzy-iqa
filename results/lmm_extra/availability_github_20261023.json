@@ -1,0 +1,24 @@
+{
+  "checked_utc": "2026-10-23 01:05:19 UTC",
+  "omni": {
+    "commit": "9d947da978d0b3aacec490bf1eeca3dfa5adbcf4",
+    "files": [
+      {
+        "name": "LICENSE",
+        "sha": "261eeb9e9f8b2b4b0d119366dda99c6fd7d35c64",
+        "size": 11357
+      },
+      {
+        "name": "README.md",
+        "sha": "8b4321ae76abd10366cf5472ef14a19505ec7a60",
+        "size": 26
+      }
+    ],
+    "url": "https://github.com/jzhws/Omni-VQA"
+  },
+  "refine": {
+    "commit": "914ae5bfa746b21086ad38fa6471392a8b9b5f4b",
+    "readme": "<div align=\"center\">\n<div>\n    <a href=\"https://arxiv.org/abs/2508.03763\"><img src=\"https://img.shields.io/badge/Arxiv-2508.03763-blue\"/></a>\n   </div>\n\n\n\n# VisualQualityAssessment-RL-Trainer\nOfficial released code for Refine-IQA (support vllm training-about \u00d73 faster)\n<div style=\"width: 100%; text-align: center; margin:auto;\">\n      <img style=\"width:100%\" src=\"intro.jpg\">\n  </div>\n\n<div style=\"width: 100%; text-align: center; margin:auto;\">\n      <img style=\"width:100%\" src=\"model.jpg\">\n  </div>\n<div align=\"left\">\n\n\n\n  \n## \ud83d\udd25\ud83d\udd25\ud83d\udd25Release News\n- \ud83d\udd25[2025/11/08] The Refine-IQA has been accepted by **AAAI-2026**\uff01\n- \ud83d\udd25[2025/8/15] We have released the training code for Refine-IQA (support vllm)\uff01\n\n\n\n\n\n  \n## \ud83d\udd16 TODO\uff1a\n- \ud83c\udfaf[\u221a] Release training code.\n- \ud83c\udfaf[] Release test code.\n- \ud83c\udfaf[] Release the model weights of Refine-IQA S1 and S2.\n- \ud83c\udfaf[] Release the Refine-IQA-Perception-DB.\n\n## \ud83d\udce6Install dependencies:\nInstall dependencies for standard GRPO (built on trl):\n```shell\ncd VisualQualityAssessment-RL\nconda create -n GRPO python=3.10 -y\nconda activate GRPO\npip install -r requirements_standard_RL.txt\n```\n\nInstall dependencies for GRPO-VLLM (built on trl):\n```shell\ncd VisualQualityAssessment-RL\nconda create -n GRPO-VLLM python=3.10 -y\nconda activate GRPO-VLLM\npip install -r requirements_VLLM.txt\n**Fix\uff1a[2025.08.05] To avoid default device inconsistency, please replace the file **/conda/envs/GRPO-VLLM/lib/python3.10/site-packages/xformers/ops/fmha/__init__.py** to **xformer_replacement/__init__.py**.\n```\n\n## \ud83d\udd0eTrain your own visual quality assessment model:\nChange the trainer_cls in src/open-r1/grpo.py line 448 for your need:\n\n**Qwen2VLGRPOTrainer**: Standard rule-based training\n\n**Qwen2VLGRPOVLLMTrainer**: Standard rule-based training in vllm (\u00d73 faster)\n\n**Qwen2VLGRPOTrainer_Refine**: The training strategy used in Refine-IQA .\n\nModify the args in **finetune_RL.sh(for standard rule-based training and refine-iqa training)** and **finetune_RL_vllm.sh(for vllm-involved training)**\n\nThe example template of training data (**we support both image and video input**) is shown in RL_examples.json\n\nUse the **watchdog.py** for uninterupted training (avoid sudden breakdown)\n\n**Recommanded Device: At least 8\u00d7A100(80GB). Please set batch_size_per_device=1 to avoid potential breakdowns.**\n\n## \ud83d\udcce Citation\n\nIf you find the code helpful in your research or work, please cite the following paper(s).\n\n```\n@article{jia2025refine,\n  title={Refine-IQA: Multi-Stage Reinforcement Finetuning for Perceptual Image Quality Assessment},\n  author={Jia, Ziheng and Qian, Jiaying and Zhang, Zicheng and Chen, Zijian and Min, Xiongkuo},\n  journal={arXiv preprint arXiv:2508.03763},\n  year={2025}\n}\n\n```\n",
+    "url": "https://github.com/jzhws/VisualQualityAssessment-RL-Trainer/blob/main/README.md"
+  }
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "repository": "dongb5/Retinex",
+    "revision": "e283325c0a3c6ce12607aa67ad68082bf5327608",
+    "relative": "retinex.py",
+    "url": "https://raw.githubusercontent.com/dongb5/Retinex/e283325c0a3c6ce12607aa67ad68082bf5327608/retinex.py",
+    "sha256": "f9ae4ec896db13a448b40b629c7bf5c7521cc96d2240ba0da82914f3a0ceed63",
+    "local": "retinex/retinex.py"
+  },
+  {
+    "repository": "dongb5/Retinex",
+    "revision": "e283325c0a3c6ce12607aa67ad68082bf5327608",
+    "relative": "config.json",
+    "url": "https://raw.githubusercontent.com/dongb5/Retinex/e283325c0a3c6ce12607aa67ad68082bf5327608/config.json",
+    "sha256": "d75e4d3d18a4e5b5fc9f241c1f811021b50f3542b2fe7b585306eec5ce13b4b0",
+    "local": "retinex/config.json"
+  },
+  {
+    "repository": "Li-Chongyi/Zero-DCE_extension",
+    "revision": "09f202b690f82da939b8e6ec8535960ae97ad8bd",
+    "relative": "Zero-DCE++/model.py",
+    "url": "https://raw.githubusercontent.com/Li-Chongyi/Zero-DCE_extension/09f202b690f82da939b8e6ec8535960ae97ad8bd/Zero-DCE%2B%2B/model.py",
+    "sha256": "508ad1b0eece0b2a99503ba8b4461a9695b79ecf1b30b046be16f7aaa99c20e3",
+    "local": "zero_dce_pp/model.py"
+  },
+  {
+    "repository": "Li-Chongyi/Zero-DCE_extension",
+    "revision": "09f202b690f82da939b8e6ec8535960ae97ad8bd",
+    "relative": "Zero-DCE++/snapshots_Zero_DCE++/Epoch99.pth",
+    "url": "https://raw.githubusercontent.com/Li-Chongyi/Zero-DCE_extension/09f202b690f82da939b8e6ec8535960ae97ad8bd/Zero-DCE%2B%2B/snapshots_Zero_DCE%2B%2B/Epoch99.pth",
+    "sha256": "ca8855b90df9a80fa4195a831f33d3476b1964f787eb70602797c773067f3b84",
+    "local": "zero_dce_pp/Epoch99.pth"
+  },
+  {
+    "repository": "vis-opt-group/RUAS",
+    "revision": "461172c4d05b54155d8f818af0543eca457a1bb5",
+    "relative": "model_enhance/model.py",
+    "url": "https://raw.githubusercontent.com/vis-opt-group/RUAS/461172c4d05b54155d8f818af0543eca457a1bb5/model_enhance/model.py",
+    "sha256": "62229865de84784acc76ed5a115c81500359ef9a4a1f485c73f7e45f4e6bd008",
+    "local": "ruas/model_enhance/model.py"
+  },
+  {
+    "repository": "vis-opt-group/RUAS",
+    "revision": "461172c4d05b54155d8f818af0543eca457a1bb5",
+    "relative": "model_enhance/operations.py",
+    "url": "https://raw.githubusercontent.com/vis-opt-group/RUAS/461172c4d05b54155d8f818af0543eca457a1bb5/model_enhance/operations.py",
+    "sha256": "708258fd4075cdb86df383179ac2cb15256e9f4511e6da48c7b2717712b0f648",
+    "local": "ruas/model_enhance/operations.py"
+  },
+  {
+    "repository": "vis-opt-group/RUAS",
+    "revision": "461172c4d05b54155d8f818af0543eca457a1bb5",
+    "relative": "model_enhance/genotypes.py",
+    "url": "https://raw.githubusercontent.com/vis-opt-group/RUAS/461172c4d05b54155d8f818af0543eca457a1bb5/model_enhance/genotypes.py",
+    "sha256": "89281876e1b159aa781d191d03ab08e37b4e076fa1a141407c240cdf9990ea17",
+    "local": "ruas/model_enhance/genotypes.py"
+  },
+  {
+    "repository": "vis-opt-group/RUAS",
+    "revision": "461172c4d05b54155d8f818af0543eca457a1bb5",
+    "relative": "weights/mit.pt",
+    "url": "https://raw.githubusercontent.com/vis-opt-group/RUAS/461172c4d05b54155d8f818af0543eca457a1bb5/weights/mit.pt",
+    "sha256": "ceb5e6b27f2c29887cda74c4dcbc0a74274307ca710101430174c7e5666acce0",
+    "local": "ruas/weights/mit.pt"
+  }
+]

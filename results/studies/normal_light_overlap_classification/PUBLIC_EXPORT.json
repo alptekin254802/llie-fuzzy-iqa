@@ -1,0 +1,13 @@
+{
+  "original_role": "private original",
+  "original_sha256": {
+    "PLAN.json": "3d76fe8167ffe64635a9c38cab54aeed3bae15f8bebe26dd0d64748dd9ff5caa",
+    "normal_overlap_classify.py": "830075ffd0e0287542aa1a78ebe27d1e3720887a6886c882ce48bc6020b8f852"
+  },
+  "description": "Neutral-language distribution copy; classification decisions, thresholds and image evidence are unchanged.",
+  "distribution_sha256": {
+    "PLAN.json": "6d0d3368c9805805b18d870e037363466bc641eb4d326e189a8da964da94d925",
+    "analysis/studies/normal_overlap_classify.py": "2f5aaf2cf6185a8f4f091088e9dc1cb2480fa99c7c8dd444dd8ef197609ce44d"
+  },
+  "results_plan_hash_role": "private original; results.json retains the plan hash recorded at classification time"
+}

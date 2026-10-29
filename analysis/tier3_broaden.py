@@ -1,19 +1,10 @@
-"""
-Tier-3 (minimal): does a BROADER, more diverse calibration pool improve
-operator-disjoint generalisation? (reviewer Q3 / Retinex failure)
+"""Compare narrow and broad calibration pools on held-out enhancers.
 
-For each held-out enhancer, calibrate the NR-free model on the OTHER methods and
-score the held-out one, two ways:
-   narrow pool = other CLASSICAL methods only (the manuscript's disjoint setting)
-   broad  pool = ALL other methods, classical + deep (Zero-DCE, SCI)
-Train-only MF breakpoints + orientation; held-out Spearman vs -LPIPS.
-
-Inputs (same as before): nr_features.csv, perceptual_metrics.csv,
-                         deep_zerodce_all.csv, deep_sci_all.csv
-Output: tier3_broaden.csv  (+ printed table)
-Run:    python tier3_broaden.py
-Needs: numpy, pandas, scipy
-"""
+The narrow pool contains the remaining classical methods; the broad pool adds
+the available deep methods, Zero-DCE and SCI. Membership breakpoints and feature
+orientations are fitted on the training pool. Results measure Spearman
+correlation with negative LPIPS. Run ``python -m analysis.tier3_broaden``;
+the input CSVs and tier3_broaden.csv are in results/."""
 from __future__ import annotations
 import itertools, os
 from pathlib import Path
@@ -90,7 +81,7 @@ def main():
 
     rows = []
     print("\nheld-out      narrow(classical-only)   broad(classical+deep)   delta")
-    for m in methods:
+    for m in ("clahe", "retinex", "zerodce"):
         te = pool[pool["method"] == m]
         narrow_tr = pool[(pool["method"] != m) & (pool["method"].isin(CLASSICAL))]
         broad_tr = pool[pool["method"] != m]

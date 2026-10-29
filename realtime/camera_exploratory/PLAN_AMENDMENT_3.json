@@ -1,0 +1,202 @@
+{
+  "amendment": 3,
+  "created_utc": "2026-10-23T20:18:40.870298+00:00",
+  "declaration": "Amendment recorded before exploratory data collection and dry_run_3.",
+  "reason": "Exploratory design with one scene per viewing direction, YUY2 capture, locally retained raw data, live clipping/reference-exposure preview and descriptive room-level reporting.",
+  "base_plan_sha256": "487fc2dee0941b13b1e052ac8eeed0b326e4774e6e0e0eb6af4cd228f3b391bc",
+  "amendment_1_sha256": "da17de4feb4ebba476025ebf2abdaaf671d09b301aff93c44975b839a40389e6",
+  "amendment_2_present": false,
+  "numbering_note": "Amendment numbering follows the recorded sequence. No Amendment 2 record was found; its content or existence is not assumed. This amendment replaces the earlier Z/N tabletop design.",
+  "scientific_scene_metadata_found": [],
+  "existing_dry_run_records": [
+    {
+      "path": "data\\dry_run\\dry_run_001\\metadata.json",
+      "dry_run": true,
+      "sha256": "c010891ef35bf2038ec0ab198ccac827ac2ef1b1cca6c276a2325e91f7cee129"
+    },
+    {
+      "path": "data\\dry_run\\dry_run_2\\metadata.json",
+      "dry_run": true,
+      "sha256": "455403fa033d7031e9f2ba673412dd93dd3fe603872a81f4c323fc4bf366e96c"
+    }
+  ],
+  "framework": {
+    "kind": "exploratory",
+    "primary_hypothesis": null,
+    "preregistered_primary_hypothesis": false,
+    "significance_testing": false,
+    "p_values": false,
+    "supersedes": "The primary hypothesis and confirmatory interpretations in the earlier plan do not apply to this exploratory check. Private original plans remain unchanged.",
+    "reporting_decision": "Reporting is descriptive; no confirmatory claim.",
+    "summary": "Equal-weight scene means; descriptive 2000 scene bootstrap percentile intervals with original seed 20261018. No significance verdict or zero-crossing test. Original selectors, metrics, ties, top-1 and LPIPS fuzzy-minus-fixed definition unchanged."
+  },
+  "scene_design": {
+    "unit": "One viewing direction = one scene. Fixed camera support, rotate only between scenes; one or two indoor rooms. Camera, objects and illumination fixed from first through last reference.",
+    "replaces": "Z/N tabletop design",
+    "labels": {
+      "room_label": "Required nonempty free text for each real scene; editable before next scene.",
+      "direction_label": "Required nonempty free text for each real scene; unique (room_label,direction_label) among accepted scenes, preventing accidental duplicate direction labels."
+    },
+    "rooms": "Report overall scene means and per-room descriptive summaries if more than one distinct room label. Bootstrap resamples scenes within each reported room; >=2 room scenes required for interval, otherwise null with reason. Room labels are descriptive strata, not independent experimental replicates.",
+    "target_accepted_scenes": 30,
+    "minimum_for_analysis": 20,
+    "no_faces": true
+  },
+  "camera": {
+    "backend": "DSHOW",
+    "index": 0,
+    "resolution": [
+      640,
+      480
+    ],
+    "fourcc": "YUY2",
+    "fourcc_numeric": 844715353,
+    "fps_requested": 30,
+    "setting_order": "width,height,FPS then FOURCC=YUY2 last; the webcam control settings remain unchanged",
+    "validation": "Read back backend, dimensions, FOURCC after opening, before each scene, after each exposure change and for every saved image, and at completion. Abort/reject on mismatch; no MJPG fallback. YUY2 is the uncompressed transport, OpenCV returns BGR8 and local files remain lossless PNG.",
+    "controls": {
+      "AUTO_EXPOSURE": 0.25,
+      "GAIN": 0,
+      "AUTO_WB": 0,
+      "WB_TEMPERATURE": 4600,
+      "AUTOFOCUS": 0,
+      "FOCUS": 1,
+      "BRIGHTNESS": 0,
+      "CONTRAST": 32,
+      "SATURATION": 64,
+      "GAMMA": 100,
+      "SHARPNESS": 4,
+      "BACKLIGHT": 1
+    },
+    "MJPG_scope": "Only the separate live timing experiments, not this exploratory capture."
+  },
+  "preview": {
+    "live_fields": [
+      "current exposure",
+      "candidate E0 or no valid candidate",
+      "five-frame averaged luminance",
+      "five-frame averaged high clipping fraction",
+      "single-frame high clipping fraction",
+      "YUY2 readback",
+      "room label",
+      "direction label"
+    ],
+    "candidate_order": [
+      -3,
+      -2,
+      -1
+    ],
+    "keys": "1/2/3 preview -3/-2/-1, E rescans candidates, L edits labels, Space acquires exactly one complete scene after a fresh E0 scan, Q/Esc exits. Preview pixels are neither saved nor used in analysis.",
+    "ready_rule": "Current five-frame average meets E0 luminance/clipping and E0-4 >=-7. Final capture always independently rechecks canonical candidate order and full unchanged QC.",
+    "interaction": "Viewing direction and indirect lighting may be adjusted during preview only. No camera or scene movement during automatic capture."
+  },
+  "privacy": {
+    "raw_root": "data/ (existing dry-run records retained)",
+    "candidate_images": "data/candidate_cache/<analysis_run>/; float32 arrays retained locally for unchanged scientific metrics and verification",
+    "derived_root": "derived/<analysis_run>/; tables only: candidate features/scores/LPIPS/PSNR/SSIM, selections, scene means, room summaries, QC ledger. No image pixels or local absolute image paths in export tables.",
+    "gitignore": "Ignore data/, image formats, image arrays/candidate caches, old image-bearing smoke outputs, and bundles. .gitignore is not a packaging guarantee.",
+    "package_policy": "export_derived.py whitelists known table/summary filenames in a chosen derived run and refuses image/array files, symlinks and non-derived sources. Raw images are excluded from distribution.",
+    "legacy": "Existing raw records and candidate caches remain local and unchanged, covered by ignore rules."
+  },
+  "unchanged": {
+    "E0": {
+      "constraint": "E0 - 4 >= -7",
+      "candidate_order": [
+        -3,
+        -2,
+        -1
+      ],
+      "luminance_range": [
+        0.35,
+        0.55
+      ],
+      "clipping_fraction_max": 0.01,
+      "no_valid_E0": "Reject attempt; adjust diffuse illumination or scene outside capture, keep camera fixed, then retry. Never relax threshold or accept plateau."
+    },
+    "QC": {
+      "begin_end_reference_psnr_db_min": 40,
+      "noise_basis_db": 47.92924396195247,
+      "threshold_rule": "max(30,min(40,floor(B two-16-frame-reference PSNR -6))); 40 dB here leaves >=7 dB margin from B static noise observation",
+      "reference_luminance": [
+        0.35,
+        0.55
+      ],
+      "reference_high_clipped_pixel_fraction_max": 0.01,
+      "clipping_definition": "any RGB channel at 255 in any averaged reference pixel; fraction; per-frame clipping also logged",
+      "settings": "fixed controls and requested exposure readback must match; manual AF uses DSHOW flag=2; DSHOW AUTO_EXPOSURE -1 readback is backend limitation, not proof",
+      "failed_scene": "exclude entire scene from every analysis and publishable dataset; keep reason and private rejected record; never silently drop individual frames",
+      "no_faces": true,
+      "scene": "static indoor objects only; tripod/stable stand; illumination and camera untouched from first to final reference",
+      "retain_all_original_QC": true,
+      "stop_luminance": "At native resolution, each raw frame gray8 = cv2.cvtColor(BGR uint8,COLOR_BGR2GRAY), mean(gray8)/255. Reference baseline is mean of 16 beginning raw-frame luminances; stop is mean of its five raw-frame luminances.",
+      "stop_max_ratio_to_previous": 0.9,
+      "first_previous": "beginning reference at E0",
+      "black_floor": 0.074,
+      "minimum_above_black_floor": 0.01,
+      "darkest_stop_min_luminance": 0.084,
+      "boundary": "<= 0.90 * previous and >= 0.084 inclusive, no tolerance adjustment",
+      "failure": "Entire scene excluded from analysis and publishable data; reasons retained; dry_run remains excluded regardless of QC."
+    },
+    "target": 30,
+    "minimum": 20,
+    "models": {
+      "nr_free": {
+        "path": "models/nr_free.json",
+        "sha256": "6f9cb7131acddf043415b77118f91ec7d2b2e392f3ab5cd8e8a399a1257ea65a"
+      },
+      "nr_mono": {
+        "path": "models/nr_mono.json",
+        "sha256": "c8cda18d6f9c5b87d8a8e203c34a796563a62ef4134b013f8e4daf62af000453"
+      }
+    },
+    "fixed_gamma": 0.3,
+    "gammas": [
+      0.2,
+      0.3,
+      0.4,
+      0.5,
+      0.6,
+      0.7,
+      0.8,
+      0.9,
+      1.0
+    ],
+    "default_gamma": 0.6666666666666666,
+    "selection": {
+      "adaptive": "only nine grid gammas; default 2/3 scored separately",
+      "plateau_atol": 1e-09,
+      "rtol": 0,
+      "maximize": [
+        "fuzzy",
+        "nr_mono",
+        "entropy",
+        "clipiqa+"
+      ],
+      "minimize": [
+        "niqe",
+        "lpips_oracle"
+      ],
+      "brightness": "maximize -abs(mean gray8/255 - .45)",
+      "tie": "lexsort(gamma, round(abs(gamma-2/3),12), round(abs(gamma-prev),12)); prev resets to 2/3 per scene/selector; previous input in stop-major order",
+      "invalid": "ignore nonfinite; if every candidate invalid use full grid then same tie rule; primary LPIPS nonfinite aborts analysis",
+      "top1": "exact tied maxima receive fractional hit against minimum LPIPS; primary controller tie rule remains the stated 1e-9 plateau rule; pairwise predicted ties half credit as closed_loop common.within_group"
+    },
+    "scoring": {
+      "input": "cv2 RGB, INTER_LINEAR resize 256x256 on uint8 then float32 /255; gamma_image with exact 1.0/(1/g)",
+      "reference": "average 16 raw uint8 frames in native resolution; store exact uint16 sum with scale 16*255; convert float32 average then INTER_LINEAR 256x256 and /255",
+      "reference_for_scoring": "mean of beginning/end 16-frame references after QC",
+      "metrics": "LPIPS-Alex via pyiqa lpips; same evaluation.metrics PSNR/SSIM",
+      "pyiqa": "0.1.15.post2",
+      "device": "CUDA if available, CPU otherwise; no model training"
+    }
+  },
+  "dry_run_3": {
+    "attempts": 1,
+    "name": "dry_run_3",
+    "room_label": "dry_run_room",
+    "direction_label": "dry_run_direction",
+    "excluded_from_all_analyses": true,
+    "scope": "Verify actual YUY2 readback, preview calculations, canonical E0 search and unchanged QC. If E0 fails, preserve rejection and do not force full scene or retry for a pass. Exercise remaining QC boundaries with synthetic engineering fixtures, explicitly not camera evidence. No LPIPS quality analysis or bootstrap from dry-run.",
+    "timing": "No performance timing. Other evaluation workloads remain uninterrupted; the dry run waits if the resource check fails."
+  }
+}

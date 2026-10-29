@@ -1,0 +1,13 @@
+{
+  "status": "completed",
+  "plan_sha256": "410be20fbfd118b83ddc451855c993ded41d44fb9d82ac421facf3c53eb66dac",
+  "started_utc": "2026-10-19T13:42:40.098510+00:00",
+  "completed": 7865,
+  "updated_utc": "2026-10-19T14:02:33.433817+00:00",
+  "first_valid_score_utc": "2026-10-19T13:52:06.605036+00:00",
+  "cpu_calls": 300,
+  "total": 7865,
+  "last_ms": 53.4827999654226,
+  "finished_utc": "2026-10-19T14:02:33.413911+00:00",
+  "raw_sha256": "7db974cafc4e525e96122c08192a310b56d64956263c8c1d54efc7d32fafda35"
+}

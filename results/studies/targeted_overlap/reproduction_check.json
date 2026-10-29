@@ -1,0 +1,23 @@
+{
+  "status": "PASS",
+  "maximum_absolute_differences": {
+    "results.csv:lol_training_scenes": 0.0,
+    "results.csv:lol_training_images": 0.0,
+    "results.csv:test_scenes": 0.0,
+    "results.csv:test_images": 0.0,
+    "results.csv:within_scene_srcc": 5.551115123125783e-17,
+    "results.csv:pooled_srcc": 5.551115123125783e-17,
+    "results.csv:delta_within_vs_485": 3.122502256758253e-17,
+    "results.csv:delta_pooled_vs_485": 4.163336342344337e-17,
+    "random_subsets.csv:subset_seed": 0.0,
+    "random_subsets.csv:optimizer_seed": 0.0,
+    "random_subsets.csv:lol_training_scenes": 0.0,
+    "random_subsets.csv:lol_training_images": 0.0,
+    "random_subsets.csv:removed_scenes": 0.0,
+    "random_subsets.csv:retained_shared_scenes": 0.0,
+    "random_subsets.csv:all_290_within_scene_srcc": 5.551115123125783e-17,
+    "random_subsets.csv:all_290_pooled_srcc": 8.326672684688674e-17,
+    "random_subsets.csv:nonshared_59_within_scene_srcc": 5.551115123125783e-17,
+    "random_subsets.csv:nonshared_59_pooled_srcc": 8.326672684688674e-17
+  }
+}

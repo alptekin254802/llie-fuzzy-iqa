@@ -1,0 +1,9 @@
+data/
+analysis_runs/
+__pycache__/
+*.png
+*.jpg
+*.jpeg
+*.npy
+*.npz
+*.zip

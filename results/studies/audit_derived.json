@@ -1,0 +1,132 @@
+{
+  "protocol": "Five stored scene-held-out LOL folds; Spearman against negative anchor, arithmetic mean and population SD; no refitting.",
+  "anchor_correlations": {
+    "MUSIQ": {
+      "lpips": {
+        "mean": 0.6918796419889829,
+        "std": 0.03734317587019392
+      },
+      "niqe": {
+        "mean": 0.4260606060606061,
+        "std": 0.09195151634080972
+      },
+      "brisque": {
+        "mean": 0.03563969474980931,
+        "std": 0.07205008897358334
+      }
+    },
+    "MANIQA": {
+      "lpips": {
+        "mean": 0.776564773003386,
+        "std": 0.03095423312892451
+      },
+      "niqe": {
+        "mean": 0.464142897263797,
+        "std": 0.10479417844742075
+      },
+      "brisque": {
+        "mean": 0.08062031565419372,
+        "std": 0.07038876953349707
+      }
+    },
+    "CLIP-IQA": {
+      "lpips": {
+        "mean": 0.20865310398581252,
+        "std": 0.023402497151706735
+      },
+      "niqe": {
+        "mean": 0.04694033956139548,
+        "std": 0.08948032998076715
+      },
+      "brisque": {
+        "mean": 0.034373802484195984,
+        "std": 0.028163390768673344
+      }
+    },
+    "CLIP-IQA+": {
+      "lpips": {
+        "mean": 0.60113249542178,
+        "std": 0.06238288973288481
+      },
+      "niqe": {
+        "mean": 0.3239556662112114,
+        "std": 0.1277275421965839
+      },
+      "brisque": {
+        "mean": 0.1337508098964265,
+        "std": 0.06640049340987496
+      }
+    },
+    "Linear": {
+      "lpips": {
+        "mean": 0.764284919380202,
+        "std": 0.030710357520962236
+      },
+      "niqe": {
+        "mean": 0.4195932037231631,
+        "std": 0.070336107418412
+      },
+      "brisque": {
+        "mean": -0.0007671525479660324,
+        "std": 0.09755030682955435
+      }
+    },
+    "SVR (RBF)": {
+      "lpips": {
+        "mean": 0.8153802315564265,
+        "std": 0.024285464479515025
+      },
+      "niqe": {
+        "mean": 0.43637524889633605,
+        "std": 0.0733119927606436
+      },
+      "brisque": {
+        "mean": 0.06501377603385036,
+        "std": 0.08835105924653269
+      }
+    },
+    "Random forest": {
+      "lpips": {
+        "mean": 0.8433689387891199,
+        "std": 0.014795855049652092
+      },
+      "niqe": {
+        "mean": 0.44351857637081,
+        "std": 0.06029146900424008
+      },
+      "brisque": {
+        "mean": 0.06512159176674297,
+        "std": 0.08342221725955182
+      }
+    }
+  },
+  "cross_dataset": {
+    "musiq": {
+      "entropy": 0.5217059703514901,
+      "nr_free": 0.4288314388217786
+    },
+    "niqe": {
+      "entropy": 0.42527768012128947,
+      "nr_free": 0.32434044736926504
+    }
+  },
+  "fr_free_mean_gap": 0.010439028812555318,
+  "demo": {
+    "frames": 1199,
+    "paired_changes": 1198,
+    "score_change": "absolute consecutive difference of fixed_score",
+    "frame_change": "stored input_frame_change, first row excluded",
+    "spearman": 0.2642265500957759
+  },
+  "sources_sha256": {
+    "results/validation_predictions.csv": "57d9997a3cd48d2de1dc0c53d25a819cedee1abed15d7b31fcda635cbd7f9a70",
+    "results/perceptual_metrics.csv": "6105329e5e1cb7ed8220a3337b22f8a627ec6493fa6aa2cbbd3c19d694ffe4a9",
+    "results/modern_nriqa.csv": "f7a441308827048bf1bb336bbdf70ca71b3daabb644872216fcee5f2ffe7f292",
+    "results/clipiqa_plus_scores.csv": "110339f236f972d1b965bfe9044eb2f228a5cadf3130d35ebcdc940cb21051a2",
+    "results/studies/records/lol_svr_predictions.csv": "7e82027a9e2c7f4ce311c7b0b588c93062ed45fd1e6a956311881269db93f49d",
+    "results/cross_dataset.csv": "8a2ca04b21feb8507c3fc2bc227bfc3ca6b9cc691cf3a73914d2ac3753c63912",
+    "models/nr_free.json": "6f9cb7131acddf043415b77118f91ec7d2b2e392f3ab5cd8e8a399a1257ea65a",
+    "results/reviewer_experiments.csv": "8e9a1a7a2d499f9afe6126c6afeb5e5c5424925c1fbd992c716cc4be7406e4f7",
+    "results/studies/records/demo_frame_changes.csv": "c7657e65e05483cd8924a1f0b726f174647cbe2b02694e3b79a3a1e30f304291"
+  }
+}

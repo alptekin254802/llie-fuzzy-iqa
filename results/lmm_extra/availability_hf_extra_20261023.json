@@ -1,0 +1,1257 @@
+{
+  "checked_utc": "2026-10-23T02:37:45.573259+00:00",
+  "checks": [
+    {
+      "url": "https://huggingface.co/api/models?author=JZHWS&search=Omni&full=true",
+      "status": 200,
+      "models": [
+        {
+          "_id": "6853c85ad6a0456691037511",
+          "id": "JZHWS/Omni-VQA-Qwen-0.5b_base",
+          "author": "JZHWS",
+          "gated": false,
+          "lastModified": "2025-06-19T08:20:42.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "337b439680aff594c471704085eae7ba8ceec6d3",
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "createdAt": "2025-06-19T08:20:42.000Z",
+          "modelId": "JZHWS/Omni-VQA-Qwen-0.5b_base",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://huggingface.co/api/models?search=Omni-VQA&full=true",
+      "status": 200,
+      "models": [
+        {
+          "_id": "6853c85ad6a0456691037511",
+          "id": "JZHWS/Omni-VQA-Qwen-0.5b_base",
+          "author": "JZHWS",
+          "gated": false,
+          "lastModified": "2025-06-19T08:20:42.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "337b439680aff594c471704085eae7ba8ceec6d3",
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "createdAt": "2025-06-19T08:20:42.000Z",
+          "modelId": "JZHWS/Omni-VQA-Qwen-0.5b_base",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            }
+          ]
+        },
+        {
+          "_id": "6a0c2e83a4cb787db6e92358",
+          "id": "aaron1141/Omniscience-VQA-model",
+          "author": "aaron1141",
+          "gated": false,
+          "lastModified": "2026-05-19T12:23:27.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "14eb17461590b5c8ab054064b80a0e24b5c751ed",
+          "downloads": 7,
+          "tags": [
+            "transformers",
+            "safetensors",
+            "qwen3_5",
+            "image-text-to-text",
+            "llama-factory",
+            "full",
+            "generated_from_trainer",
+            "conversational",
+            "base_model:Qwen/Qwen3.5-9B-Base",
+            "base_model:finetune:Qwen/Qwen3.5-9B-Base",
+            "license:other",
+            "endpoints_compatible",
+            "region:us"
+          ],
+          "pipeline_tag": "image-text-to-text",
+          "library_name": "transformers",
+          "createdAt": "2026-05-19T09:33:55.000Z",
+          "modelId": "aaron1141/Omniscience-VQA-model",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            },
+            {
+              "rfilename": "README.md"
+            },
+            {
+              "rfilename": "all_results.json"
+            },
+            {
+              "rfilename": "chat_template.jinja"
+            },
+            {
+              "rfilename": "checkpoint-1876/chat_template.jinja"
+            },
+            {
+              "rfilename": "checkpoint-1876/config.json"
+            },
+            {
+              "rfilename": "checkpoint-1876/generation_config.json"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_0_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_1_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_2_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_3_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_4_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_5_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_6_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/bf16_zero_pp_rank_7_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_0_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_1_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_2_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_3_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_4_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_5_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_6_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/global_step1876/zero_pp_rank_7_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/latest"
+            },
+            {
+              "rfilename": "checkpoint-1876/model.safetensors"
+            },
+            {
+              "rfilename": "checkpoint-1876/processor_config.json"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_0.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_1.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_2.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_3.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_4.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_5.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_6.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/rng_state_7.pth"
+            },
+            {
+              "rfilename": "checkpoint-1876/scheduler.pt"
+            },
+            {
+              "rfilename": "checkpoint-1876/tokenizer.json"
+            },
+            {
+              "rfilename": "checkpoint-1876/tokenizer_config.json"
+            },
+            {
+              "rfilename": "checkpoint-1876/trainer_state.json"
+            },
+            {
+              "rfilename": "checkpoint-1876/training_args.bin"
+            },
+            {
+              "rfilename": "checkpoint-1876/zero_to_fp32.py"
+            },
+            {
+              "rfilename": "checkpoint-2814/chat_template.jinja"
+            },
+            {
+              "rfilename": "checkpoint-2814/config.json"
+            },
+            {
+              "rfilename": "checkpoint-2814/generation_config.json"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_0_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_1_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_2_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_3_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_4_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_5_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_6_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/bf16_zero_pp_rank_7_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_0_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_1_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_2_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_3_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_4_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_5_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_6_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/global_step2814/zero_pp_rank_7_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/latest"
+            },
+            {
+              "rfilename": "checkpoint-2814/model.safetensors"
+            },
+            {
+              "rfilename": "checkpoint-2814/processor_config.json"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_0.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_1.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_2.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_3.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_4.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_5.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_6.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/rng_state_7.pth"
+            },
+            {
+              "rfilename": "checkpoint-2814/scheduler.pt"
+            },
+            {
+              "rfilename": "checkpoint-2814/tokenizer.json"
+            },
+            {
+              "rfilename": "checkpoint-2814/tokenizer_config.json"
+            },
+            {
+              "rfilename": "checkpoint-2814/trainer_state.json"
+            },
+            {
+              "rfilename": "checkpoint-2814/training_args.bin"
+            },
+            {
+              "rfilename": "checkpoint-2814/zero_to_fp32.py"
+            },
+            {
+              "rfilename": "checkpoint-3752/chat_template.jinja"
+            },
+            {
+              "rfilename": "checkpoint-3752/config.json"
+            },
+            {
+              "rfilename": "checkpoint-3752/generation_config.json"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_0_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_1_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_2_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_3_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_4_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_5_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_6_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/bf16_zero_pp_rank_7_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_0_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_1_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_2_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_3_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_4_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_5_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_6_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/global_step3752/zero_pp_rank_7_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/latest"
+            },
+            {
+              "rfilename": "checkpoint-3752/model.safetensors"
+            },
+            {
+              "rfilename": "checkpoint-3752/processor_config.json"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_0.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_1.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_2.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_3.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_4.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_5.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_6.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/rng_state_7.pth"
+            },
+            {
+              "rfilename": "checkpoint-3752/scheduler.pt"
+            },
+            {
+              "rfilename": "checkpoint-3752/tokenizer.json"
+            },
+            {
+              "rfilename": "checkpoint-3752/tokenizer_config.json"
+            },
+            {
+              "rfilename": "checkpoint-3752/trainer_state.json"
+            },
+            {
+              "rfilename": "checkpoint-3752/training_args.bin"
+            },
+            {
+              "rfilename": "checkpoint-3752/zero_to_fp32.py"
+            },
+            {
+              "rfilename": "checkpoint-4690/chat_template.jinja"
+            },
+            {
+              "rfilename": "checkpoint-4690/config.json"
+            },
+            {
+              "rfilename": "checkpoint-4690/generation_config.json"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_0_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_1_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_2_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_3_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_4_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_5_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_6_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/bf16_zero_pp_rank_7_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_0_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_1_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_2_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_3_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_4_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_5_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_6_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/global_step4690/zero_pp_rank_7_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/latest"
+            },
+            {
+              "rfilename": "checkpoint-4690/model.safetensors"
+            },
+            {
+              "rfilename": "checkpoint-4690/processor_config.json"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_0.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_1.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_2.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_3.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_4.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_5.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_6.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/rng_state_7.pth"
+            },
+            {
+              "rfilename": "checkpoint-4690/scheduler.pt"
+            },
+            {
+              "rfilename": "checkpoint-4690/tokenizer.json"
+            },
+            {
+              "rfilename": "checkpoint-4690/tokenizer_config.json"
+            },
+            {
+              "rfilename": "checkpoint-4690/trainer_state.json"
+            },
+            {
+              "rfilename": "checkpoint-4690/training_args.bin"
+            },
+            {
+              "rfilename": "checkpoint-4690/zero_to_fp32.py"
+            },
+            {
+              "rfilename": "checkpoint-938/chat_template.jinja"
+            },
+            {
+              "rfilename": "checkpoint-938/config.json"
+            },
+            {
+              "rfilename": "checkpoint-938/generation_config.json"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_0_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_1_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_2_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_3_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_4_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_5_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_6_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/bf16_zero_pp_rank_7_mp_rank_00_optim_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_0_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_1_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_2_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_3_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_4_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_5_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_6_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/global_step938/zero_pp_rank_7_mp_rank_00_model_states.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/latest"
+            },
+            {
+              "rfilename": "checkpoint-938/model.safetensors"
+            },
+            {
+              "rfilename": "checkpoint-938/processor_config.json"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_0.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_1.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_2.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_3.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_4.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_5.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_6.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/rng_state_7.pth"
+            },
+            {
+              "rfilename": "checkpoint-938/scheduler.pt"
+            },
+            {
+              "rfilename": "checkpoint-938/tokenizer.json"
+            },
+            {
+              "rfilename": "checkpoint-938/tokenizer_config.json"
+            },
+            {
+              "rfilename": "checkpoint-938/trainer_state.json"
+            },
+            {
+              "rfilename": "checkpoint-938/training_args.bin"
+            },
+            {
+              "rfilename": "checkpoint-938/zero_to_fp32.py"
+            },
+            {
+              "rfilename": "config.json"
+            },
+            {
+              "rfilename": "generation_config.json"
+            },
+            {
+              "rfilename": "model.safetensors"
+            },
+            {
+              "rfilename": "processor_config.json"
+            },
+            {
+              "rfilename": "tokenizer.json"
+            },
+            {
+              "rfilename": "tokenizer_config.json"
+            },
+            {
+              "rfilename": "train_results.json"
+            },
+            {
+              "rfilename": "train_run.log"
+            },
+            {
+              "rfilename": "trainer_log.jsonl"
+            },
+            {
+              "rfilename": "trainer_state.json"
+            },
+            {
+              "rfilename": "training_args.bin"
+            },
+            {
+              "rfilename": "training_loss.png"
+            }
+          ]
+        },
+        {
+          "_id": "6a57aee62701c00dca6df7ac",
+          "id": "omnifish123/vqa-rlvr-sft-2b",
+          "author": "omnifish123",
+          "gated": false,
+          "lastModified": "2026-07-15T16:01:57.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "d6b08a0c18c0c1d527b1184046ffceaba3efacaf",
+          "downloads": 2,
+          "tags": [
+            "peft",
+            "safetensors",
+            "vqa",
+            "multimodal",
+            "lora",
+            "sft",
+            "base_model:Qwen/Qwen3-VL-2B-Instruct",
+            "base_model:adapter:Qwen/Qwen3-VL-2B-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "library_name": "peft",
+          "createdAt": "2026-07-15T16:01:42.000Z",
+          "modelId": "omnifish123/vqa-rlvr-sft-2b",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            },
+            {
+              "rfilename": "README.md"
+            },
+            {
+              "rfilename": "adapter_config.json"
+            },
+            {
+              "rfilename": "adapter_model.safetensors"
+            },
+            {
+              "rfilename": "chat_template.jinja"
+            },
+            {
+              "rfilename": "processor_config.json"
+            },
+            {
+              "rfilename": "run_config.json"
+            },
+            {
+              "rfilename": "tokenizer.json"
+            },
+            {
+              "rfilename": "tokenizer_config.json"
+            },
+            {
+              "rfilename": "training_args.bin"
+            }
+          ]
+        },
+        {
+          "_id": "6a57aef5b4040914f422051e",
+          "id": "omnifish123/vqa-rlvr-sft-8b",
+          "author": "omnifish123",
+          "gated": false,
+          "lastModified": "2026-07-15T16:02:07.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "f0684f7f12254b19849d816b39274d2efcb0df57",
+          "downloads": 2,
+          "tags": [
+            "peft",
+            "safetensors",
+            "vqa",
+            "multimodal",
+            "lora",
+            "sft",
+            "base_model:Qwen/Qwen3-VL-8B-Instruct",
+            "base_model:adapter:Qwen/Qwen3-VL-8B-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "library_name": "peft",
+          "createdAt": "2026-07-15T16:01:57.000Z",
+          "modelId": "omnifish123/vqa-rlvr-sft-8b",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            },
+            {
+              "rfilename": "README.md"
+            },
+            {
+              "rfilename": "adapter_config.json"
+            },
+            {
+              "rfilename": "adapter_model.safetensors"
+            },
+            {
+              "rfilename": "chat_template.jinja"
+            },
+            {
+              "rfilename": "processor_config.json"
+            },
+            {
+              "rfilename": "run_config.json"
+            },
+            {
+              "rfilename": "tokenizer.json"
+            },
+            {
+              "rfilename": "tokenizer_config.json"
+            },
+            {
+              "rfilename": "training_args.bin"
+            }
+          ]
+        },
+        {
+          "_id": "6a57aeff8f14b3dbbfeee618",
+          "id": "omnifish123/vqa-rlvr-grpo-2b-main-base",
+          "author": "omnifish123",
+          "gated": false,
+          "lastModified": "2026-07-20T18:04:11.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "dbb4a24ec72f0deba471688fcdc65c8d7924cc23",
+          "downloads": 4,
+          "tags": [
+            "peft",
+            "safetensors",
+            "vqa",
+            "multimodal",
+            "lora",
+            "grpo",
+            "rlvr",
+            "reinforcement-learning",
+            "base_model:Qwen/Qwen3-VL-2B-Instruct",
+            "base_model:adapter:Qwen/Qwen3-VL-2B-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "pipeline_tag": "reinforcement-learning",
+          "library_name": "peft",
+          "createdAt": "2026-07-15T16:02:07.000Z",
+          "modelId": "omnifish123/vqa-rlvr-grpo-2b-main-base",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            },
+            {
+              "rfilename": "README.md"
+            },
+            {
+              "rfilename": "adapter_config.json"
+            },
+            {
+              "rfilename": "adapter_model.safetensors"
+            },
+            {
+              "rfilename": "chat_template.jinja"
+            },
+            {
+              "rfilename": "completions/completions_00010.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00020.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00030.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00040.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00050.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00060.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00070.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00080.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00090.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00100.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00110.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00120.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00130.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00140.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00150.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00160.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00170.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00180.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00190.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00200.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00210.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00220.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00230.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00240.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00250.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00260.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00270.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00280.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00290.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00300.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00310.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00320.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00330.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00340.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00350.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00360.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00370.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00380.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00390.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00400.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00410.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00420.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00430.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00440.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00450.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00460.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00470.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00480.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00490.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00500.parquet"
+            },
+            {
+              "rfilename": "processor_config.json"
+            },
+            {
+              "rfilename": "run_config.json"
+            },
+            {
+              "rfilename": "tokenizer.json"
+            },
+            {
+              "rfilename": "tokenizer_config.json"
+            },
+            {
+              "rfilename": "training_args.bin"
+            }
+          ]
+        },
+        {
+          "_id": "6a57af0a54d9ba162571860b",
+          "id": "omnifish123/vqa-rlvr-grpo-2b-main-sft",
+          "author": "omnifish123",
+          "gated": false,
+          "lastModified": "2026-07-20T18:04:13.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "2924ef278ab01342790a1fc9b97e25b0038c901e",
+          "downloads": 5,
+          "tags": [
+            "peft",
+            "safetensors",
+            "vqa",
+            "multimodal",
+            "lora",
+            "grpo",
+            "rlvr",
+            "reinforcement-learning",
+            "base_model:Qwen/Qwen3-VL-2B-Instruct",
+            "base_model:adapter:Qwen/Qwen3-VL-2B-Instruct",
+            "license:apache-2.0",
+            "region:us"
+          ],
+          "pipeline_tag": "reinforcement-learning",
+          "library_name": "peft",
+          "createdAt": "2026-07-15T16:02:18.000Z",
+          "modelId": "omnifish123/vqa-rlvr-grpo-2b-main-sft",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            },
+            {
+              "rfilename": "README.md"
+            },
+            {
+              "rfilename": "adapter_config.json"
+            },
+            {
+              "rfilename": "adapter_model.safetensors"
+            },
+            {
+              "rfilename": "chat_template.jinja"
+            },
+            {
+              "rfilename": "completions/completions_00010.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00020.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00030.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00040.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00050.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00060.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00070.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00080.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00090.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00100.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00110.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00120.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00130.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00140.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00150.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00160.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00170.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00180.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00190.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00200.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00210.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00220.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00230.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00240.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00250.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00260.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00270.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00280.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00290.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00300.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00310.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00320.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00330.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00340.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00350.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00360.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00370.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00380.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00390.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00400.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00410.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00420.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00430.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00440.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00450.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00460.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00470.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00480.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00490.parquet"
+            },
+            {
+              "rfilename": "completions/completions_00500.parquet"
+            },
+            {
+              "rfilename": "processor_config.json"
+            },
+            {
+              "rfilename": "run_config.json"
+            },
+            {
+              "rfilename": "tokenizer.json"
+            },
+            {
+              "rfilename": "tokenizer_config.json"
+            },
+            {
+              "rfilename": "training_args.bin"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://huggingface.co/api/models?search=OmniVQA&full=true",
+      "status": 200,
+      "models": [
+        {
+          "_id": "6853c85ad6a0456691037511",
+          "id": "JZHWS/Omni-VQA-Qwen-0.5b_base",
+          "author": "JZHWS",
+          "gated": false,
+          "lastModified": "2025-06-19T08:20:42.000Z",
+          "likes": 0,
+          "trendingScore": 0,
+          "private": false,
+          "sha": "337b439680aff594c471704085eae7ba8ceec6d3",
+          "downloads": 0,
+          "tags": [
+            "region:us"
+          ],
+          "createdAt": "2025-06-19T08:20:42.000Z",
+          "modelId": "JZHWS/Omni-VQA-Qwen-0.5b_base",
+          "siblings": [
+            {
+              "rfilename": ".gitattributes"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "url": "https://huggingface.co/api/models?search=RefineIQA&full=true",
+      "status": 200,
+      "models": []
+    }
+  ]
+}

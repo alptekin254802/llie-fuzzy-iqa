@@ -1,0 +1,148 @@
+{
+  "dataset": "squarelol",
+  "mode": "area256",
+  "n": 2900,
+  "scenes": 290,
+  "feature_quantiles_q05_q50_q95": {
+    "entropy": {
+      "LOL": [
+        4.4284,
+        5.9504,
+        7.9146
+      ],
+      "squarelol": [
+        5.6416,
+        6.6406,
+        7.3757
+      ]
+    },
+    "contrast": {
+      "LOL": [
+        0.0309,
+        0.0939,
+        0.2905
+      ],
+      "squarelol": [
+        0.0545,
+        0.1171,
+        0.2019
+      ]
+    },
+    "sharpness": {
+      "LOL": [
+        0.0013,
+        0.0087,
+        0.1933
+      ],
+      "squarelol": [
+        0.0016,
+        0.0089,
+        0.0432
+      ]
+    }
+  },
+  "zero_shot": {
+    "NR-free fuzzy (LOL-frozen)": {
+      "srcc": 0.304,
+      "krcc": 0.206,
+      "plcc": 0.394,
+      "within_scene_srcc": 0.381,
+      "top1": 0.145,
+      "pair_acc": 0.643
+    },
+    "Linear (LOL-trained)": {
+      "srcc": 0.241,
+      "krcc": 0.163,
+      "plcc": 0.339,
+      "within_scene_srcc": 0.295,
+      "top1": 0.11,
+      "pair_acc": 0.606
+    },
+    "SVR (LOL-trained)": {
+      "srcc": 0.187,
+      "krcc": 0.127,
+      "plcc": 0.324,
+      "within_scene_srcc": 0.236,
+      "top1": 0.083,
+      "pair_acc": 0.587
+    },
+    "RF (LOL-trained)": {
+      "srcc": 0.219,
+      "krcc": 0.149,
+      "plcc": 0.308,
+      "within_scene_srcc": 0.256,
+      "top1": 0.152,
+      "pair_acc": 0.593
+    },
+    "entropy (raw)": {
+      "srcc": 0.262,
+      "krcc": 0.179,
+      "plcc": 0.376,
+      "within_scene_srcc": 0.284,
+      "top1": 0.086,
+      "pair_acc": 0.602
+    },
+    "contrast (raw)": {
+      "srcc": 0.281,
+      "krcc": 0.192,
+      "plcc": 0.37,
+      "within_scene_srcc": 0.306,
+      "top1": 0.1,
+      "pair_acc": 0.61
+    },
+    "brightness (raw)": {
+      "srcc": -0.245,
+      "krcc": -0.164,
+      "plcc": 0.326,
+      "within_scene_srcc": -0.298,
+      "top1": 0.007,
+      "pair_acc": 0.385
+    },
+    "sharpness (oriented)": {
+      "srcc": -0.089,
+      "krcc": -0.058,
+      "plcc": 0.334,
+      "within_scene_srcc": -0.076,
+      "top1": 0.083,
+      "pair_acc": 0.473
+    }
+  },
+  "scene_disjoint_recal": {
+    "NR-free fuzzy (MOS-cal)": {
+      "srcc_pooled": 0.368,
+      "srcc_foldmean": 0.371,
+      "krcc": 0.253,
+      "plcc": 0.423,
+      "within_scene_srcc": 0.389,
+      "top1": 0.141,
+      "pair_acc": 0.63
+    },
+    "Linear": {
+      "srcc_pooled": 0.27,
+      "srcc_foldmean": 0.271,
+      "krcc": 0.183,
+      "plcc": 0.373,
+      "within_scene_srcc": 0.307,
+      "top1": 0.11,
+      "pair_acc": 0.61
+    },
+    "SVR": {
+      "srcc_pooled": 0.418,
+      "srcc_foldmean": 0.42,
+      "krcc": 0.289,
+      "plcc": 0.514,
+      "within_scene_srcc": 0.442,
+      "top1": 0.107,
+      "pair_acc": 0.67
+    },
+    "RF": {
+      "srcc_pooled": 0.407,
+      "srcc_foldmean": 0.408,
+      "krcc": 0.284,
+      "plcc": 0.526,
+      "within_scene_srcc": 0.418,
+      "top1": 0.145,
+      "pair_acc": 0.662
+    }
+  }
+}

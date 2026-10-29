@@ -1,0 +1,26 @@
+{
+  "fuzzy DE global (manuscript)": {
+    "within_scene_srcc": 0.389,
+    "pooled_srcc": 0.368
+  },
+  "fuzzy DE within": {
+    "within_scene_srcc": 0.433,
+    "pooled_srcc": 0.327
+  },
+  "fuzzy LS within": {
+    "within_scene_srcc": 0.393,
+    "pooled_srcc": 0.355
+  },
+  "linear-3f within": {
+    "within_scene_srcc": 0.35,
+    "pooled_srcc": 0.365
+  },
+  "BRISQUE-SVR within": {
+    "within_scene_srcc": 0.819,
+    "pooled_srcc": 0.838
+  },
+  "BRISQUE-SVR global": {
+    "within_scene_srcc": 0.715,
+    "pooled_srcc": 0.653
+  }
+}

@@ -1,0 +1,70 @@
+{
+  "source_results_sha256": "49543bfb74ec8fef68830b6852ece68b06f235491571a2da78d0d3a98a0d1bab",
+  "copied_records": {
+    "availability_github_20261023.json": "d7a603ee1b70f077cfffa3794cd8f31693260f22a182fe7a6797d6a6ca9cc2f3",
+    "availability_hf_20261023.json": "5f6561451fd4dcd520ecf69b5bd84758bc8cb3e4316e119ddf63933645a288b7",
+    "availability_hf_extra_20261023.json": "1e0e5d6733378dbe509100d19903d8813e3a6b7c2ac57fa33c66925bb218ceb0",
+    "implementation_notes_v2.json": "b57d424d1061e85cdd27edb714566114e236d2a91e747eef94a2118b5dcf818e",
+    "joined.csv": "527bd139a1e9e9389ca63e996a3f8bf7aba5296fda1587c37647e4b76893c92b",
+    "MODEL_SPEC_original.json": "ff49d09e6071e0b304bfb1804196fc4c22bc4a8a4365e26408a398d74558097d",
+    "official_prompts.json": "e1b894cae4a6bef82df68620ad30a61bb6be60eb655c047936f041f3a2bcf92d",
+    "overlap_verified.json": "bc9d7d3d57bff9d850fe70b56baa521fbaba51a1cbeb9c02e6f6224cefce1de5",
+    "paired_differences.csv": "3a2f3de2c2be772bb2ba65354dfd4079a7ef99d8f2f212b0093456ece9a81976",
+    "per_scene.csv": "dca3a9a16b660516e3203e05cc4602b97f30d1c54603463bd5c9f81d2797a96c",
+    "protocol.json": "4520f43dae7d0a476ade293b90b7fb283582c7dac7fbad5a8dab50c082c23e18",
+    "README.md": "0ffe54972f6ddc5ea393d6d782741511e16041681b604c4a8622c84d46a4cf48",
+    "results.json": "49543bfb74ec8fef68830b6852ece68b06f235491571a2da78d0d3a98a0d1bab"
+  },
+  "main_text_frozen": {
+    "manuscript/main.tex": "aaf08d40d0b5ccc3eac9feca17a1a83a297d2d921b67a284cacfc0ff367a34e6",
+    "tools/main_body.tex": "2b72ab0d3585dbd763f9b031120c97ae3b8fd58134dae7ac19fdcebb9ac21750"
+  },
+  "vital_alignment_audit": {
+    "vital_alignment": "PASS",
+    "vital_images_rehashed": 2900,
+    "vital_score_max_absolute_error": 2.220446049250313e-16,
+    "vital_scene_srcc_max_absolute_error": 1.1102230246251565e-16
+  },
+  "distribution": {
+    "joined.csv": {
+      "sha256": "1cc7d5a0733dd3bde820aa306bf6d8ed2efbd888942cff3a0d6652346d70bdaf",
+      "omitted_labels": "Per-image LIEQ and RLIE MOS values; load from separately obtained datasets. SQUARE-LOL MOS is retained under the notice in NOTICE.",
+      "original_hash_role": "copied_records.joined.csv identifies the private unredacted record"
+    }
+  },
+  "overlap_classification": "All 290 SQUARE-LOL scenes are classified from normal-light references: 231 shared, 59 non-overlapping. low00710 is shared; its low-light source was unavailable.",
+  "current_distribution_sha256": {
+    "asset_hashes.json": "90452b3d87d045e28f009f8d233b8dfb23615b1329dfc7fad591324f4c960547",
+    "availability_github_20261023.json": "3f1d62b03fb1b5aec6f947f8db8e7ac324a747e6f0d848f0ed8ad69f603bfea9",
+    "availability_hf_20261023.json": "d80a4f2fc1d39fcc001d494b039ca5d6c9e919877d63ac7c7ff12c94f4199259",
+    "availability_hf_extra_20261023.json": "63ce3c8d0c10bcd89b17818f0ae5594a5490e9b6a55bfd8dcf3de2940c700121",
+    "image_manifest.csv": "e7d15e253d9a0792929971311ae89ecb719b8402d8b4bd277467630b0b112c62",
+    "implementation_notes_v2.json": "cdaacb950f139537ebc2aa8c745449e0f3b34a82b67e3c225b4749c4af534cb0",
+    "joined.csv": "1cc7d5a0733dd3bde820aa306bf6d8ed2efbd888942cff3a0d6652346d70bdaf",
+    "MODEL_SPEC_original.json": "f922cf856f0e25a21ea316e13b0cd0d80ba7772cac793bb88a51d828c17366bb",
+    "nf4_meta_compat_test.json": "061961d8fd9397cb586d545ce1e4757a2a2d1aaffec5a80939be6b6641afdf49",
+    "official_prompts.json": "be393c8eba5c83d46ecf8062690647876629520228f85147ce69bc64873491d4",
+    "overlap_verified.json": "dd1cd8eb83e94351a1881598c30d1fbe65ba38ca4b2078bc783050cccccff7c4",
+    "paired_differences.csv": "722a85fef18039c211ed61d47716f4104e7e12788d096bb924d42ec9f186613a",
+    "per_scene.csv": "d72a3684ea24e503598c1ece68475bdfe8f48f9b5d70945207badbf1616b8f43",
+    "protocol.json": "2c9b9e975a5ed6602c602ace1fa0dd445e5bbc366831c53c8be276c1fb6b116b",
+    "README.md": "162a666b27a0c15c5985fe20d9146860fad7643254ad7677d7ea317a013e1562",
+    "results.json": "4bce8c680dd45dde51ce4ce822477076639e61ca5d4de569b4c0abbb1c50666a",
+    "vital/checkpoint_hashes.json": "a6471af45f6ef577e2c97435e4485414a90e6d4ada4bd47d327195973a2fdf9a",
+    "vital/pilot_candidate.csv": "621301b01ce729e2eb48db27cb8ba99daf2d8f212d5012c6e6f7b96ca4b7f9dc",
+    "vital/pilot_reference.csv": "df4644f29cca6f398385563916b688e6266334d7ae0ceea89fd9d544955220ba",
+    "vital/runtime.json": "51b4ee35d2bff7eee59fb14d25645ad11047a441874664a60a1e4fda26e1cf39",
+    "vital/scores.csv": "f7014311ced41c813dd5a48e173afc3fce0175b9a7221bb17ee9c7f47f483563",
+    "vital/source_hashes.json": "3182c645ab362ddc2cbf94e6093bb5d2d798d689e18de1afdcde013baf74e4bb",
+    "vqa2/checkpoint_hashes.json": "f5f91c997310e0a3bddfcbca4ee201d3977b203c459be5cb3b2d02de190ae103",
+    "vqa2/pilot_candidate.csv": "0e2fb4cb3e20cf1397e353cf2c30c513d73084bdd533f962213404595521543c",
+    "vqa2/pilot_reference.csv": "84e8eaa757d96b00b4c88e69af552e0acb7711438df01a5feca2c6d975a3be52",
+    "vqa2/runtime.json": "d141c583ceb3e7cce254063e6a0264da9a40e27a11a86304b9c97c7082ea2405",
+    "vqa2/scores.csv": "f2230c9373ba4ea8cd6ffac3fc818623009ef4274c89389da7c8ff2b3741f4b1",
+    "vqa2/source_hashes.json": "7a8b1ac728cabc3b6f2cad4d61422f4848f070a3f9e5aeab391ef2f5d66ce26d"
+  },
+  "portable_inference_private_source_sha256": {
+    "adapters.py": "25cca25128d76f5117c45ec44e8405a168b3b2bbb3d24c432d8fead73e1c9a0a",
+    "run_phase.py": "e5692e27047a961ceb9f420defcf6296f241a3bea091b1271e5640c44a182bfc"
+  }
+}

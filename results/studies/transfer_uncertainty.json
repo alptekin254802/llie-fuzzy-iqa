@@ -1,0 +1,44 @@
+{
+  "squarelol": {
+    "fuzzy_within_scene_by_seed": {
+      "42": 0.381,
+      "1": 0.351,
+      "2": 0.37,
+      "3": 0.363,
+      "4": 0.365
+    },
+    "within_scene_fuzzy_minus_linear": [
+      0.086,
+      0.064,
+      0.107
+    ]
+  },
+  "lieq": {
+    "fuzzy_within_scene_by_seed": {
+      "42": 0.095,
+      "1": 0.043,
+      "2": 0.069,
+      "3": 0.03,
+      "4": -0.016
+    },
+    "within_scene_fuzzy_minus_linear": [
+      0.233,
+      0.163,
+      0.307
+    ]
+  },
+  "rlie": {
+    "fuzzy_within_scene_by_seed": {
+      "42": 0.135,
+      "1": 0.186,
+      "2": 0.159,
+      "3": 0.171,
+      "4": 0.179
+    },
+    "within_scene_fuzzy_minus_linear": [
+      -0.144,
+      -0.192,
+      -0.096
+    ]
+  }
+}

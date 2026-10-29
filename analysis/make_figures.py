@@ -1,28 +1,13 @@
-"""
-Paper figures (PDF + SVG) for the revised manuscript - SELF-CONTAINED.
+"""Generate the manuscript's vector figures and fold-mean results.
 
-Place at: analysis/make_figures.py     Run: python -m analysis.make_figures
-
-Reads the raw result CSVs, runs the fuzzy model + 5-fold CV internally
-(reproduces the manuscript numbers, seed=42), and writes vector figures to
-results/figures/. Figures carry no in-figure titles; titles live in the
-manuscript captions. SVG text stays editable (svg.fonttype=none).
-
-Inputs expected in results/ (same folder as your other CSVs):
-  nr_features.csv, perceptual_metrics.csv, modern_nriqa.csv,
-  clipiqa_plus_scores.csv, fuzzy_enhancement_results.csv,
-  deep_zerodce_all.csv, deep_sci_all.csv
-Outputs (results/figures/, each as .pdf and .svg):
-  fig2_correlation_matrix, fig3_main_alignment, fig4_generalization,
-  fig4b_within_method, fig5_rule_heatmap, figS_membership_functions
-  + results/figures_numbers.csv  (numbers used by manuscript tables)
-
-Architecture diagram (Fig 1) is inline TikZ in main.tex.
-Qualitative figure (Fig 6) needs the LOL images -> make_qualitative_figure.py.
-"""
+Run ``python -m analysis.make_figures`` from the repository root. Reads the
+derived CSVs in results/, fits the five scene-disjoint folds (seed 42), and
+writes PDF/SVG figures to results/figures/ and values to figures_numbers.csv.
+The qualitative image panels require the separate make_qualitative_figure module."""
 from __future__ import annotations
 
 import itertools
+import json
 import os
 from pathlib import Path
 
@@ -34,6 +19,8 @@ import pandas as pd
 from matplotlib.patches import Patch
 from scipy.optimize import differential_evolution
 from scipy.stats import spearmanr
+from analysis.monotone_fuzzy import fit as fit_monotone, design as product_design
+from evaluation.frozen_scorer import FrozenScorer
 
 BASE = Path(__file__).resolve().parent.parent
 RESULTS = Path(os.environ.get("RESULTS_DIR", BASE / "results"))
@@ -52,11 +39,10 @@ BLUE, GREEN, PURPLE, ORANGE, RED, GRAY = "#4c72b0", "#55a868", "#8172b3", "#dd84
 # ---------------- fuzzy model (verbatim logic from reference_free_fuzzy.py) ----
 NR_FEATURES = ["entropy", "contrast", "sharpness"]
 FR_FEATURES = ["psnr", "ssim", "entropy"]
-K_FOLDS, PRIMARY_LAMBDA, DE_MAXITER, DE_POPSIZE, SEED = 5, 2.0, 40, 8, 42
+K_FOLDS, DE_MAXITER, DE_POPSIZE, SEED = 5, 40, 8, 42
 COMBOS = list(itertools.product(range(3), range(3), range(3)))
 IDX = {c: n for n, c in enumerate(COMBOS)}
 LEVELS = ["low", "med", "high"]
-BANDS = [(25, "Poor"), (50, "Fair"), (75, "Good"), (100.1, "Excellent")]
 _P = []
 for (i, j, k) in COMBOS:
     for di, dj, dk in [(1, 0, 0), (0, 1, 0), (0, 0, 1)]:
@@ -160,11 +146,15 @@ def cv_summary(df, models_single):
     nr_arr, _ = orient(df, NR_FEATURES, tgt); fr_arr, _ = orient(df, FR_FEATURES, tgt)
     nf_, ns_, _ = build_firing(nr_arr); ff_, fs_, _ = build_firing(fr_arr)
     rows = {m: {"lpips": [], "niqe": []} for m in models_single + ["fr_fuzzy_free", "nr_fuzzy_free", "nr_fuzzy_mono"]}
-    for tr, te in group_kfold(g, K_FOLDS, SEED):
+    oof = np.empty(len(df)); fold_ids = np.empty(len(df), dtype=int)
+    for fold, (tr, te) in enumerate(group_kfold(g, K_FOLDS, SEED)):
         thfr = calibrate(ff_, fs_, tgt, tr, 0.0)
         thnr = calibrate(nf_, ns_, tgt, tr, 0.0)
-        thnm = calibrate(nf_, ns_, tgt, tr, PRIMARY_LAMBDA)
-        sfr, snr, snm = (ff_[te] @ thfr) / fs_[te], (nf_[te] @ thnr) / ns_[te], (nf_[te] @ thnm) / ns_[te]
+        mono_mfs = [mfset(a[tr]) for a in nr_arr]
+        thnm = fit_monotone(np.column_stack(nr_arr)[tr], tgt[tr], mono_mfs)
+        sfr, snr = (ff_[te] @ thfr) / fs_[te], (nf_[te] @ thnr) / ns_[te]
+        snm = product_design(np.column_stack(nr_arr)[te], mono_mfs) @ thnm
+        oof[te] = snr; fold_ids[te] = fold
         for m in models_single:
             rows[m]["lpips"].append(rho(df[m].to_numpy()[te], tgt[te]))
             rows[m]["niqe"].append(rho(df[m].to_numpy()[te], niqe[te]))
@@ -174,6 +164,7 @@ def cv_summary(df, models_single):
     for m, d in rows.items():
         out.append({"model": m, "lpips_mean": np.mean(d["lpips"]), "lpips_std": np.std(d["lpips"]),
                     "niqe_mean": np.mean(d["niqe"]), "niqe_std": np.std(d["niqe"])})
+    df[["filename", "method"]].assign(fold=fold_ids, prediction=oof).to_csv(RESULTS / "nr_fuzzy_oof.csv", index=False)
     return pd.DataFrame(out).set_index("model")
 
 
@@ -230,12 +221,15 @@ def fig_generalization(sc):
 
 
 def fig_within_method(expanded):
-    """7-method within-method validity (all-data nr_fuzzy_free)."""
+    """Classical out-of-fold predictions; deep enhancers unseen during calibration."""
     tgt = -expanded["lpips"].to_numpy()
-    arrs, _ = orient(expanded, NR_FEATURES, tgt)
-    fire, fsum, _ = build_firing(arrs)
-    theta = calibrate(fire, fsum, tgt, np.arange(len(expanded)), 0.0)
-    score = (fire @ theta) / fsum
+    score = FrozenScorer().predict(expanded[NR_FEATURES])
+    oof = pd.read_csv(RESULTS / "nr_fuzzy_oof.csv")
+    aligned = expanded[["filename", "method"]].merge(oof, on=["filename", "method"], how="left", validate="one_to_one")
+    classical = ~expanded["method"].isin(["zerodce", "sci"])
+    if aligned.loc[classical, "prediction"].isna().any():
+        raise ValueError("Missing classical out-of-fold predictions")
+    score[classical] = aligned.loc[classical, "prediction"]
     meth = expanded["method"].to_numpy()
     vals = {m: rho(score[meth == m], tgt[meth == m]) for m in np.unique(meth)}
     order = sorted(vals, key=lambda m: vals[m], reverse=True)
@@ -245,20 +239,24 @@ def fig_within_method(expanded):
     ax.bar(range(len(order)), [vals[m] for m in order], color=colors, edgecolor="black", linewidth=0.6)
     ax.axhline(0, color="gray", lw=0.6)
     ax.set_xticks(range(len(order))); ax.set_xticklabels(order, rotation=20, ha="right")
-    ax.set_ylabel("Within-method Spearman with $-$LPIPS")
-    ax.legend(handles=[Patch(color=RED, label="classical"), Patch(color=PURPLE, label="deep (Zero-DCE, SCI)")],
+    ax.set_ylabel("Within-method Spearman\nwith $-$LPIPS")
+    ax.legend(handles=[Patch(color=RED, label="classical (out of fold)"), Patch(color=PURPLE, label="deep (frozen classical fit)")],
               frameon=False, loc="upper right")
     save(fig, "fig4b_within_method")
+    pd.DataFrame([{ "method": k, "srcc": v, "protocol": "frozen classical fit" if k in deep else "out of fold"} for k,v in vals.items()]).to_csv(RESULTS / "within_method.csv", index=False)
     return vals
 
 
-def fig_rule_heatmap(classical):
+def fig_rule_heatmap(classical, model_name="nr_mono", output_name="figS3_rules_nrmono"):
     """Calibrated monotone rule base on classical all-data."""
-    tgt = -classical["lpips"].to_numpy()
-    arrs, _ = orient(classical, NR_FEATURES, tgt)
-    fire, fsum, _ = build_firing(arrs)
-    theta = calibrate(fire, fsum, tgt, np.arange(len(classical)), PRIMARY_LAMBDA)
-    v = 100 * (theta - theta.min()) / (theta.max() - theta.min() + 1e-9)
+    model = FrozenScorer(model_name)
+    theta = model.theta
+    arr=classical[NR_FEATURES].to_numpy()*model.signs
+    if model_name=='nr_mono': firing=product_design(arr,model.mfs)
+    else:
+        firing,_,_=build_firing([arr[:,n] for n in range(3)],model.mfs.tolist())
+    unsupported=set(np.flatnonzero(firing.max(axis=0)==0).tolist())
+    v = theta if model_name == "nr_free" else 100 * (theta - theta.min()) / (theta.max() - theta.min() + 1e-9)
     rules = pd.DataFrame([{"entropy": LEVELS[i], "contrast": LEVELS[j], "sharpness": LEVELS[k], "value": v[r]}
                           for r, (i, j, k) in enumerate(COMBOS)])
     lv = LEVELS
@@ -274,13 +272,13 @@ def fig_rule_heatmap(classical):
         ax.set_xticklabels(lv); ax.set_yticklabels(lv); ax.set_xlabel("contrast")
         if s_i == 0:
             ax.set_ylabel("entropy")
-        ax.set_title(f"sharpness$^*$ = {s}", fontsize=9)   # panel label (a/b/c style), allowed
+        ax.set_title(f"Laplacian energy$^*$\n{s}", fontsize=9)   # Panel label.
         for e_i in range(3):
             for c_i in range(3):
-                ax.text(c_i, e_i, f"{grid[e_i,c_i]:.0f}", ha="center", va="center", fontsize=7, color="black")
-    fig.colorbar(im, ax=axes, shrink=0.8, label="calibrated quality")
-    save(fig, "fig5_rule_heatmap")
-    rules.to_csv(RESULTS / "rule_table_mono.csv", index=False)
+                ax.text(c_i, e_i, f"{grid[e_i,c_i]:.0f}" + ("*" if IDX[(e_i,c_i,s_i)] in unsupported else ""), ha="center", va="center", fontsize=7, color="black")
+    fig.colorbar(im, ax=axes, shrink=0.8, label="consequent (0–100)" if model_name=="nr_free" else "relative consequent (0–100)")
+    save(fig, output_name)
+    rules.to_csv(RESULTS / f"rule_table_{model_name}.csv", index=False)
 
 
 def fig_membership(classical):
@@ -295,13 +293,16 @@ def fig_membership(classical):
         for l, col in zip(range(3), [BLUE, GREEN, RED]):
             ax.plot(xs, trapmf(xs, *mf[l]), color=col, lw=1.5, label=LEVELS[l])
         star = "$^*$" if flips[feat] else ""
-        ax.set_xlabel(f"{feat}{star} (oriented)"); ax.set_ylim(-0.05, 1.1)
+        label = "Laplacian energy" if feat == "sharpness" else feat
+        ax.set_xlabel(f"{label}{star}\n(oriented)"); ax.set_ylim(-0.05, 1.1)
         if n == 0:
             ax.set_ylabel("membership"); ax.legend(frameon=False, loc="lower center", ncol=3)
-    save(fig, "figS_membership_functions")
+    save(fig, "figS1_membership_functions")
 
 
 def main():
+    from threadpoolctl import threadpool_limits
+    threadpool_limits(1)
     print(f"Reading from: {RESULTS}\nWriting to: {OUT}")
     classical, expanded = load_data()
     print(f"classical n={len(classical)} | expanded n={len(expanded)} (methods: {sorted(expanded['method'].unique())})")
@@ -320,16 +321,18 @@ def main():
     # all-data classical NR-free score (so the correlation matrix can include it)
     arrs_c, _ = orient(classical, NR_FEATURES, tgt)
     fc, sc_, _ = build_firing(arrs_c)
-    classical["nr_fuzzy_free"] = (fc @ calibrate(fc, sc_, tgt, np.arange(len(classical)), 0.0)) / sc_
+    classical["nr_fuzzy_free"] = FrozenScorer().predict(classical[NR_FEATURES])
 
     fig_correlation_matrix(classical)
     fig_main_alignment(sc)
     fig_generalization(sc)
     wm = fig_within_method(expanded)
     fig_rule_heatmap(classical)
+    fig_rule_heatmap(classical,"nr_free","figS4_rules_nrfree")
     fig_membership(classical)
 
     sc.round(3).to_csv(RESULTS / "figures_numbers.csv")
+    (RESULTS / "figure_numbers.json").write_text(json.dumps(sc.round(3).to_dict(orient="index"), indent=2) + "\n")
     print("\nwithin-method (7):", {k: round(v, 3) for k, v in wm.items()})
     print("Done. Figures in", OUT)
     print("Saved CSV summaries in", RESULTS)

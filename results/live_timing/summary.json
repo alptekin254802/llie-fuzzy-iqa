@@ -1,0 +1,281 @@
+{
+  "created_utc": "2026-10-23T12:56:39.413844+00:00",
+  "plan_sha256": "96c39cd39fc5709fc8911360fa574804e9e21ca2dca3cb0321c68c88ab405a8a",
+  "sessions": [
+    {
+      "session": "main_1",
+      "exposure": -5,
+      "n": 1950,
+      "processing_ms": {
+        "median": 9.2932,
+        "p95": 9.838165,
+        "p99": 11.256167,
+        "maximum": 19.1263,
+        "mean": 9.422105487179488
+      },
+      "camera_interval_median_ms": 32.40045,
+      "camera_interval_mean_ms": 39.966626717948714,
+      "deadline_misses": 0,
+      "deadline_miss_fraction": 0.0,
+      "deadline_miss_percent": 0.0,
+      "measured_loop_seconds": 77.9349356,
+      "actual_loop_fps": 25.02087138441159
+    },
+    {
+      "session": "main_2",
+      "exposure": -5,
+      "n": 1950,
+      "processing_ms": {
+        "median": 9.26065,
+        "p95": 10.129025,
+        "p99": 11.809968,
+        "maximum": 17.938,
+        "mean": 9.440977384615385
+      },
+      "camera_interval_median_ms": 32.37635,
+      "camera_interval_mean_ms": 39.96660435897436,
+      "deadline_misses": 0,
+      "deadline_miss_fraction": 0.0,
+      "deadline_miss_percent": 0.0,
+      "measured_loop_seconds": 77.9347284,
+      "actual_loop_fps": 25.02093790577706
+    },
+    {
+      "session": "main_3",
+      "exposure": -5,
+      "n": 1950,
+      "processing_ms": {
+        "median": 9.2272,
+        "p95": 9.692074999999999,
+        "p99": 10.426652,
+        "maximum": 18.5723,
+        "mean": 9.307128666666667
+      },
+      "camera_interval_median_ms": 32.321749999999994,
+      "camera_interval_mean_ms": 39.97483830769231,
+      "deadline_misses": 0,
+      "deadline_miss_fraction": 0.0,
+      "deadline_miss_percent": 0.0,
+      "measured_loop_seconds": 77.9512688,
+      "actual_loop_fps": 25.015628738553644
+    },
+    {
+      "session": "extra_minus3",
+      "exposure": -3,
+      "n": 450,
+      "processing_ms": {
+        "median": 9.5171,
+        "p95": 10.660235,
+        "p99": 11.279311,
+        "maximum": 18.9503,
+        "mean": 9.626999555555557
+      },
+      "camera_interval_median_ms": 128.01055000000002,
+      "camera_interval_mean_ms": 130.3449342222222,
+      "deadline_misses": 0,
+      "deadline_miss_fraction": 0.0,
+      "deadline_miss_percent": 0.0,
+      "measured_loop_seconds": 58.6571231,
+      "actual_loop_fps": 7.671702535305554
+    },
+    {
+      "session": "extra_minus4",
+      "exposure": -4,
+      "n": 450,
+      "processing_ms": {
+        "median": 9.4259,
+        "p95": 10.16931,
+        "p99": 11.324960999999998,
+        "maximum": 15.7915,
+        "mean": 9.531176666666667
+      },
+      "camera_interval_median_ms": 64.00625,
+      "camera_interval_mean_ms": 65.24355866666667,
+      "deadline_misses": 0,
+      "deadline_miss_fraction": 0.0,
+      "deadline_miss_percent": 0.0,
+      "measured_loop_seconds": 29.3600593,
+      "actual_loop_fps": 15.326944520169958
+    }
+  ],
+  "pooled": {
+    "primary_minus5": {
+      "n": 5850,
+      "processing_ms": {
+        "median": 9.2632,
+        "p95": 9.91613,
+        "p99": 11.37125700000001,
+        "maximum": 19.1263,
+        "mean": 9.390070512820513
+      },
+      "camera_interval_median_ms": 32.367,
+      "camera_interval_mean_ms": 39.96935646153846,
+      "deadline_misses": 0,
+      "deadline_miss_fraction": 0.0,
+      "deadline_miss_percent": 0.0,
+      "measured_loop_seconds": 233.82093279999998,
+      "actual_loop_fps": 25.01914576229935
+    },
+    "all_exposures": {
+      "n": 6750,
+      "processing_ms": {
+        "median": 9.27955,
+        "p95": 9.96553,
+        "p99": 11.357742000000005,
+        "maximum": 19.1263,
+        "mean": 9.41527285925926
+      },
+      "camera_interval_median_ms": 47.9559,
+      "camera_interval_mean_ms": 47.679341792592595,
+      "deadline_misses": 0,
+      "deadline_miss_fraction": 0.0,
+      "deadline_miss_percent": 0.0,
+      "measured_loop_seconds": 321.83811519999995,
+      "actual_loop_fps": 20.973277188767234
+    }
+  },
+  "selftests": [
+    {
+      "session": "main_1",
+      "passed": true,
+      "frames_completed": 100,
+      "candidate_count": 1000,
+      "utc": "2026-10-23T12:44:54.466957+00:00",
+      "camera_frames": true,
+      "timed": false,
+      "original_sha256": "f97b46e6c20d07412ca5997aac4568680ae7eb077ba2ba312c0fd22550396978",
+      "lut_sha256": "f97b46e6c20d07412ca5997aac4568680ae7eb077ba2ba312c0fd22550396978",
+      "input_sha256": "08581bd82caa9859c5d108b41a0d50affa5bd4f5a5a06f6c0af642c731597218",
+      "feature_values": 3000,
+      "model_scores": 2000,
+      "selected_gammas": 800
+    },
+    {
+      "session": "main_2",
+      "passed": true,
+      "frames_completed": 100,
+      "candidate_count": 1000,
+      "utc": "2026-10-23T12:46:59.525619+00:00",
+      "camera_frames": true,
+      "timed": false,
+      "original_sha256": "28a97967b71eeedc0a80e24b2fe3eb4a1a0560b6be097e61a409b91a20cf9ca6",
+      "lut_sha256": "28a97967b71eeedc0a80e24b2fe3eb4a1a0560b6be097e61a409b91a20cf9ca6",
+      "input_sha256": "ece11e49fe96594212757c914dec352023a74f575c17e94f5859018717012b65",
+      "feature_values": 3000,
+      "model_scores": 2000,
+      "selected_gammas": 800
+    },
+    {
+      "session": "main_3",
+      "passed": true,
+      "frames_completed": 100,
+      "candidate_count": 1000,
+      "utc": "2026-10-23T12:48:59.163596+00:00",
+      "camera_frames": true,
+      "timed": false,
+      "original_sha256": "ac4ca1c4cef789cfcfd5edff04aecdc2b36a97a8bc83997ef2a7816242dafba9",
+      "lut_sha256": "ac4ca1c4cef789cfcfd5edff04aecdc2b36a97a8bc83997ef2a7816242dafba9",
+      "input_sha256": "66e38c00d22c2f257656d8a67fbc82894e0629c6d316bce8421bbb405153633c",
+      "feature_values": 3000,
+      "model_scores": 2000,
+      "selected_gammas": 800
+    },
+    {
+      "session": "extra_minus3",
+      "passed": true,
+      "frames_completed": 100,
+      "candidate_count": 1000,
+      "utc": "2026-10-23T12:53:22.106801+00:00",
+      "camera_frames": true,
+      "timed": false,
+      "original_sha256": "5c1511fdffd4547c0829d94adda190fb655ee76a104c5b914c5b252081d043f8",
+      "lut_sha256": "5c1511fdffd4547c0829d94adda190fb655ee76a104c5b914c5b252081d043f8",
+      "input_sha256": "cfd99bcd926b9112a400d2f5e2f6261241b4b4b80de90fb24508f089d97cdfdb",
+      "feature_values": 3000,
+      "model_scores": 2000,
+      "selected_gammas": 800
+    },
+    {
+      "session": "extra_minus4",
+      "passed": true,
+      "frames_completed": 100,
+      "candidate_count": 1000,
+      "utc": "2026-10-23T12:55:14.476783+00:00",
+      "camera_frames": true,
+      "timed": false,
+      "original_sha256": "e56b44b2e0eed3a9bd87aadfe4c3b1ea7a8d6aec8e379b546a69d4d892d9a286",
+      "lut_sha256": "e56b44b2e0eed3a9bd87aadfe4c3b1ea7a8d6aec8e379b546a69d4d892d9a286",
+      "input_sha256": "9d07f1ac827bf6fcb872c20a4bc1a45f928a7954a7ac590878bcd7cad47fceb2",
+      "feature_values": 3000,
+      "model_scores": 2000,
+      "selected_gammas": 800
+    }
+  ],
+  "environment": {
+    "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "pandas": "3.0.2",
+    "torch": "2.7.1+cu118",
+    "OS": "Windows-10-10.0.19045-SP0",
+    "cv2_threads": 1,
+    "torch_threads": 1,
+    "environment": {
+      "OMP_NUM_THREADS": "1",
+      "MKL_NUM_THREADS": "1",
+      "OPENBLAS_NUM_THREADS": "1",
+      "NUMEXPR_NUM_THREADS": "1"
+    },
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "version": "0.3.31.188.0",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "library": "libscipy_openblas64_-63c857e738469261263c764a36be9436.dll"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell",
+        "library": "libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libiomp",
+        "version": null,
+        "library": "libiomp5md.dll"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "libiomp",
+        "version": null,
+        "library": "libiompstubs5md.dll"
+      }
+    ]
+  },
+  "hardware": {
+    "os": {
+      "Caption": "Microsoft Windows 10 Pro",
+      "Version": "10.0.19045",
+      "BuildNumber": "19045"
+    },
+    "cpu": {
+      "Name": "AMD Ryzen 7 1700 Eight-Core Processor          ",
+      "NumberOfCores": 8,
+      "NumberOfLogicalProcessors": 16
+    }
+  },
+  "scientific_image_quality_tested": false
+}

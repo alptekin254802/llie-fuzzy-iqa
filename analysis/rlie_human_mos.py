@@ -1,37 +1,13 @@
-"""
-RLIE human-MOS evaluation  
+"""Evaluate frozen transfer and scene-disjoint human-label calibration on RLIE.
 
-Tests the proposed assessor against ACTUAL HUMAN OPINION scores on the RLIE
-dataset (1,540 real-world enhanced low-light images, 154 scenes, Bradley-Terry
-scores from 103,950 2AFC annotations; ACM MM 2025, github.com/CQUPT-HuBo90/RLIE).
+Uses 1,540 enhanced images from 154 scenes. The frozen model is loaded from
+models/nr_free.json. Fuzzy, linear, SVR and random-forest recalibration use
+human labels and separate scene folds. Literature results are cited separately.
+Reports SRCC, KRCC and PLCC after five-parameter logistic mapping.
 
-Three evaluations:
-  (1) FROZEN TRANSFER     - the LOL-calibrated NR-free model (consequents + MF
-                            breakpoints fit on LOL against -LPIPS) applied
-                            UNCHANGED to RLIE; SRCC/PLCC vs human MOS. Zero-shot.
-  (2) MOS RE-CALIBRATION  - re-calibrate the SAME fuzzy architecture directly
-                            against the human MOS, scene-disjoint 5-fold (answers
-                            "calibrate to a human anchor, not only LPIPS").
-  (3) BASELINES           - Linear / SVR / RF on the same 3 features, MOS-calibrated,
-                            same folds. Plus published deep references (MIIHDP, IACA)
-                            cited in the paper, not recomputed here.
-
-Reports SRCC, KRCC and PLCC (after the standard 5-param logistic mapping).
-
-=============================  WHAT YOU MUST DO  =============================
-1. Download RLIE (Google Drive / Baidu links in the repo README) and extract.
-2. Fill in load_rlie() below so it returns a DataFrame with columns:
-       img_path  (absolute path to each enhanced image)
-       scene     (scene id, 1..154 -- used for scene-disjoint folds)
-       mos       (the Bradley-Terry / MOS score, higher = better)
-   If RLIE ships an official fold/split file, also return a 'fold' column
-   (int 0..4); otherwise scene-disjoint GroupKFold is used automatically.
-3. Make sure the LOL result CSVs (nr_features.csv, perceptual_metrics.csv) are
-   reachable (RESULTS_DIR or results/), so the frozen LOL model can be built.
-Run:  python rlie_human_mos.py  --rlie_root  /path/to/RLIE
-=============================================================================
-Needs: numpy, pandas, scipy, scikit-learn, opencv-python
-"""
+Run ``python -m analysis.rlie_human_mos --rlie_root /path/to/RLIE``.
+The root must contain enhancement/ and normalized_scores.csv. Features use
+INTER_AREA resizing to 256 x 256."""
 from __future__ import annotations
 
 import argparse
@@ -84,17 +60,13 @@ def load_rlie(root: Path) -> pd.DataFrame:
 # Identical to the manuscript's nr_features (BT.601 luma, RMS contrast,
 # 256-bin Shannon entropy, 3x3 Laplacian-variance sharpness, all normalised).
 def nr_features_from_path(path: str) -> dict:
+    from evaluation.nr_features import nr_features
     bgr = cv2.imread(str(path), cv2.IMREAD_COLOR)
     if bgr is None:
         raise FileNotFoundError(path)
-    rgb8 = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
-    gray = cv2.cvtColor(rgb8, cv2.COLOR_RGB2GRAY).astype(np.float64)
-    contrast = gray.std() / 255.0
-    hist = np.bincount(gray.astype(np.uint8).ravel(), minlength=256).astype(np.float64)
-    p = hist[hist > 0] / hist.sum()
-    entropy = float(-(p * np.log2(p)).sum())
-    sharpness = cv2.Laplacian(gray, cv2.CV_64F).var() / (255.0 ** 2)
-    return {"entropy": entropy, "contrast": float(contrast), "sharpness": float(sharpness)}
+    rgb8 = cv2.resize(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB), (256, 256), interpolation=cv2.INTER_AREA)
+    values = nr_features(rgb8.astype(np.float32) / 255.0)
+    return {k: values[k] for k in NR_FEATURES}
 
 
 # ----------------------------- fuzzy machinery ----------------------------- #
@@ -168,17 +140,9 @@ def iqa_scores(pred, mos):
 
 # -------------------------------- pipeline --------------------------------- #
 def build_lol_model():
-    """Fit NR-free on LOL (full data, vs -LPIPS) -> (signs, mfs, theta)."""
-    nf = pd.read_csv(RESULTS / "nr_features.csv")[["filename", "method"] + NR_FEATURES]
-    pc = pd.read_csv(RESULTS / "perceptual_metrics.csv")[["filename", "method", "lpips"]]
-    lol = nf.merge(pc, on=["filename", "method"]).dropna().reset_index(drop=True)
-    tgt = -lol["lpips"].to_numpy()
-    signs = fit_signs(lol, tgt)
-    arrs = oriented(lol, signs)
-    mfs = [mfset(a) for a in arrs]
-    fire, fsum = firing(arrs, mfs)
-    theta = calibrate(fire, fsum, tgt, np.arange(len(lol)))
-    return signs, mfs, theta
+    from evaluation.frozen_scorer import FrozenScorer
+    model = FrozenScorer("nr_free")
+    return model.parameters["signs"], model.parameters["mfs"], model.theta
 
 
 def fuzzy_predict(X, signs, mfs, theta):
@@ -190,7 +154,7 @@ def fuzzy_predict(X, signs, mfs, theta):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--rlie_root", required=True)
-    ap.add_argument("--cache", default="rlie_features.csv",
+    ap.add_argument("--cache", default="rlie_features_area256.csv",
                     help="cache computed features so re-runs are instant")
     args = ap.parse_args()
     root = Path(args.rlie_root)

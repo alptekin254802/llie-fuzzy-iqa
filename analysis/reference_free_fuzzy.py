@@ -1,30 +1,16 @@
-"""
-Stage B (final) - Reference-free, explainable, calibrated fuzzy perceptual quality.
+"""Fit the reference-free fuzzy models and evaluate five scene-disjoint folds.
 
-Place at: analysis/reference_free_fuzzy.py   Run: python -m analysis.reference_free_fuzzy
+NR-free uses entropy, normalized contrast and normalized Laplacian variance
+with 27 singleton rules calibrated to negative LPIPS. NR-mono adds a
+monotonicity constraint. Reference-based and single-feature baselines use
+the same held-out scenes. Deployment fits use all calibration scenes.
 
-Builds the paper's main model: a 27-rule fuzzy system over THREE primitive,
-human-interpretable NO-REFERENCE features (entropy, contrast, sharpness),
-calibrated against perceptual quality (-LPIPS) with image-level 5-fold CV.
-It needs no ground truth at inference, yet is compared head-to-head (same folds)
-against reference-based baselines.
-
-Compared models (held-out):
-  psnr, ssim                      - reference-based single metrics
-  entropy, contrast, sharpness    - the no-reference single features
-  fr_fuzzy_free                   - calibrated fuzzy on PSNR+SSIM+entropy (Direction A)
-  nr_fuzzy_free                   - calibrated fuzzy on the 3 NR features  (MAIN)
-  nr_fuzzy_mono                   - same, monotone/interpretable variant
-
-Outputs (results/):
-  reference_free_summary.csv          per-model mean+/-std vs LPIPS/NIQE/BRISQUE
-  nr_rule_table_mono.csv, nr_rule_table_free.csv
-  nr_fuzzy_scores.csv                 all-data refit scores (for later plots/draft)
-  figures/reference_free_alignment.png
-"""
+Run ``python -m analysis.reference_free_fuzzy --output calibration_run``.
+The output directory receives scores, summaries, rule tables and model files."""
 from __future__ import annotations
 
 import itertools
+import json
 import sys
 from pathlib import Path
 
@@ -33,6 +19,8 @@ import numpy as np
 import pandas as pd
 from scipy.optimize import differential_evolution
 from scipy.stats import spearmanr
+from analysis.monotone_fuzzy import fit as fit_monotone, design as product_design
+from evaluation.quality_labels import quality_label
 
 BASE = Path(__file__).resolve().parent.parent
 NR_CSV = BASE / "results" / "nr_features.csv"
@@ -45,9 +33,8 @@ RULE_FREE = BASE / "results" / "nr_rule_table_free.csv"
 SCORES_CSV = BASE / "results" / "nr_fuzzy_scores.csv"
 
 NR_FEATURES = ["entropy", "contrast", "sharpness"]   # the main no-reference inputs
-FR_FEATURES = ["psnr", "ssim", "entropy"]            # Direction-A baseline
+FR_FEATURES = ["psnr", "ssim", "entropy"]            # reference-based baseline
 K_FOLDS = 5
-PRIMARY_LAMBDA = 2.0
 DE_MAXITER = 40
 DE_POPSIZE = 8
 DE_WORKERS = 1
@@ -56,7 +43,6 @@ SEED = 42
 COMBOS = list(itertools.product(range(3), range(3), range(3)))
 IDX = {c: n for n, c in enumerate(COMBOS)}
 LEVELS = ["low", "med", "high"]
-BANDS = [(25, "Poor"), (50, "Fair"), (75, "Good"), (100.1, "Excellent")]
 _PAIRS = []
 for (i, j, k) in COMBOS:
     for di, dj, dk in [(1, 0, 0), (0, 1, 0), (0, 0, 1)]:
@@ -111,52 +97,18 @@ _SCORER_CACHE = None
 
 
 def _build_score_features_model():
-    for p in (NR_CSV, PC_CSV, SCORES_CSV):
-        if not p.exists():
-            raise FileNotFoundError(f"Missing {p}")
-
-    df = (pd.read_csv(NR_CSV)
-          .merge(pd.read_csv(PC_CSV)[["filename", "method", "lpips"]],
-                 on=["filename", "method"])
-          .merge(pd.read_csv(SCORES_CSV)[["filename", "method", "nr_fuzzy_free"]],
-                 on=["filename", "method"])
-          .dropna().reset_index(drop=True))
-    target = -df["lpips"].to_numpy(float)
-
-    signs = []
-    mfs = []
-    oriented = []
-    for c in NR_FEATURES:
-        x = df[c].to_numpy(float)
-        sign = -1.0 if spearmanr(x, target)[0] < 0 else 1.0
-        xo = sign * x
-        signs.append(sign)
-        mfs.append(mfset(xo))
-        oriented.append(xo)
-
-    memberships = [_membership_from_mfs(a, mf) for a, mf in zip(oriented, mfs)]
-    fire = np.stack(
-        [np.minimum(np.minimum(memberships[0][:, i], memberships[1][:, j]), memberships[2][:, k])
-         for i, j, k in COMBOS],
-        axis=1,
-    )
-    design = fire / (fire.sum(axis=1, keepdims=True) + 1e-9)
-    theta, *_ = np.linalg.lstsq(design, df["nr_fuzzy_free"].to_numpy(float), rcond=None)
-    return np.asarray(signs), mfs, theta
+    from evaluation.frozen_scorer import FrozenScorer
+    model = FrozenScorer("nr_free")
+    return model.signs, model.mfs, model.theta
 
 
 def score_features(entropy, contrast, sharpness):
-    """Infer the calibrated all-data NR-fuzzy score for one feature triplet."""
+    """Infer the frozen all-scene deployment model without fitting at runtime."""
     global _SCORER_CACHE
     if _SCORER_CACHE is None:
-        _SCORER_CACHE = _build_score_features_model()
-    signs, mfs, theta = _SCORER_CACHE
-    vals = signs * np.asarray([entropy, contrast, sharpness], dtype=float)
-    memberships = [_membership_from_mfs([vals[i]], mfs[i])[0] for i in range(3)]
-    fire = np.array([min(memberships[0][i], memberships[1][j], memberships[2][k])
-                     for i, j, k in COMBOS], dtype=float)
-    fsum = fire.sum()
-    return float((fire @ theta) / (fsum + 1e-9)) if fsum > 1e-12 else 0.0
+        from evaluation.frozen_scorer import FrozenScorer
+        _SCORER_CACHE = FrozenScorer("nr_free")
+    return _SCORER_CACHE((entropy, contrast, sharpness))
 
 
 def rho(x, y):
@@ -190,10 +142,7 @@ def group_kfold(groups, k, seed):
 
 
 def band(v):
-    for hi, name in BANDS:
-        if v < hi:
-            return name
-    return "Excellent"
+    return quality_label(v)
 
 
 def save_rules(theta, feats, path, tag):
@@ -208,6 +157,18 @@ def save_rules(theta, feats, path, tag):
 
 
 def main():
+    import argparse
+    from threadpoolctl import threadpool_limits
+    threadpool_limits(1)
+    parser=argparse.ArgumentParser()
+    parser.add_argument('--output',type=Path,default=Path('calibration_run'))
+    output=parser.parse_args().output.resolve()
+    if output==BASE.resolve() or output.is_relative_to((BASE/'results').resolve()) or output.is_relative_to((BASE/'models').resolve()):
+        raise ValueError('Choose a separate output directory for a new calibration')
+    output.mkdir(parents=True,exist_ok=True);(output/'models').mkdir(exist_ok=True)
+    global SUMMARY_CSV,RULE_MONO,RULE_FREE,SCORES_CSV
+    SUMMARY_CSV=output/'reference_free_summary.csv';RULE_MONO=output/'nr_rule_table_mono.csv';RULE_FREE=output/'nr_rule_table_free.csv';SCORES_CSV=output/'nr_fuzzy_scores.csv'
+
     for p in (NR_CSV, PC_CSV, FZ_CSV):
         if not p.exists():
             sys.exit(f"Missing {p}")
@@ -239,10 +200,11 @@ def main():
     for f, (tr, te) in enumerate(group_kfold(groups, K_FOLDS, SEED)):
         th_fr = calibrate(fr_fire, fr_fsum, cal_target, tr, 0.0)
         th_nr = calibrate(nr_fire, nr_fsum, cal_target, tr, 0.0)
-        th_nm = calibrate(nr_fire, nr_fsum, cal_target, tr, PRIMARY_LAMBDA)
+        mono_mfs = [mfset(a[tr]) for a in nr_feats]
+        th_nm = fit_monotone(np.column_stack(nr_feats)[tr], cal_target[tr], mono_mfs)
         s_fr = (fr_fire[te] @ th_fr) / fr_fsum[te]
         s_nr = (nr_fire[te] @ th_nr) / nr_fsum[te]
-        s_nm = (nr_fire[te] @ th_nm) / nr_fsum[te]
+        s_nm = product_design(np.column_stack(nr_feats)[te], mono_mfs) @ th_nm
         for t in targets:
             for c, x in singles.items():
                 per_fold[c][t].append(rho(x[te], targets[t][te]))
@@ -279,39 +241,25 @@ def main():
     # final all-data refit -> rule tables + scores + within-method robustness
     print("\nFinal all-data calibration:")
     th_free = calibrate(nr_fire, nr_fsum, cal_target, np.arange(len(df)), 0.0)
-    th_mono = calibrate(nr_fire, nr_fsum, cal_target, np.arange(len(df)), PRIMARY_LAMBDA)
+    mono_mfs = [mfset(a) for a in nr_feats]
+    th_mono = fit_monotone(np.column_stack(nr_feats), cal_target, mono_mfs)
+    for model_name, theta_values, norm in (("nr_free", th_free, "minimum"), ("nr_mono", th_mono, "product")):
+        model_path = BASE / "models" / f"{model_name}.json"
+        metadata = json.loads(model_path.read_text())
+        metadata.update(theta=theta_values.tolist(), mfs=mono_mfs,
+                        signs={c: bool(spearmanr(df[c], cal_target)[0] < 0) for c in NR_FEATURES}, t_norm=norm)
+        (output / "models" / f"{model_name}.json").write_text(json.dumps(metadata, indent=2) + "\n")
     save_rules(th_mono, NR_FEATURES, RULE_MONO, "mono")
     save_rules(th_free, NR_FEATURES, RULE_FREE, "free")
     score_all = (nr_fire @ th_free) / nr_fsum
     pd.DataFrame({"filename": df["filename"], "method": df["method"],
                   "nr_fuzzy_free": score_all,
-                  "nr_fuzzy_mono": (nr_fire @ th_mono) / nr_fsum}).to_csv(SCORES_CSV, index=False)
+                  "nr_fuzzy_mono": product_design(np.column_stack(nr_feats), mono_mfs) @ th_mono}).to_csv(SCORES_CSV, index=False)
 
     print("\nWithin-method Spearman vs -LPIPS (robustness; all-data nr_fuzzy_free):")
     for m in sorted(df["method"].unique()):
         mask = df["method"].to_numpy() == m
         print(f"  {m:8s}: {rho(score_all[mask], cal_target[mask]):+.3f}  (n={mask.sum()})")
-
-    # figure
-    order = ["psnr", "ssim", "entropy", "contrast", "sharpness",
-             "fuzzy_handtuned", "fr_fuzzy_free", "nr_fuzzy_mono", "nr_fuzzy_free"]
-    means = [np.mean(per_fold[m]["lpips"]) for m in order]
-    stds = [np.std(per_fold[m]["lpips"]) for m in order]
-    colors = ["#4c72b0", "#4c72b0", "#55a868", "#55a868", "#55a868",
-              "#4c72b0", "#8172b3", "#dd8452", "#c44e52"]
-    fig, ax = plt.subplots(figsize=(9, 4.8))
-    ax.bar(order, means, yerr=stds, capsize=4, edgecolor="black", color=colors)
-    ax.axhline(means[0], color="gray", ls="--", lw=0.9, label="PSNR (reference-based)")
-    ax.set_ylabel("Held-out Spearman with -LPIPS")
-    ax.set_title(f"Reference-free fuzzy vs reference-based metrics (5-fold CV, n={len(df)})")
-    ax.legend()
-    plt.setp(ax.get_xticklabels(), rotation=20, ha="right")
-    fig.tight_layout()
-    FIG_DIR.mkdir(parents=True, exist_ok=True)
-    fig.savefig(FIG_DIR / "reference_free_alignment.png", dpi=300)
-    plt.close(fig)
-    print(f"\nFigure saved: {FIG_DIR / 'reference_free_alignment.png'}")
-
 
 if __name__ == "__main__":
     main()

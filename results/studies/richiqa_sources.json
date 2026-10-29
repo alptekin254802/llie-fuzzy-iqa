@@ -1,0 +1,47 @@
+{
+  "github_commit": "bfcf34939937e8fd2a55179982d648c4dfb29c37",
+  "hf_commit": "af8ff09037533c265c8a57d981319b549b253a4b",
+  "score_direction": {
+    "orientation": 1,
+    "meaning": "higher MOS = better quality",
+    "code_evidence": "inference.py predict_image_quality: mean = sum(softmax quality distribution * arange(1,6)); main.py trains against MOS; utils/score_utils_KON.py mean_score uses ascending KonIQ categories",
+    "readme_evidence": "README describes predicting the distribution of opinion scores and deriving mean image quality. It does not explicitly spell out higher-is-better.",
+    "external_scale_source": "https://database.mmsp-kn.de/koniq-10k-database.html",
+    "no_direction_selection_from_test_results": true
+  },
+  "files": {
+    "source.zip": {
+      "url": "https://codeload.github.com/YixuanGao98/RichIQA/zip/bfcf34939937e8fd2a55179982d648c4dfb29c37",
+      "bytes": 3659871,
+      "sha256": "22cf818dbb0e68f5ef22035c07847314aea936679279e7539756c2229bc96fd4"
+    },
+    "best.pkl": {
+      "url": "https://huggingface.co/GYX98/RichIQA/resolve/af8ff09037533c265c8a57d981319b549b253a4b/best.pkl?download=true",
+      "bytes": 130819017,
+      "sha256": "22fda9c41ef3b03f71c828565056dd92993a30a299b93aab120ce4533f5ebdb7"
+    },
+    "CvT-21-384x384-IN-22k.pth": {
+      "bytes": 126945634,
+      "sha256": "e630d7b77ac3777832a1d4c89e989dd2b51459d6eebe8f96816e4d794f51a14f",
+      "source": "Official README OneDrive model zoo; browser selected exact CvT-21-384x384-IN-22k.pth file and downloaded",
+      "url": "https://1drv.ms/u/s!AhIXJn_J-blW9RzF3rMW7SsLHa8h?e=blQ0Al"
+    }
+  },
+  "source_hashes": {
+    "cvt.py": "d985ad492c33eadff00e32913cb658e583b1acf9098ae38721ac82e721e56db5",
+    "EMDLoss.py": "ffc1bf1eec7fddead402afdbcaa85a3a2bc36ec5b9a3efadbe3c52531bfc35a8",
+    "Folder_sos.py": "cf0c5d6033eb64dcde39ab9b6f9d12617547c86dab87eb3c257ac0649d62fd05",
+    "inference.py": "9b1e40dadebd295d1cb52611f002a87afb605313ef283c7b3cb80d839bc3f02b",
+    "KONIQ10KFolder_sos.py": "cf8220794f8e624853d3ccd3cc47943d001d695065b6253eed45eeb0078ff6c9",
+    "loss.py": "58a3d91e08de5812d7838a1d27a1e8db262130c262fe7686914cb9085ae9a090",
+    "main.py": "c0ab8be0a8a5ad7a81fd647bd495fd1eb5197ed0fa3209d7b5206732f906580e",
+    "README.md": "e1566a7e122bab3729c8002d2370ebaa57417a5fd0a475eddf7670e8d4715e61",
+    "utils/GMMutils.py": "594bda01e59d3fb35c2468c253e9c7df961729791d55eb2b3a0fd70a027b921d",
+    "utils/score_utils.py": "6211cf87b496041ab6e782c238626d77b27d001e45f78dfe11691a5d91a6a31b",
+    "utils/score_utils_bid.py": "c4e4639bb778804540e43cedf5119253963b475d54c906bef795b9c65b513a14",
+    "utils/score_utils_CSIQ.py": "19dfca1f77039600871627f981d2e22de9dd0f72d72112678ff248c25933f613",
+    "utils/score_utils_kadid.py": "315de74bd13808ee31c53e293dc67929339f62fbd77e4bc617498ca8201261ca",
+    "utils/score_utils_KON.py": "bd0e7873ae491fd9ca727ba690a555562cc030a8f782cac6806b5f550b34c62b",
+    "utils/score_utils_TID.py": "d58b8e724baf5de9a0b74722e7ed1738376f662af8ad700af4953d27c55ac8e1"
+  }
+}

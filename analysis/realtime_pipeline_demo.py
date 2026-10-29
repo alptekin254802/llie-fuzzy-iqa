@@ -1,41 +1,9 @@
-"""
-realtime_pipeline_demo.py
-=========================
-Live capture -> enhance -> assess pipeline for the reference-free fuzzy NR-IQA
-method. Measures sustained fps and per-stage latency, and emits the per-frame
-perceptual score.
+"""Capture -> enhance -> assess using the frozen NR-free singleton scorer.
 
-IMPORTANT - which assessor produces the SCORE
----------------------------------------------
-  --assessor real         (DEFAULT) uses the calibrated reference-free fuzzy
-                          system (the LPIPS-DE-calibrated rule base shown in
-                          Fig. 5). This is the ONLY correct choice when the
-                          per-frame SCORE is reported/plotted (Fig. 6b): the
-                          scores must come from the calibrated consequents.
-  --assessor placeholder  a structurally identical but PLACEHOLDER fuzzy
-                          (random consequents). Use ONLY for pure timing tests
-                          when the calibrated module is unavailable; its SCORES
-                          are NOT meaningful and must never be plotted/reported.
-
-Timing (fps, latency) is representative either way because the cost depends on the
-computation structure, not on the consequent values. Scores are only correct with
---assessor real.
-
-Sources:   --source 0 | video.mp4 | frames/ | synth
-Enhancer:  --enhancer gamma | clahe | none | zerodce  (+ --zerodce-weights, --device)
-
-Examples
---------
-  # paper headline (calibrated scores + real timing, Zero-DCE on GPU):
-  python analysis/realtime_pipeline_demo.py --source dark.mp4 --enhancer zerodce \
-        --device cuda --assessor real --seconds 20 --plot
-
-  # pure timing sanity check, no calibrated module needed:
-  python analysis/realtime_pipeline_demo.py --source synth --assessor placeholder --frames 600
-
-Outputs: prints a summary and writes results/pipeline_log.csv. With --plot it
-writes fig6_pipeline_score.{png,pdf,svg} and fig6_pipeline_fps.{png,pdf,svg} to
-results/figures/.
+The score is an LPIPS-calibrated model output. Pipeline frame rate depends on the
+source, enhancer, device and input size; it is distinct from parameter-search time.
+Run: python -m analysis.realtime_pipeline_demo --source video.mp4 --enhancer zerodce
+     --device cuda --frames 1200 --plot
 """
 from __future__ import annotations
 import argparse, glob, os, sys, time, platform
@@ -66,8 +34,8 @@ def extract_features(img):
     hist = cv2.calcHist([g], [0], None, [256], [0, 256]).flatten()
     p = hist / max(hist.sum(), 1.0); p = p[p > 0]
     entropy = float(-np.sum(p * np.log2(p)))
-    contrast = float(g.astype(np.float32).std())
-    sharp = float(cv2.Laplacian(g, cv2.CV_64F).var())
+    contrast = float(g.astype(np.float32).std()) / 255.0
+    sharp = float(cv2.Laplacian(g, cv2.CV_64F).var()) / (255.0 ** 2)
     return entropy, contrast, sharp
 
 
@@ -75,68 +43,13 @@ def extract_features(img):
 #  Assessor 1 - REAL calibrated reference-free fuzzy 
 # --------------------------------------------------------------------------- #
 class RealAssessor:
-    """
-    Wraps the calibrated reference-free fuzzy system so the per-frame score is
-    the genuine LPIPS-DE-calibrated value that matches Fig. 5.
-    """
+    """Load the frozen calibrated singleton model once."""
     def __init__(self):
-        try:
-            from analysis.reference_free_fuzzy import score_features as _sf
-            self._score = _sf
-        except Exception as ex:
-            raise SystemExit(
-                "RealAssessor could not import the calibrated scorer.\n"
-                "analysis.reference_free_fuzzy.score_features must expose the\n"
-                "calibrated 27-rule reference-free fuzzy score used in Fig. 5.\n"
-                f"Import error: {ex}\n"
-                "For a pure timing test you may use --assessor placeholder instead.")
-
-    def infer(self, e, c, s) -> float:
-        return float(self._score(e, c, s))
-
-
-# --------------------------------------------------------------------------- #
-#  Assessor 2 - PLACEHOLDER (timing only; scores NOT meaningful)
-# --------------------------------------------------------------------------- #
-def trapmf(x, a, b, c, d):
-    x = np.asarray(x, float)
-    l = np.where(b > a, (x - a) / np.maximum(b - a, 1e-12), 1.0)
-    r = np.where(d > c, (d - x) / np.maximum(d - c, 1e-12), 1.0)
-    return np.clip(np.minimum(np.minimum(l, 1.0), r), 0.0, 1.0)
-
-class PlaceholderFIS:
-    """
-    Structurally identical to the paper's FIS (3x3 trapezoidal MFs, 27 rules,
-    min-implication, max-aggregation, centroid defuzzification) so TIMING is
-    representative. The breakpoints and 27 consequents are PLACEHOLDERS (random),
-    so the SCORES it returns are NOT the paper's scores and must never be plotted
-    or reported. Use only for --assessor placeholder timing tests.
-    """
-    def __init__(self, res=101):
-        ranges = {"entropy": (0, 8), "contrast": (0, 128), "sharpness": (0, 2000)}
-        self.mf = {}
-        for n, (lo, hi) in ranges.items():
-            s = hi - lo
-            q = [lo + s * p for p in (0, .2, .4, .5, .6, .8, 1)]
-            self.mf[n] = [(q[0], q[0], q[1], q[2]),
-                          (q[1], q[2], q[4], q[5]),
-                          (q[4], q[5], q[6], q[6])]
-        self.u = np.linspace(0, 100, res)
-        outs = [(0, 0, 20, 40), (20, 40, 50, 65), (50, 65, 75, 90), (75, 90, 100, 100)]
-        self.out_mf = np.stack([trapmf(self.u, *o) for o in outs])
-        self.rule_out = np.random.default_rng(42).integers(0, 4, size=27)  # PLACEHOLDER
+        from evaluation.frozen_scorer import FrozenScorer
+        self._score = FrozenScorer("nr_free")
 
     def infer(self, e, c, s):
-        me = np.array([trapmf(e, *m) for m in self.mf["entropy"]])
-        mc = np.array([trapmf(c, *m) for m in self.mf["contrast"]])
-        ms = np.array([trapmf(s, *m) for m in self.mf["sharpness"]])
-        fire = np.minimum.reduce(np.broadcast_arrays(
-            me[:, None, None], mc[None, :, None], ms[None, None, :])).ravel()
-        agg = np.zeros_like(self.u)
-        for r in range(27):
-            agg = np.maximum(agg, np.minimum(fire[r], self.out_mf[self.rule_out[r]]))
-        d = agg.sum()
-        return float((self.u * agg).sum() / d) if d > 1e-12 else 0.0
+        return self._score((e, c, s))
 
 
 # --------------------------------------------------------------------------- #
@@ -233,9 +146,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--source", default="0")
     ap.add_argument("--enhancer", default="gamma", choices=list(ENHANCERS) + ["zerodce"])
-    ap.add_argument("--assessor", default="real", choices=["real", "placeholder"],
-                    help="real = calibrated fuzzy scorer (correct scores, Fig.5); "
-                         "placeholder = timing-only, scores NOT meaningful")
+    ap.add_argument("--assessor", default="real", choices=["real"])
+    ap.add_argument("--output-dir", type=Path, default=_BASE / "results")
     ap.add_argument("--zerodce-weights", default=str(_DEFAULT_ZERODCE_WEIGHTS))
     ap.add_argument("--device", default="auto", choices=["auto", "cuda", "cpu"])
     ap.add_argument("--size", default="256x256")
@@ -254,10 +166,7 @@ def main():
     src = Source(args.source, (h, w))
     enh = ZeroDCEEnhancer(args.zerodce_weights, args.device) if args.enhancer == "zerodce" \
         else ENHANCERS[args.enhancer]
-    assessor = RealAssessor() if args.assessor == "real" else PlaceholderFIS()
-    if args.assessor == "placeholder":
-        print("WARNING: --assessor placeholder -> SCORES ARE NOT MEANINGFUL "
-              "(timing only). Do not plot/report these scores.")
+    assessor = RealAssessor()
 
     f0 = src.read()
     if f0 is None: raise SystemExit("source produced no frames")
@@ -311,7 +220,7 @@ def main():
         print(f">> min instantaneous fps  : {1000.0 / max(t_tot):6.1f}")
 
     import csv
-    out_dir = _BASE / "results"
+    out_dir = args.output_dir
     fig_dir = out_dir / "figures"
     out_dir.mkdir(parents=True, exist_ok=True)
     fig_dir.mkdir(parents=True, exist_ok=True)
@@ -330,14 +239,12 @@ def main():
             import matplotlib.pyplot as plt
             if args.assessor == "real":
                 plt.figure(figsize=(6, 2.6)); plt.plot(stamps, scores, lw=1)
-                plt.xlabel("time (s)"); plt.ylabel("perceptual score")
-                plt.title(f"Per-frame quality (zerodce, {sustained:.0f} fps)")
+                plt.xlabel("time (s)"); plt.ylabel("LPIPS-calibrated score")
+                plt.title(f"Per-frame output ({args.enhancer}, {sustained:.0f} fps)")
                 plt.tight_layout()
                 for ext in ("png", "pdf", "svg"):
                     plt.savefig(fig_dir / f"fig6_pipeline_score.{ext}", dpi=150 if ext == "png" else None)
                 plt.close()
-            else:
-                print("[plot] score plot skipped: placeholder scores are not meaningful")
             inst = [1000.0 / t if t > 0 else 0 for t in t_tot]
             plt.figure(figsize=(6, 2.6)); plt.plot(stamps, inst, lw=1)
             plt.axhline(30, ls="--", c="r", lw=0.8, label="30 fps")

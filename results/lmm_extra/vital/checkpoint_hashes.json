@@ -1,0 +1,17 @@
+{
+  "added_tokens.json": "e66b6bc948dec3421f01a8986f31632cf8d556aaa89f7b39c183b3dd4b5b2c83",
+  "all_results.json": "2deee08fa75f69dd77ae1b196805dd1e68a2b79920dad5cd2cb5a50822c86bee",
+  "config.json": "016ae1b0f1a442395b7588cb94dbe61583ddf41e49ffdb4acb5e16abf5293c0a",
+  "generation_config.json": "69d76e6b0a3b31f0de871f8f5b968957e0532fd9b17214aabf151da4bdbe1804",
+  "merges.txt": "455e0caaa06abffc663e9282dfe71dde07fd1991eaf24146bf08793c4dba4497",
+  "model-00001-of-00004.safetensors": "066fe09ca50abd3c896af47157f2df42f82ebf8baa059e4becd30b75c5a0100c",
+  "model-00002-of-00004.safetensors": "2df3d891d3c4ecc0bb9b52452e6f1f9a81030f3ab0e10be05f0b213770c49560",
+  "model-00003-of-00004.safetensors": "fe4063e2489bdf7ffbbaed348b6153fee3db386cc5c512e16cf39dfa178e0ce3",
+  "model-00004-of-00004.safetensors": "71e0469b9266e21a29556895f66f31f2ad9837296146f6abb081270df22cdb2b",
+  "model.safetensors.index.json": "e2ca729c8cc00c346fae68b89f0075c2f1093115db0ed2440251fbae3e7dbe75",
+  "special_tokens_map.json": "76862e765266b85aa9459767e33cbaf13970f327a0e88d1c65846c2ddd3a1ecd",
+  "tokenizer_config.json": "57da8fbacd8575ae670400fc9a1bd91ab9533ac668d3b13d375b90e9c2a213e9",
+  "trainer_state.json": "baa454703eccbbc8cbfad252311e01f718bef3f4a699bb068e1ef13161a762b7",
+  "train_results.json": "2deee08fa75f69dd77ae1b196805dd1e68a2b79920dad5cd2cb5a50822c86bee",
+  "vocab.json": "87a257b04b17642a0688c98cd1df89c398bda4fee532d6f88b38a659ecb4ac8d"
+}

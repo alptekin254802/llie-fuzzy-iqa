@@ -1,0 +1,40 @@
+{
+  "private_originals": {
+    "prepare.py": "0a424a22f9455cfa95dc3b1555649693ee1b83e8072862fc463c29a3b5cbd1c7",
+    "run.py": "81699fbaffedb5367ae1670f2841c8d972f97a4c10f530ba3e352e11f8381c26",
+    "analyze.py": "9cf72559773e65c8bb3453b90e5a168fdd0d0514b63ef1fdfcf62c65133f17d3",
+    "verify.py": "3f0d72bd54fdedadbb30418b4b36803aae563a37c4d50990c9b885a858e411cd",
+    "results.csv": "18e02a4ddc64ef2e64e8472d25a2d17f72b80b30b45a3577314f8db76b0ad3ec",
+    "contrasts.csv": "2fcac6077d555352a2200448cc121a178949f9c030916b57ac537ff7e2873b94",
+    "curve_summary.csv": "75175178f5644854be67731c60002adad802212e85b763d40058574320ac0723",
+    "config.json": "4a85d6eea2f70b7252ebaa0aac3c0fe26d36f5e7ceb975891033f3fdebbe0795",
+    "method_splits.csv": "9b877086ae2c922bf1ded87b495095e5d09ddebba03044a948061390bff66909",
+    "REPORT.md": "40511acee492cbe12d39731a98c9ae3996f22da6ef555c44fc5fea8eeb589014",
+    "common.py": "6c74ed57e5d528c5cbe001561713f9e5be75a307ed341bb6bd9fdc85edf07e6c"
+  },
+  "notes": "Private originals are retained. The helper is distributed as common.py; paths, output guards and prose are adapted for portable reproduction. Numeric CSV bytes are unchanged.",
+  "distributed_sha256": {
+    "analysis/method_coverage/analyze.py": "56ccb5e5e1fceeded118679550c7ea551d03cd6dde12f3682853f4bb4ea632b8",
+    "analysis/method_coverage/common.py": "b5829250486d2fae19e861af19bff31e3281b19ab34e770b5488312b862023b9",
+    "analysis/method_coverage/prepare.py": "6f68872e0005d15889a26218827f8fe96a88b637fa466e2bd02f1e79afd53ea6",
+    "analysis/method_coverage/run.py": "f369e01bd539cf409dac760bffb462157a7a1923b1c76e066c8ded9d9aad1448",
+    "analysis/method_coverage/verify.py": "1f91038e585f8d832c830bff24c8735e20ee77dd0c9afbcf9ea748c5633022f4",
+    "analysis/method_coverage/__init__.py": "f2892d0e46b7a21ced6cea5f17b84b139edd676dcdb138ab9e37a90a9dd9c263",
+    "analysis/method_coverage/__main__.py": "2f07a3474ea09d5b0b5cfcceab8457f3a97a381eeba4a373eba555a62462f08a",
+    "results/studies/method_coverage/config.json": "2df8dc1118b1631654d92f1980bbbdcf56c3e9059c87d60cd7fcb0f254335519",
+    "results/studies/method_coverage/contrasts.csv": "2fcac6077d555352a2200448cc121a178949f9c030916b57ac537ff7e2873b94",
+    "results/studies/method_coverage/curve_summary.csv": "75175178f5644854be67731c60002adad802212e85b763d40058574320ac0723",
+    "results/studies/method_coverage/method_splits.csv": "9b877086ae2c922bf1ded87b495095e5d09ddebba03044a948061390bff66909",
+    "results/studies/method_coverage/REPORT.md": "d9506b4a5ab451cef887edc80c6d35ede41055543b53cb5870838074fb5332c4",
+    "results/studies/method_coverage/README.md": "b0175390d8e3166c6fa0ca05b3d7d83ef6107329733ffa9005a5f0f07618c2e0",
+    "results/studies/method_coverage/results.csv": "18e02a4ddc64ef2e64e8472d25a2d17f72b80b30b45a3577314f8db76b0ad3ec",
+    "results/studies/method_coverage/reproduction_check.json": "b5b81651c87a27def9113a989f50cb9e33ab4c33efcfa13eecefc6a4b7448ccc"
+  },
+  "reproduction": {
+    "score_conditions": 4500,
+    "curve_rows": 45,
+    "contrasts": 33,
+    "numeric_tolerance": 1e-12,
+    "status": "PASS"
+  }
+}

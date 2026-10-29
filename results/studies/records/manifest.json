@@ -1,0 +1,113 @@
+{
+  "files": [
+    {
+      "file": "results/studies/records/closed_loop.csv",
+      "sha256": "8991f6f927f5ed1c173ce52e253da1e5189b3b3ca1321274759a08494b35108f",
+      "source_file": "closed_loop.csv",
+      "source_sha256": "8991f6f927f5ed1c173ce52e253da1e5189b3b3ca1321274759a08494b35108f",
+      "operation": "Unmodified derived record; no human labels or images."
+    },
+    {
+      "file": "results/studies/records/closed_loop_candidates.csv",
+      "sha256": "b7b469baabfbb0ff87901ef62e968b3e93b918079543dd57da5be8fd4f3b22ce",
+      "source_file": "closed_loop_candidates.csv",
+      "source_sha256": "b7b469baabfbb0ff87901ef62e968b3e93b918079543dd57da5be8fd4f3b22ce",
+      "operation": "Unmodified derived record; no human labels or images."
+    },
+    {
+      "file": "results/studies/records/human_recalibration_squarelol_predictions.csv",
+      "sha256": "0e24e4dc176f75dc1299f67067e7bdde586b0054a74c9cd6688d522aa4e81079",
+      "source_file": "human_recalibration_squarelol_predictions.csv",
+      "source_sha256": "0e24e4dc176f75dc1299f67067e7bdde586b0054a74c9cd6688d522aa4e81079",
+      "operation": "Unmodified derived record; no human labels or images."
+    },
+    {
+      "file": "results/studies/records/human_recalibration_lieq_predictions.csv",
+      "sha256": "03d3f58a8e74c6ec8d3926240b5b92a5c982028f62ea14956abca05604386ab3",
+      "source_file": "human_recalibration_lieq_predictions.csv",
+      "source_sha256": "03d3f58a8e74c6ec8d3926240b5b92a5c982028f62ea14956abca05604386ab3",
+      "operation": "Unmodified derived record; no human labels or images."
+    },
+    {
+      "file": "results/studies/records/human_recalibration_rlie_predictions.csv",
+      "sha256": "fd55ae5719d4b82e9b6b165693469d9eb072c4cff999d29360d485ab24ccad36",
+      "source_file": "human_recalibration_rlie_predictions.csv",
+      "source_sha256": "fd55ae5719d4b82e9b6b165693469d9eb072c4cff999d29360d485ab24ccad36",
+      "operation": "Unmodified derived record; no human labels or images."
+    },
+    {
+      "file": "results/studies/records/squarelol_lol_scene_matches.csv",
+      "sha256": "71677c88690e456a0f327861b32ea9c93ffec250d6cb2651045c4913af31ef02",
+      "source_file": "normal_light_overlap_classification/classification.csv",
+      "source_sha256": "71677c88690e456a0f327861b32ea9c93ffec250d6cb2651045c4913af31ef02",
+      "operation": "All rated scenes classified by normal-light 48x32 equalized grayscale matching at threshold 0.9; committed before subgroup metrics."
+    },
+    {
+      "file": "results/studies/records/human_scene_folds.csv",
+      "sha256": "3f274f20176705092dfe5338e18002e4a8831005268f9b6ef6327f1912c749cc",
+      "source_file": "human_method_disjoint.py",
+      "source_sha256": "d5b6c2d4e66489a635d4cf60b69c10bcd347fdb94bd6b32b134c698fd76695d2",
+      "operation": "Reconstruct deterministic scene folds (seed 42) and method halves (10 repeats, seed 1); no fitting."
+    },
+    {
+      "file": "results/studies/records/human_method_splits.csv",
+      "sha256": "7e62e4b80521a4faf9c24cbd97af894f8f1e6f7bf2c9feb941b2ea09753a6a4b",
+      "source_file": "human_method_disjoint.py",
+      "source_sha256": "d5b6c2d4e66489a635d4cf60b69c10bcd347fdb94bd6b32b134c698fd76695d2",
+      "operation": "Reconstruct deterministic scene folds (seed 42) and method halves (10 repeats, seed 1); no fitting."
+    },
+    {
+      "file": "results/studies/records/closed_loop_scene_splits.csv",
+      "sha256": "c315f80ad3c8cddf39551ebbeca84ba34bff725c62b48c62d85203fc67fca063",
+      "source_file": "closed_loop_models.json",
+      "source_sha256": "0e420ba127e318f1c3b40691cccf243f647dce57fa673cf97c94b5c89208feb0",
+      "operation": "Read model training scenes and evaluation/fixed-gamma subsets from recorded split files."
+    },
+    {
+      "file": "results/studies/records/squarelol_existing_metric_predictions.csv",
+      "sha256": "0ba5246979e8e6f7f76a0a9bbecbee36c3077a7e6278d5dfe38c10ce5334da8e",
+      "source_file": "human_metrics_squarelol.csv",
+      "source_sha256": "fa4ad279a988ec380372fd7298208003f7125c3b185cd3ae68f11ceef0228859",
+      "operation": "Join existing Q-Align fp16 scores by unique image name; negate LPIPS (higher is better). No inference."
+    },
+    {
+      "file": "results/studies/records/squarelol_existing_metric_predictions.csv",
+      "sha256": "0ba5246979e8e6f7f76a0a9bbecbee36c3077a7e6278d5dfe38c10ce5334da8e",
+      "source_file": "qalign_fp16_scores.csv",
+      "source_sha256": "aca857030ca6846993f82799aa0c3ef542be59cbbf6540d38e6a3794d845a191",
+      "operation": "Q-Align source, unchanged quality direction."
+    },
+    {
+      "file": "results/studies/records/squarelol_frozen_de_predictions.csv",
+      "sha256": "5f3ade270fe9e3928acd333bd00123bc5616bbb1afbff291f37120daa7b0e0e4",
+      "source_file": "squarelol_frozen_de_predictions.csv",
+      "source_sha256": "5f3ade270fe9e3928acd333bd00123bc5616bbb1afbff291f37120daa7b0e0e4",
+      "operation": "Stored LPIPS-calibrated predictions; CRLF; no refitting."
+    },
+    {
+      "file": "results/studies/records/squarelol_frozen_linear_predictions.csv",
+      "sha256": "1a0f92eb479f23e8e5b57a2339bdd5646358d0ac4c4a6e3730c2301e2b8dd956",
+      "source_file": "squarelol_frozen_linear_predictions.csv",
+      "source_sha256": "1a0f92eb479f23e8e5b57a2339bdd5646358d0ac4c4a6e3730c2301e2b8dd956",
+      "operation": "Stored LPIPS-calibrated predictions; CRLF; no refitting."
+    }
+  ],
+  "human_labels_included": true,
+  "images_included": false,
+  "method_split_rule": "For each repeat and test_fold: train only rows with other scene folds and train methods; test only rows with test_fold and test methods; remaining cross-cells unused.",
+  "OOF_rule": "Each image prediction is from the fit excluding its test_fold; human_recalibration predictions retain original row order.",
+  "closed_loop_split_rule": "model_train: 388 original LOL scenes; fixed_gamma_train: 80 selected synthetic scenes; evaluation: 20 selected scenes per fold.",
+  "matching_threshold": 0.9,
+  "retained_human_labels": {
+    "dataset": "SQUARE-LOL",
+    "permission": "MIT; see NOTICE",
+    "files": [
+      "squarelol_frozen_de_predictions.csv",
+      "squarelol_frozen_linear_predictions.csv"
+    ]
+  },
+  "omitted_human_labels": [
+    "LIEQ",
+    "RLIE"
+  ]
+}

@@ -1,0 +1,84 @@
+{
+  "created_utc": "2026-10-22T02:21:21.935786+00:00",
+  "vqa2": {
+    "checkpoint": "q-future/VQA-Assistant-llava-qwen-enhanced",
+    "revision": "eff4328c0f3b4a6e9da98e5a608f3984ae2ff30d",
+    "code_commit": "9087c7952052088a6eb01bac4408bff903ab9e41",
+    "selection_reason": "Official repository release announcement explicitly recommends this unified enhanced model for both image/video quality scoring; UGC/Streaming scorers primarily target video. Selection made before LLIE outcomes.",
+    "official_image_entry": "quality_scoring/llava/eval/model_score_image.py",
+    "system_prompt": "You are a helpful assistant.",
+    "human_prompt": "<image>",
+    "assistant_prefix": "The overall quality of the image is",
+    "quality_logit_position": -3,
+    "token_ids": [
+      1550,
+      1661,
+      6624,
+      7852,
+      3347
+    ],
+    "score_source": "Official paper Appendix D, equation 1",
+    "weights": [
+      1,
+      0.75,
+      0.5,
+      0.25,
+      0
+    ],
+    "source_code_issues": {
+      "endpoint_key_mismatch": "wa5 reads high/low but caller stores excellent/bad in defaultdict(float). Use the published five-token equation directly; save source-key-defect scalar only as diagnostic.",
+      "weight_scale": "Released source weights [1,.8,.6,.4,.2] are a positive affine transform: code_score=0.8*paper_score+0.2 after endpoint-key reconciliation. Rank metrics/ties unaffected.",
+      "hardware": "CPU map for slowfast initialization; eager attention; half precision; offload-aware vision execution device; legacy torchvision functional_tensor import alias. No model parameter/value/prompt changes."
+    },
+    "license": {
+      "code": "Apache-2.0",
+      "checkpoint": "Apache-2.0"
+    },
+    "single_frame_video_used": false
+  },
+  "vital": {
+    "checkpoint": "JZHWS/VITAL-Base-8B",
+    "revision": "b8807b21c1d6442c0c5286038176523ab9943c40",
+    "code_commit": "729097bd45a799535c2e70297fbc96e81c317099",
+    "selection_reason": "Official paper section 4.2 evaluates VITAL-Base-8B for image/video scalar scoring; Assistant-8B is post-trained for text generation. Select the main scoring model rather than smaller transfer variants.",
+    "official_image_entry": "VITAL-LMM/test/shell/eval/evaluate_image.sh -> internvl/eval/internvl_chat_finetune.py",
+    "template": "internvl2_5",
+    "human_prompt": "<image>\\n",
+    "assistant_prefix": "The quality of this image is",
+    "quality_logit_position": -3,
+    "token_ids": [
+      1550,
+      1661,
+      6624,
+      7852,
+      3347
+    ],
+    "weights": [
+      1,
+      0.75,
+      0.5,
+      0.25,
+      0
+    ],
+    "score_source": "Official paper section 8.1",
+    "source_code_issues": {
+      "README_routing": "README names scoring.py which is absent in current tree. The actual evaluate_image.sh routes to internvl_chat_finetune.py. rating.py is not that route and uses last position instead of -3.",
+      "weight_scale": "Image evaluation entry uses [1,.8,.6,.4,.2], a positive affine transform of paper weights; no rank metric differences.",
+      "initialization": "Initialize SlowFast structure without re-downloading its pretrained weights; require exact full-checkpoint key coverage before scoring.",
+      "hardware": "No FlashAttention or bf16; eager float16, optional auto CPU offload."
+    },
+    "license": {
+      "code_root": "No root license file detected; InternVL source files carry MIT headers.",
+      "checkpoint": "MIT model-card metadata"
+    },
+    "single_frame_video_used": false
+  },
+  "common": {
+    "no_fitting": true,
+    "official_prompts_only": true,
+    "outcome_independent_selection": true,
+    "seed": 20261018,
+    "generated_number": false,
+    "scoring": "One deterministic forward pass, selected five logits, float64 softmax and weighted mean; no token sampling or generation."
+  }
+}

@@ -1,0 +1,129 @@
+{
+  "created_utc": "2026-10-23T12:43:27.001925+00:00",
+  "camera": {
+    "camera": "USB Camera",
+    "index": 0,
+    "backend": "DSHOW",
+    "resolution": [
+      640,
+      480
+    ],
+    "fourcc": "MJPG",
+    "fps_requested": 30,
+    "controls": {
+      "AUTO_EXPOSURE": 0.25,
+      "GAIN": 0,
+      "AUTO_WB": 0,
+      "WB_TEMPERATURE": 4600,
+      "AUTOFOCUS": 0,
+      "FOCUS": 1,
+      "BRIGHTNESS": 0,
+      "CONTRAST": 32,
+      "SATURATION": 64,
+      "GAMMA": 100,
+      "SHARPNESS": 4,
+      "BACKLIGHT": 1
+    },
+    "manual_focus_readback": 2,
+    "settle_discard_frames": 12
+  },
+  "models": {
+    "nr_free": {
+      "path": "models/nr_free.json",
+      "sha256": "6f9cb7131acddf043415b77118f91ec7d2b2e392f3ab5cd8e8a399a1257ea65a"
+    },
+    "nr_mono": {
+      "path": "models/nr_mono.json",
+      "sha256": "c8cda18d6f9c5b87d8a8e203c34a796563a62ef4134b013f8e4daf62af000453"
+    }
+  },
+  "gammas": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "default_gamma": 0.6666666666666666,
+  "sessions": [
+    {
+      "id": "main_1",
+      "exposure": -5,
+      "total_frames": 2000,
+      "warmup_frames": 50
+    },
+    {
+      "id": "main_2",
+      "exposure": -5,
+      "total_frames": 2000,
+      "warmup_frames": 50
+    },
+    {
+      "id": "main_3",
+      "exposure": -5,
+      "total_frames": 2000,
+      "warmup_frames": 50
+    },
+    {
+      "id": "extra_minus3",
+      "exposure": -3,
+      "total_frames": 500,
+      "warmup_frames": 50
+    },
+    {
+      "id": "extra_minus4",
+      "exposure": -4,
+      "total_frames": 500,
+      "warmup_frames": 50
+    }
+  ],
+  "frame_count_interpretation": "2000 total includes first 50 excluded warmup, leaving 1950 per main session (5850 primary). Extra sessions each 500 total, first 50 excluded, leaving 450 each. 7000 total / 6750 retained. All rows, including warmup, saved and flagged.",
+  "selftest": {
+    "frames": 100,
+    "source": "100 consecutive actual webcam frames at session exposure after 12 discarded settle frames; excluded from timing, checked before session warmup",
+    "candidates": 10,
+    "types": "9 numpy.float64 gammas plus Python float default 2/3; original reciprocal exponent preserved",
+    "comparisons": "Exact dtype/shape/bytes: candidate RGB8 images, entropy/contrast/sharpness, brightness, NR-free/NR-mono and all four selectors. Independent original floating pipeline versus LUT path. Sequential and reset-to-default tie checks.",
+    "failure": "First mismatch aborts entire sequence and writes diagnostic; no timing after failed selftest. No scene frames saved publicly."
+  },
+  "quality_limitation": "These sessions measure latency. The separate exploratory image-quality comparison is provided in realtime/camera_exploratory/.",
+  "threads": {
+    "OMP_NUM_THREADS": 1,
+    "MKL_NUM_THREADS": 1,
+    "OPENBLAS_NUM_THREADS": 1,
+    "NUMEXPR_NUM_THREADS": 1,
+    "cv2": 1,
+    "torch_if_imported": 1
+  },
+  "timing": {
+    "clock": "time.perf_counter_ns; host monotonic nanoseconds",
+    "processing": "Begin after capture returns, immediately before BGR->RGB and uint8 INTER_LINEAR resize 640x480 to 256x256; end after 9 LUT candidates, three features, batched NR-free score, original tie selection and full-resolution cv2.LUT. Tables/model loads precomputed outside loop. Capture wait/display/logging excluded.",
+    "columns": [
+      "frame_index",
+      "warmup",
+      "capture_start_ns",
+      "capture_end_ns",
+      "processing_end_ns",
+      "capture_wait_ms",
+      "processing_ms",
+      "camera_interval_ms",
+      "gamma"
+    ],
+    "camera_interval": "capture_end_ns[i] - capture_end_ns[i-1]. The warmup predecessor supplies interval for first retained frame. This is measured host delivery spacing in the live loop, not sensor timestamp or guaranteed source fps.",
+    "deadline_miss": "processing_ms[i] > camera_interval_ms[i], strict >; report numerator/retained denominator and percent. This retrospective comparison can hide back-pressure; do not equate zero misses with hard real-time guarantees.",
+    "actual_loop_fps": "N_retained / ((last retained processing_end_ns - immediately preceding warmup processing_end_ns)/1e9); includes acquisition, processing and between-frame overhead; report separately from 1000/median processing.",
+    "statistics": [
+      "median",
+      "p95",
+      "p99",
+      "maximum"
+    ],
+    "percentile": "numpy quantile default linear, no outlier removal",
+    "pooling": "Primary combined concatenates three -5 sessions (5850). Also per exposure and all retained combined; primary macros use only -5 pooled."
+  },
+  "separate_session": "A fresh Python process and camera reopen for each session, in the listed order. All completed sessions are included."
+}

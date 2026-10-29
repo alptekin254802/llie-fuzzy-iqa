@@ -1,0 +1,22 @@
+{
+  "shared": {
+    "vqa2": {
+      "pooled_srcc": 0.1259933573879632,
+      "within_scene_srcc": 0.2639434519858253
+    },
+    "vital": {
+      "pooled_srcc": 0.14095191272266377,
+      "within_scene_srcc": 0.34446031559902907
+    }
+  },
+  "nonoverlap": {
+    "vqa2": {
+      "pooled_srcc": 0.15967033201970698,
+      "within_scene_srcc": 0.2804123965262251
+    },
+    "vital": {
+      "pooled_srcc": -0.054441715025679294,
+      "within_scene_srcc": -0.1056991903643
+    }
+  }
+}

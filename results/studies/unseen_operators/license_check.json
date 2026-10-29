@@ -1,0 +1,35 @@
+[
+  {
+    "repository": "Li-Chongyi/Zero-DCE_extension",
+    "revision": "09f202b690f82da939b8e6ec8535960ae97ad8bd",
+    "checked_date": "2026-10-28",
+    "tree_url": "https://api.github.com/repos/Li-Chongyi/Zero-DCE_extension/git/trees/09f202b690f82da939b8e6ec8535960ae97ad8bd?recursive=1",
+    "license_paths": [],
+    "file_count": 2078,
+    "README_license_lines": [
+      "##  License",
+      "The code is made available for academic research purpose only. Under Attribution-NonCommercial 4.0 International License."
+    ],
+    "redistribute_third_party_code": false
+  },
+  {
+    "repository": "dongb5/Retinex",
+    "revision": "e283325c0a3c6ce12607aa67ad68082bf5327608",
+    "checked_date": "2026-10-28",
+    "tree_url": "https://api.github.com/repos/dongb5/Retinex/git/trees/e283325c0a3c6ce12607aa67ad68082bf5327608?recursive=1",
+    "license_paths": [],
+    "file_count": 6,
+    "README_license_lines": [],
+    "redistribute_third_party_code": false
+  },
+  {
+    "repository": "vis-opt-group/RUAS",
+    "revision": "461172c4d05b54155d8f818af0543eca457a1bb5",
+    "checked_date": "2026-10-28",
+    "tree_url": "https://api.github.com/repos/vis-opt-group/RUAS/git/trees/461172c4d05b54155d8f818af0543eca457a1bb5?recursive=1",
+    "license_paths": [],
+    "file_count": 113,
+    "README_license_lines": [],
+    "redistribute_third_party_code": false
+  }
+]

@@ -1,22 +1,8 @@
-"""
-Step 1 - Modern learned no-reference IQA metrics for the enhanced images.
+"""Compute pretrained MUSIQ, MANIQA and CLIP-IQA scores for classical LOL outputs.
 
-Place at: evaluation/modern_nriqa.py    Run: python -m evaluation.modern_nriqa
-
-Computes MUSIQ, MANIQA and CLIP-IQA (all no-reference, human-MOS-trained deep
-metrics) for every enhanced image, using the same pipeline as the other scripts
-(regenerate the enhanced image from the LOL low-light input via methods.py, then
-score it). These serve two purposes later:
-  (i)  a modern NR-IQA comparison row in Table 1 (their alignment with -LPIPS);
-  (ii) an additional no-reference anchor for cross-dataset validation (Step 3).
-
-Output: results/modern_nriqa.csv   (filename, method, musiq, maniqa, clipiqa)
-
-Notes:
-  * Needs `pyiqa` and `torch` (already used for LPIPS/NIQE/BRISQUE).
-  * A GPU is strongly recommended; on CPU this is slow (thousands of deep
-    forward passes). Trim METRICS if needed.
-"""
+Run ``python -m evaluation.modern_nriqa``. Uses PyTorch and pyiqa, regenerates
+the enhanced images and writes results/modern_nriqa.csv. These no-reference
+metrics have different training protocols; CLIP-IQA is not MOS-trained here."""
 from __future__ import annotations
 
 import sys
