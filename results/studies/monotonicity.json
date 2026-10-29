@@ -1,0 +1,30 @@
+{
+  "grid_size_per_axis": 31,
+  "tolerance": 1e-09,
+  "ordered_minimum_certificate": {
+    "success": true,
+    "iterations": 118,
+    "min_constraint_slack": 0.0,
+    "violations_tolerance_1e7": 0,
+    "mse": 0.0184851982662571,
+    "rank": 25
+  },
+  "models": {
+    "ordered_minimum": {
+      "decreasing_edges": {
+        "entropy": 26,
+        "contrast": 595,
+        "sharpness": 0
+      },
+      "largest_drop": 0.03166071304722773
+    },
+    "nr_mono": {
+      "decreasing_edges": {
+        "entropy": 0,
+        "contrast": 0,
+        "sharpness": 0
+      },
+      "largest_drop": 6.750155989720952e-14
+    }
+  }
+}

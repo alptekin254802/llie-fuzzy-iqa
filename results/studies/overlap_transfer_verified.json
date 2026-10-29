@@ -1,0 +1,82 @@
+{
+  "method": "Normal-light 48x32 equalized grayscale thumbnail, maximum correlation >= 0.9",
+  "classification_commit": "02473f3af4acbbec9f93e7bda6cb589a70473d9d",
+  "threshold": 0.9,
+  "counts": {
+    "shared": 231,
+    "nonoverlap": 59
+  },
+  "groups": {
+    "shared": {
+      "nr_free": {
+        "pooled_srcc": 0.3232195073928154,
+        "within_scene_srcc": 0.3781104331522552,
+        "n_scenes": 231
+      },
+      "linear": {
+        "pooled_srcc": 0.25128131865331127,
+        "within_scene_srcc": 0.31241885540425446,
+        "n_scenes": 231
+      },
+      "lpips_alex": {
+        "pooled_srcc": 0.20935484392497247,
+        "within_scene_srcc": 0.34036366730133377,
+        "n_scenes": 231
+      },
+      "qalign_fp16": {
+        "pooled_srcc": 0.21586852650196178,
+        "within_scene_srcc": 0.49456759527353117,
+        "n_scenes": 231
+      },
+      "vqa2": {
+        "pooled_srcc": 0.1259933573879632,
+        "within_scene_srcc": 0.2639434519858253,
+        "n_scenes": 231
+      },
+      "vital": {
+        "pooled_srcc": 0.14095191272266377,
+        "within_scene_srcc": 0.34446031559902907,
+        "n_scenes": 231
+      }
+    },
+    "nonoverlap": {
+      "nr_free": {
+        "pooled_srcc": 0.346491238544314,
+        "within_scene_srcc": 0.3909675923098774,
+        "n_scenes": 59
+      },
+      "linear": {
+        "pooled_srcc": 0.25454579760153073,
+        "within_scene_srcc": 0.22601064904048773,
+        "n_scenes": 59
+      },
+      "lpips_alex": {
+        "pooled_srcc": 0.3056751995176879,
+        "within_scene_srcc": 0.4862488875385181,
+        "n_scenes": 59
+      },
+      "qalign_fp16": {
+        "pooled_srcc": 0.195208922138483,
+        "within_scene_srcc": 0.38879671915277114,
+        "n_scenes": 59
+      },
+      "vqa2": {
+        "pooled_srcc": 0.15967033201970698,
+        "within_scene_srcc": 0.2804123965262251,
+        "n_scenes": 59
+      },
+      "vital": {
+        "pooled_srcc": -0.054441715025679294,
+        "within_scene_srcc": -0.1056991903643,
+        "n_scenes": 59
+      }
+    }
+  },
+  "sources": {
+    "results/studies/records/squarelol_lol_scene_matches.csv": "71677c88690e456a0f327861b32ea9c93ffec250d6cb2651045c4913af31ef02",
+    "results/studies/records/squarelol_frozen_de_predictions.csv": "5f3ade270fe9e3928acd333bd00123bc5616bbb1afbff291f37120daa7b0e0e4",
+    "results/studies/records/squarelol_frozen_linear_predictions.csv": "1a0f92eb479f23e8e5b57a2339bdd5646358d0ac4c4a6e3730c2301e2b8dd956",
+    "results/studies/records/squarelol_existing_metric_predictions.csv": "0ba5246979e8e6f7f76a0a9bbecbee36c3077a7e6278d5dfe38c10ce5334da8e",
+    "results/lmm_extra/joined.csv": "527bd139a1e9e9389ca63e996a3f8bf7aba5296fda1587c37647e4b76893c92b"
+  }
+}

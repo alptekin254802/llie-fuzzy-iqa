@@ -1,0 +1,301 @@
+{
+  "LOL_cv": {
+    "Fuzzy 27 rules, DE (manuscript)": {
+      "foldmean_srcc": 0.754,
+      "within_scene_srcc": 0.627
+    },
+    "Fuzzy 27 rules, LS consequents": {
+      "foldmean_srcc": 0.757,
+      "within_scene_srcc": 0.637
+    },
+    "Additive memberships (9), linear": {
+      "foldmean_srcc": 0.747,
+      "within_scene_srcc": 0.649
+    },
+    "Linear (standardised)": {
+      "foldmean_srcc": 0.764,
+      "within_scene_srcc": 0.688
+    },
+    "Linear on LOL-quantile (rank) features": {
+      "foldmean_srcc": 0.714,
+      "within_scene_srcc": 0.624
+    },
+    "Linear on clipped features": {
+      "foldmean_srcc": 0.764,
+      "within_scene_srcc": 0.688
+    },
+    "Monotone additive boosting (stumps)": {
+      "foldmean_srcc": 0.779,
+      "within_scene_srcc": 0.683
+    },
+    "Entropy alone": {
+      "foldmean_srcc": 0.488,
+      "within_scene_srcc": 0.397
+    }
+  },
+  "zero_shot": {
+    "squarelol": {
+      "Fuzzy 27 rules, DE (manuscript)": {
+        "srcc": 0.304,
+        "within_scene_srcc": 0.381,
+        "pair_acc": 0.643,
+        "top1": 0.145
+      },
+      "Fuzzy 27 rules, LS consequents": {
+        "srcc": 0.298,
+        "within_scene_srcc": 0.387,
+        "pair_acc": 0.642,
+        "top1": 0.138
+      },
+      "Additive memberships (9), linear": {
+        "srcc": 0.293,
+        "within_scene_srcc": 0.378,
+        "pair_acc": 0.639,
+        "top1": 0.138
+      },
+      "Linear (standardised)": {
+        "srcc": 0.241,
+        "within_scene_srcc": 0.295,
+        "pair_acc": 0.606,
+        "top1": 0.11
+      },
+      "Linear on LOL-quantile (rank) features": {
+        "srcc": 0.145,
+        "within_scene_srcc": 0.15,
+        "pair_acc": 0.552,
+        "top1": 0.093
+      },
+      "Linear on clipped features": {
+        "srcc": 0.241,
+        "within_scene_srcc": 0.295,
+        "pair_acc": 0.606,
+        "top1": 0.11
+      },
+      "Monotone additive boosting (stumps)": {
+        "srcc": 0.291,
+        "within_scene_srcc": 0.39,
+        "pair_acc": 0.543,
+        "top1": 0.193
+      },
+      "Entropy alone": {
+        "srcc": 0.262,
+        "within_scene_srcc": 0.284,
+        "pair_acc": 0.602,
+        "top1": 0.086
+      }
+    },
+    "lieq": {
+      "Fuzzy 27 rules, DE (manuscript)": {
+        "srcc": 0.505,
+        "within_scene_srcc": 0.095,
+        "pair_acc": 0.53,
+        "top1": 0.11
+      },
+      "Fuzzy 27 rules, LS consequents": {
+        "srcc": 0.508,
+        "within_scene_srcc": 0.001,
+        "pair_acc": 0.499,
+        "top1": 0.13
+      },
+      "Additive memberships (9), linear": {
+        "srcc": 0.513,
+        "within_scene_srcc": -0.025,
+        "pair_acc": 0.49,
+        "top1": 0.13
+      },
+      "Linear (standardised)": {
+        "srcc": 0.543,
+        "within_scene_srcc": -0.138,
+        "pair_acc": 0.455,
+        "top1": 0.04
+      },
+      "Linear on LOL-quantile (rank) features": {
+        "srcc": 0.425,
+        "within_scene_srcc": -0.084,
+        "pair_acc": 0.468,
+        "top1": 0.03
+      },
+      "Linear on clipped features": {
+        "srcc": 0.543,
+        "within_scene_srcc": -0.138,
+        "pair_acc": 0.455,
+        "top1": 0.04
+      },
+      "Monotone additive boosting (stumps)": {
+        "srcc": 0.434,
+        "within_scene_srcc": -0.079,
+        "pair_acc": 0.373,
+        "top1": 0.06
+      },
+      "Entropy alone": {
+        "srcc": 0.434,
+        "within_scene_srcc": -0.263,
+        "pair_acc": 0.398,
+        "top1": 0.01
+      }
+    },
+    "rlie": {
+      "Fuzzy 27 rules, DE (manuscript)": {
+        "srcc": 0.106,
+        "within_scene_srcc": 0.135,
+        "pair_acc": 0.548,
+        "top1": 0.11
+      },
+      "Fuzzy 27 rules, LS consequents": {
+        "srcc": 0.145,
+        "within_scene_srcc": 0.201,
+        "pair_acc": 0.575,
+        "top1": 0.091
+      },
+      "Additive memberships (9), linear": {
+        "srcc": 0.138,
+        "within_scene_srcc": 0.2,
+        "pair_acc": 0.575,
+        "top1": 0.084
+      },
+      "Linear (standardised)": {
+        "srcc": 0.208,
+        "within_scene_srcc": 0.279,
+        "pair_acc": 0.605,
+        "top1": 0.117
+      },
+      "Linear on LOL-quantile (rank) features": {
+        "srcc": 0.2,
+        "within_scene_srcc": 0.266,
+        "pair_acc": 0.601,
+        "top1": 0.071
+      },
+      "Linear on clipped features": {
+        "srcc": 0.208,
+        "within_scene_srcc": 0.278,
+        "pair_acc": 0.605,
+        "top1": 0.117
+      },
+      "Monotone additive boosting (stumps)": {
+        "srcc": 0.12,
+        "within_scene_srcc": 0.165,
+        "pair_acc": 0.414,
+        "top1": 0.188
+      },
+      "Entropy alone": {
+        "srcc": 0.298,
+        "within_scene_srcc": 0.454,
+        "pair_acc": 0.679,
+        "top1": 0.279
+      }
+    }
+  },
+  "diff_vs_fuzzy_within": {
+    "squarelol": {
+      "Fuzzy 27 rules, LS consequents": [
+        0.007,
+        -0.009,
+        0.022
+      ],
+      "Additive memberships (9), linear": [
+        -0.003,
+        -0.02,
+        0.015
+      ],
+      "Linear (standardised)": [
+        -0.086,
+        -0.107,
+        -0.065
+      ],
+      "Linear on LOL-quantile (rank) features": [
+        -0.231,
+        -0.269,
+        -0.193
+      ],
+      "Linear on clipped features": [
+        -0.086,
+        -0.107,
+        -0.065
+      ],
+      "Monotone additive boosting (stumps)": [
+        0.01,
+        -0.013,
+        0.031
+      ],
+      "Entropy alone": [
+        -0.097,
+        -0.122,
+        -0.073
+      ]
+    },
+    "lieq": {
+      "Fuzzy 27 rules, LS consequents": [
+        -0.094,
+        -0.155,
+        -0.035
+      ],
+      "Additive memberships (9), linear": [
+        -0.12,
+        -0.194,
+        -0.052
+      ],
+      "Linear (standardised)": [
+        -0.233,
+        -0.306,
+        -0.166
+      ],
+      "Linear on LOL-quantile (rank) features": [
+        -0.179,
+        -0.262,
+        -0.097
+      ],
+      "Linear on clipped features": [
+        -0.233,
+        -0.306,
+        -0.166
+      ],
+      "Monotone additive boosting (stumps)": [
+        -0.173,
+        -0.246,
+        -0.104
+      ],
+      "Entropy alone": [
+        -0.358,
+        -0.429,
+        -0.292
+      ]
+    },
+    "rlie": {
+      "Fuzzy 27 rules, LS consequents": [
+        0.066,
+        0.028,
+        0.105
+      ],
+      "Additive memberships (9), linear": [
+        0.064,
+        0.016,
+        0.112
+      ],
+      "Linear (standardised)": [
+        0.144,
+        0.095,
+        0.191
+      ],
+      "Linear on LOL-quantile (rank) features": [
+        0.131,
+        0.062,
+        0.2
+      ],
+      "Linear on clipped features": [
+        0.142,
+        0.094,
+        0.189
+      ],
+      "Monotone additive boosting (stumps)": [
+        0.029,
+        -0.028,
+        0.089
+      ],
+      "Entropy alone": [
+        0.318,
+        0.241,
+        0.394
+      ]
+    }
+  }
+}

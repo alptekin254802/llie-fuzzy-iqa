@@ -1,0 +1,429 @@
+{
+  "distribution": {
+    "entropy": {
+      "train_min": 2.382568836212158,
+      "train_max": 7.972911834716797,
+      "train_q05": 4.507243299484253,
+      "train_q95": 7.925844359397888,
+      "below_min_fraction": 0.0,
+      "above_max_fraction": 0.0,
+      "outside_minmax_fraction": 0.0,
+      "below_q05_fraction": 0.09896907216494845,
+      "above_q95_fraction": 0.0,
+      "outside_q05q95_fraction": 0.09896907216494845,
+      "retinex_median": 5.403737545013428
+    },
+    "contrast": {
+      "train_min": 0.0084870940610217,
+      "train_max": 0.3230973372601315,
+      "train_q05": 0.03129835565421527,
+      "train_q95": 0.29126901983281794,
+      "below_min_fraction": 0.0,
+      "above_max_fraction": 0.012371134020618556,
+      "outside_minmax_fraction": 0.012371134020618556,
+      "below_q05_fraction": 0.05360824742268041,
+      "above_q95_fraction": 0.018556701030927835,
+      "outside_q05q95_fraction": 0.07216494845360824,
+      "retinex_median": 0.1055483490398376
+    },
+    "sharpness": {
+      "train_min": 0.0007003144256703,
+      "train_max": 0.5621934244581468,
+      "train_q05": 0.001275321763184245,
+      "train_q95": 0.12115936399225591,
+      "below_min_fraction": 0.008247422680412371,
+      "above_max_fraction": 0.006185567010309278,
+      "outside_minmax_fraction": 0.01443298969072165,
+      "below_q05_fraction": 0.018556701030927835,
+      "above_q95_fraction": 0.2927835051546392,
+      "outside_q05q95_fraction": 0.311340206185567,
+      "retinex_median": 0.0649762895708901
+    },
+    "any_feature": {
+      "outside_minmax_fraction": 0.026804123711340205,
+      "outside_q05q95_fraction": 0.4061855670103093
+    }
+  },
+  "ranking": {
+    "model": {
+      "kind": "de",
+      "signs": {
+        "entropy": false,
+        "contrast": false,
+        "sharpness": false
+      },
+      "mfs": [
+        [
+          [
+            2.382568836212158,
+            2.382568836212158,
+            5.302994918823242,
+            5.843600559234619
+          ],
+          [
+            5.302994918823242,
+            5.843600559234619,
+            6.4091719627380375,
+            7.418107795715332
+          ],
+          [
+            6.4091719627380375,
+            7.418107795715332,
+            7.972911834716797,
+            7.972911834716797
+          ]
+        ],
+        [
+          [
+            0.0084870940610217,
+            0.0084870940610217,
+            0.05211601083339866,
+            0.07416004868289151
+          ],
+          [
+            0.05211601083339866,
+            0.07416004868289151,
+            0.11809303654398255,
+            0.27582383786587167
+          ],
+          [
+            0.11809303654398255,
+            0.27582383786587167,
+            0.3230973372601315,
+            0.3230973372601315
+          ]
+        ],
+        [
+          [
+            0.0007003144256703,
+            0.0007003144256703,
+            0.00209257005916396,
+            0.00415169186769456
+          ],
+          [
+            0.00209257005916396,
+            0.00415169186769456,
+            0.009091277964551338,
+            0.042229525219896126
+          ],
+          [
+            0.009091277964551338,
+            0.042229525219896126,
+            0.5621934244581468,
+            0.5621934244581468
+          ]
+        ]
+      ],
+      "theta": [
+        23.199801218599813,
+        27.627165197261217,
+        92.2175203206896,
+        35.8736732178192,
+        35.11716975106834,
+        47.17505312469584,
+        66.53835519425438,
+        32.50154595444575,
+        26.724389028393507,
+        55.04881669504829,
+        75.08583213074283,
+        75.73069790939391,
+        59.96903059322726,
+        59.297617172986016,
+        78.53321587577972,
+        39.48846642254516,
+        44.1072849913496,
+        6.757753254869812,
+        37.20328322515345,
+        23.457386836925707,
+        73.89221073293399,
+        54.31404625228361,
+        94.91125862594154,
+        97.94715252308771,
+        87.71291285059976,
+        63.08123270865674,
+        50.20939487784425
+      ],
+      "solver": {
+        "seed": 42,
+        "popsize": 8,
+        "maxiter": 40
+      }
+    },
+    "retinex_scene_oof_srcc": 0.2700343525626217,
+    "method_diagnostics": {
+      "clahe": {
+        "evaluation": "in_sample_training_operator",
+        "within_method_srcc": 0.855709028174137,
+        "mean_score": 42.612529856364475,
+        "mean_negative_lpips": -0.44160954515958567,
+        "mean_residual_after_training_affine_map": 0.02832594165079457
+      },
+      "gamma": {
+        "evaluation": "in_sample_training_operator",
+        "within_method_srcc": 0.7389735748398685,
+        "mean_score": 45.88722656852619,
+        "mean_negative_lpips": -0.33653440745067353,
+        "mean_residual_after_training_affine_map": -0.05255358902049812
+      },
+      "hist_eq": {
+        "evaluation": "in_sample_training_operator",
+        "within_method_srcc": 0.34292132674085224,
+        "mean_score": 47.08543574946846,
+        "mean_negative_lpips": -0.39189233504927035,
+        "mean_residual_after_training_affine_map": 0.011657493859098552
+      },
+      "log": {
+        "evaluation": "in_sample_training_operator",
+        "within_method_srcc": 0.6331553460416992,
+        "mean_score": 58.071367968617444,
+        "mean_negative_lpips": -0.311633722280565,
+        "mean_residual_after_training_affine_map": 0.012570153510605434
+      },
+      "retinex": {
+        "evaluation": "held_out_operator",
+        "within_method_srcc": -0.2212426669916889,
+        "mean_score": 46.33193614269376,
+        "mean_negative_lpips": -0.6676980363339493,
+        "mean_residual_after_training_affine_map": 0.2818958458619912
+      }
+    },
+    "between_method_mean_srcc": 0.4999999999999999,
+    "retinex_vs_rest": {
+      "score_difference": -2.0822038930503837,
+      "target_difference": -0.29728053384892567,
+      "affine_calibrated_bias": 0.2818958458619912
+    }
+  },
+  "artifacts": {
+    "method_means": {
+      "clahe": {
+        "chroma_mean_shift": 4.590174611573366,
+        "chroma_pixel_distance": 7.896997210414139,
+        "a_mean_shift": -1.370709525924368,
+        "b_mean_shift": -2.6068035823782694,
+        "brightness_signed": -0.3446368009159245,
+        "brightness_abs": 0.3449797215535469,
+        "halo_overshoot": 0.0003392233437282521,
+        "halo_undershoot": 0.16844306486255498,
+        "edge_highpass_mismatch": 0.1727665784432716,
+        "lpips": 0.44160954515958567
+      },
+      "gamma": {
+        "chroma_mean_shift": 3.697212328861669,
+        "chroma_pixel_distance": 6.661513609247109,
+        "a_mean_shift": -1.3642211987800206,
+        "b_mean_shift": -1.4415737535535675,
+        "brightness_signed": -0.320216850368018,
+        "brightness_abs": 0.3213806492458914,
+        "halo_overshoot": 0.00013322397961425999,
+        "halo_undershoot": 0.15220893114560569,
+        "edge_highpass_mismatch": 0.13073294627451404,
+        "lpips": 0.33653440745067353
+      },
+      "hist_eq": {
+        "chroma_mean_shift": 6.553253772824081,
+        "chroma_pixel_distance": 15.720300526963067,
+        "a_mean_shift": -2.154339985011779,
+        "b_mean_shift": -0.005945806404978959,
+        "brightness_signed": 0.04352625221321263,
+        "brightness_abs": 0.08750046251975384,
+        "halo_overshoot": 0.050624819243300416,
+        "halo_undershoot": 0.026576141335433782,
+        "edge_highpass_mismatch": 0.1580706840630659,
+        "lpips": 0.39189233504927035
+      },
+      "log": {
+        "chroma_mean_shift": 4.21471343707178,
+        "chroma_pixel_distance": 7.551059468259516,
+        "a_mean_shift": -0.7616603403976283,
+        "b_mean_shift": -0.48456794846918166,
+        "brightness_signed": -0.2722666737959557,
+        "brightness_abs": 0.27662603375837974,
+        "halo_overshoot": 0.0010605398008133589,
+        "halo_undershoot": 0.12776497617606608,
+        "edge_highpass_mismatch": 0.13938996618248753,
+        "lpips": 0.311633722280565
+      },
+      "retinex": {
+        "chroma_mean_shift": 7.210770257938768,
+        "chroma_pixel_distance": 14.953965737401825,
+        "a_mean_shift": -3.1917930337571607,
+        "b_mean_shift": 1.0715154864124417,
+        "brightness_signed": 0.37038732834697996,
+        "brightness_abs": 0.37038732834697996,
+        "halo_overshoot": 0.23728815065984873,
+        "halo_undershoot": 0.000870496836344138,
+        "edge_highpass_mismatch": 0.3222062520452381,
+        "lpips": 0.6676980363339493
+      }
+    },
+    "pooled": {
+      "chroma_mean_shift": {
+        "lpips": 0.336425594557144,
+        "entropy": 0.024538785322256146,
+        "contrast": 0.16104561847044888,
+        "sharpness": 0.2772464584233897
+      },
+      "chroma_pixel_distance": {
+        "lpips": 0.4248527810345563,
+        "entropy": 0.22725372969045743,
+        "contrast": 0.42225302578872126,
+        "sharpness": 0.585148561974614
+      },
+      "a_mean_shift": {
+        "lpips": -0.24287873594899798,
+        "entropy": 0.06782573547212874,
+        "contrast": -0.0791259425362055,
+        "sharpness": -0.11688682985125669
+      },
+      "b_mean_shift": {
+        "lpips": 0.10305115022087705,
+        "entropy": 0.12405140005760802,
+        "contrast": 0.20539175771037468,
+        "sharpness": 0.28663222863536214
+      },
+      "brightness_signed": {
+        "lpips": 0.18630893199551893,
+        "entropy": 0.22715333975498161,
+        "contrast": 0.47291802738207206,
+        "sharpness": 0.7315937925712239
+      },
+      "brightness_abs": {
+        "lpips": 0.4783454236415559,
+        "entropy": -0.669093908906448,
+        "contrast": -0.6459980371533894,
+        "sharpness": -0.448287943522257
+      },
+      "halo_overshoot": {
+        "lpips": 0.40216456399356443,
+        "entropy": 0.16379101726313985,
+        "contrast": 0.4299106218566026,
+        "sharpness": 0.7163749653843986
+      },
+      "halo_undershoot": {
+        "lpips": -0.10407481639421441,
+        "entropy": -0.2294711744431674,
+        "contrast": -0.4470838324293568,
+        "sharpness": -0.6976518837322253
+      },
+      "edge_highpass_mismatch": {
+        "lpips": 0.6512369493125956,
+        "entropy": -0.334896557579709,
+        "contrast": -0.12401543921995739,
+        "sharpness": 0.3457917699623882
+      }
+    },
+    "retinex_only": {
+      "chroma_mean_shift": {
+        "lpips": 0.485816090720808,
+        "entropy": 0.5339765456291542,
+        "contrast": 0.5122315522190561,
+        "sharpness": 0.5481542489352549
+      },
+      "chroma_pixel_distance": {
+        "lpips": 0.524561979263635,
+        "entropy": 0.7232681916530713,
+        "contrast": 0.7011711407525215,
+        "sharpness": 0.7304528151450989
+      },
+      "a_mean_shift": {
+        "lpips": -0.1381360202041239,
+        "entropy": -0.4352703332397178,
+        "contrast": -0.3867152205171574,
+        "sharpness": -0.39567464712731815
+      },
+      "b_mean_shift": {
+        "lpips": 0.2637014737608302,
+        "entropy": 0.4325228753220006,
+        "contrast": 0.4086405027048576,
+        "sharpness": 0.44551997113696584
+      },
+      "brightness_signed": {
+        "lpips": 0.06261143140243422,
+        "entropy": -0.33785633067107607,
+        "contrast": -0.37993682529765005,
+        "sharpness": -0.37085569850330863
+      },
+      "brightness_abs": {
+        "lpips": 0.06261143140243422,
+        "entropy": -0.33785633067107607,
+        "contrast": -0.37993682529765005,
+        "sharpness": -0.37085569850330863
+      },
+      "halo_overshoot": {
+        "lpips": -0.08754902981707105,
+        "entropy": -0.5550204744519022,
+        "contrast": -0.4456250519355799,
+        "sharpness": -0.45409736225106423
+      },
+      "halo_undershoot": {
+        "lpips": 0.2503734497971198,
+        "entropy": 0.5961735027203129,
+        "contrast": 0.7245698707521901,
+        "sharpness": 0.7601594783159968
+      },
+      "edge_highpass_mismatch": {
+        "lpips": 0.16105541513226612,
+        "entropy": 0.23384643056620563,
+        "contrast": 0.3579060415673974,
+        "sharpness": 0.4584668932372775
+      }
+    },
+    "scene_centered": {
+      "chroma_mean_shift": {
+        "lpips": 0.3456135704849668,
+        "entropy": 0.2215560452621018,
+        "contrast": 0.38799489404069976,
+        "sharpness": 0.5437905323070701
+      },
+      "chroma_pixel_distance": {
+        "lpips": 0.4573913325924343,
+        "entropy": 0.4395780822249791,
+        "contrast": 0.6521869145634955,
+        "sharpness": 0.8389213313865871
+      },
+      "a_mean_shift": {
+        "lpips": -0.257204379993842,
+        "entropy": 0.0029699158372505133,
+        "contrast": -0.13389132867953168,
+        "sharpness": -0.32523925043595203
+      },
+      "b_mean_shift": {
+        "lpips": -0.02021118987498991,
+        "entropy": 0.2661199143941047,
+        "contrast": 0.33037527429237257,
+        "sharpness": 0.36844069903459015
+      },
+      "brightness_signed": {
+        "lpips": 0.32003181905122463,
+        "entropy": 0.2685637122793028,
+        "contrast": 0.5495871399635183,
+        "sharpness": 0.6869298019372823
+      },
+      "brightness_abs": {
+        "lpips": 0.45661993538914153,
+        "entropy": -0.692519655183237,
+        "contrast": -0.6550910237928884,
+        "sharpness": -0.3475152723115182
+      },
+      "halo_overshoot": {
+        "lpips": 0.6220180896585079,
+        "entropy": -0.0052723549585365435,
+        "contrast": 0.2678116838273455,
+        "sharpness": 0.5243834499831074
+      },
+      "halo_undershoot": {
+        "lpips": -0.23148286398198473,
+        "entropy": -0.38565520687670146,
+        "contrast": -0.6271939323868909,
+        "sharpness": -0.7252718893981763
+      },
+      "edge_highpass_mismatch": {
+        "lpips": 0.6929781842633826,
+        "entropy": -0.2137075240742388,
+        "contrast": 0.0773247366721697,
+        "sharpness": 0.46187616361520567
+      }
+    }
+  }
+}

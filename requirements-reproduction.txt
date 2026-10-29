@@ -1,0 +1,12 @@
+# Numerical environment used for this computation snapshot (Python 3.11).
+numpy==2.4.4
+pandas==3.0.2
+scipy==1.17.1
+matplotlib==3.10.9
+opencv-python==4.13.0.92
+Pillow==12.2.0
+scikit-image==0.26.0
+scikit-fuzzy==0.5.0
+scikit-learn==1.9.0
+threadpoolctl==3.6.0
+psutil==7.2.2

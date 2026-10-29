@@ -1,0 +1,107 @@
+{
+  "created_utc": "2026-10-23T19:51:22.298483+00:00",
+  "declaration": "Configuration fixed before processing timings were observed; selected from capture-only and control-lock checks.",
+  "rationale": "DSHOW+MJPG, exposure -6, 640x480 capture-only mean interval 33.8021385 ms; exposure, gain and white-balance locks passed. Previous -5/YUY2 official measurements are retained, not replaced or hidden.",
+  "camera": {
+    "index": 0,
+    "backend": "DSHOW",
+    "fourcc": "MJPG",
+    "width": 640,
+    "height": 480,
+    "fps_requested": 30,
+    "exposure": -6,
+    "controls": {
+      "AUTO_EXPOSURE": 0.25,
+      "GAIN": 0,
+      "AUTO_WB": 0,
+      "WB_TEMPERATURE": 4600,
+      "AUTOFOCUS": 0,
+      "FOCUS": 1,
+      "BRIGHTNESS": 0,
+      "CONTRAST": 32,
+      "SATURATION": 64,
+      "GAMMA": 100,
+      "SHARPNESS": 4,
+      "BACKLIGHT": 1
+    },
+    "settle_discard_frames": 12,
+    "set_order": "width, height, FPS, FOURCC LAST, then controls and exposure",
+    "verification": "All set returns true AND DSHOW/640x480/MJPG readbacks and fps within 0.01 of 30; exact webcam control readbacks. AUTO_EXPOSURE getter=-1 is unsupported, manual response established by frozen prior image tests; AUTOFOCUS getter=2 is the previously verified manual flag. Verify after requests, settling, selftest, immediately before timing and after timing. On failure no session starts or completed session is invalid."
+  },
+  "sessions": [
+    {
+      "id": "mjpg_1",
+      "exposure": -6,
+      "total_frames": 2000,
+      "warmup_frames": 50
+    },
+    {
+      "id": "mjpg_2",
+      "exposure": -6,
+      "total_frames": 2000,
+      "warmup_frames": 50
+    },
+    {
+      "id": "mjpg_3",
+      "exposure": -6,
+      "total_frames": 2000,
+      "warmup_frames": 50
+    }
+  ],
+  "gammas": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "previous_gamma_initial": 0.6666666666666666,
+  "protocol": "Same live-search kernel, feature operations, models, selection and full-resolution LUT. Fresh Python process and camera reopen per session. First 50 of 2000 excluded; no data-dependent exclusion, trimming, retries or session replacement. Stop after a blocked or failed session. Preserve completed and partial outputs. Display disabled; no images retained.",
+  "selftest": "Same live-search session_selftest: 100 newly captured frames, 9 candidates plus default 2/3, bit-identical rgb8, three features, NR-free/NR-mono scores and all four selector choices. Not timed. Failure stops work before measurement.",
+  "timing": {
+    "processing_ms": "Original live-search boundary: after common.frame returns to after unchanged kernel.process_frame returns. Includes RGB conversion, 256x256 bilinear resize, nine LUT candidates, features, NR-free score, selection and full-resolution LUT. Excludes capture, display, metadata writes.",
+    "capture_decode_ms": "perf_counter_ns strictly around underlying cap.read(), including waiting, transport and MJPG decoding together; these components cannot be separately identified.",
+    "capture_wait_ms": "Original common.frame wrapper, including the nested cap.read timers and shape check, for comparison with original live-search.",
+    "camera_interval_ms": "Differences between consecutive host common.frame completion timestamps, same as live-search; not sensor timestamps.",
+    "capture_to_output_ms": "From common.frame call start through completed correction in this iteration.",
+    "end_to_end_loop_ms": "Differences between consecutive corrected-output completion timestamps; includes inter-iteration bookkeeping and external-state check. Warmup predecessor supplies first retained interval.",
+    "clock": "perf_counter_ns; two extra timestamps solely inside capture, not inside processing; CSV and hashes after measurement"
+  },
+  "statistics": {
+    "quantiles": "numpy percentile linear; pool all retained frames, not session medians",
+    "processing": [
+      "median",
+      "p95",
+      "p99",
+      "maximum",
+      "mean"
+    ],
+    "camera": [
+      "median",
+      "mean",
+      "count and fraction strictly >48 ms"
+    ],
+    "deadline_miss": "processing_ms > camera_interval_ms for the same row, historical live-search definition; also report processing >1000/30 ms nominal budget separately. This is a host-timestamp statistic, not proof about sensor arrival or dropped frames.",
+    "actual_loop_fps": "retained count / sum of retained end_to_end_loop_ms *1000, identical to old endpoint formula; pooled sums of all three sessions",
+    "other": "Capture/decode and end-to-end distributions reported. All frames retained after fixed warmup, including spikes."
+  },
+  "preconditions": {
+    "CPU": "Single fixed five-second overall load sample <=10% before camera and again after selftest before each timed session; record power scheme and top ten non-idle processes. If >10%, stop pending; no automatic favorable-load retries.",
+    "threads": {
+      "OMP_NUM_THREADS": 1,
+      "MKL_NUM_THREADS": 1,
+      "OPENBLAS_NUM_THREADS": 1,
+      "NUMEXPR_NUM_THREADS": 1,
+      "cv2": 1,
+      "torch": 1,
+      "torch_interop": 1
+    },
+    "other_experiments": "No concurrent model inference or inaccessible Python process during measurement. Check before and after each session."
+  },
+  "comparison": "Old -5 official cohort: main_1/main_2/main_3, 1950 retained each. Recompute extra metrics from immutable CSV. Old cap.read duration cannot be separated from common.frame validation; mark it capture wrapper. Old YUY2 label is supported by later reproduction of the old setting order, not an original per-session FOURCC record. Exposure and format both differ in new official comparison; do not attribute entire effect solely to format.",
+  "outputs": "Per-frame timestamps, camera readbacks, selftests, environment checks, summaries and independent timestamp verification."
+}

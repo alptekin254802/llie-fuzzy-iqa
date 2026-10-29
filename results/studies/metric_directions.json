@@ -1,0 +1,116 @@
+{
+  "bpri": {
+    "checks": {
+      "noise": {
+        "mean_srcc": 0.9428571428571428,
+        "positive_scenes": 10,
+        "endpoint_increase_scenes": 10,
+        "scene_srcc": [
+          0.8285714285714286,
+          0.9428571428571428,
+          0.9428571428571428,
+          1.0,
+          1.0,
+          0.9428571428571428,
+          0.9428571428571428,
+          0.9428571428571428,
+          0.9428571428571428,
+          0.9428571428571428
+        ]
+      },
+      "blur": {
+        "mean_srcc": 0.9942857142857143,
+        "positive_scenes": 10,
+        "endpoint_increase_scenes": 10,
+        "scene_srcc": [
+          0.9428571428571428,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "jpeg": {
+        "mean_srcc": 0.8114285714285714,
+        "positive_scenes": 10,
+        "endpoint_increase_scenes": 10,
+        "scene_srcc": [
+          0.7714285714285715,
+          0.8857142857142857,
+          0.9428571428571428,
+          1.0,
+          0.9428571428571428,
+          0.7714285714285715,
+          0.7142857142857143,
+          0.7714285714285715,
+          0.4857142857142857,
+          0.8285714285714286
+        ]
+      }
+    },
+    "lower_is_better_confirmed": true,
+    "orientation": -1
+  },
+  "bmpri": {
+    "checks": {
+      "noise": {
+        "mean_srcc": 0.9942857142857143,
+        "positive_scenes": 10,
+        "endpoint_increase_scenes": 10,
+        "scene_srcc": [
+          0.9428571428571428,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "blur": {
+        "mean_srcc": 1.0,
+        "positive_scenes": 10,
+        "endpoint_increase_scenes": 10,
+        "scene_srcc": [
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0
+        ]
+      },
+      "jpeg": {
+        "mean_srcc": 0.9657142857142859,
+        "positive_scenes": 10,
+        "endpoint_increase_scenes": 10,
+        "scene_srcc": [
+          0.8285714285714286,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          1.0,
+          0.8285714285714286
+        ]
+      }
+    },
+    "lower_is_better_confirmed": true,
+    "orientation": -1
+  }
+}

@@ -1,0 +1,50 @@
+{
+  "fixed_before_viewing_selected_images": true,
+  "panel_A": {
+    "population": "All 485 LOL scenes with the five classical enhancement operators",
+    "predictions": "Stored scene-held-out NR-free predictions from nr_fuzzy_oof.csv; never use all-data fitted scores",
+    "target": "Negative LPIPS-Alex from the existing LOL pipeline",
+    "selection": "Compute each scene Spearman correlation across its five outputs; choose maximum, median (243rd of 485 ascending correlations), and minimum. For each target correlation, choose the smallest numeric scene ID among ties. Correlations within absolute 1e-12 count as tied.",
+    "order": [
+      "highest",
+      "median",
+      "lowest"
+    ],
+    "columns": [
+      "Low-light",
+      "CLAHE",
+      "Gamma",
+      "Log",
+      "SSR",
+      "HE",
+      "Reference"
+    ],
+    "labels": "Stored PSNR, LPIPS and held-out NR-free values beneath each enhanced output; 8 pt minimum",
+    "preprocessing": "Original LOL RGB, bilinear 256x256 pipeline; preserve stored PSNR uint8-output convention and LPIPS float-output convention, and record feature/prediction provenance.",
+    "winner_marks": "Thin blue inner frame for LPIPS minimum; thin orange outer frame for NR-free maximum. Mark all exactly tied best outputs (absolute 1e-12).",
+    "missing_images": "Stop or report missing files; do not substitute another scene."
+  },
+  "panel_B": {
+    "population": "All 290 SQUARE-LOL scenes, ten outputs each",
+    "predictions": "Stored frozen LOL-trained NR-free predictions used for human comparison",
+    "selection": "Compute within-scene Spearman versus human scores. Take the median of the 290 scene correlations and select the closest scene; ties use smallest numeric scene ID (absolute 1e-12).",
+    "order": "Ten outputs ordered by descending human score; equal human scores use stable method-name order for display, with average ranks shown for both human and NR-free scores.",
+    "layout": "Two rows of five images, each labelled human rank and NR-free rank. Include only if Panel A plus Panel B and caption fit on one supplement page, without text below 8 pt or Panel A images below 55 pt width. Inclusion depends only on readable layout and file availability, not on the results."
+  },
+  "inputs_sha256": {
+    "nr_fuzzy_oof.csv": "3d3444e37528874e4a1f25ff696651199f5b901126b9b02dc47605c293007da6",
+    "enhancement_metrics.csv": "74d38cd0c7af0b759b4747c5bc8e29ad1b9eceba65a3e28a1c74e0d2d6d90c1b",
+    "perceptual_metrics.csv": "6105329e5e1cb7ed8220a3337b22f8a627ec6493fa6aa2cbbd3c19d694ffe4a9",
+    "studies/records/squarelol_frozen_de_predictions.csv": "5f3ade270fe9e3928acd333bd00123bc5616bbb1afbff291f37120daa7b0e0e4",
+    "studies/records/squarelol_existing_metric_predictions.csv": "0ba5246979e8e6f7f76a0a9bbecbee36c3077a7e6278d5dfe38c10ce5334da8e"
+  },
+  "private_original_sha256": "86b31fda0855e8635bf6ca33c552df95b2bdc9004371714fef1675f4feb4ff59",
+  "private_input_sha256": {
+    "nr_fuzzy_oof.csv": "673861c6474a56808a1b9235a043b75406effa36e9ef9263a92b8f848b592dee",
+    "enhancement_metrics.csv": "74d38cd0c7af0b759b4747c5bc8e29ad1b9eceba65a3e28a1c74e0d2d6d90c1b",
+    "perceptual_metrics.csv": "6105329e5e1cb7ed8220a3337b22f8a627ec6493fa6aa2cbbd3c19d694ffe4a9",
+    "studies/records/squarelol_frozen_de_predictions.csv": "5f3ade270fe9e3928acd333bd00123bc5616bbb1afbff291f37120daa7b0e0e4",
+    "studies/records/squarelol_existing_metric_predictions.csv": "0ba5246979e8e6f7f76a0a9bbecbee36c3077a7e6278d5dfe38c10ce5334da8e"
+  },
+  "distribution_note": "The held-out CSV has LF line endings in this release; its CRLF normalization matches the original hash. Numeric content is unchanged."
+}

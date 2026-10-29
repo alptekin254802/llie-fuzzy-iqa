@@ -1,0 +1,15 @@
+{
+  "work_dir": "study_work",
+  "lol_root": "data/our485",
+  "preprocessed": "preprocessed",
+  "squarelol": "data/SQUARE-LOL",
+  "lieq": "data/LIEQ",
+  "rlie": "data/RLIE",
+  "matlab": "matlab",
+  "bpri_source": "third_party/BPRI",
+  "bmpri_source": "third_party/BMPRI",
+  "stairiqa_source": "third_party/StairIQA",
+  "stairiqa_weights": "third_party/ResNet_staircase_50-EXP1-Koniq10k.pkl",
+  "richiqa_backbone": "third_party/richiqa/CvT-21-384x384-IN-22k.pth",
+  "archived_work_dir": "path/to/archived_work"
+}

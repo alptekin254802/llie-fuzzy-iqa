@@ -1,0 +1,125 @@
+{
+  "passed": true,
+  "independent_original_pipeline": true,
+  "dry_run": false,
+  "excluded_from_all_analyses": false,
+  "verified_candidate_rows": 4200,
+  "verified_selection_rows": 3780,
+  "original_top1_pair_tie_diagnostics_verified": 2940,
+  "metric_max_abs_diff": {
+    "lpips": 0.0,
+    "clipiqa+": 0.0,
+    "niqe": 0.0,
+    "psnr": 0.0,
+    "ssim": 0.0
+  },
+  "qc": [
+    {
+      "scene": "scene_01",
+      "qc_pass": true,
+      "psnr": 45.99704450404839
+    },
+    {
+      "scene": "scene_02",
+      "qc_pass": true,
+      "psnr": 43.11254321679114
+    },
+    {
+      "scene": "scene_03",
+      "qc_pass": true,
+      "psnr": 43.3532363397163
+    },
+    {
+      "scene": "scene_04",
+      "qc_pass": true,
+      "psnr": 47.9652856212673
+    },
+    {
+      "scene": "scene_05",
+      "qc_pass": true,
+      "psnr": 50.4590163195632
+    },
+    {
+      "scene": "scene_06",
+      "qc_pass": true,
+      "psnr": 48.9850301386219
+    },
+    {
+      "scene": "scene_07",
+      "qc_pass": true,
+      "psnr": 42.45646336102402
+    },
+    {
+      "scene": "scene_08",
+      "qc_pass": true,
+      "psnr": 47.843839735051084
+    },
+    {
+      "scene": "scene_09",
+      "qc_pass": true,
+      "psnr": 50.00398216750079
+    },
+    {
+      "scene": "scene_10",
+      "qc_pass": true,
+      "psnr": 49.7260601175358
+    },
+    {
+      "scene": "scene_11",
+      "qc_pass": true,
+      "psnr": 48.77639932457591
+    },
+    {
+      "scene": "scene_12",
+      "qc_pass": true,
+      "psnr": 51.44620707054375
+    },
+    {
+      "scene": "scene_13",
+      "qc_pass": true,
+      "psnr": 49.1135017694036
+    },
+    {
+      "scene": "scene_14",
+      "qc_pass": true,
+      "psnr": 49.54418821880444
+    },
+    {
+      "scene": "scene_15",
+      "qc_pass": true,
+      "psnr": 51.21866058971256
+    },
+    {
+      "scene": "scene_16",
+      "qc_pass": true,
+      "psnr": 47.912330609305315
+    },
+    {
+      "scene": "scene_17",
+      "qc_pass": true,
+      "psnr": 47.21990772292849
+    },
+    {
+      "scene": "scene_18",
+      "qc_pass": true,
+      "psnr": 45.466857872925075
+    },
+    {
+      "scene": "scene_19",
+      "qc_pass": true,
+      "psnr": 49.57407072238424
+    },
+    {
+      "scene": "scene_20",
+      "qc_pass": true,
+      "psnr": 48.022135469712246
+    },
+    {
+      "scene": "scene_21",
+      "qc_pass": true,
+      "psnr": 44.24960917882394
+    }
+  ],
+  "bootstrap_verified": true,
+  "bootstrap_not_applicable_to_dry_run": false
+}

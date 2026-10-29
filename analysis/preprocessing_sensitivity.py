@@ -1,17 +1,7 @@
-"""
-Small preprocessing-sensitivity audit for the NR-fuzzy assessor.
+"""Compare feature preprocessing choices under five-fold scene-disjoint calibration.
 
-The reviewer asked whether the headline result depends on choices such as
-luminance conversion, entropy histogram binning, Laplacian kernel size, or resize
-resolution. This script recomputes the three no-reference features under a small
-set of alternatives and reruns the same image-group 5-fold calibration protocol.
-
-It needs the LOL low-light images under preprocessed/low, which are not included
-in the lightweight public package. The resulting CSV is included for reproducible
-reporting:
-
-    results/preprocessing_sensitivity.csv
-"""
+Recomputes luminance, histogram, Laplacian and resize variants from the LOL
+images in preprocessed/low. Writes results/preprocessing_sensitivity.csv."""
 from __future__ import annotations
 
 from pathlib import Path

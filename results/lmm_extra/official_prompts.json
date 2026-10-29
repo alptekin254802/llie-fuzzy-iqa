@@ -1,0 +1,18 @@
+{
+  "vqa2": {
+    "system": "You are a helpful assistant.",
+    "human": "<image>",
+    "assistant_prefix": "The overall quality of the image is",
+    "source_commit": "9087c7952052088a6eb01bac4408bff903ab9e41",
+    "source": "quality_scoring/llava/eval/model_score_image.py:preprocess_qwen"
+  },
+  "vital": {
+    "system": "你是书生·万象，英文名是InternVL，是由上海人工智能实验室、清华大学及多家合作单位联合开发的多模态大语言模型。",
+    "human": "<image>\n",
+    "assistant_prefix": "The quality of this image is",
+    "template": "internvl2_5",
+    "source_commit": "729097bd45a799535c2e70297fbc96e81c317099"
+  },
+  "recorded_utc": "2026-10-23T02:59:28.041902+00:00",
+  "note": "Verbatim official strings already used by the existing adapters; no prompt modification. Human newline is a real newline, encoded as JSON backslash-n."
+}

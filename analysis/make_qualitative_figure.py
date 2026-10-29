@@ -1,18 +1,9 @@
-"""
-Compact qualitative demonstration figure (PDF + SVG).
+# Historical two-scene figure. Final paper artwork: analysis.qualitative and docs/FIGURES.md.
+"""Plot two fixed LOL scenes illustrating disagreement between PSNR and NR-free.
 
-Place at: analysis/make_qualitative_figure.py
-Run:      python -m analysis.make_qualitative_figure
-
-Shows scenes where PSNR prefers histogram equalisation (higher PSNR) but the
-reference-free fuzzy score - like human perception (LPIPS) - prefers the log
-transform. Each row: low-light input, hist-eq, log, reference. The hist-eq and
-log panels are annotated with PSNR (reference-based) and the proposed
-reference-free score, making the disagreement visible.
-
-Edit SCENES to pick different examples. Strong candidates (from the data):
-  100.png, 189.png, 151.png, 143.png, 212.png, 598.png
-"""
+Each row shows the low-light input, histogram equalization, log transform and
+reference. Run ``python -m analysis.make_qualitative_figure`` after obtaining
+the LOL images. Outputs are PDF and SVG figures."""
 from __future__ import annotations
 
 import os
@@ -107,9 +98,9 @@ def main():
     fig.tight_layout()
     OUT.mkdir(parents=True, exist_ok=True)
     for ext in ("pdf", "svg"):
-        fig.savefig(OUT / f"fig6_qualitative.{ext}")
+        fig.savefig(OUT / f"figS2_qualitative.{ext}")
     plt.close(fig)
-    print(f"Saved fig6_qualitative.pdf / .svg to {OUT}")
+    print(f"Saved figS2_qualitative.pdf / .svg to {OUT}")
     print("Annotated scenes:", SCENES)
 
 

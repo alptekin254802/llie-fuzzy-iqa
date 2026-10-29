@@ -1,0 +1,18 @@
+{
+  "original_file_sha256": {
+    "PLAN.json": "d129f7a7aa6b6857a4d33d9ca6d458682d024ef72cf840e812b56c6701c7590c",
+    "timing.json": "0f51d835ef26e23a23397187f22750d85a9722407217dfe801db7bdbd7a4d628",
+    "equality.json": "4d0f021bc07f9f91ace93d0aa45ff4bdb8ab7333163bb45586840f4395901515",
+    "timing_frames.csv": "51814b816ec5d015d59369ec1d64d42716e8921e974ec4047cc68f81e28685e4",
+    "profile_frames.csv": "6c937dd9793f8c8ab07cac15bcb6a0077f443f26bf8ff4001326628132a72212",
+    "equality_selections.csv": "ca245500d860a815d49823ddff38edf0c299654709c6417d37c389f0160bbebc"
+  },
+  "exported_file_sha256": {
+    "equality.json": "81fdc691ce783b800a4b8d4ef43882ab5ce7ef9bb915fe1975f0c17bd836f78f",
+    "equality_selections.csv": "ca245500d860a815d49823ddff38edf0c299654709c6417d37c389f0160bbebc",
+    "profile_frames.csv": "6c937dd9793f8c8ab07cac15bcb6a0077f443f26bf8ff4001326628132a72212",
+    "summary.json": "9b03689cf772d42b1acd379e17c06bce912c18d399cc5f4e1ac86fbf8bf7856e",
+    "timing_frames.csv": "51814b816ec5d015d59369ec1d64d42716e8921e974ec4047cc68f81e28685e4"
+  },
+  "transformation": "CSV files are byte-identical. JSONs replace private library paths with basenames; all measurements are preserved. This repeat retains floating-point inputs and exponentiation and is separate from live-camera LUT timing."
+}

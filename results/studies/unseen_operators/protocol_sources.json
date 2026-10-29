@@ -1,0 +1,25 @@
+{
+  "source_records": [
+    {
+      "description": "Initial plan",
+      "sha256": "39ce5461ac2d661962f95aa71b04a51eb081d9ab85ad95f4c2084bd925497135",
+      "availability": "private original"
+    },
+    {
+      "description": "Initial plan with post-hoc amendment",
+      "sha256": "2ca096e9816ec467c4b1753b6bac9d91162b7b0d4f8e80be34d9b9c60fcfe526",
+      "availability": "private original"
+    },
+    {
+      "description": "Initial experiment implementation",
+      "sha256": "dfcb91c20d148266d5f890c6f7a7777db1b47f650c307b2da0fb67e85381e463",
+      "availability": "private original"
+    },
+    {
+      "description": "Four-method post-hoc analysis",
+      "sha256": "426149f8ce0870f30a113930f08295222064635309c96a54257283d567314308",
+      "availability": "private original"
+    }
+  ],
+  "public_plan_sha256": "bee3c16a7bbf263fd9f8d910ac571cf6c6ca39932bc8f9f2fd4096f37cc5b4a2"
+}

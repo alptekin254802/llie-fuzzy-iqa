@@ -1,0 +1,8 @@
+method,srcc,protocol
+clahe,0.7337133538259029,out of fold
+gamma,0.6685305125106704,out of fold
+hist_eq,0.2516789691122407,out of fold
+log,0.5354508590080154,out of fold
+retinex,0.2700343525626217,out of fold
+sci,0.39092808637563203,frozen classical fit
+zerodce,0.26576248249694445,frozen classical fit

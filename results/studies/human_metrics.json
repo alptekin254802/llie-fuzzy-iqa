@@ -1,0 +1,218 @@
+{
+  "squarelol": {
+    "musiq": {
+      "srcc": 0.005,
+      "plcc": 0.102,
+      "within_scene_srcc": -0.03,
+      "pair_acc": 0.491,
+      "top1": 0.086
+    },
+    "clipiqa": {
+      "srcc": 0.238,
+      "plcc": 0.271,
+      "within_scene_srcc": 0.382,
+      "pair_acc": 0.645,
+      "top1": 0.252
+    },
+    "clipiqa+": {
+      "srcc": 0.16,
+      "plcc": 0.166,
+      "within_scene_srcc": 0.476,
+      "pair_acc": 0.682,
+      "top1": 0.269
+    },
+    "niqe": {
+      "srcc": 0.04,
+      "plcc": 0.073,
+      "within_scene_srcc": 0.105,
+      "pair_acc": 0.539,
+      "top1": 0.034
+    },
+    "brisque": {
+      "srcc": 0.108,
+      "plcc": 0.173,
+      "within_scene_srcc": 0.108,
+      "pair_acc": 0.541,
+      "top1": 0.055
+    },
+    "lpips": {
+      "srcc": 0.2,
+      "plcc": 0.241,
+      "within_scene_srcc": 0.37,
+      "pair_acc": 0.633,
+      "top1": 0.086
+    },
+    "lpips-vgg": {
+      "srcc": 0.125,
+      "plcc": 0.142,
+      "within_scene_srcc": 0.329,
+      "pair_acc": 0.623,
+      "top1": 0.086
+    },
+    "dists": {
+      "srcc": 0.25,
+      "plcc": 0.301,
+      "within_scene_srcc": 0.404,
+      "pair_acc": 0.648,
+      "top1": 0.086
+    },
+    "maniqa": {
+      "srcc": 0.036,
+      "plcc": 0.085,
+      "within_scene_srcc": 0.118,
+      "pair_acc": 0.548,
+      "top1": 0.083
+    },
+    "fuzzy_frozen": {
+      "srcc": 0.304,
+      "plcc": 0.394,
+      "within_scene_srcc": 0.381,
+      "pair_acc": 0.643,
+      "top1": 0.145
+    }
+  },
+  "lieq": {
+    "musiq": {
+      "srcc": 0.674,
+      "plcc": 0.682,
+      "within_scene_srcc": 0.171,
+      "pair_acc": 0.564,
+      "top1": 0.04
+    },
+    "clipiqa": {
+      "srcc": 0.408,
+      "plcc": 0.472,
+      "within_scene_srcc": 0.22,
+      "pair_acc": 0.58,
+      "top1": 0.06
+    },
+    "clipiqa+": {
+      "srcc": 0.715,
+      "plcc": 0.727,
+      "within_scene_srcc": 0.394,
+      "pair_acc": 0.652,
+      "top1": 0.13
+    },
+    "niqe": {
+      "srcc": 0.314,
+      "plcc": 0.377,
+      "within_scene_srcc": 0.041,
+      "pair_acc": 0.512,
+      "top1": 0.1
+    },
+    "brisque": {
+      "srcc": 0.134,
+      "plcc": 0.269,
+      "within_scene_srcc": 0.142,
+      "pair_acc": 0.555,
+      "top1": 0.11
+    },
+    "lpips": {
+      "srcc": 0.815,
+      "plcc": 0.82,
+      "within_scene_srcc": 0.36,
+      "pair_acc": 0.643,
+      "top1": 0.25
+    },
+    "lpips-vgg": {
+      "srcc": 0.867,
+      "plcc": 0.868,
+      "within_scene_srcc": 0.668,
+      "pair_acc": 0.767,
+      "top1": 0.27
+    },
+    "dists": {
+      "srcc": 0.826,
+      "plcc": 0.828,
+      "within_scene_srcc": 0.232,
+      "pair_acc": 0.59,
+      "top1": 0.15
+    },
+    "maniqa": {
+      "srcc": 0.613,
+      "plcc": 0.638,
+      "within_scene_srcc": 0.245,
+      "pair_acc": 0.597,
+      "top1": 0.03
+    },
+    "fuzzy_frozen": {
+      "srcc": 0.505,
+      "plcc": 0.524,
+      "within_scene_srcc": 0.095,
+      "pair_acc": 0.53,
+      "top1": 0.11
+    }
+  },
+  "rlie": {
+    "musiq": {
+      "srcc": 0.13,
+      "plcc": 0.201,
+      "within_scene_srcc": 0.191,
+      "pair_acc": 0.572,
+      "top1": 0.071
+    },
+    "clipiqa": {
+      "srcc": 0.089,
+      "plcc": 0.116,
+      "within_scene_srcc": 0.159,
+      "pair_acc": 0.557,
+      "top1": 0.279
+    },
+    "clipiqa+": {
+      "srcc": 0.146,
+      "plcc": 0.16,
+      "within_scene_srcc": 0.318,
+      "pair_acc": 0.617,
+      "top1": 0.11
+    },
+    "niqe": {
+      "srcc": 0.059,
+      "plcc": 0.077,
+      "within_scene_srcc": 0.14,
+      "pair_acc": 0.554,
+      "top1": 0.065
+    },
+    "brisque": {
+      "srcc": -0.015,
+      "plcc": 0.062,
+      "within_scene_srcc": -0.052,
+      "pair_acc": 0.482,
+      "top1": 0.071
+    },
+    "lpips": {
+      "srcc": -0.055,
+      "plcc": 0.13,
+      "within_scene_srcc": -0.059,
+      "pair_acc": 0.476,
+      "top1": 0.058
+    },
+    "lpips-vgg": {
+      "srcc": -0.034,
+      "plcc": 0.123,
+      "within_scene_srcc": -0.051,
+      "pair_acc": 0.483,
+      "top1": 0.11
+    },
+    "dists": {
+      "srcc": -0.003,
+      "plcc": 0.23,
+      "within_scene_srcc": -0.08,
+      "pair_acc": 0.469,
+      "top1": 0.084
+    },
+    "maniqa": {
+      "srcc": 0.213,
+      "plcc": 0.228,
+      "within_scene_srcc": 0.406,
+      "pair_acc": 0.65,
+      "top1": 0.162
+    },
+    "fuzzy_frozen": {
+      "srcc": 0.106,
+      "plcc": 0.162,
+      "within_scene_srcc": 0.135,
+      "pair_acc": 0.548,
+      "top1": 0.11
+    }
+  }
+}

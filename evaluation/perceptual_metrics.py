@@ -1,23 +1,9 @@
-"""
-Stage 1a - Perceptual metric computation (LPIPS / NIQE / BRISQUE).
+"""Compute LPIPS, NIQE and BRISQUE for the five classical enhancement methods.
 
-Place this file at:  evaluation/perceptual_metrics.py
-Run from project root:  python -m evaluation.perceptual_metrics
-
-For every (image, method) pair this script:
-  1. Re-applies the five classical enhancement methods to the preprocessed
-     low-light images, reusing preprocessing.enhancement.methods, so the
-     enhanced images are IDENTICAL to those behind enhancement_metrics.csv.
-  2. Computes three perceptual metrics that are NOT inputs to the fuzzy system:
-       - LPIPS  : full-reference learned perceptual distance (lower = better)
-       - NIQE   : no-reference natural-image quality          (lower = better)
-       - BRISQUE: no-reference perceptual quality             (lower = better)
-  3. Re-computes PSNR / SSIM / Entropy with the project's own metrics module as
-     a CONSISTENCY CHECK against enhancement_metrics.csv, so we can prove the
-     enhanced images are faithfully reproduced before trusting LPIPS.
-
-Output: results/perceptual_metrics.csv
-"""
+Run ``python -m evaluation.perceptual_metrics``. Recreates the enhanced images
+from the preprocessed LOL inputs, compares PSNR/SSIM/entropy with the stored
+metric columns, and writes results/perceptual_metrics.csv. Lower raw scores
+indicate better quality for these three metrics."""
 from __future__ import annotations
 
 import sys

@@ -1,0 +1,14 @@
+{
+  "created_utc": "2026-10-25T10:12:44.555143+00:00",
+  "known_scenes": 289,
+  "missing_source_scenes": [
+    "low00710"
+  ],
+  "label_record_sha256": "3b774528445db6ee753d0121e7daf446df6ffe9763bc25701ecdf3cc495d09ee",
+  "thumbnail": "BGR to grayscale; area 48x32; equalizeHist; float64 centering and division by std+1e-9; mean dot product",
+  "threshold": 0.9,
+  "normal_source_mapping": "lowNNNNN -> normalNNNNN.png",
+  "validation": "Compare normal-light shared/non-overlap classification to the recorded low-light classification on all 289 known scenes.",
+  "gate": "Only exact 289/289 class agreement permits classifying low00710 with its normal-light reference. Otherwise retain unknown; do not tune threshold or preprocessing.",
+  "score_retraining": false
+}

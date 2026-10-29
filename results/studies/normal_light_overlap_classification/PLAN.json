@@ -1,0 +1,12 @@
+{
+  "created_utc": "2026-10-25T10:31:18.819145+00:00",
+  "decision": "Use normal-light image matching for every rated scene; classify shared if maximum correlation >= 0.9, otherwise non-overlapping.",
+  "reason": "The preceding perfect-agreement gate incorrectly treated low-light matching as ground truth. On known scenes normal-light correlations separated the classes, while low00182 matched normal-light LOL 186.png at approximately 0.9997; the low-light search instead selected adjacent frame 185.png at approximately 0.873. Use image evidence, not model outcomes.",
+  "scope": "All 290 scenes, including low00182 and low00710.",
+  "preprocessing": "BGR to grayscale; 48x32 area interpolation; equalizeHist; float64; center and divide by std+1e-9; mean dot product.",
+  "threshold": 0.9,
+  "model_score_access": "No model score files are opened by this script. Commit classification and plan before recomputing subgroup metrics.",
+  "prior_lowlight_labels_sha256": "3b774528445db6ee753d0121e7daf446df6ffe9763bc25701ecdf3cc495d09ee",
+  "prior_gate": "Replaced by the normal-light classification protocol based on image evidence; the complete earlier record is retained.",
+  "script_sha256": "2f5aaf2cf6185a8f4f091088e9dc1cb2480fa99c7c8dd444dd8ef197609ce44d"
+}

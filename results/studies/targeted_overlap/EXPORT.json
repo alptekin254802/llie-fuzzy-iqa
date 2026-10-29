@@ -1,0 +1,17 @@
+{
+  "sha256": {
+    "results/studies/targeted_overlap/lol_scene_split.csv": "523ece3cac19e69e37dfa11477a9a45d53bcd57d7f8d560a104a7071f2b69548",
+    "results/studies/targeted_overlap/model_lol254_no_shared.json": "47aaf730919f09478b245262e4222abcdd2448f589f46023a39cb71cd9a0ad75",
+    "results/studies/targeted_overlap/model_lol485.json": "dd3b007cf450e824d7ea38c09a0ce682803818810bfcdf6e90ed7f766d7015b6",
+    "results/studies/targeted_overlap/per_scene_srcc.csv": "207752ac8abc6a4087bb127aa71633e5f4e8c00db1620ee1afac65eab836c4ec",
+    "results/studies/targeted_overlap/PROTOCOL.json": "2cc29ad6e785e239e63d65904274a166b5eb7a7072611123f3d11372e8e431cb",
+    "results/studies/targeted_overlap/random_subsets.csv": "adabc71a01c4d09c3d4be069c92a52cd3f6fd51e8bfa98c91098f86c6ad07a8f",
+    "results/studies/targeted_overlap/random_subsets_summary.csv": "1d7a0bcd2b5c99ef1b724129a3119ff1298521ddd12ca0a13d3af45decf81c27",
+    "results/studies/targeted_overlap/README.md": "5491094f2817d17d0e2449387c7fdea53b04c4978bcdec84e29eff09600fbe50",
+    "results/studies/targeted_overlap/reproduction_check.json": "6ed38c8547d28970345f1de8ba9f2db031f84e2b250134a2b647677cb67a9556",
+    "results/studies/targeted_overlap/results.csv": "fcb8d338584ebe24115c01f7e62d2b4ef92033afe20fc5454c8de7832e05f91d",
+    "results/studies/targeted_overlap/squarelol_features.csv": "8b7f39591d292a632b698687fd13a5dc92055b7310cd5284df1f3442c0565bc4",
+    "analysis/studies/targeted_overlap.py": "d36da847392caa875eed8827402821f1f0c735fde2142e5735351e3efd581670"
+  },
+  "data": "Derived SQUARE-LOL features/scores and aggregate calibration results only; no images or local paths."
+}

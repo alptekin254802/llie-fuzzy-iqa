@@ -1,25 +1,4 @@
-"""
-Enriched-feature test  -  does adding colour / brightness / noise
-to the three primitive features improve alignment, in-distribution (LOL vs
--LPIPS) and against real human MOS (RLIE)?
-
-Clean instrument = learned regressors (Linear / SVR / RF). The fuzzy system is
-NOT extended to 6 inputs (that is 3^6 = 729 rules, defeating interpretability);
-the regressor 3-vs-6 contrast isolates feature sufficiency.
-
-Two parts:
-  PART A  LOL,  target -LPIPS,  group-CV by source image          (CSV only)
-  PART B  RLIE, target human MOS, scene-disjoint 5-fold           (needs images)
-
-Feature sets:
-  3 = entropy, contrast, sharpness            (the paper's set)
-  6 = + brightness, colorfulness, noise
-
-Run:
-  python rlie_enriched.py                          # Part A only (LOL)
-  python rlie_enriched.py --rlie_root <RLIE_ROOT>  # Part A + Part B
-Needs: numpy, pandas, scipy, scikit-learn, opencv-python
-"""
+"""Compare three and six features for scene-disjoint human-label calibration on RLIE."""
 from __future__ import annotations
 
 import argparse
@@ -57,29 +36,13 @@ def load_rlie(root: Path) -> pd.DataFrame:
 
 
 def all6_from_path(path: str) -> dict:
-    """Six NR features, identical definitions to the manuscript extractor."""
+    from evaluation.nr_features import nr_features
     bgr = cv2.imread(str(path), cv2.IMREAD_COLOR)
     if bgr is None:
         raise FileNotFoundError(path)
-    rgb8 = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
-    gray = cv2.cvtColor(rgb8, cv2.COLOR_RGB2GRAY).astype(np.float64)
-    brightness = gray.mean() / 255.0
-    contrast = gray.std() / 255.0
-    hist = np.bincount(gray.astype(np.uint8).ravel(), minlength=256).astype(np.float64)
-    p = hist[hist > 0] / hist.sum()
-    entropy = float(-(p * np.log2(p)).sum())
-    R, G, B = rgb8[..., 0].astype(np.float64), rgb8[..., 1].astype(np.float64), rgb8[..., 2].astype(np.float64)
-    rg, yb = R - G, 0.5 * (R + G) - B
-    colorfulness = (np.sqrt(rg.std() ** 2 + yb.std() ** 2)
-                    + 0.3 * np.sqrt(rg.mean() ** 2 + yb.mean() ** 2)) / 255.0
-    sharpness = cv2.Laplacian(gray, cv2.CV_64F).var() / (255.0 ** 2)
-    Kmask = np.array([[1, -2, 1], [-2, 4, -2], [1, -2, 1]], dtype=np.float64)
-    conv = cv2.filter2D(gray, cv2.CV_64F, Kmask, borderType=cv2.BORDER_REPLICATE)
-    H, W = gray.shape
-    noise = (np.sum(np.abs(conv)) * np.sqrt(0.5 * np.pi)
-             / (6.0 * max(W - 2, 1) * max(H - 2, 1))) / 255.0
-    return {"entropy": entropy, "contrast": float(contrast), "sharpness": float(sharpness),
-            "brightness": float(brightness), "colorfulness": float(colorfulness), "noise": float(noise)}
+    rgb8 = cv2.resize(cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB), (256, 256), interpolation=cv2.INTER_AREA)
+    values = nr_features(rgb8.astype(np.float32) / 255.0)
+    return values
 
 
 def srho(x, y):
@@ -143,22 +106,14 @@ def report(title, df, target, folds, fuzzy3_ref):
 
 def main():
     ap = argparse.ArgumentParser()
-    ap.add_argument("--rlie_root", default=None)
+    ap.add_argument("--rlie_root", required=True)
     args = ap.parse_args()
     out = []
-
-    # ---------- PART A: LOL, target -LPIPS ----------
-    nf = pd.read_csv(RESULTS / "nr_features.csv")
-    pc = pd.read_csv(RESULTS / "perceptual_metrics.csv")[["filename", "method", "lpips"]]
-    lol = nf.merge(pc, on=["filename", "method"]).dropna(subset=F6 + ["lpips"]).reset_index(drop=True)
-    tgtL = -lol["lpips"].to_numpy()
-    foldsL = list(group_kfold(lol["filename"].to_numpy(), K_FOLDS, SEED))
-    out += report("LOL (vs -LPIPS, in-distribution)", lol, tgtL, foldsL, fuzzy3_ref="0.753")
 
     # ---------- PART B: RLIE, target human MOS ----------
     if args.rlie_root:
         root = Path(args.rlie_root)
-        cache = RESULTS / "rlie_features6.csv"
+        cache = RESULTS / "rlie_features6_area256.csv"
         if cache.exists():
             r = pd.read_csv(cache)
         else:
@@ -169,13 +124,9 @@ def main():
             r.to_csv(cache, index=False); print(f"[ok] cached -> {cache}")
         tgtR = r["mos"].to_numpy(float)
         foldsR = list(group_kfold(r["scene"].to_numpy(), K_FOLDS, SEED))
-        out += report("RLIE (vs human MOS, scene-disjoint)", r, tgtR, foldsR, fuzzy3_ref="0.267")
-    else:
-        print("\n[i] no --rlie_root given: ran Part A (LOL) only. "
-              "Add --rlie_root to run the RLIE human-MOS test.")
-
-    pd.DataFrame(out).to_csv(RESULTS / "enriched_feature_test.csv", index=False)
-    print(f"\n[ok] wrote {RESULTS / 'enriched_feature_test.csv'}")
+        out += report("RLIE (vs human MOS, scene-disjoint)", r, tgtR, foldsR, fuzzy3_ref="see rlie_human_mos.csv")
+    pd.DataFrame(out).to_csv(RESULTS / "rlie_enriched.csv", index=False)
+    print(f"\n[ok] wrote {RESULTS / 'rlie_enriched.csv'}")
 
 
 if __name__ == "__main__":

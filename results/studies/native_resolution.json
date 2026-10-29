@@ -1,0 +1,284 @@
+{
+  "pipelines": {
+    "native": {
+      "de": {
+        "pooled_srcc": 0.7197178853037053,
+        "fold_srcc": [
+          0.7393182544952492,
+          0.7117663231782754,
+          0.7010921319501877,
+          0.7157438386901628,
+          0.7595755415770644
+        ],
+        "within": {
+          "groups": 485,
+          "mean_srcc": 0.5459712509873441,
+          "mean_krcc": 0.46051798928061,
+          "top1": 0.3920962199312715,
+          "pair_acc": 0.7295876288659794,
+          "pairs": 4850,
+          "prediction_tied_pairs": 99,
+          "pair_acc_tie_correction": 0.01020618556701031
+        },
+        "retinex_srcc": -0.36054544197800914,
+        "human": {
+          "squarelol": {
+            "pooled_srcc": 0.16008689613200233,
+            "within": {
+              "groups": 290,
+              "mean_srcc": 0.13809256635526518,
+              "mean_krcc": 0.08561748699615225,
+              "top1": 0.14482758620689656,
+              "pair_acc": 0.5429254007398274,
+              "pairs": 12976,
+              "prediction_tied_pairs": 2,
+              "pair_acc_tie_correction": 7.706535141800247e-05
+            }
+          },
+          "lieq": {
+            "pooled_srcc": 0.545922615295864,
+            "within": {
+              "groups": 100,
+              "mean_srcc": 0.07416756826950054,
+              "mean_krcc": 0.061435720549218795,
+              "top1": 0.135,
+              "pair_acc": 0.5307777777777778,
+              "pairs": 4500,
+              "prediction_tied_pairs": 25,
+              "pair_acc_tie_correction": 0.002777777777777778
+            }
+          },
+          "rlie": {
+            "pooled_srcc": 0.10012598219546437,
+            "within": {
+              "groups": 154,
+              "mean_srcc": 0.12018692537924035,
+              "mean_krcc": 0.09548349021776067,
+              "top1": 0.11688311688311688,
+              "pair_acc": 0.5476911976911977,
+              "pairs": 6930,
+              "prediction_tied_pairs": 9,
+              "pair_acc_tie_correction": 0.0006493506493506494
+            }
+          }
+        },
+        "fold_mean_srcc": 0.725499217978188
+      },
+      "nr_mono": {
+        "pooled_srcc": 0.7131136061516518,
+        "fold_srcc": [
+          0.741401405389865,
+          0.7342329984870744,
+          0.6698621685954044,
+          0.7119176605102333,
+          0.7562056202685508
+        ],
+        "within": {
+          "groups": 485,
+          "mean_srcc": 0.5841077361953415,
+          "mean_krcc": 0.49805323598289364,
+          "top1": 0.429553264604811,
+          "pair_acc": 0.7480412371134021,
+          "pairs": 4850,
+          "prediction_tied_pairs": 108,
+          "pair_acc_tie_correction": 0.0111340206185567
+        },
+        "retinex_srcc": -0.5797668033252392,
+        "human": {
+          "squarelol": {
+            "pooled_srcc": 0.1615490282287357,
+            "within": {
+              "groups": 290,
+              "mean_srcc": 0.127093621369911,
+              "mean_krcc": 0.07221261671727973,
+              "top1": 0.1,
+              "pair_acc": 0.5364904438964241,
+              "pairs": 12976,
+              "prediction_tied_pairs": 63,
+              "pair_acc_tie_correction": 0.0024275585696670776
+            }
+          },
+          "lieq": {
+            "pooled_srcc": 0.5111361744943003,
+            "within": {
+              "groups": 100,
+              "mean_srcc": 0.039457272885802926,
+              "mean_krcc": 0.037134800810444644,
+              "top1": 0.095,
+              "pair_acc": 0.5186666666666667,
+              "pairs": 4500,
+              "prediction_tied_pairs": 26,
+              "pair_acc_tie_correction": 0.0028888888888888888
+            }
+          },
+          "rlie": {
+            "pooled_srcc": 0.11326266527866309,
+            "within": {
+              "groups": 154,
+              "mean_srcc": 0.1552357472813257,
+              "mean_krcc": 0.12152926091365879,
+              "top1": 0.09090909090909091,
+              "pair_acc": 0.5606782106782107,
+              "pairs": 6930,
+              "prediction_tied_pairs": 9,
+              "pair_acc_tie_correction": 0.0006493506493506494
+            }
+          }
+        },
+        "fold_mean_srcc": 0.7227239706502255
+      }
+    },
+    "256": {
+      "de": {
+        "pooled_srcc": 0.7505950098952676,
+        "fold_srcc": [
+          0.7614225235243623,
+          0.74679654206018,
+          0.7225021250165548,
+          0.7558093919812062,
+          0.7839911661279118
+        ],
+        "within": {
+          "groups": 485,
+          "mean_srcc": 0.6271626949837886,
+          "mean_krcc": 0.5376764006312479,
+          "top1": 0.5508591065292096,
+          "pair_acc": 0.7662886597938144,
+          "pairs": 4850,
+          "prediction_tied_pairs": 123,
+          "pair_acc_tie_correction": 0.012680412371134021
+        },
+        "retinex_srcc": -0.2212426669916889,
+        "human": {
+          "squarelol": {
+            "pooled_srcc": 0.303679572549989,
+            "within": {
+              "groups": 290,
+              "mean_srcc": 0.3807262000153577,
+              "mean_krcc": 0.2860560169500554,
+              "top1": 0.14482758620689656,
+              "pair_acc": 0.6433800863131935,
+              "pairs": 12976,
+              "prediction_tied_pairs": 15,
+              "pair_acc_tie_correction": 0.0005779901356350185
+            }
+          },
+          "lieq": {
+            "pooled_srcc": 0.5054932969317566,
+            "within": {
+              "groups": 100,
+              "mean_srcc": 0.09471993462338975,
+              "mean_krcc": 0.06583900708109362,
+              "top1": 0.11,
+              "pair_acc": 0.5334444444444445,
+              "pairs": 4500,
+              "prediction_tied_pairs": 31,
+              "pair_acc_tie_correction": 0.0034444444444444444
+            }
+          },
+          "rlie": {
+            "pooled_srcc": 0.10616404225469477,
+            "within": {
+              "groups": 154,
+              "mean_srcc": 0.13543554242794656,
+              "mean_krcc": 0.09981061376127859,
+              "top1": 0.11038961038961038,
+              "pair_acc": 0.5497835497835497,
+              "pairs": 6930,
+              "prediction_tied_pairs": 18,
+              "pair_acc_tie_correction": 0.0012987012987012987
+            }
+          }
+        },
+        "fold_mean_srcc": 0.754104349742043
+      },
+      "nr_mono": {
+        "pooled_srcc": 0.7435705830088135,
+        "fold_srcc": [
+          0.7634896049508582,
+          0.745177526487265,
+          0.7187002430597457,
+          0.7431477714341351,
+          0.7803905126880507
+        ],
+        "within": {
+          "groups": 485,
+          "mean_srcc": 0.6350545326494293,
+          "mean_krcc": 0.5508092066515005,
+          "top1": 0.5542955326460481,
+          "pair_acc": 0.7728865979381443,
+          "pairs": 4850,
+          "prediction_tied_pairs": 127,
+          "pair_acc_tie_correction": 0.013092783505154639
+        },
+        "retinex_srcc": -0.43102752816932516,
+        "human": {
+          "squarelol": {
+            "pooled_srcc": 0.2932281119165595,
+            "within": {
+              "groups": 290,
+              "mean_srcc": 0.4052990541604145,
+              "mean_krcc": 0.2965343328201302,
+              "top1": 0.1482758620689655,
+              "pair_acc": 0.6485819975339088,
+              "pairs": 12976,
+              "prediction_tied_pairs": 16,
+              "pair_acc_tie_correction": 0.0006165228113440197
+            }
+          },
+          "lieq": {
+            "pooled_srcc": 0.45316513133095954,
+            "within": {
+              "groups": 100,
+              "mean_srcc": -0.021069136349781314,
+              "mean_krcc": -0.010232071707255446,
+              "top1": 0.135,
+              "pair_acc": 0.49522222222222223,
+              "pairs": 4500,
+              "prediction_tied_pairs": 35,
+              "pair_acc_tie_correction": 0.0038888888888888888
+            }
+          },
+          "rlie": {
+            "pooled_srcc": 0.14060285673908246,
+            "within": {
+              "groups": 154,
+              "mean_srcc": 0.20465721062417325,
+              "mean_krcc": 0.16051671718919686,
+              "top1": 0.07142857142857142,
+              "pair_acc": 0.58008658008658,
+              "pairs": 6930,
+              "prediction_tied_pairs": 18,
+              "pair_acc_tie_correction": 0.0012987012987012987
+            }
+          }
+        },
+        "fold_mean_srcc": 0.750181131724011
+      }
+    }
+  },
+  "within_native_minus_256": {
+    "de": {
+      "difference": -0.08119144399644446,
+      "ci95": [
+        -0.11027212205310619,
+        -0.052941409661438725
+      ],
+      "p_two_sided_null_centered": 0.0004997501249375312,
+      "excludes_zero": true,
+      "replicates": 2000,
+      "seed": 20261018
+    },
+    "nr_mono": {
+      "difference": -0.050946796454087964,
+      "ci95": [
+        -0.08010565561611327,
+        -0.022206455131707215
+      ],
+      "p_two_sided_null_centered": 0.0004997501249375312,
+      "excludes_zero": true,
+      "replicates": 2000,
+      "seed": 20261018
+    }
+  }
+}

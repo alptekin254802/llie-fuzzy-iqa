@@ -1,0 +1,25 @@
+{
+  "SVR 6f MOS-cal": {
+    "srcc": 0.353,
+    "krcc": 0.243,
+    "plcc": 0.356,
+    "foldmean": 0.352
+  },
+  "zero-shot fuzzy": {
+    "srcc": 0.106,
+    "krcc": 0.069,
+    "plcc": 0.162,
+    "within_scene_srcc": 0.135,
+    "top1": 0.11,
+    "pair_acc": 0.548
+  },
+  "MOS-cal fuzzy": {
+    "srcc_pooled": 0.249,
+    "srcc_foldmean": 0.253,
+    "krcc": 0.168,
+    "plcc": 0.242,
+    "within_scene_srcc": 0.329,
+    "top1": 0.195,
+    "pair_acc": 0.597
+  }
+}

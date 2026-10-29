@@ -1,0 +1,3092 @@
+{
+  "task": "human_method_coverage",
+  "created_utc": "2026-10-29T14:11:54.096081+00:00",
+  "seed": 20261029,
+  "repeats": 20,
+  "scene_folds": 5,
+  "k_values": [
+    2,
+    3,
+    4,
+    5,
+    6
+  ],
+  "test_methods_per_repeat": 4,
+  "training_pool_methods": 6,
+  "nesting": "k uses first k of the single random six-method addition order; same four test methods for all k and folds in that repeat",
+  "randomization": "np.random.default_rng(20261029), reset per dataset; choose4 test without replacement, then permute remaining6",
+  "datasets": {
+    "squarelol": {
+      "images": 2900,
+      "scenes": 290,
+      "methods": [
+        "CRM",
+        "Enlightengan",
+        "JED",
+        "MF",
+        "MR",
+        "RetinexNet",
+        "SRIE",
+        "Self_Supervised",
+        "Semi",
+        "Zero"
+      ],
+      "method_count": 10,
+      "scene_fold_counts": {
+        "0": 58,
+        "1": 58,
+        "2": 58,
+        "3": 58,
+        "4": 58
+      },
+      "splits": [
+        {
+          "repeat": 0,
+          "test_methods": [
+            "Enlightengan",
+            "MF",
+            "Semi",
+            "Zero"
+          ],
+          "addition_order": [
+            "MR",
+            "RetinexNet",
+            "CRM",
+            "SRIE",
+            "Self_Supervised",
+            "JED"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "MR",
+              "RetinexNet"
+            ],
+            "3": [
+              "MR",
+              "RetinexNet",
+              "CRM"
+            ],
+            "4": [
+              "MR",
+              "RetinexNet",
+              "CRM",
+              "SRIE"
+            ],
+            "5": [
+              "MR",
+              "RetinexNet",
+              "CRM",
+              "SRIE",
+              "Self_Supervised"
+            ],
+            "6": [
+              "MR",
+              "RetinexNet",
+              "CRM",
+              "SRIE",
+              "Self_Supervised",
+              "JED"
+            ]
+          }
+        },
+        {
+          "repeat": 1,
+          "test_methods": [
+            "Enlightengan",
+            "MF",
+            "RetinexNet",
+            "Self_Supervised"
+          ],
+          "addition_order": [
+            "JED",
+            "MR",
+            "Semi",
+            "SRIE",
+            "CRM",
+            "Zero"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "JED",
+              "MR"
+            ],
+            "3": [
+              "JED",
+              "MR",
+              "Semi"
+            ],
+            "4": [
+              "JED",
+              "MR",
+              "Semi",
+              "SRIE"
+            ],
+            "5": [
+              "JED",
+              "MR",
+              "Semi",
+              "SRIE",
+              "CRM"
+            ],
+            "6": [
+              "JED",
+              "MR",
+              "Semi",
+              "SRIE",
+              "CRM",
+              "Zero"
+            ]
+          }
+        },
+        {
+          "repeat": 2,
+          "test_methods": [
+            "Enlightengan",
+            "JED",
+            "MR",
+            "RetinexNet"
+          ],
+          "addition_order": [
+            "Self_Supervised",
+            "Semi",
+            "Zero",
+            "CRM",
+            "SRIE",
+            "MF"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Self_Supervised",
+              "Semi"
+            ],
+            "3": [
+              "Self_Supervised",
+              "Semi",
+              "Zero"
+            ],
+            "4": [
+              "Self_Supervised",
+              "Semi",
+              "Zero",
+              "CRM"
+            ],
+            "5": [
+              "Self_Supervised",
+              "Semi",
+              "Zero",
+              "CRM",
+              "SRIE"
+            ],
+            "6": [
+              "Self_Supervised",
+              "Semi",
+              "Zero",
+              "CRM",
+              "SRIE",
+              "MF"
+            ]
+          }
+        },
+        {
+          "repeat": 3,
+          "test_methods": [
+            "Enlightengan",
+            "MF",
+            "MR",
+            "RetinexNet"
+          ],
+          "addition_order": [
+            "Zero",
+            "CRM",
+            "Self_Supervised",
+            "Semi",
+            "SRIE",
+            "JED"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Zero",
+              "CRM"
+            ],
+            "3": [
+              "Zero",
+              "CRM",
+              "Self_Supervised"
+            ],
+            "4": [
+              "Zero",
+              "CRM",
+              "Self_Supervised",
+              "Semi"
+            ],
+            "5": [
+              "Zero",
+              "CRM",
+              "Self_Supervised",
+              "Semi",
+              "SRIE"
+            ],
+            "6": [
+              "Zero",
+              "CRM",
+              "Self_Supervised",
+              "Semi",
+              "SRIE",
+              "JED"
+            ]
+          }
+        },
+        {
+          "repeat": 4,
+          "test_methods": [
+            "CRM",
+            "Enlightengan",
+            "MF",
+            "SRIE"
+          ],
+          "addition_order": [
+            "Zero",
+            "RetinexNet",
+            "Self_Supervised",
+            "MR",
+            "JED",
+            "Semi"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Zero",
+              "RetinexNet"
+            ],
+            "3": [
+              "Zero",
+              "RetinexNet",
+              "Self_Supervised"
+            ],
+            "4": [
+              "Zero",
+              "RetinexNet",
+              "Self_Supervised",
+              "MR"
+            ],
+            "5": [
+              "Zero",
+              "RetinexNet",
+              "Self_Supervised",
+              "MR",
+              "JED"
+            ],
+            "6": [
+              "Zero",
+              "RetinexNet",
+              "Self_Supervised",
+              "MR",
+              "JED",
+              "Semi"
+            ]
+          }
+        },
+        {
+          "repeat": 5,
+          "test_methods": [
+            "CRM",
+            "Enlightengan",
+            "MR",
+            "SRIE"
+          ],
+          "addition_order": [
+            "Semi",
+            "Zero",
+            "RetinexNet",
+            "Self_Supervised",
+            "JED",
+            "MF"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Semi",
+              "Zero"
+            ],
+            "3": [
+              "Semi",
+              "Zero",
+              "RetinexNet"
+            ],
+            "4": [
+              "Semi",
+              "Zero",
+              "RetinexNet",
+              "Self_Supervised"
+            ],
+            "5": [
+              "Semi",
+              "Zero",
+              "RetinexNet",
+              "Self_Supervised",
+              "JED"
+            ],
+            "6": [
+              "Semi",
+              "Zero",
+              "RetinexNet",
+              "Self_Supervised",
+              "JED",
+              "MF"
+            ]
+          }
+        },
+        {
+          "repeat": 6,
+          "test_methods": [
+            "JED",
+            "Self_Supervised",
+            "Semi",
+            "Zero"
+          ],
+          "addition_order": [
+            "CRM",
+            "RetinexNet",
+            "MF",
+            "SRIE",
+            "MR",
+            "Enlightengan"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "CRM",
+              "RetinexNet"
+            ],
+            "3": [
+              "CRM",
+              "RetinexNet",
+              "MF"
+            ],
+            "4": [
+              "CRM",
+              "RetinexNet",
+              "MF",
+              "SRIE"
+            ],
+            "5": [
+              "CRM",
+              "RetinexNet",
+              "MF",
+              "SRIE",
+              "MR"
+            ],
+            "6": [
+              "CRM",
+              "RetinexNet",
+              "MF",
+              "SRIE",
+              "MR",
+              "Enlightengan"
+            ]
+          }
+        },
+        {
+          "repeat": 7,
+          "test_methods": [
+            "CRM",
+            "MF",
+            "MR",
+            "Self_Supervised"
+          ],
+          "addition_order": [
+            "Semi",
+            "Enlightengan",
+            "SRIE",
+            "JED",
+            "Zero",
+            "RetinexNet"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Semi",
+              "Enlightengan"
+            ],
+            "3": [
+              "Semi",
+              "Enlightengan",
+              "SRIE"
+            ],
+            "4": [
+              "Semi",
+              "Enlightengan",
+              "SRIE",
+              "JED"
+            ],
+            "5": [
+              "Semi",
+              "Enlightengan",
+              "SRIE",
+              "JED",
+              "Zero"
+            ],
+            "6": [
+              "Semi",
+              "Enlightengan",
+              "SRIE",
+              "JED",
+              "Zero",
+              "RetinexNet"
+            ]
+          }
+        },
+        {
+          "repeat": 8,
+          "test_methods": [
+            "CRM",
+            "RetinexNet",
+            "Self_Supervised",
+            "Semi"
+          ],
+          "addition_order": [
+            "Zero",
+            "SRIE",
+            "MR",
+            "MF",
+            "Enlightengan",
+            "JED"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Zero",
+              "SRIE"
+            ],
+            "3": [
+              "Zero",
+              "SRIE",
+              "MR"
+            ],
+            "4": [
+              "Zero",
+              "SRIE",
+              "MR",
+              "MF"
+            ],
+            "5": [
+              "Zero",
+              "SRIE",
+              "MR",
+              "MF",
+              "Enlightengan"
+            ],
+            "6": [
+              "Zero",
+              "SRIE",
+              "MR",
+              "MF",
+              "Enlightengan",
+              "JED"
+            ]
+          }
+        },
+        {
+          "repeat": 9,
+          "test_methods": [
+            "CRM",
+            "MR",
+            "RetinexNet",
+            "Zero"
+          ],
+          "addition_order": [
+            "JED",
+            "SRIE",
+            "Enlightengan",
+            "MF",
+            "Self_Supervised",
+            "Semi"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "JED",
+              "SRIE"
+            ],
+            "3": [
+              "JED",
+              "SRIE",
+              "Enlightengan"
+            ],
+            "4": [
+              "JED",
+              "SRIE",
+              "Enlightengan",
+              "MF"
+            ],
+            "5": [
+              "JED",
+              "SRIE",
+              "Enlightengan",
+              "MF",
+              "Self_Supervised"
+            ],
+            "6": [
+              "JED",
+              "SRIE",
+              "Enlightengan",
+              "MF",
+              "Self_Supervised",
+              "Semi"
+            ]
+          }
+        },
+        {
+          "repeat": 10,
+          "test_methods": [
+            "Enlightengan",
+            "MF",
+            "Self_Supervised",
+            "Semi"
+          ],
+          "addition_order": [
+            "JED",
+            "SRIE",
+            "RetinexNet",
+            "Zero",
+            "CRM",
+            "MR"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "JED",
+              "SRIE"
+            ],
+            "3": [
+              "JED",
+              "SRIE",
+              "RetinexNet"
+            ],
+            "4": [
+              "JED",
+              "SRIE",
+              "RetinexNet",
+              "Zero"
+            ],
+            "5": [
+              "JED",
+              "SRIE",
+              "RetinexNet",
+              "Zero",
+              "CRM"
+            ],
+            "6": [
+              "JED",
+              "SRIE",
+              "RetinexNet",
+              "Zero",
+              "CRM",
+              "MR"
+            ]
+          }
+        },
+        {
+          "repeat": 11,
+          "test_methods": [
+            "MR",
+            "SRIE",
+            "Self_Supervised",
+            "Zero"
+          ],
+          "addition_order": [
+            "RetinexNet",
+            "Enlightengan",
+            "JED",
+            "CRM",
+            "Semi",
+            "MF"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "RetinexNet",
+              "Enlightengan"
+            ],
+            "3": [
+              "RetinexNet",
+              "Enlightengan",
+              "JED"
+            ],
+            "4": [
+              "RetinexNet",
+              "Enlightengan",
+              "JED",
+              "CRM"
+            ],
+            "5": [
+              "RetinexNet",
+              "Enlightengan",
+              "JED",
+              "CRM",
+              "Semi"
+            ],
+            "6": [
+              "RetinexNet",
+              "Enlightengan",
+              "JED",
+              "CRM",
+              "Semi",
+              "MF"
+            ]
+          }
+        },
+        {
+          "repeat": 12,
+          "test_methods": [
+            "Enlightengan",
+            "Self_Supervised",
+            "Semi",
+            "Zero"
+          ],
+          "addition_order": [
+            "MR",
+            "RetinexNet",
+            "CRM",
+            "JED",
+            "MF",
+            "SRIE"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "MR",
+              "RetinexNet"
+            ],
+            "3": [
+              "MR",
+              "RetinexNet",
+              "CRM"
+            ],
+            "4": [
+              "MR",
+              "RetinexNet",
+              "CRM",
+              "JED"
+            ],
+            "5": [
+              "MR",
+              "RetinexNet",
+              "CRM",
+              "JED",
+              "MF"
+            ],
+            "6": [
+              "MR",
+              "RetinexNet",
+              "CRM",
+              "JED",
+              "MF",
+              "SRIE"
+            ]
+          }
+        },
+        {
+          "repeat": 13,
+          "test_methods": [
+            "CRM",
+            "MR",
+            "SRIE",
+            "Self_Supervised"
+          ],
+          "addition_order": [
+            "Zero",
+            "Enlightengan",
+            "MF",
+            "JED",
+            "Semi",
+            "RetinexNet"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Zero",
+              "Enlightengan"
+            ],
+            "3": [
+              "Zero",
+              "Enlightengan",
+              "MF"
+            ],
+            "4": [
+              "Zero",
+              "Enlightengan",
+              "MF",
+              "JED"
+            ],
+            "5": [
+              "Zero",
+              "Enlightengan",
+              "MF",
+              "JED",
+              "Semi"
+            ],
+            "6": [
+              "Zero",
+              "Enlightengan",
+              "MF",
+              "JED",
+              "Semi",
+              "RetinexNet"
+            ]
+          }
+        },
+        {
+          "repeat": 14,
+          "test_methods": [
+            "JED",
+            "MR",
+            "RetinexNet",
+            "SRIE"
+          ],
+          "addition_order": [
+            "CRM",
+            "MF",
+            "Zero",
+            "Semi",
+            "Self_Supervised",
+            "Enlightengan"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "CRM",
+              "MF"
+            ],
+            "3": [
+              "CRM",
+              "MF",
+              "Zero"
+            ],
+            "4": [
+              "CRM",
+              "MF",
+              "Zero",
+              "Semi"
+            ],
+            "5": [
+              "CRM",
+              "MF",
+              "Zero",
+              "Semi",
+              "Self_Supervised"
+            ],
+            "6": [
+              "CRM",
+              "MF",
+              "Zero",
+              "Semi",
+              "Self_Supervised",
+              "Enlightengan"
+            ]
+          }
+        },
+        {
+          "repeat": 15,
+          "test_methods": [
+            "CRM",
+            "Enlightengan",
+            "MF",
+            "MR"
+          ],
+          "addition_order": [
+            "JED",
+            "Semi",
+            "Self_Supervised",
+            "RetinexNet",
+            "SRIE",
+            "Zero"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "JED",
+              "Semi"
+            ],
+            "3": [
+              "JED",
+              "Semi",
+              "Self_Supervised"
+            ],
+            "4": [
+              "JED",
+              "Semi",
+              "Self_Supervised",
+              "RetinexNet"
+            ],
+            "5": [
+              "JED",
+              "Semi",
+              "Self_Supervised",
+              "RetinexNet",
+              "SRIE"
+            ],
+            "6": [
+              "JED",
+              "Semi",
+              "Self_Supervised",
+              "RetinexNet",
+              "SRIE",
+              "Zero"
+            ]
+          }
+        },
+        {
+          "repeat": 16,
+          "test_methods": [
+            "CRM",
+            "Enlightengan",
+            "Self_Supervised",
+            "Zero"
+          ],
+          "addition_order": [
+            "MR",
+            "JED",
+            "SRIE",
+            "Semi",
+            "MF",
+            "RetinexNet"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "MR",
+              "JED"
+            ],
+            "3": [
+              "MR",
+              "JED",
+              "SRIE"
+            ],
+            "4": [
+              "MR",
+              "JED",
+              "SRIE",
+              "Semi"
+            ],
+            "5": [
+              "MR",
+              "JED",
+              "SRIE",
+              "Semi",
+              "MF"
+            ],
+            "6": [
+              "MR",
+              "JED",
+              "SRIE",
+              "Semi",
+              "MF",
+              "RetinexNet"
+            ]
+          }
+        },
+        {
+          "repeat": 17,
+          "test_methods": [
+            "CRM",
+            "MF",
+            "MR",
+            "RetinexNet"
+          ],
+          "addition_order": [
+            "Semi",
+            "SRIE",
+            "Self_Supervised",
+            "JED",
+            "Enlightengan",
+            "Zero"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Semi",
+              "SRIE"
+            ],
+            "3": [
+              "Semi",
+              "SRIE",
+              "Self_Supervised"
+            ],
+            "4": [
+              "Semi",
+              "SRIE",
+              "Self_Supervised",
+              "JED"
+            ],
+            "5": [
+              "Semi",
+              "SRIE",
+              "Self_Supervised",
+              "JED",
+              "Enlightengan"
+            ],
+            "6": [
+              "Semi",
+              "SRIE",
+              "Self_Supervised",
+              "JED",
+              "Enlightengan",
+              "Zero"
+            ]
+          }
+        },
+        {
+          "repeat": 18,
+          "test_methods": [
+            "CRM",
+            "JED",
+            "Self_Supervised",
+            "Zero"
+          ],
+          "addition_order": [
+            "Semi",
+            "Enlightengan",
+            "RetinexNet",
+            "SRIE",
+            "MF",
+            "MR"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Semi",
+              "Enlightengan"
+            ],
+            "3": [
+              "Semi",
+              "Enlightengan",
+              "RetinexNet"
+            ],
+            "4": [
+              "Semi",
+              "Enlightengan",
+              "RetinexNet",
+              "SRIE"
+            ],
+            "5": [
+              "Semi",
+              "Enlightengan",
+              "RetinexNet",
+              "SRIE",
+              "MF"
+            ],
+            "6": [
+              "Semi",
+              "Enlightengan",
+              "RetinexNet",
+              "SRIE",
+              "MF",
+              "MR"
+            ]
+          }
+        },
+        {
+          "repeat": 19,
+          "test_methods": [
+            "Enlightengan",
+            "MF",
+            "SRIE",
+            "Semi"
+          ],
+          "addition_order": [
+            "Self_Supervised",
+            "CRM",
+            "MR",
+            "RetinexNet",
+            "JED",
+            "Zero"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "Self_Supervised",
+              "CRM"
+            ],
+            "3": [
+              "Self_Supervised",
+              "CRM",
+              "MR"
+            ],
+            "4": [
+              "Self_Supervised",
+              "CRM",
+              "MR",
+              "RetinexNet"
+            ],
+            "5": [
+              "Self_Supervised",
+              "CRM",
+              "MR",
+              "RetinexNet",
+              "JED"
+            ],
+            "6": [
+              "Self_Supervised",
+              "CRM",
+              "MR",
+              "RetinexNet",
+              "JED",
+              "Zero"
+            ]
+          }
+        }
+      ]
+    },
+    "lieq": {
+      "images": 1000,
+      "scenes": 100,
+      "methods": [
+        "CRM",
+        "EFF",
+        "LIME",
+        "NPEA",
+        "PLE",
+        "SRIE",
+        "bpdhe",
+        "dong",
+        "he",
+        "multi_fusion"
+      ],
+      "method_count": 10,
+      "scene_fold_counts": {
+        "0": 20,
+        "1": 20,
+        "2": 20,
+        "3": 20,
+        "4": 20
+      },
+      "splits": [
+        {
+          "repeat": 0,
+          "test_methods": [
+            "EFF",
+            "NPEA",
+            "he",
+            "multi_fusion"
+          ],
+          "addition_order": [
+            "PLE",
+            "SRIE",
+            "CRM",
+            "bpdhe",
+            "dong",
+            "LIME"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "PLE",
+              "SRIE"
+            ],
+            "3": [
+              "PLE",
+              "SRIE",
+              "CRM"
+            ],
+            "4": [
+              "PLE",
+              "SRIE",
+              "CRM",
+              "bpdhe"
+            ],
+            "5": [
+              "PLE",
+              "SRIE",
+              "CRM",
+              "bpdhe",
+              "dong"
+            ],
+            "6": [
+              "PLE",
+              "SRIE",
+              "CRM",
+              "bpdhe",
+              "dong",
+              "LIME"
+            ]
+          }
+        },
+        {
+          "repeat": 1,
+          "test_methods": [
+            "EFF",
+            "NPEA",
+            "SRIE",
+            "dong"
+          ],
+          "addition_order": [
+            "LIME",
+            "PLE",
+            "he",
+            "bpdhe",
+            "CRM",
+            "multi_fusion"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "LIME",
+              "PLE"
+            ],
+            "3": [
+              "LIME",
+              "PLE",
+              "he"
+            ],
+            "4": [
+              "LIME",
+              "PLE",
+              "he",
+              "bpdhe"
+            ],
+            "5": [
+              "LIME",
+              "PLE",
+              "he",
+              "bpdhe",
+              "CRM"
+            ],
+            "6": [
+              "LIME",
+              "PLE",
+              "he",
+              "bpdhe",
+              "CRM",
+              "multi_fusion"
+            ]
+          }
+        },
+        {
+          "repeat": 2,
+          "test_methods": [
+            "EFF",
+            "LIME",
+            "PLE",
+            "SRIE"
+          ],
+          "addition_order": [
+            "dong",
+            "he",
+            "multi_fusion",
+            "CRM",
+            "bpdhe",
+            "NPEA"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "dong",
+              "he"
+            ],
+            "3": [
+              "dong",
+              "he",
+              "multi_fusion"
+            ],
+            "4": [
+              "dong",
+              "he",
+              "multi_fusion",
+              "CRM"
+            ],
+            "5": [
+              "dong",
+              "he",
+              "multi_fusion",
+              "CRM",
+              "bpdhe"
+            ],
+            "6": [
+              "dong",
+              "he",
+              "multi_fusion",
+              "CRM",
+              "bpdhe",
+              "NPEA"
+            ]
+          }
+        },
+        {
+          "repeat": 3,
+          "test_methods": [
+            "EFF",
+            "NPEA",
+            "PLE",
+            "SRIE"
+          ],
+          "addition_order": [
+            "multi_fusion",
+            "CRM",
+            "dong",
+            "he",
+            "bpdhe",
+            "LIME"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "multi_fusion",
+              "CRM"
+            ],
+            "3": [
+              "multi_fusion",
+              "CRM",
+              "dong"
+            ],
+            "4": [
+              "multi_fusion",
+              "CRM",
+              "dong",
+              "he"
+            ],
+            "5": [
+              "multi_fusion",
+              "CRM",
+              "dong",
+              "he",
+              "bpdhe"
+            ],
+            "6": [
+              "multi_fusion",
+              "CRM",
+              "dong",
+              "he",
+              "bpdhe",
+              "LIME"
+            ]
+          }
+        },
+        {
+          "repeat": 4,
+          "test_methods": [
+            "CRM",
+            "EFF",
+            "NPEA",
+            "bpdhe"
+          ],
+          "addition_order": [
+            "multi_fusion",
+            "SRIE",
+            "dong",
+            "PLE",
+            "LIME",
+            "he"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "multi_fusion",
+              "SRIE"
+            ],
+            "3": [
+              "multi_fusion",
+              "SRIE",
+              "dong"
+            ],
+            "4": [
+              "multi_fusion",
+              "SRIE",
+              "dong",
+              "PLE"
+            ],
+            "5": [
+              "multi_fusion",
+              "SRIE",
+              "dong",
+              "PLE",
+              "LIME"
+            ],
+            "6": [
+              "multi_fusion",
+              "SRIE",
+              "dong",
+              "PLE",
+              "LIME",
+              "he"
+            ]
+          }
+        },
+        {
+          "repeat": 5,
+          "test_methods": [
+            "CRM",
+            "EFF",
+            "PLE",
+            "bpdhe"
+          ],
+          "addition_order": [
+            "he",
+            "multi_fusion",
+            "SRIE",
+            "dong",
+            "LIME",
+            "NPEA"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "he",
+              "multi_fusion"
+            ],
+            "3": [
+              "he",
+              "multi_fusion",
+              "SRIE"
+            ],
+            "4": [
+              "he",
+              "multi_fusion",
+              "SRIE",
+              "dong"
+            ],
+            "5": [
+              "he",
+              "multi_fusion",
+              "SRIE",
+              "dong",
+              "LIME"
+            ],
+            "6": [
+              "he",
+              "multi_fusion",
+              "SRIE",
+              "dong",
+              "LIME",
+              "NPEA"
+            ]
+          }
+        },
+        {
+          "repeat": 6,
+          "test_methods": [
+            "LIME",
+            "dong",
+            "he",
+            "multi_fusion"
+          ],
+          "addition_order": [
+            "CRM",
+            "SRIE",
+            "NPEA",
+            "bpdhe",
+            "PLE",
+            "EFF"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "CRM",
+              "SRIE"
+            ],
+            "3": [
+              "CRM",
+              "SRIE",
+              "NPEA"
+            ],
+            "4": [
+              "CRM",
+              "SRIE",
+              "NPEA",
+              "bpdhe"
+            ],
+            "5": [
+              "CRM",
+              "SRIE",
+              "NPEA",
+              "bpdhe",
+              "PLE"
+            ],
+            "6": [
+              "CRM",
+              "SRIE",
+              "NPEA",
+              "bpdhe",
+              "PLE",
+              "EFF"
+            ]
+          }
+        },
+        {
+          "repeat": 7,
+          "test_methods": [
+            "CRM",
+            "NPEA",
+            "PLE",
+            "dong"
+          ],
+          "addition_order": [
+            "he",
+            "EFF",
+            "bpdhe",
+            "LIME",
+            "multi_fusion",
+            "SRIE"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "he",
+              "EFF"
+            ],
+            "3": [
+              "he",
+              "EFF",
+              "bpdhe"
+            ],
+            "4": [
+              "he",
+              "EFF",
+              "bpdhe",
+              "LIME"
+            ],
+            "5": [
+              "he",
+              "EFF",
+              "bpdhe",
+              "LIME",
+              "multi_fusion"
+            ],
+            "6": [
+              "he",
+              "EFF",
+              "bpdhe",
+              "LIME",
+              "multi_fusion",
+              "SRIE"
+            ]
+          }
+        },
+        {
+          "repeat": 8,
+          "test_methods": [
+            "CRM",
+            "SRIE",
+            "dong",
+            "he"
+          ],
+          "addition_order": [
+            "multi_fusion",
+            "bpdhe",
+            "PLE",
+            "NPEA",
+            "EFF",
+            "LIME"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "multi_fusion",
+              "bpdhe"
+            ],
+            "3": [
+              "multi_fusion",
+              "bpdhe",
+              "PLE"
+            ],
+            "4": [
+              "multi_fusion",
+              "bpdhe",
+              "PLE",
+              "NPEA"
+            ],
+            "5": [
+              "multi_fusion",
+              "bpdhe",
+              "PLE",
+              "NPEA",
+              "EFF"
+            ],
+            "6": [
+              "multi_fusion",
+              "bpdhe",
+              "PLE",
+              "NPEA",
+              "EFF",
+              "LIME"
+            ]
+          }
+        },
+        {
+          "repeat": 9,
+          "test_methods": [
+            "CRM",
+            "PLE",
+            "SRIE",
+            "multi_fusion"
+          ],
+          "addition_order": [
+            "LIME",
+            "bpdhe",
+            "EFF",
+            "NPEA",
+            "dong",
+            "he"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "LIME",
+              "bpdhe"
+            ],
+            "3": [
+              "LIME",
+              "bpdhe",
+              "EFF"
+            ],
+            "4": [
+              "LIME",
+              "bpdhe",
+              "EFF",
+              "NPEA"
+            ],
+            "5": [
+              "LIME",
+              "bpdhe",
+              "EFF",
+              "NPEA",
+              "dong"
+            ],
+            "6": [
+              "LIME",
+              "bpdhe",
+              "EFF",
+              "NPEA",
+              "dong",
+              "he"
+            ]
+          }
+        },
+        {
+          "repeat": 10,
+          "test_methods": [
+            "EFF",
+            "NPEA",
+            "dong",
+            "he"
+          ],
+          "addition_order": [
+            "LIME",
+            "bpdhe",
+            "SRIE",
+            "multi_fusion",
+            "CRM",
+            "PLE"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "LIME",
+              "bpdhe"
+            ],
+            "3": [
+              "LIME",
+              "bpdhe",
+              "SRIE"
+            ],
+            "4": [
+              "LIME",
+              "bpdhe",
+              "SRIE",
+              "multi_fusion"
+            ],
+            "5": [
+              "LIME",
+              "bpdhe",
+              "SRIE",
+              "multi_fusion",
+              "CRM"
+            ],
+            "6": [
+              "LIME",
+              "bpdhe",
+              "SRIE",
+              "multi_fusion",
+              "CRM",
+              "PLE"
+            ]
+          }
+        },
+        {
+          "repeat": 11,
+          "test_methods": [
+            "PLE",
+            "bpdhe",
+            "dong",
+            "multi_fusion"
+          ],
+          "addition_order": [
+            "SRIE",
+            "EFF",
+            "LIME",
+            "CRM",
+            "he",
+            "NPEA"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "SRIE",
+              "EFF"
+            ],
+            "3": [
+              "SRIE",
+              "EFF",
+              "LIME"
+            ],
+            "4": [
+              "SRIE",
+              "EFF",
+              "LIME",
+              "CRM"
+            ],
+            "5": [
+              "SRIE",
+              "EFF",
+              "LIME",
+              "CRM",
+              "he"
+            ],
+            "6": [
+              "SRIE",
+              "EFF",
+              "LIME",
+              "CRM",
+              "he",
+              "NPEA"
+            ]
+          }
+        },
+        {
+          "repeat": 12,
+          "test_methods": [
+            "EFF",
+            "dong",
+            "he",
+            "multi_fusion"
+          ],
+          "addition_order": [
+            "PLE",
+            "SRIE",
+            "CRM",
+            "LIME",
+            "NPEA",
+            "bpdhe"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "PLE",
+              "SRIE"
+            ],
+            "3": [
+              "PLE",
+              "SRIE",
+              "CRM"
+            ],
+            "4": [
+              "PLE",
+              "SRIE",
+              "CRM",
+              "LIME"
+            ],
+            "5": [
+              "PLE",
+              "SRIE",
+              "CRM",
+              "LIME",
+              "NPEA"
+            ],
+            "6": [
+              "PLE",
+              "SRIE",
+              "CRM",
+              "LIME",
+              "NPEA",
+              "bpdhe"
+            ]
+          }
+        },
+        {
+          "repeat": 13,
+          "test_methods": [
+            "CRM",
+            "PLE",
+            "bpdhe",
+            "dong"
+          ],
+          "addition_order": [
+            "multi_fusion",
+            "EFF",
+            "NPEA",
+            "LIME",
+            "he",
+            "SRIE"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "multi_fusion",
+              "EFF"
+            ],
+            "3": [
+              "multi_fusion",
+              "EFF",
+              "NPEA"
+            ],
+            "4": [
+              "multi_fusion",
+              "EFF",
+              "NPEA",
+              "LIME"
+            ],
+            "5": [
+              "multi_fusion",
+              "EFF",
+              "NPEA",
+              "LIME",
+              "he"
+            ],
+            "6": [
+              "multi_fusion",
+              "EFF",
+              "NPEA",
+              "LIME",
+              "he",
+              "SRIE"
+            ]
+          }
+        },
+        {
+          "repeat": 14,
+          "test_methods": [
+            "LIME",
+            "PLE",
+            "SRIE",
+            "bpdhe"
+          ],
+          "addition_order": [
+            "CRM",
+            "NPEA",
+            "multi_fusion",
+            "he",
+            "dong",
+            "EFF"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "CRM",
+              "NPEA"
+            ],
+            "3": [
+              "CRM",
+              "NPEA",
+              "multi_fusion"
+            ],
+            "4": [
+              "CRM",
+              "NPEA",
+              "multi_fusion",
+              "he"
+            ],
+            "5": [
+              "CRM",
+              "NPEA",
+              "multi_fusion",
+              "he",
+              "dong"
+            ],
+            "6": [
+              "CRM",
+              "NPEA",
+              "multi_fusion",
+              "he",
+              "dong",
+              "EFF"
+            ]
+          }
+        },
+        {
+          "repeat": 15,
+          "test_methods": [
+            "CRM",
+            "EFF",
+            "NPEA",
+            "PLE"
+          ],
+          "addition_order": [
+            "LIME",
+            "he",
+            "dong",
+            "SRIE",
+            "bpdhe",
+            "multi_fusion"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "LIME",
+              "he"
+            ],
+            "3": [
+              "LIME",
+              "he",
+              "dong"
+            ],
+            "4": [
+              "LIME",
+              "he",
+              "dong",
+              "SRIE"
+            ],
+            "5": [
+              "LIME",
+              "he",
+              "dong",
+              "SRIE",
+              "bpdhe"
+            ],
+            "6": [
+              "LIME",
+              "he",
+              "dong",
+              "SRIE",
+              "bpdhe",
+              "multi_fusion"
+            ]
+          }
+        },
+        {
+          "repeat": 16,
+          "test_methods": [
+            "CRM",
+            "EFF",
+            "dong",
+            "multi_fusion"
+          ],
+          "addition_order": [
+            "PLE",
+            "LIME",
+            "bpdhe",
+            "he",
+            "NPEA",
+            "SRIE"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "PLE",
+              "LIME"
+            ],
+            "3": [
+              "PLE",
+              "LIME",
+              "bpdhe"
+            ],
+            "4": [
+              "PLE",
+              "LIME",
+              "bpdhe",
+              "he"
+            ],
+            "5": [
+              "PLE",
+              "LIME",
+              "bpdhe",
+              "he",
+              "NPEA"
+            ],
+            "6": [
+              "PLE",
+              "LIME",
+              "bpdhe",
+              "he",
+              "NPEA",
+              "SRIE"
+            ]
+          }
+        },
+        {
+          "repeat": 17,
+          "test_methods": [
+            "CRM",
+            "NPEA",
+            "PLE",
+            "SRIE"
+          ],
+          "addition_order": [
+            "he",
+            "bpdhe",
+            "dong",
+            "LIME",
+            "EFF",
+            "multi_fusion"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "he",
+              "bpdhe"
+            ],
+            "3": [
+              "he",
+              "bpdhe",
+              "dong"
+            ],
+            "4": [
+              "he",
+              "bpdhe",
+              "dong",
+              "LIME"
+            ],
+            "5": [
+              "he",
+              "bpdhe",
+              "dong",
+              "LIME",
+              "EFF"
+            ],
+            "6": [
+              "he",
+              "bpdhe",
+              "dong",
+              "LIME",
+              "EFF",
+              "multi_fusion"
+            ]
+          }
+        },
+        {
+          "repeat": 18,
+          "test_methods": [
+            "CRM",
+            "LIME",
+            "dong",
+            "multi_fusion"
+          ],
+          "addition_order": [
+            "he",
+            "EFF",
+            "SRIE",
+            "bpdhe",
+            "NPEA",
+            "PLE"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "he",
+              "EFF"
+            ],
+            "3": [
+              "he",
+              "EFF",
+              "SRIE"
+            ],
+            "4": [
+              "he",
+              "EFF",
+              "SRIE",
+              "bpdhe"
+            ],
+            "5": [
+              "he",
+              "EFF",
+              "SRIE",
+              "bpdhe",
+              "NPEA"
+            ],
+            "6": [
+              "he",
+              "EFF",
+              "SRIE",
+              "bpdhe",
+              "NPEA",
+              "PLE"
+            ]
+          }
+        },
+        {
+          "repeat": 19,
+          "test_methods": [
+            "EFF",
+            "NPEA",
+            "bpdhe",
+            "he"
+          ],
+          "addition_order": [
+            "dong",
+            "CRM",
+            "PLE",
+            "SRIE",
+            "LIME",
+            "multi_fusion"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "dong",
+              "CRM"
+            ],
+            "3": [
+              "dong",
+              "CRM",
+              "PLE"
+            ],
+            "4": [
+              "dong",
+              "CRM",
+              "PLE",
+              "SRIE"
+            ],
+            "5": [
+              "dong",
+              "CRM",
+              "PLE",
+              "SRIE",
+              "LIME"
+            ],
+            "6": [
+              "dong",
+              "CRM",
+              "PLE",
+              "SRIE",
+              "LIME",
+              "multi_fusion"
+            ]
+          }
+        }
+      ]
+    },
+    "rlie": {
+      "images": 1540,
+      "scenes": 154,
+      "methods": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9"
+      ],
+      "method_count": 10,
+      "scene_fold_counts": {
+        "0": 31,
+        "1": 31,
+        "2": 31,
+        "3": 31,
+        "4": 30
+      },
+      "splits": [
+        {
+          "repeat": 0,
+          "test_methods": [
+            "1",
+            "3",
+            "8",
+            "9"
+          ],
+          "addition_order": [
+            "4",
+            "5",
+            "0",
+            "6",
+            "7",
+            "2"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "4",
+              "5"
+            ],
+            "3": [
+              "4",
+              "5",
+              "0"
+            ],
+            "4": [
+              "4",
+              "5",
+              "0",
+              "6"
+            ],
+            "5": [
+              "4",
+              "5",
+              "0",
+              "6",
+              "7"
+            ],
+            "6": [
+              "4",
+              "5",
+              "0",
+              "6",
+              "7",
+              "2"
+            ]
+          }
+        },
+        {
+          "repeat": 1,
+          "test_methods": [
+            "1",
+            "3",
+            "5",
+            "7"
+          ],
+          "addition_order": [
+            "2",
+            "4",
+            "8",
+            "6",
+            "0",
+            "9"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "2",
+              "4"
+            ],
+            "3": [
+              "2",
+              "4",
+              "8"
+            ],
+            "4": [
+              "2",
+              "4",
+              "8",
+              "6"
+            ],
+            "5": [
+              "2",
+              "4",
+              "8",
+              "6",
+              "0"
+            ],
+            "6": [
+              "2",
+              "4",
+              "8",
+              "6",
+              "0",
+              "9"
+            ]
+          }
+        },
+        {
+          "repeat": 2,
+          "test_methods": [
+            "1",
+            "2",
+            "4",
+            "5"
+          ],
+          "addition_order": [
+            "7",
+            "8",
+            "9",
+            "0",
+            "6",
+            "3"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "7",
+              "8"
+            ],
+            "3": [
+              "7",
+              "8",
+              "9"
+            ],
+            "4": [
+              "7",
+              "8",
+              "9",
+              "0"
+            ],
+            "5": [
+              "7",
+              "8",
+              "9",
+              "0",
+              "6"
+            ],
+            "6": [
+              "7",
+              "8",
+              "9",
+              "0",
+              "6",
+              "3"
+            ]
+          }
+        },
+        {
+          "repeat": 3,
+          "test_methods": [
+            "1",
+            "3",
+            "4",
+            "5"
+          ],
+          "addition_order": [
+            "9",
+            "0",
+            "7",
+            "8",
+            "6",
+            "2"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "9",
+              "0"
+            ],
+            "3": [
+              "9",
+              "0",
+              "7"
+            ],
+            "4": [
+              "9",
+              "0",
+              "7",
+              "8"
+            ],
+            "5": [
+              "9",
+              "0",
+              "7",
+              "8",
+              "6"
+            ],
+            "6": [
+              "9",
+              "0",
+              "7",
+              "8",
+              "6",
+              "2"
+            ]
+          }
+        },
+        {
+          "repeat": 4,
+          "test_methods": [
+            "0",
+            "1",
+            "3",
+            "6"
+          ],
+          "addition_order": [
+            "9",
+            "5",
+            "7",
+            "4",
+            "2",
+            "8"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "9",
+              "5"
+            ],
+            "3": [
+              "9",
+              "5",
+              "7"
+            ],
+            "4": [
+              "9",
+              "5",
+              "7",
+              "4"
+            ],
+            "5": [
+              "9",
+              "5",
+              "7",
+              "4",
+              "2"
+            ],
+            "6": [
+              "9",
+              "5",
+              "7",
+              "4",
+              "2",
+              "8"
+            ]
+          }
+        },
+        {
+          "repeat": 5,
+          "test_methods": [
+            "0",
+            "1",
+            "4",
+            "6"
+          ],
+          "addition_order": [
+            "8",
+            "9",
+            "5",
+            "7",
+            "2",
+            "3"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "8",
+              "9"
+            ],
+            "3": [
+              "8",
+              "9",
+              "5"
+            ],
+            "4": [
+              "8",
+              "9",
+              "5",
+              "7"
+            ],
+            "5": [
+              "8",
+              "9",
+              "5",
+              "7",
+              "2"
+            ],
+            "6": [
+              "8",
+              "9",
+              "5",
+              "7",
+              "2",
+              "3"
+            ]
+          }
+        },
+        {
+          "repeat": 6,
+          "test_methods": [
+            "2",
+            "7",
+            "8",
+            "9"
+          ],
+          "addition_order": [
+            "0",
+            "5",
+            "3",
+            "6",
+            "4",
+            "1"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "0",
+              "5"
+            ],
+            "3": [
+              "0",
+              "5",
+              "3"
+            ],
+            "4": [
+              "0",
+              "5",
+              "3",
+              "6"
+            ],
+            "5": [
+              "0",
+              "5",
+              "3",
+              "6",
+              "4"
+            ],
+            "6": [
+              "0",
+              "5",
+              "3",
+              "6",
+              "4",
+              "1"
+            ]
+          }
+        },
+        {
+          "repeat": 7,
+          "test_methods": [
+            "0",
+            "3",
+            "4",
+            "7"
+          ],
+          "addition_order": [
+            "8",
+            "1",
+            "6",
+            "2",
+            "9",
+            "5"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "8",
+              "1"
+            ],
+            "3": [
+              "8",
+              "1",
+              "6"
+            ],
+            "4": [
+              "8",
+              "1",
+              "6",
+              "2"
+            ],
+            "5": [
+              "8",
+              "1",
+              "6",
+              "2",
+              "9"
+            ],
+            "6": [
+              "8",
+              "1",
+              "6",
+              "2",
+              "9",
+              "5"
+            ]
+          }
+        },
+        {
+          "repeat": 8,
+          "test_methods": [
+            "0",
+            "5",
+            "7",
+            "8"
+          ],
+          "addition_order": [
+            "9",
+            "6",
+            "4",
+            "3",
+            "1",
+            "2"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "9",
+              "6"
+            ],
+            "3": [
+              "9",
+              "6",
+              "4"
+            ],
+            "4": [
+              "9",
+              "6",
+              "4",
+              "3"
+            ],
+            "5": [
+              "9",
+              "6",
+              "4",
+              "3",
+              "1"
+            ],
+            "6": [
+              "9",
+              "6",
+              "4",
+              "3",
+              "1",
+              "2"
+            ]
+          }
+        },
+        {
+          "repeat": 9,
+          "test_methods": [
+            "0",
+            "4",
+            "5",
+            "9"
+          ],
+          "addition_order": [
+            "2",
+            "6",
+            "1",
+            "3",
+            "7",
+            "8"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "2",
+              "6"
+            ],
+            "3": [
+              "2",
+              "6",
+              "1"
+            ],
+            "4": [
+              "2",
+              "6",
+              "1",
+              "3"
+            ],
+            "5": [
+              "2",
+              "6",
+              "1",
+              "3",
+              "7"
+            ],
+            "6": [
+              "2",
+              "6",
+              "1",
+              "3",
+              "7",
+              "8"
+            ]
+          }
+        },
+        {
+          "repeat": 10,
+          "test_methods": [
+            "1",
+            "3",
+            "7",
+            "8"
+          ],
+          "addition_order": [
+            "2",
+            "6",
+            "5",
+            "9",
+            "0",
+            "4"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "2",
+              "6"
+            ],
+            "3": [
+              "2",
+              "6",
+              "5"
+            ],
+            "4": [
+              "2",
+              "6",
+              "5",
+              "9"
+            ],
+            "5": [
+              "2",
+              "6",
+              "5",
+              "9",
+              "0"
+            ],
+            "6": [
+              "2",
+              "6",
+              "5",
+              "9",
+              "0",
+              "4"
+            ]
+          }
+        },
+        {
+          "repeat": 11,
+          "test_methods": [
+            "4",
+            "6",
+            "7",
+            "9"
+          ],
+          "addition_order": [
+            "5",
+            "1",
+            "2",
+            "0",
+            "8",
+            "3"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "5",
+              "1"
+            ],
+            "3": [
+              "5",
+              "1",
+              "2"
+            ],
+            "4": [
+              "5",
+              "1",
+              "2",
+              "0"
+            ],
+            "5": [
+              "5",
+              "1",
+              "2",
+              "0",
+              "8"
+            ],
+            "6": [
+              "5",
+              "1",
+              "2",
+              "0",
+              "8",
+              "3"
+            ]
+          }
+        },
+        {
+          "repeat": 12,
+          "test_methods": [
+            "1",
+            "7",
+            "8",
+            "9"
+          ],
+          "addition_order": [
+            "4",
+            "5",
+            "0",
+            "2",
+            "3",
+            "6"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "4",
+              "5"
+            ],
+            "3": [
+              "4",
+              "5",
+              "0"
+            ],
+            "4": [
+              "4",
+              "5",
+              "0",
+              "2"
+            ],
+            "5": [
+              "4",
+              "5",
+              "0",
+              "2",
+              "3"
+            ],
+            "6": [
+              "4",
+              "5",
+              "0",
+              "2",
+              "3",
+              "6"
+            ]
+          }
+        },
+        {
+          "repeat": 13,
+          "test_methods": [
+            "0",
+            "4",
+            "6",
+            "7"
+          ],
+          "addition_order": [
+            "9",
+            "1",
+            "3",
+            "2",
+            "8",
+            "5"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "9",
+              "1"
+            ],
+            "3": [
+              "9",
+              "1",
+              "3"
+            ],
+            "4": [
+              "9",
+              "1",
+              "3",
+              "2"
+            ],
+            "5": [
+              "9",
+              "1",
+              "3",
+              "2",
+              "8"
+            ],
+            "6": [
+              "9",
+              "1",
+              "3",
+              "2",
+              "8",
+              "5"
+            ]
+          }
+        },
+        {
+          "repeat": 14,
+          "test_methods": [
+            "2",
+            "4",
+            "5",
+            "6"
+          ],
+          "addition_order": [
+            "0",
+            "3",
+            "9",
+            "8",
+            "7",
+            "1"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "0",
+              "3"
+            ],
+            "3": [
+              "0",
+              "3",
+              "9"
+            ],
+            "4": [
+              "0",
+              "3",
+              "9",
+              "8"
+            ],
+            "5": [
+              "0",
+              "3",
+              "9",
+              "8",
+              "7"
+            ],
+            "6": [
+              "0",
+              "3",
+              "9",
+              "8",
+              "7",
+              "1"
+            ]
+          }
+        },
+        {
+          "repeat": 15,
+          "test_methods": [
+            "0",
+            "1",
+            "3",
+            "4"
+          ],
+          "addition_order": [
+            "2",
+            "8",
+            "7",
+            "5",
+            "6",
+            "9"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "2",
+              "8"
+            ],
+            "3": [
+              "2",
+              "8",
+              "7"
+            ],
+            "4": [
+              "2",
+              "8",
+              "7",
+              "5"
+            ],
+            "5": [
+              "2",
+              "8",
+              "7",
+              "5",
+              "6"
+            ],
+            "6": [
+              "2",
+              "8",
+              "7",
+              "5",
+              "6",
+              "9"
+            ]
+          }
+        },
+        {
+          "repeat": 16,
+          "test_methods": [
+            "0",
+            "1",
+            "7",
+            "9"
+          ],
+          "addition_order": [
+            "4",
+            "2",
+            "6",
+            "8",
+            "3",
+            "5"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "4",
+              "2"
+            ],
+            "3": [
+              "4",
+              "2",
+              "6"
+            ],
+            "4": [
+              "4",
+              "2",
+              "6",
+              "8"
+            ],
+            "5": [
+              "4",
+              "2",
+              "6",
+              "8",
+              "3"
+            ],
+            "6": [
+              "4",
+              "2",
+              "6",
+              "8",
+              "3",
+              "5"
+            ]
+          }
+        },
+        {
+          "repeat": 17,
+          "test_methods": [
+            "0",
+            "3",
+            "4",
+            "5"
+          ],
+          "addition_order": [
+            "8",
+            "6",
+            "7",
+            "2",
+            "1",
+            "9"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "8",
+              "6"
+            ],
+            "3": [
+              "8",
+              "6",
+              "7"
+            ],
+            "4": [
+              "8",
+              "6",
+              "7",
+              "2"
+            ],
+            "5": [
+              "8",
+              "6",
+              "7",
+              "2",
+              "1"
+            ],
+            "6": [
+              "8",
+              "6",
+              "7",
+              "2",
+              "1",
+              "9"
+            ]
+          }
+        },
+        {
+          "repeat": 18,
+          "test_methods": [
+            "0",
+            "2",
+            "7",
+            "9"
+          ],
+          "addition_order": [
+            "8",
+            "1",
+            "5",
+            "6",
+            "3",
+            "4"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "8",
+              "1"
+            ],
+            "3": [
+              "8",
+              "1",
+              "5"
+            ],
+            "4": [
+              "8",
+              "1",
+              "5",
+              "6"
+            ],
+            "5": [
+              "8",
+              "1",
+              "5",
+              "6",
+              "3"
+            ],
+            "6": [
+              "8",
+              "1",
+              "5",
+              "6",
+              "3",
+              "4"
+            ]
+          }
+        },
+        {
+          "repeat": 19,
+          "test_methods": [
+            "1",
+            "3",
+            "6",
+            "8"
+          ],
+          "addition_order": [
+            "7",
+            "0",
+            "4",
+            "5",
+            "2",
+            "9"
+          ],
+          "train_methods_by_k": {
+            "2": [
+              "7",
+              "0"
+            ],
+            "3": [
+              "7",
+              "0",
+              "4"
+            ],
+            "4": [
+              "7",
+              "0",
+              "4",
+              "5"
+            ],
+            "5": [
+              "7",
+              "0",
+              "4",
+              "5",
+              "2"
+            ],
+            "6": [
+              "7",
+              "0",
+              "4",
+              "5",
+              "2",
+              "9"
+            ]
+          }
+        }
+      ]
+    }
+  },
+  "source": {
+    "S14_code": "analysis/studies/human_method_disjoint.py",
+    "helper": "analysis/studies/human_objectives.py",
+    "preprocessing": "analysis/studies/common.py",
+    "scene_fold_source": "results/studies/records/human_scene_folds.csv",
+    "old_method_split_source": "results/studies/records/human_method_splits.csv",
+    "reference": "supplement section sup:recalibration, table_human_methods.tex",
+    "hashes": "input_hashes.json"
+  },
+  "models": {
+    "fuzzy_LS": "27 rules; frozen LOL orientation/MFs; minimum firing and sum+1e-9 normalization; scene-center design and MOS across k training methods; ridge1e-3 to zero; raw test design times coefficients",
+    "linear_3f": "three frozen-LOL-oriented features; scene-center training features/targets across k methods; StandardScaler+LinearRegression; test features centered within the four test alternatives; no test-label use",
+    "LOL_prior": "same fixed LOL model and test rows for all k; no human-label calibration"
+  },
+  "preprocessing": "existing256x256 INTER_AREA feature caches, same S14 loader/BRISQUE inner join/order and scene conversion; no image loading or feature extraction",
+  "metric": {
+    "name": "mean within-scene SRCC over four held-out methods",
+    "ties": "S14 current average ranks; denominator sqrt(norm2p*norm2y)+1e-12; constant prediction/target scores produce zero",
+    "curve": "mean and population SD (ddof0) over20 repeats x5 folds =100 values per dataset/model/k"
+  },
+  "bootstrap": {
+    "repeats": 2000,
+    "seed": 20261029,
+    "unit": "whole original scene; all20 method repeats/models/k kept paired",
+    "method": "average per-scene differences over20 repeats; resample original scene IDs with replacement; preserve source fold labels and take equal mean of5 resampled fold means",
+    "estimand": "equal mean over20 repeats x5 fixed folds, matching the coverage curve",
+    "models_fixed": true,
+    "refit": false,
+    "method_repeat_resampling": false,
+    "CI": "percentile2.5,97.5, marginal unadjusted",
+    "draws_reused_across_all_contrasts_in_dataset": true
+  },
+  "prespecified_contrasts": {
+    "primary": "fuzzy LS k6 minus k2, one per dataset",
+    "secondary": "for each k, fuzzy LS minus LOL prior and linear-3f minus LOL prior",
+    "counts": {
+      "primary": 3,
+      "secondary": 30
+    }
+  },
+  "environment": {
+    "executable": "python",
+    "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+    "platform": "Windows-10-10.0.19045-SP0",
+    "threads": 1,
+    "packages": {
+      "numpy": "2.4.4",
+      "pandas": "3.0.2",
+      "scipy": "1.17.1",
+      "scikit-learn": "1.9.0",
+      "matplotlib": "3.10.9"
+    }
+  },
+  "output_scope": "separate reproduction directory"
+}

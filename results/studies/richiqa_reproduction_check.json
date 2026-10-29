@@ -1,0 +1,12 @@
+{
+  "all_7865_manifest_rows_and_fields_exact": true,
+  "public_setup_verified_pinned_weights": true,
+  "public_prepared_pixels_match": true,
+  "public_inference_function_ast_matches_executed_runner": true,
+  "public_analysis_function_ast_matches_executed_analysis": true,
+  "all_dataset_results_and_bootstraps_exact": true,
+  "all_timing_results_exact": true,
+  "public_gpu_rerun": false,
+  "public_check": "setup + prepare + analysis replay; GPU runner validated by unchanged AST",
+  "prior_public_commit": "abb9960aab853a2d21d52235e3670cb88f31d7c5"
+}

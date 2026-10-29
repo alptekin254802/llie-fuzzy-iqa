@@ -1,192 +1,192 @@
 # Lightweight Real-Time Reference-Free Quality Assessment of Low-Light Image Enhancement
 
-Code and computed result tables for the paper:
+Computational companion to **Lightweight Real-Time Reference-Free Quality
+Assessment of Low-Light Image Enhancement via Calibrated Fuzzy Inference**,
+under review at *Journal of Real-Time Image Processing*.
 
-> "Lightweight Real-Time Reference-Free Quality Assessment of Low-Light Image Enhancement via Calibrated Fuzzy Inference"  
-> Journal of Real-Time Image Processing (Springer), under review.
+The main NR-free assessor maps entropy, normalized contrast and normalized
+Laplacian variance to an LPIPS-calibrated score. It is a zero-order Sugeno model
+with 27 singleton consequents, minimum rule firing and a normalized weighted
+average. Calibration uses references offline; scoring uses only the enhanced
+image. Agreement with LPIPS is distinct from agreement with human observers.
 
-The method is a lightweight, interpretable, reference-free image quality assessor
-for low-light image enhancement (LLIE). It uses three no-reference features of
-the enhanced image, entropy, contrast, and a sharpness indicator, and maps them to
-a perceptual quality score with a calibrated 27-rule Mamdani fuzzy inference
-system. The rule consequents are calibrated offline against LPIPS; inference uses
-only the enhanced image.
+NR-mono is a separate variant: product rule firing, a Ruspini membership
+partition and ordered consequents fitted by constrained least squares. Its
+response is nondecreasing in the oriented features; the Laplacian feature is
+sign-reversed. This response constraint does not imply perceptual validity.
 
-## Repository Layout
+## Setup
 
-```text
-llie-fuzzy-iqa/
-|-- analysis/                  # calibration, validation, figures, runtime, realtime scripts
-|-- evaluation/                # optional raw-image metric/feature extraction scripts
-|-- preprocessing/             # classical LLIE operators used by extractors
-|-- results/                   # computed CSV tables and summaries
-|   `-- figures/               # paper-ready PDF/SVG figures
-|-- models/                    # optional pretrained weights, not tracked
-|-- requirements.txt
-|-- LICENSE
-`-- README.md
-```
-
-The `results/` CSV files are included so the paper tables and figures can be
-reproduced without downloading image datasets or rerunning slow perceptual metric
-extraction. Raw images, demo videos, enhanced-image caches, and model weights are
-not included.
-
-## Installation
+Use Python 3.11 in a virtual environment. The pinned core dependencies in
+`requirements-reproduction.txt` support fitting, plotting and the tests. Run the
+commands below from the repository root. Frozen inference needs NumPy and
+OpenCV; the fitting and validation commands also use SciPy and pandas. Deep
+metrics require the listed PyTorch and pyiqa dependencies and their weights.
 
 ```bash
 git clone https://github.com/alptekin254802/llie-fuzzy-iqa.git
 cd llie-fuzzy-iqa
 python -m venv .venv
-source .venv/bin/activate  # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
+# Activate: .venv\Scripts\Activate.ps1 (PowerShell), or source .venv/bin/activate (bash)
+python -m pip install -r requirements-reproduction.txt
+python -B -m unittest discover -s tests -v
 ```
 
-Tested with Python 3.11. Commands below are run from the repository root.
+## Score an enhanced image
 
-## Datasets (only needed to regenerate the CSVs from raw images)
+```python
+import cv2
+from evaluation.three_features import extract
+from evaluation.frozen_scorer import FrozenScorer
 
-The provided CSVs already contain the per-image features and metrics, so most
-results reproduce with **no downloads**. To rebuild the CSVs from raw images, obtain
-the datasets below from their original sources. Please cite the corresponding papers
-if you use them.
-
-**Paired benchmark (calibration + main study)**
-
-- **LOL** — Wei, C., Wang, W., Yang, W., Liu, J. "Deep Retinex Decomposition for
-  Low-Light Enhancement." *BMVC* (2018). arXiv:1808.04560.
-  Project page: https://daooshee.github.io/BMVC2018website/
-
-**Unpaired real-world test sets (cross-dataset transfer, Sec. 4.8 / Table S1)**
-
-- **DICM** — Lee, C., Lee, C., Kim, C.-S. "Contrast enhancement based on layered
-  difference representation of 2D histograms." *IEEE TIP* 22(12), 5372–5384 (2013).
-  https://doi.org/10.1109/TIP.2013.2284059
-- **LIME** — Guo, X., Li, Y., Ling, H. "LIME: Low-Light Image Enhancement via
-  Illumination Map Estimation." *IEEE TIP* 26(2), 982–993 (2017).
-  https://doi.org/10.1109/TIP.2016.2639450
-- **MEF** — Ma, K., Zeng, K., Wang, Z. "Perceptual Quality Assessment for
-  Multi-Exposure Image Fusion." *IEEE TIP* 24(11), 3345–3356 (2015).
-  https://doi.org/10.1109/TIP.2015.2442920
-- **NPE** — Wang, S., Zheng, J., Hu, H.-M., Li, B. "Naturalness Preserved Enhancement
-  Algorithm for Non-Uniform Illumination Images." *IEEE TIP* 22(9), 3538–3548 (2013).
-  https://doi.org/10.1109/TIP.2013.2261309
-- **VV** — Vonikakis, V., Kouskouridas, R., Gasteratos, A. "On the evaluation of
-  illumination compensation algorithms." *Multimedia Tools and Applications* 77(8),
-  9211–9231 (2018). https://doi.org/10.1007/s11042-017-4783-x
-  Dataset: https://sites.google.com/site/vonikakis/datasets
-
-**Real-world human-MOS benchmark (Sec. 4.9 / Table 3)**
-
-- **RLIE** — Li, C., Hu, B., Chen, T., Li, L., He, L., Gao, X. "Low-Light Image
-  Enhancement Quality Assessment: A Real-World Dataset and an Objective Method."
-  *ACM MM* (2025). https://doi.org/10.1145/3746027.3758296
-  Repository: https://github.com/CQUPT-HuBo90/RLIE
-  The RLIE human-opinion label files (`bt_scores.csv`, `normalized_scores.csv`) belong
-  to that dataset and are **not** redistributed here; download them from the RLIE repo.
-
-## Fast Reproduction From Included CSVs
-
-These commands use the CSVs already in `results/`.
-
-| Step | Command | Produces |
-|---|---|---|
-| 1. Main paper figures and main table numbers | `python -m analysis.make_figures` | `results/figures/fig2_correlation_matrix.{pdf,svg}`, `fig3_main_alignment.{pdf,svg}`, `fig4_generalization.{pdf,svg}`, `fig4b_within_method.{pdf,svg}`, `fig5_rule_heatmap.{pdf,svg}`, `results/figures_numbers.csv`, `results/rule_table_mono.csv` |
-| 2. Supplementary membership and disagreement figures | `python -m analysis.make_extra_figures` | `results/figures/figS_membership_functions.{pdf,svg}` plus supplementary diagnostic figures |
-| 3. Qualitative cases | `python -m analysis.make_qualitative_figure` | `results/figures/fig6_qualitative.{pdf,svg}` |
-| 4. Hand-tuned fuzzy vs perceptual anchors | `python -m analysis.validate_against_perceptual` | `results/perceptual_validation_summary.csv`, `results/figures/alignment_with_lpips.png`, `results/figures/imagelevel_correlation_matrix.png` |
-| 5. Reference-based calibrated fuzzy baseline | `python -m analysis.optimize_fuzzy` | `results/perceptual_optimization_summary.csv`, `results/optimized_rule_table_{free,mono}.csv`, `results/figures/optimized_alignment.png` |
-| 6. Main reference-free calibrated fuzzy model | `python -m analysis.reference_free_fuzzy` | `results/reference_free_summary.csv`, `results/nr_fuzzy_scores.csv`, `results/nr_rule_table_{free,mono}.csv`, `results/figures/reference_free_alignment.png` |
-| 7. Significance tests | `python -m analysis.significance_tests` | `results/significance_tests.csv` |
-| 8. Leakage, learned-fusion, algorithm-disjoint, seed-stability checks | `python -m analysis.reviewer_experiments` | `results/reviewer_experiments.csv` |
-| 9. Preprocessing sensitivity audit | `python -m analysis.preprocessing_sensitivity` | `results/preprocessing_sensitivity.csv` |
-| 10. Broadened calibration pool stress test | `python -m analysis.tier3_broaden` | `results/tier3_broaden.csv` |
-
-## Human-Opinion Validation
-
-These require the external RLIE dataset path.
-
-| Step | Command | Produces |
-|---|---|---|
-| RLIE human-MOS validation | `python -m analysis.rlie_human_mos --rlie_root /path/to/RLIE` | `results/rlie_features.csv`, `results/rlie_human_mos.csv` |
-| Enriched 3-feature vs 6-feature test | `python -m analysis.rlie_enriched --rlie_root /path/to/RLIE` | `results/rlie_features6.csv`, `results/enriched_feature_test.csv` |
-
-## Runtime And Real-Time Pipeline
-
-| Step | Command | Produces |
-|---|---|---|
-| CLIP-IQA+ baseline audit | `python -m analysis.clipiqa_plus_audit` | `results/clipiqa_plus_scores.csv`, `results/clipiqa_plus_summary.csv`, `results/clipiqa_plus_runtime.csv` |
-| CLIP-IQA+ single-thread CPU timing | `python -m analysis.deep_cpu_runtime --metrics clipiqa+ --n 30` | `results/deep_cpu_runtime.csv` |
-| Assessor runtime sweep | `python -m analysis.benchmark_runtime --sweep` | `results/runtime_results.csv` |
-| Runtime sweep plus deep NR-IQA baselines | `python -m analysis.benchmark_runtime --sweep --deep` | `results/runtime_results.csv`, `results/runtime_deep.csv` |
-| Synthetic realtime sanity check | `python -m analysis.realtime_pipeline_demo --source synth --enhancer gamma --assessor real --frames 600 --plot` | `results/pipeline_log.csv`, `results/figures/fig6_pipeline_fps.{png,pdf,svg}`, `results/figures/fig6_pipeline_score.{png,pdf,svg}` |
-| Video + Zero-DCE realtime demo | `python -m analysis.realtime_pipeline_demo --source path/to/video.mp4 --enhancer zerodce --device cuda --assessor real --seconds 20 --plot` | same realtime log and Fig. 6 pipeline figures |
-| Summarize realtime numbers | `python -m analysis.realtime_analysis` | prints latency, frame-budget occupancy, resolution sweep, sustained FPS, and per-stage medians from `results/runtime_results.csv` and `results/pipeline_log.csv` |
-
-`--assessor real` uses `analysis.reference_free_fuzzy.score_features`, the
-calibrated 27-rule reference-free scorer. `--assessor placeholder` is included
-only for timing sanity checks when the calibrated scorer is unavailable; its
-scores should not be reported.
-
-For the Zero-DCE realtime demo, place the pretrained weights here:
-
-```text
-models/zerodce_Epoch99.pth
+model = FrozenScorer("nr_free")  # or "nr_mono"; initialize once
+bgr = cv2.imread("enhanced.png")
+if bgr is None:
+    raise FileNotFoundError("enhanced.png")
+rgb = cv2.cvtColor(bgr, cv2.COLOR_BGR2RGB)
+rgb = cv2.resize(rgb, (256, 256), interpolation=cv2.INTER_AREA)
+score = model(extract(rgb))
 ```
 
-The weights are not redistributed in this repository.
+For an optional NR-free display label, use `quality_label(score)` from
+`evaluation.quality_labels`. The maximum-membership band is chosen from Poor
+(0, 0, 20, 40), Fair (20, 40, 50, 65), Good (50, 65, 75, 90), and Excellent
+(75, 90, 100, 100); exact ties select the lower band. These are display categories,
+not validated human quality judgments. They do not alter the numeric score and
+are not applicable directly to the raw negative-LPIPS output of NR-mono.
 
-## Rebuilding Input CSVs From Raw Images
+`models/nr_free.json` and `models/nr_mono.json` contain the full-precision
+deployment fits, feature orientations, membership breakpoints and rule order.
+The CSV field `sharpness` means Laplacian variance divided by 255 squared.
+It is an image statistic, not a direct perceptual sharpness measurement.
+NR-free returns its calibrated 0–100 score. NR-mono returns the fitted negative-LPIPS
+scale; its rule figures use an affine 0–100 display scale. Deployment models use all calibration scenes; held-out evaluation uses separate
+fold fits. NR-free's reported primary protocol uses global membership
+breakpoints and orientations, with train-fold consequents. NR-free reaches 0.753 under this protocol and 0.754 when all preprocessing
+is fitted within training folds. NR-mono's fold evaluation uses
+train-fold breakpoints and the LOL feature orientations. The main NR-mono fold mean is 0.751; full-precision parameters, predictions and near-tie checks are recorded in [the validation results](results/monotone_validation.json).
 
-This path is slower and requires the original image datasets.
+The additional Q-Align comparison reports fp16 accuracy and 4-bit GPU timing
+(1.18 s/image on a GTX 1060). Archived fp16 predictions, paired scene-bootstrap
+results and portable `run.py` / `analyze.py` scripts have a separate
+[reproduction guide](docs/QALIGN.md); the original 4-bit scores remain the timing source.
 
-| Output CSV | Command |
+The [webcam search and timing guide](realtime/README.md) covers live processing,
+an offline selftest and recomputation of the archived frame timings.
+
+## Data and preprocessing
+
+Download LOL from the [authors' project](https://daooshee.github.io/BMVC2018website/).
+The calibration split contains 485 paired scenes under `our485/low` and
+`our485/high`. Recreate the stored PNG inputs with:
+
+```bash
+python -m preprocessing.preprocess --lol-root /path/to/our485 --output preprocessed
+```
+
+This uses RGB conversion, **bilinear** resizing to 256 x 256, float32 division
+by 255, and uint8 serialization. Enhancement follows resizing. Human-rated
+enhanced images use **area** resizing to the same operating resolution.
+The preprocessing command requires matching paired filenames and an empty
+output directory. Feature and perceptual-metric extraction entry points are
+under `evaluation/`; classical enhancement operators are under
+`preprocessing/enhancement/`.
+
+RLIE images and MOS labels are available from the
+[RLIE authors](https://github.com/CQUPT-HuBo90/RLIE).
+Use `python -m analysis.rlie_human_mos --rlie_root /path/to/RLIE`.
+Its feature cache is resolution-specific (`rlie_features_area256.csv`).
+Six-feature MOS calibration is run with
+`python -m analysis.rlie_enriched --rlie_root /path/to/RLIE`.
+Unpaired cross-dataset scripts describe the DICM, LIME, MEF, NPE and VV layouts
+in `evaluation/cross_dataset.py`.
+
+## Reproduce reported computations
+
+Included derived CSVs support the main calibration and figure commands without
+raw-image downloads. Model fitting uses scene-disjoint five-fold splits.
+
+| Computation | Command / output |
 |---|---|
-| `results/nr_features.csv` | `python -m evaluation.nr_features` |
-| `results/perceptual_metrics.csv` | `python -m evaluation.perceptual_metrics` |
-| `results/modern_nriqa.csv` | `python -m evaluation.modern_nriqa` |
-| `results/deep_zerodce_all.csv` | `python -m evaluation.deep_zerodce` |
-| `results/deep_sci_all.csv` | `python -m evaluation.deep_sci` |
-| `results/cross_dataset.csv` | `python -m evaluation.cross_dataset` |
+| Primary figures and fold-mean table | `python -m analysis.make_figures`; `results/figures_numbers.csv` |
+| NR-mono fold validation and near-tie sensitivity | `python -m analysis.validate_monotone`; `results/monotone_validation.json` |
+| NR-free and NR-mono calibration | `python -m analysis.reference_free_fuzzy --output calibration_run` |
+| Within-method figure | `analysis.make_figures`: classical out-of-fold predictions; Zero-DCE and SCI scored by the unchanged classical deployment fit |
+| NR-mono rule heatmap | `analysis.make_figures`: frozen product-model consequents, affinely displayed on a relative 0–100 scale |
+| Scene-clustered paired statistics | `python -m analysis.significance_tests`; `results/significance_tests.json` |
+| Fusion / method-disjoint / strict preprocessing controls | `python -m analysis.reviewer_experiments` |
+| Feature preprocessing sensitivity | `python -m analysis.preprocessing_sensitivity` |
+| Supplementary membership functions | `python -m analysis.make_extra_figures` |
+| Pipeline panels from the same recorded run | `python -m analysis.plot_pipeline` |
 
-The extraction scripts expect the raw/preprocessed images in the paths described
-in each script header. Deep enhancer scripts also require their corresponding
-pretrained weights under `models/`.
+The significance analysis compares fixed out-of-fold predictions with eight
+metrics/baselines. It resamples 485 scenes with replacement (2,000 draws),
+retains all outputs of each selected scene, and reports percentile confidence
+intervals, null-centered bootstrap p-values and Holm adjustment. Pooled SRCC
+and mean fold SRCC are separate estimands. The intervals condition on the
+fitted models; the bootstrap does not refit them.
 
-## Included Results
+The [final qualitative-figure guide](docs/FIGURES.md) reproduces the plate-rack example and the rule-selected LOL/SQUARE-LOL panels.
 
-Important included CSVs:
+## Additional validation studies
 
-- `results/enhancement_metrics.csv`
-- `results/perceptual_metrics.csv`
-- `results/modern_nriqa.csv`
-- `results/nr_features.csv`
-- `results/fuzzy_enhancement_results.csv`
-- `results/nr_fuzzy_scores.csv`
-- `results/clipiqa_plus_scores.csv`
-- `results/clipiqa_plus_summary.csv`
-- `results/clipiqa_plus_runtime.csv`
-- `results/deep_cpu_runtime.csv`
-- `results/preprocessing_sensitivity.csv`
-- `results/reference_free_summary.csv`
-- `results/significance_tests.csv`
-- `results/reviewer_experiments.csv`
-- `results/runtime_results.csv`
-- `results/pipeline_log.csv`
+[Study commands, data layouts and numerical conventions](docs/STUDIES.md) cover
+the regional, optimization, native-resolution, synthetic closed-loop, human-rated
+and additional-metric experiments. Derived recorded summaries are under
+`results/studies/`. Use a separate configured workspace to reproduce them.
 
-Important included figures:
+[VQA² and VITAL results](results/lmm_extra/) include the released-model scores and paired comparisons.
+[Exploratory real-camera check](realtime/camera_exploratory/) provides the protocol and anonymized derived tables.
 
-- `results/figures/fig2_correlation_matrix.pdf`
-- `results/figures/fig3_main_alignment.pdf`
-- `results/figures/fig4_generalization.pdf`
-- `results/figures/fig4b_within_method.pdf`
-- `results/figures/fig5_rule_heatmap.pdf`
-- `results/figures/fig6_qualitative.pdf`
-- `results/figures/fig6_pipeline_fps.pdf`
-- `results/figures/fig6_pipeline_score.pdf`
-- `results/figures/figS_membership_functions.pdf`
+## Timing and video demonstration
 
-## Citation
+```bash
+python -m analysis.benchmark_runtime --images /path/to/our485/low --sessions 3 --deep
+python -m analysis.realtime_analysis
+python -m analysis.realtime_pipeline_demo --source video.mp4 --enhancer zerodce --device cuda --frames 1200 --plot
+```
 
-The citation will be updated after acceptance. For now, please cite the paper
-title and repository if you use the code or computed tables.
+Timing measures the actual frozen singleton scorers. It records PNG/JPEG reads,
+color conversion, resize, feature extraction, inference, complete in-memory
+paths and disk-inclusive paths separately, with raw samples in JSON. Three
+fresh processes form three sessions. Model loading and warmup are excluded.
+CLIP-IQA+ and MUSIQ are evaluated on CPU with one thread when `--deep` is set.
+Input sizes from 256 x 256 to 1920 x 1080 are controlled resamplings of the same
+source images. Reads use a warm filesystem cache. For comparable measurements,
+use the same power profile and an otherwise idle machine; each run records its
+environment. New measurements are written to `results/timing_run.json`;
+the recorded campaign is `results/timing_benchmark.json`.
+
+Latency and speed ratios are machine- and protocol-specific. The 95th percentile
+is not a worst-case guarantee. A single score, capture-enhance-assess throughput,
+and a search over multiple enhancement candidates measure different workloads.
+The video score trace is a model output, without framewise human-quality labels.
+
+For Zero-DCE, obtain `Epoch99.pth` from the
+[Zero-DCE authors](https://github.com/Li-Chongyi/Zero-DCE) and use
+`--zerodce-weights /path/to/Epoch99.pth`.
+
+## Additional comparisons
+
+The [training-method coverage control](results/studies/method_coverage/README.md) tests human-calibrated transfer with two to six training methods.
+
+The [calibration-source overlap control](results/studies/targeted_overlap/README.md) removes shared calibration scenes and compares the effect with 20 random-removal fits.
+
+The [exploratory unseen-enhancement check](results/studies/unseen_operators/README.md) includes eight additional methods, per-scene records and reproducible confidence intervals.
+
+The [RichIQA guide](docs/RICHIQA.md) covers the released author checkpoint,
+LOL and human-dataset scores, CPU/GPU timing and paired scene-bootstrap contrasts.
+
+The four additional LOL scorers have both negative-LPIPS and negative-NIQE
+correlations in `results/studies/extra_metrics_lol_anchors.json`. Reproduce them
+from archived scores with `python -m analysis.complete_lol_correlations`. This
+uses the existing five scene folds and population SD, negating raw BPRI/BMPRI
+scores. It does not run inference or fit any models.
+
+## Citation and license
+
+Please cite the manuscript title and repository while the paper is under review.
+The code license is in `LICENSE`; retained SQUARE-LOL scores carry the attribution and MIT permission in [NOTICE](NOTICE). LIEQ and RLIE image-level labels are obtained separately; [local label joining and reproduction](results/lmm_extra/README.md#human-labels-and-reproduction) are documented. Image datasets and pretrained weights are
+obtained separately under the terms of their respective providers.
+
+Full protocols, implementation details and supplementary caveats are collected in [Technical notes](docs/TECHNICAL_NOTES.md).

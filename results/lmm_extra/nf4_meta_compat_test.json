@@ -1,0 +1,35 @@
+{
+  "utc": "2026-10-23T06:36:29.658843+00:00",
+  "torch": "2.7.1+cu118",
+  "bnb": "0.49.2",
+  "adapter_sha256": "25cca25128d76f5117c45ec44e8405a168b3b2bbb3d24c432d8fead73e1c9a0a",
+  "configuration": "NF4, float32 compute, no double quantization",
+  "tests": [
+    {
+      "initial_quantization_device": "cuda",
+      "round_trips": 3,
+      "packed_weights_bit_equal": true,
+      "metadata_bit_equal": true,
+      "forward_outputs_bit_equal": true,
+      "forward_max_abs_differences": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    },
+    {
+      "initial_quantization_device": "cpu",
+      "round_trips": 3,
+      "packed_weights_bit_equal": true,
+      "metadata_bit_equal": true,
+      "forward_outputs_bit_equal": true,
+      "forward_max_abs_differences": [
+        0.0,
+        0.0,
+        0.0
+      ]
+    }
+  ],
+  "unpatched_error": "NotImplementedError: Cannot copy out of meta tensor; no data!",
+  "passed": true
+}

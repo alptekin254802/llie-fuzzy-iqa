@@ -1,0 +1,44 @@
+* text=auto eol=lf
+*.pdf binary
+*.png binary
+*.jpg binary
+*.pth binary
+*.svg -whitespace
+
+# Keep recorded RichIQA CSV byte hashes stable across platforms.
+/results/studies/richiqa_scores.csv -text whitespace=cr-at-eol
+/results/studies/richiqa_cpu.csv -text whitespace=cr-at-eol
+/results/studies/richiqa_input_hashes.csv -text whitespace=cr-at-eol
+
+# Preserve the recorded fp16 score-file SHA-256 across platforms.
+/results/studies/qalign_fp16_scores.csv -text whitespace=cr-at-eol
+
+# Preserve bytes covered by the timing provenance manifests.
+/results/live_timing/** -text whitespace=cr-at-eol
+/results/synthetic_timing/** -text whitespace=cr-at-eol
+
+# Derived closure records retain bytes for their SHA-256 manifest.
+results/studies/records/** -text whitespace=cr-at-eol
+
+# Preserve normal-light decision and preregistration byte hashes.
+/results/studies/normal_light_overlap_classification/** -text whitespace=cr-at-eol
+/results/studies/normal_light_overlap_validation/** -text whitespace=cr-at-eol
+/analysis/studies/normal_overlap_classify.py -text whitespace=cr-at-eol
+
+# Preserve the distributed label-redacted CSV hash across platforms.
+/results/lmm_extra/joined.csv -text whitespace=cr-at-eol
+
+# Preserve archived unseen-method records and protocol hashes across platforms.
+/results/studies/unseen_operators/** -text whitespace=cr-at-eol
+
+# Preserve targeted overlap records and portable-script manifest hashes.
+/results/studies/targeted_overlap/** -text whitespace=cr-at-eol
+/analysis/studies/targeted_overlap.py -text whitespace=cr-at-eol
+
+# Preserve distributed method-coverage records and source line endings.
+/results/studies/method_coverage/** -text whitespace=cr-at-eol
+/analysis/method_coverage/** -text whitespace=cr-at-eol
+
+# Keep recorded inference and figure-protocol hashes byte-stable.
+/results/lmm_extra/** -text whitespace=cr-at-eol
+/results/figure_protocols/** -text whitespace=cr-at-eol

@@ -1,27 +1,12 @@
-"""
-Reviewer-response experiments  -  SELF-CONTAINED.
+"""Evaluate preprocessing, fusion, enhancer-disjoint and seed controls.
 
-  (A) LEAKAGE FIX     - membership-function (MF) breakpoints computed PER TRAIN
-                        FOLD ONLY vs. the manuscript's global quantiles. Shows
-                        the held-out numbers barely move -> no meaningful leakage.
-  (B) BASELINES       - same three oriented features fed to plain learned
-                        regressors (Linear, SVR-RBF, RandomForest), same group
-                        CV. Isolates "fuzzy inference" vs. "any learned fusion".
-  (C) ALGO-DISJOINT   - leave-one-enhancer-out: calibrate on the other methods,
-                        test on the held-out method (+ deep Zero-DCE / SCI as
-                        fully held-out enhancers). Tests robustness to the
-                        algorithm/style bias the reviewer raised.
-  (D) SEED STABILITY  - NR-free held-out mean rho across 5 random seeds.
+Compares global preprocessing with training-fold preprocessing, fits linear,
+SVR and random-forest baselines on the same features, evaluates held-out
+enhancers and repeats calibration with five seeds. The preprocessing control
+measures sensitivity to the protocol; similar results do not rule out leakage.
 
-Run from the folder that contains your result CSVs, or set RESULTS_DIR:
-    python reviewer_experiments.py
-Inputs (same as make_figures.py):
-    nr_features.csv, perceptual_metrics.csv, modern_nriqa.csv,
-    fuzzy_enhancement_results.csv, deep_zerodce_all.csv, deep_sci_all.csv
-Outputs:
-    reviewer_experiments.csv   (+ a printed summary)
-Needs: numpy, pandas, scipy, scikit-learn
-"""
+Run ``python -m analysis.reviewer_experiments`` from the repository root.
+Inputs and reviewer_experiments.csv are in results/."""
 from __future__ import annotations
 
 import itertools
@@ -175,8 +160,7 @@ def exp_leakage(classical):
     print("\n=== (A) LEAKAGE: global MF vs per-fold MF (held-out rho vs -LPIPS) ===")
     rows = []
     specs = [("FR-calibrated", FR_FEATURES, 0.0),
-             ("NR-free", NR_FEATURES, 0.0),
-             ("NR-mono", NR_FEATURES, PRIMARY_LAMBDA)]
+             ("NR-free", NR_FEATURES, 0.0)]
     for name, feats, lam in specs:
         gm, gs = fuzzy_cv(classical, feats, lam, per_fold_mf=False)
         pm, ps = fuzzy_cv(classical, feats, lam, per_fold_mf=True)
@@ -263,24 +247,6 @@ def exp_algo_disjoint(classical, dz, ds):
 # --------------------------------------------------------------------------- #
 # (D) seed stability
 # --------------------------------------------------------------------------- #
-def exp_seed_stability(classical):
-    print("\n=== (D) SEED STABILITY: NR-free held-out mean rho across seeds ===")
-    vals = []
-    for sd in SEEDS:
-        mean, _ = fuzzy_cv(classical, NR_FEATURES, 0.0, per_fold_mf=False, seed=sd)
-        vals.append(mean)
-        print(f"  seed {sd:5d} -> {mean:.3f}")
-    vals = np.array(vals)
-    spread = float(vals.max() - vals.min())
-    std = float(vals.std())
-    print(f"  => mean {vals.mean():.3f}, std {std:.3f}, max-min spread {spread:.3f}")
-    print(f"  => mean {vals.mean():.3f}, std {std:.3f}, max-min spread {spread:.3f}")
-    return [dict(experiment="seed_stability", seed=int(s), mean_rho=float(v)) for s, v in zip(SEEDS, vals)] + \
-           [dict(experiment="seed_stability", seed="summary", mean_rho=float(vals.mean()),
-                 std=std, spread=spread)]
-
-
-# --------------------------------------------------------------------------- #
 def main():
     classical, cols, dz, ds = load_data()
     print(f"[i] classical n={len(classical)}, zerodce n={len(dz)}, sci n={len(ds)}")
@@ -288,7 +254,6 @@ def main():
     rows += exp_leakage(classical)
     rows += exp_baselines(classical)
     rows += exp_algo_disjoint(classical, dz, ds)
-    rows += exp_seed_stability(classical)
     out = RESULTS / "reviewer_experiments.csv"
     pd.DataFrame(rows).to_csv(out, index=False)
     print(f"\n[ok] wrote {out}")

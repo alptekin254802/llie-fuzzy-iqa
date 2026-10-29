@@ -1,20 +1,9 @@
-"""
-Stage B - Extract interpretable NO-REFERENCE features from enhanced images.
+"""Extract image statistics without a reference image.
 
-Place at: evaluation/nr_features.py      Run: python -m evaluation.nr_features
-
-These features are computed from the enhanced image ALONE (no ground truth), so a
-model built on them can run where no reference exists (autonomous driving, medical,
-surveillance). All are cheap and human-interpretable:
-  brightness   - mean luminance
-  contrast     - RMS contrast (luminance std)
-  entropy      - Shannon entropy (information / detail)
-  colorfulness - Hasler-Susstrunk colorfulness
-  sharpness    - variance of Laplacian (focus / edge strength)
-  noise        - Immerkaer noise sigma estimate
-
-Output: results/nr_features.csv   (filename, method, <features...>)
-"""
+Run ``python -m evaluation.nr_features`` to write results/nr_features.csv.
+Features are mean intensity, intensity standard deviation, grayscale histogram
+entropy, Hasler-Susstrunk colorfulness, Laplacian variance and the Immerkaer
+noise estimate. These statistics do not directly measure perceptual quality."""
 from __future__ import annotations
 
 import sys

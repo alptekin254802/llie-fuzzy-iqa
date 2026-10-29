@@ -1,2 +1,1 @@
-"""Preprocessing utilities for the BM606 low-light enhancement project."""
-
+"""Image preprocessing utilities for low-light enhancement."""

@@ -1,25 +1,10 @@
-"""
-Step 2b - SCI (Self-Calibrated Illumination, CVPR 2022) end-to-end.
+"""Enhance LOL images with SCI and compute the comparison metrics.
 
-Place at: evaluation/deep_sci.py        Run: python -m evaluation.deep_sci
-
-Second modern deep enhancer (Retinex self-calibration paradigm, complements
-Zero-DCE's curve estimation). Same one-script pattern as deep_zerodce.py: runs SCI
-on the LOL low-light images, saves enhanced outputs, and computes the FULL column
-set so it drops straight into the existing analysis.
-
-Output: results/deep_sci_all.csv   (method = "sci")
-        results/enhanced_deep/sci/<filename>.png
-
-WEIGHTS (bundled in the official repo, tiny):
-  From https://github.com/vis-opt-group/SCI  ->  CVPR/weights/medium.pt
-  place it at:  models/sci_medium.pt   (under the project root)
-  (If outputs look too dark/bright when you eyeball them, try easy.pt or
-   difficult.pt from the same folder and update WEIGHT_NAME below.)
-
-Architecture (EnhanceNetwork) and input convention (RGB [0,1], no resize) are
-reproduced verbatim from the official model.py so the weights load exactly.
-"""
+Run ``python -m evaluation.deep_sci``. Obtain CVPR/weights/medium.pt from
+https://github.com/vis-opt-group/SCI and save it as models/sci_medium.pt.
+The reported experiment uses this fixed checkpoint. Outputs are
+results/deep_sci_all.csv and results/enhanced_deep/sci/.
+The network and RGB [0,1] input convention follow the authors' implementation."""
 from __future__ import annotations
 
 import sys

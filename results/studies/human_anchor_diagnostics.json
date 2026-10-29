@@ -1,0 +1,49 @@
+{
+  "squarelol": {
+    "scenes": 290,
+    "uniform_top_method_counts": {
+      "lpips": {
+        "Semi": 267.0,
+        "CRM": 12.0,
+        "Self_Supervised": 2.0,
+        "SRIE": 5.0,
+        "Enlightengan": 1.0,
+        "JED": 3.0
+      },
+      "mos": {
+        "CRM": 66.5,
+        "Enlightengan": 47.0,
+        "Semi": 25.0,
+        "Zero": 18.5,
+        "MF": 113.0,
+        "MR": 4.0,
+        "SRIE": 16.0
+      }
+    }
+  },
+  "lieq": {
+    "scenes": 100,
+    "uniform_top_method_counts": {
+      "lpips": {
+        "EFF": 3.0,
+        "CRM": 33.0,
+        "SRIE": 1.0,
+        "he": 14.0,
+        "PLE": 3.0,
+        "multi_fusion": 10.0,
+        "NPEA": 6.0,
+        "LIME": 25.0,
+        "dong": 5.0
+      },
+      "mos": {
+        "EFF": 24.0,
+        "LIME": 7.0,
+        "CRM": 37.0,
+        "dong": 8.0,
+        "multi_fusion": 9.0,
+        "PLE": 12.0,
+        "SRIE": 3.0
+      }
+    }
+  }
+}

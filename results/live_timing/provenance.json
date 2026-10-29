@@ -1,0 +1,19 @@
+{
+  "original_plan_sha256": "96c39cd39fc5709fc8911360fa574804e9e21ca2dca3cb0321c68c88ab405a8a",
+  "original_results_sha256": "940eeea6b4ed30744a5e280962140563fe41621a8bfda2af1c38f9e8f647eba8",
+  "exported_file_sha256": {
+    "main_1/frames.csv": "6860f1ea2bd8c508b0062ab6ad96a316388c246479971d5a9f847533aa691537",
+    "main_1/selftest.json": "895a3d7ec13942c4c7eb4d13035aeb89ec1482fb1d0d271cd047bc834b7426dd",
+    "main_2/frames.csv": "f89b94d870df70f5a40b39d879aefe565a7ea29e8510f7194fc0901355c53645",
+    "main_2/selftest.json": "5c48c674639921a6fc72a39f67c04bddfbff2b7149ad5f86e6371bd38bd75000",
+    "main_3/frames.csv": "94b52fac0ad585d4fc2929c8db93477f0017fe9612ddcc95cd7e293ea3dd500c",
+    "main_3/selftest.json": "f1343cd8c1ef689b3e4597818edda7b2b4e149b08bcbb015f14f689adc9372fa",
+    "extra_minus3/frames.csv": "4954f14e441a0d254df901bc11e2be11404b74cbbbf523dd93f60aa52c5a2e19",
+    "extra_minus3/selftest.json": "3f7c4626f87aa6286e9b8df6efc6936deaed9859918e23381193775aef89c86c",
+    "extra_minus4/frames.csv": "0a2e12a425af7a8cc1f572c89bdc13ebf8b230cf35ebe08b96d29f4930e28a91",
+    "extra_minus4/selftest.json": "3b0fa9f581e01de1f789fa526db953e15506e1433fef6d5458200f5254dc8e19",
+    "protocol.json": "3d9ee6868c481e5cde7eea893641d137238cbc53d42d24ebdb8f3f9b538c5034",
+    "summary.json": "171ff2e23a6219f860c5ac42fe881482c54aed23c1575f94146354c64003a372"
+  },
+  "transformation": "Frame CSVs and selftests are byte-identical copies. Protocol and summary retain measurements, settings and versions; private filesystem paths and local process-management notes are omitted. Original plan/results hashes identify the unmodified source records."
+}

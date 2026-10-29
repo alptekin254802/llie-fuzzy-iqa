@@ -1,0 +1,7 @@
+{
+  "created_utc": "2026-10-23T19:51:22.342397+00:00",
+  "OS": "Windows-10-10.0.19045-SP0",
+  "python": "3.11.0 (main, Oct 24 2022, 18:26:48) [MSC v.1933 64 bit (AMD64)]",
+  "cpu_query": "{\"Name\":\"AMD Ryzen 7 1700 Eight-Core Processor          \",\"NumberOfCores\":8,\"NumberOfLogicalProcessors\":16}",
+  "old_hardware_file_sha256": "8d3494998be19131cc7502ca809d02a60474e617792d07babf66623e4dc1c35b"
+}

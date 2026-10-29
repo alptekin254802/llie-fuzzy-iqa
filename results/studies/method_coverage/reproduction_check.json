@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "independent_checks": 21316,
+  "failed_conditions": 0,
+  "all_4500_SRCC_values_identical": true,
+  "all_33_contrasts_and_intervals_identical": true,
+  "summary_numeric_maximum_error": 0.0,
+  "unit_tests": {
+    "passed": 13,
+    "failed": 0
+  }
+}

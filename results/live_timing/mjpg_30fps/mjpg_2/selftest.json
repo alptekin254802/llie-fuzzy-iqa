@@ -1,0 +1,14 @@
+{
+  "passed": true,
+  "frames_completed": 100,
+  "candidate_count": 1000,
+  "utc": "2026-10-23T19:53:43.264437+00:00",
+  "camera_frames": true,
+  "timed": false,
+  "original_sha256": "0ce9d628bb0481772e8ca5a05d9f162e014dcf77390e4b133ecc8fb22932e804",
+  "lut_sha256": "0ce9d628bb0481772e8ca5a05d9f162e014dcf77390e4b133ecc8fb22932e804",
+  "input_sha256": "dbf7f949125685b810bc290325b009142c6a1cffe9be561dbeb29b22060932e2",
+  "feature_values": 3000,
+  "model_scores": 2000,
+  "selected_gammas": 800
+}

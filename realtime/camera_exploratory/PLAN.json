@@ -1,0 +1,236 @@
+{
+  "section": "C",
+  "created_utc": "2026-10-23T11:31:27.602223+00:00",
+  "status": "Protocol recorded before the initial dry run; no experimental collection at this stage.",
+  "B_decision_sha256": "42df2a061b3c740f8ae1c6483c2247849c6fa02a49268d4882394cce7eb825e2",
+  "A_equality_sha256": "4d0f021bc07f9f91ace93d0aa45ff4bdb8ab7333163bb45586840f4395901515",
+  "primary": {
+    "hypothesis": "Real camera dark inputs: scene-mean LPIPS(fuzzy minus fixed) < 0 relative to averaged reference",
+    "unit": "scene; 20 input frames (4 stops x 5), averaged equally within each scene",
+    "bootstrap": {
+      "replicates": 2000,
+      "seed": 20261018,
+      "unit": "scene with replacement",
+      "ci95": "percentile [2.5,97.5], numpy default linear quantile"
+    },
+    "report_at_least_scenes": 20,
+    "target_scenes": 30
+  },
+  "secondary": {
+    "metrics": [
+      "PSNR",
+      "SSIM"
+    ],
+    "selectors": [
+      "nr_mono",
+      "entropy",
+      "brightness",
+      "default",
+      "oracle",
+      "clipiqa+",
+      "niqe"
+    ],
+    "deep_no_reference": "CLIP-IQA+ and NIQE computed offline on saved 256x256 candidates; never run live"
+  },
+  "models": {
+    "nr_free": {
+      "path": "models/nr_free.json",
+      "sha256": "6f9cb7131acddf043415b77118f91ec7d2b2e392f3ab5cd8e8a399a1257ea65a"
+    },
+    "nr_mono": {
+      "path": "models/nr_mono.json",
+      "sha256": "c8cda18d6f9c5b87d8a8e203c34a796563a62ef4134b013f8e4daf62af000453"
+    }
+  },
+  "fixed_gamma": {
+    "value": 0.3,
+    "source": "synthetic closed-loop candidate records",
+    "source_sha256": "b7b469baabfbb0ff87901ef62e968b3e93b918079543dd57da5be8fd4f3b22ce",
+    "rule": "Pool per-scene, per-gamma mean LPIPS across all five frozen synthetic LOL folds, weighting each fold by its scene count. Choose smallest gamma at exact minimum. Each of the 100 scenes contributes once, including all four exposures. This uses all available synthetic controller-training data for the independent webcam experiment; not a mean/vote of fold winner gammas and not a claim that all 485 LOL images have gamma sweeps. No webcam labels, reference metrics or new folds affect this choice.",
+    "fold_risks": {
+      "0": {
+        "0.2": 0.3236760857515037,
+        "0.3": 0.26369375009089707,
+        "0.4": 0.27182849450036883,
+        "0.5": 0.3278870327398181,
+        "0.6": 0.40672625228762627,
+        "0.7": 0.4910019526258111,
+        "0.8": 0.571907176822424,
+        "0.9": 0.6455465072765947,
+        "1.0": 0.7094936447218061
+      },
+      "1": {
+        "0.2": 0.3272680914029479,
+        "0.3": 0.2850923565216362,
+        "0.4": 0.30109149115160105,
+        "0.5": 0.35851797824725506,
+        "0.6": 0.434835883975029,
+        "0.7": 0.5159326892346143,
+        "0.8": 0.5948111664503812,
+        "0.9": 0.6677142066881061,
+        "1.0": 0.7322320744395256
+      },
+      "2": {
+        "0.2": 0.32809798531234263,
+        "0.3": 0.2627878810279071,
+        "0.4": 0.2688783500343561,
+        "0.5": 0.32628694381564854,
+        "0.6": 0.4076282518915832,
+        "0.7": 0.49468407314270735,
+        "0.8": 0.5789748694747686,
+        "0.9": 0.6562873538583517,
+        "1.0": 0.7227119736373424
+      },
+      "3": {
+        "0.2": 0.3774970581755042,
+        "0.3": 0.32146279141306877,
+        "0.4": 0.32931456053629515,
+        "0.5": 0.38540400480851533,
+        "0.6": 0.4638736892491579,
+        "0.7": 0.5482083277776837,
+        "0.8": 0.629012667760253,
+        "0.9": 0.7011972058564424,
+        "1.0": 0.7624634455889463
+      },
+      "4": {
+        "0.2": 0.3507924159988761,
+        "0.3": 0.2843394627794623,
+        "0.4": 0.2883563214913011,
+        "0.5": 0.3426698364317417,
+        "0.6": 0.42046357989311217,
+        "0.7": 0.5043150024488569,
+        "0.8": 0.5844494374468923,
+        "0.9": 0.6562815774232149,
+        "1.0": 0.7189667169004679
+      }
+    },
+    "fold_scene_weights": {
+      "0": 20,
+      "1": 20,
+      "2": 20,
+      "3": 20,
+      "4": 20
+    },
+    "pooled_risk": {
+      "0.2": 0.3414663273282349,
+      "0.3": 0.2834752483665943,
+      "0.4": 0.29189384354278447,
+      "0.5": 0.34815315920859574,
+      "0.6": 0.42670553145930173,
+      "0.7": 0.5108284090459346,
+      "0.8": 0.5918310635909438,
+      "0.9": 0.6654053702205419,
+      "1.0": 0.7291735710576177
+    }
+  },
+  "gammas": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ],
+  "default_gamma": 0.6666666666666666,
+  "selection": {
+    "adaptive": "only nine grid gammas; default 2/3 scored separately",
+    "plateau_atol": 1e-09,
+    "rtol": 0,
+    "maximize": [
+      "fuzzy",
+      "nr_mono",
+      "entropy",
+      "clipiqa+"
+    ],
+    "minimize": [
+      "niqe",
+      "lpips_oracle"
+    ],
+    "brightness": "maximize -abs(mean gray8/255 - .45)",
+    "tie": "lexsort(gamma, round(abs(gamma-2/3),12), round(abs(gamma-prev),12)); prev resets to 2/3 per scene/selector; previous input in stop-major order",
+    "invalid": "ignore nonfinite; if every candidate invalid use full grid then same tie rule; primary LPIPS nonfinite aborts analysis",
+    "top1": "exact tied maxima receive fractional hit against minimum LPIPS; primary controller tie rule remains the stated 1e-9 plateau rule; pairwise predicted ties half credit as closed_loop common.within_group"
+  },
+  "scoring": {
+    "input": "cv2 RGB, INTER_LINEAR resize 256x256 on uint8 then float32 /255; gamma_image with exact 1.0/(1/g)",
+    "reference": "average 16 raw uint8 frames in native resolution; store exact uint16 sum with scale 16*255; convert float32 average then INTER_LINEAR 256x256 and /255",
+    "reference_for_scoring": "mean of beginning/end 16-frame references after QC",
+    "metrics": "LPIPS-Alex via pyiqa lpips; same evaluation.metrics PSNR/SSIM",
+    "pyiqa": "0.1.15.post2",
+    "device": "CUDA if available, CPU otherwise; no model training"
+  },
+  "capture": {
+    "camera": "USB Camera",
+    "index": 0,
+    "backend": "DSHOW",
+    "resolution": [
+      640,
+      480
+    ],
+    "fourcc": "MJPG",
+    "fps_requested": 30,
+    "controls": {
+      "AUTO_EXPOSURE": 0.25,
+      "GAIN": 0,
+      "AUTO_WB": 0,
+      "WB_TEMPERATURE": 4600,
+      "AUTOFOCUS": 0,
+      "FOCUS": 1,
+      "BRIGHTNESS": 0,
+      "CONTRAST": 32,
+      "SATURATION": 64,
+      "GAMMA": 100,
+      "SHARPNESS": 4,
+      "BACKLIGHT": 1
+    },
+    "manual_focus_readback": 2,
+    "reference_exposure_candidates": [
+      -3,
+      -4,
+      -5,
+      -6,
+      -7
+    ],
+    "E0_selection": "first longest exposure with mean luminance .35-.55 and high-end clipped pixel proportion <.01; must allow four shorter tested stops >=-11",
+    "settle_discard_frames": 12,
+    "reference_frames_each_end": 16,
+    "stops": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "dark_frames_per_stop": 5,
+    "format": "lossless PNG and JSON with UTC timestamp, all readback settings, camera/backend, capture order, SHA256",
+    "trigger": "Space captures exactly one scene; Q/Esc quits; dry-run mode explicitly tags scene and never writes to accepted dataset"
+  },
+  "QC": {
+    "begin_end_reference_psnr_db_min": 40,
+    "noise_basis_db": 47.92924396195247,
+    "threshold_rule": "max(30,min(40,floor(B two-16-frame-reference PSNR -6))); 40 dB here leaves >=7 dB margin from B static noise observation",
+    "reference_luminance": [
+      0.35,
+      0.55
+    ],
+    "reference_high_clipped_pixel_fraction_max": 0.01,
+    "clipping_definition": "any RGB channel at 255 in any averaged reference pixel; fraction; per-frame clipping also logged",
+    "settings": "fixed controls and requested exposure readback must match; manual AF uses DSHOW flag=2; DSHOW AUTO_EXPOSURE -1 readback is backend limitation, not proof",
+    "failed_scene": "exclude entire scene from every analysis and publishable dataset; keep reason and private rejected record; never silently drop individual frames",
+    "no_faces": true,
+    "scene": "static indoor objects only; tripod/stable stand; illumination and camera untouched from first to final reference"
+  },
+  "dry_run": {
+    "count": 1,
+    "label": "dry_run",
+    "excluded_from_all_analyses": true,
+    "pipeline": "capture, QC, candidate scoring/selection smoke test, independent verification; no inferential estimate or bootstrap CI from dry_run"
+  },
+  "live_loop": {
+    "search": "A optimized nine-candidate kernel on bilinear 256x256",
+    "display": "original full resolution via uint8 LUT, for display only",
+    "timing": "capture, search, LUT, display/waitKey and total wall ms; resource-idle check before timing; nominal fps not claimed as true fps"
+  }
+}

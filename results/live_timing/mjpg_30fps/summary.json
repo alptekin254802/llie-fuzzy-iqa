@@ -1,0 +1,242 @@
+{
+  "sessions": [
+    {
+      "session": "mjpg_1",
+      "n": 1950,
+      "exposure": -6,
+      "format": "MJPG",
+      "processing_ms": {
+        "median": 8.57915,
+        "p95": 8.789594999999998,
+        "p99": 9.313275,
+        "maximum": 17.8941,
+        "mean": 8.619991076923075
+      },
+      "camera_interval_ms": {
+        "median": 32.0041,
+        "p95": 47.994614999999996,
+        "p99": 48.031701999999996,
+        "maximum": 48.3368,
+        "mean": 33.83749107692308
+      },
+      "camera_interval_median_ms": 32.0041,
+      "camera_interval_mean_ms": 33.83749107692308,
+      "intervals_gt_48_ms": 81,
+      "interval_gt_48_ms_percent": 4.153846153846154,
+      "deadline_misses": 0,
+      "deadline_miss_percent": 0.0,
+      "nominal_30fps_budget_misses": 0,
+      "nominal_30fps_budget_miss_percent": 0.0,
+      "measured_loop_seconds": 65.98318799999987,
+      "actual_loop_fps": 29.552982496086788,
+      "capture_wrapper_ms": {
+        "median": 23.18985,
+        "p95": 39.181165,
+        "p99": 39.239008,
+        "maximum": 39.6079,
+        "mean": 24.976067179487178
+      },
+      "capture_to_output_ms": {
+        "median": 31.7672,
+        "p95": 47.7681,
+        "p99": 47.88211,
+        "maximum": 49.889,
+        "mean": 33.59605825641026
+      },
+      "end_to_end_loop_ms": {
+        "median": 32.0088,
+        "p95": 48.007664999999996,
+        "p99": 48.12205,
+        "maximum": 50.1385,
+        "mean": 33.83753230769231
+      },
+      "capture_decode_ms": {
+        "median": 23.1749,
+        "p95": 39.16431,
+        "p99": 39.222006,
+        "maximum": 39.5886,
+        "mean": 24.960224102564105
+      }
+    },
+    {
+      "session": "mjpg_2",
+      "n": 1950,
+      "exposure": -6,
+      "format": "MJPG",
+      "processing_ms": {
+        "median": 8.55345,
+        "p95": 8.758905,
+        "p99": 9.244242,
+        "maximum": 22.5271,
+        "mean": 8.608818717948717
+      },
+      "camera_interval_ms": {
+        "median": 32.003550000000004,
+        "p95": 48.007475,
+        "p99": 48.06294,
+        "maximum": 50.05,
+        "mean": 33.83748317948718
+      },
+      "camera_interval_median_ms": 32.003550000000004,
+      "camera_interval_mean_ms": 33.83748317948718,
+      "intervals_gt_48_ms": 115,
+      "interval_gt_48_ms_percent": 5.897435897435898,
+      "deadline_misses": 0,
+      "deadline_miss_percent": 0.0,
+      "nominal_30fps_budget_misses": 0,
+      "nominal_30fps_budget_miss_percent": 0.0,
+      "measured_loop_seconds": 65.98306720000004,
+      "actual_loop_fps": 29.553036600881125,
+      "capture_wrapper_ms": {
+        "median": 23.216250000000002,
+        "p95": 39.224405,
+        "p99": 39.27942,
+        "maximum": 41.2447,
+        "mean": 24.98884312820513
+      },
+      "capture_to_output_ms": {
+        "median": 31.7663,
+        "p95": 47.788185,
+        "p99": 47.892122,
+        "maximum": 51.9135,
+        "mean": 33.59766184615385
+      },
+      "end_to_end_loop_ms": {
+        "median": 32.00495,
+        "p95": 48.024375,
+        "p99": 48.131266,
+        "maximum": 52.1479,
+        "mean": 33.837470358974365
+      },
+      "capture_decode_ms": {
+        "median": 23.20015,
+        "p95": 39.207475,
+        "p99": 39.261737999999994,
+        "maximum": 41.2196,
+        "mean": 24.972602
+      }
+    },
+    {
+      "session": "mjpg_3",
+      "n": 1950,
+      "exposure": -6,
+      "format": "MJPG",
+      "processing_ms": {
+        "median": 8.60035,
+        "p95": 8.76592,
+        "p99": 9.508482999999998,
+        "maximum": 16.7224,
+        "mean": 8.64227271794872
+      },
+      "camera_interval_ms": {
+        "median": 32.0048,
+        "p95": 47.9939,
+        "p99": 48.028314,
+        "maximum": 48.0893,
+        "mean": 33.8374663076923
+      },
+      "camera_interval_median_ms": 32.0048,
+      "camera_interval_mean_ms": 33.8374663076923,
+      "intervals_gt_48_ms": 82,
+      "interval_gt_48_ms_percent": 4.205128205128205,
+      "deadline_misses": 0,
+      "deadline_miss_percent": 0.0,
+      "nominal_30fps_budget_misses": 0,
+      "nominal_30fps_budget_miss_percent": 0.0,
+      "measured_loop_seconds": 65.98297969999993,
+      "actual_loop_fps": 29.55307579114985,
+      "capture_wrapper_ms": {
+        "median": 23.1705,
+        "p95": 39.159774999999996,
+        "p99": 39.222314,
+        "maximum": 39.2774,
+        "mean": 24.953191128205127
+      },
+      "capture_to_output_ms": {
+        "median": 31.7674,
+        "p95": 47.75867,
+        "p99": 47.903650999999996,
+        "maximum": 48.8265,
+        "mean": 33.59546384615385
+      },
+      "end_to_end_loop_ms": {
+        "median": 32.01,
+        "p95": 48.00163,
+        "p99": 48.14351,
+        "maximum": 49.0612,
+        "mean": 33.83742548717949
+      },
+      "capture_decode_ms": {
+        "median": 23.1551,
+        "p95": 39.142694999999996,
+        "p99": 39.204767,
+        "maximum": 39.261,
+        "mean": 24.937478615384613
+      }
+    }
+  ],
+  "primary": {
+    "session": "MJPG_minus6_pooled",
+    "n": 5850,
+    "exposure": -6,
+    "format": "MJPG",
+    "processing_ms": {
+      "median": 8.5783,
+      "p95": 8.767655,
+      "p99": 9.321236,
+      "maximum": 22.5271,
+      "mean": 8.62369417094017
+    },
+    "camera_interval_ms": {
+      "median": 32.00425,
+      "p95": 47.998355,
+      "p99": 48.041802,
+      "maximum": 50.05,
+      "mean": 33.83748018803419
+    },
+    "camera_interval_median_ms": 32.00425,
+    "camera_interval_mean_ms": 33.83748018803419,
+    "intervals_gt_48_ms": 278,
+    "interval_gt_48_ms_percent": 4.752136752136752,
+    "deadline_misses": 0,
+    "deadline_miss_percent": 0.0,
+    "nominal_30fps_budget_misses": 0,
+    "nominal_30fps_budget_miss_percent": 0.0,
+    "measured_loop_seconds": 197.94923489999954,
+    "actual_loop_fps": 29.55303162932313,
+    "capture_wrapper_ms": {
+      "median": 23.19115,
+      "p95": 39.18491,
+      "p99": 39.255871000000006,
+      "maximum": 41.2447,
+      "mean": 24.97270047863248
+    },
+    "capture_to_output_ms": {
+      "median": 31.7671,
+      "p95": 47.7742,
+      "p99": 47.895703999999995,
+      "maximum": 51.9135,
+      "mean": 33.59639464957265
+    },
+    "end_to_end_loop_ms": {
+      "median": 32.0082,
+      "p95": 48.012475,
+      "p99": 48.134304,
+      "maximum": 52.1479,
+      "mean": 33.83747605128205
+    },
+    "capture_decode_ms": {
+      "median": 23.176,
+      "p95": 39.168455,
+      "p99": 39.238265,
+      "maximum": 41.2196,
+      "mean": 24.956768239316236
+    }
+  },
+  "recommended_macros": {
+    "LiveSearch": "8.58",
+    "LiveSearchMax": "22.53",
+    "LiveFrames": "5{,}850",
+    "CameraFps": "29.55"
+  }
+}

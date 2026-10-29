@@ -29,10 +29,7 @@ def _prepare_pair(img: np.ndarray, gt: np.ndarray) -> Tuple[np.ndarray, np.ndarr
 
 
 def compute_psnr(img: np.ndarray, gt: np.ndarray) -> float:
-    """
-    Peak Signal-to-Noise Ratio, compares the quality of image enhancement
-    to the reference data. Higher values (in dB) indicate better enhancement.
-    """
+    """Return PSNR in dB; higher values mean lower pixel error against the reference."""
     img_f, gt_f = _prepare_pair(img, gt)
     mse = np.mean((img_f - gt_f) ** 2)
     if mse == 0:
@@ -41,10 +38,7 @@ def compute_psnr(img: np.ndarray, gt: np.ndarray) -> float:
 
 
 def compute_ssim(img: np.ndarray, gt: np.ndarray) -> float:
-    """
-    Structural Similarity Index (SSIM), compares the quality of image enhancement
-    to the reference data. Values range from -1 to 1, higher values indicate better enhancement.
-    """
+    """Return channel-averaged structural similarity against the reference."""
     img_f, gt_f = _prepare_pair(img, gt)
     # structural_similarity, win_size expects channel-last RGB inputs by default.
     return float(
@@ -58,12 +52,7 @@ def compute_ssim(img: np.ndarray, gt: np.ndarray) -> float:
 
 
 def compute_entropy(img: np.ndarray, bins: int = 256) -> float:
-    """
-    The Shannon entropy of the grayscale version of the image.
-
-    Higher entropy indicates a more wide-spread density distribution (more detail),
-    while lower entropy suggests flat or low-contrast images.
-    """
+    """Return grayscale histogram entropy in bits; this does not measure detail or quality directly."""
     if img.ndim != 3 or img.shape[2] != 3:
         raise ValueError("Entropy expects a RGB image.")
 

@@ -1,0 +1,115 @@
+{
+  "checkpoint": "q-future/one-align",
+  "revision": "dcc603b95aa0ebd82afa696d4a1e20d11fc80ddb",
+  "versions": {
+    "torch": "2.7.1+cu118",
+    "torchvision": "0.22.1+cu118",
+    "pyiqa": "0.1.15.post2",
+    "transformers": "4.36.1",
+    "accelerate": "0.26.1",
+    "bitsandbytes": "0.49.2",
+    "huggingface-hub": "0.36.0",
+    "tokenizers": "0.15.2",
+    "numpy": "2.4.4",
+    "opencv-python": "4.13.0.92"
+  },
+  "device_map": {
+    "model.embed_tokens": "0",
+    "model.layers.0": "0",
+    "model.layers.1": "0",
+    "model.layers.2": "0",
+    "model.layers.3": "0",
+    "model.layers.4": "0",
+    "model.layers.5": "0",
+    "model.layers.6": "0",
+    "model.layers.7": "0",
+    "model.layers.8": "0",
+    "model.layers.9": "cpu",
+    "model.layers.10": "cpu",
+    "model.layers.11": "cpu",
+    "model.layers.12": "cpu",
+    "model.layers.13": "cpu",
+    "model.layers.14": "cpu",
+    "model.layers.15": "cpu",
+    "model.layers.16": "cpu",
+    "model.layers.17": "cpu",
+    "model.layers.18": "cpu",
+    "model.layers.19": "cpu",
+    "model.layers.20": "cpu",
+    "model.layers.21": "cpu",
+    "model.layers.22": "cpu",
+    "model.layers.23": "cpu",
+    "model.layers.24": "cpu",
+    "model.layers.25": "cpu",
+    "model.layers.26": "cpu",
+    "model.layers.27": "cpu",
+    "model.layers.28": "cpu",
+    "model.layers.29": "cpu",
+    "model.layers.30": "cpu",
+    "model.layers.31": "cpu",
+    "model.norm": "cpu",
+    "model.vision_model": "cpu",
+    "model.visual_abstractor": "cpu",
+    "lm_head": "cpu"
+  },
+  "floating_parameter_dtypes": [
+    "torch.float16"
+  ],
+  "internal_processor": {
+    "_processor_class": null,
+    "feature_extractor_type": "CLIPFeatureExtractor",
+    "do_resize": true,
+    "size": {
+      "shortest_edge": 448
+    },
+    "resample": 3,
+    "do_center_crop": true,
+    "crop_size": {
+      "height": 448,
+      "width": 448
+    },
+    "do_rescale": true,
+    "rescale_factor": 0.00392156862745098,
+    "do_normalize": true,
+    "image_mean": [
+      0.48145466,
+      0.4578275,
+      0.40821073
+    ],
+    "image_std": [
+      0.26862954,
+      0.26130258,
+      0.27577711
+    ],
+    "do_convert_rgb": true,
+    "image_processor_type": "CLIPImageProcessor"
+  },
+  "preferential_token_ids": [
+    15129,
+    1781,
+    6534,
+    6460,
+    4319
+  ],
+  "weights": [
+    5,
+    4,
+    3,
+    2,
+    1
+  ],
+  "prompt": "USER: How would you rate the quality of this image?\n<|image|>\nASSISTANT: The quality of the image is",
+  "max_memory": {
+    "0": "5GiB",
+    "cpu": "17GiB"
+  },
+  "source_experiment_plan_sha256": "feeb4f9907eeb8b508fbb4f754125d632944b64e046a1fe3f310344e91c195bd",
+  "source_run_sha256": "a58c7870166b904168ec820db64c7bc9cdf0e818c8de169914cf4ebffdd6ea1c",
+  "source_analysis_sha256": "dcf3bcc09a896890280030d0866bd09c1980ada2dc652f7bbd9b63f4caba8f7b",
+  "scores_sha256": "aca857030ca6846993f82799aa0c3ef542be59cbbf6540d38e6a3794d845a191",
+  "portable_run_sha256": "3a91a2c1fd2d89935c58a134574d046987f4c6de57aa5e0343721a6f27bbb64d",
+  "portable_analyze_sha256": "0ca4cbf6f67c63e35c2e7921ddd7bfbc100b14de0e6aef6f1e16b104f00f903a",
+  "portability": "Command-line paths, portable RAM check and lock; identical preprocessing AST and fp16 loading AST; public analyze adds paired NR-free contrasts.",
+  "accuracy_mapping_verified": 15,
+  "timing_source": "qalign_scores.csv / qalign_results.json (4-bit only)"
+}
