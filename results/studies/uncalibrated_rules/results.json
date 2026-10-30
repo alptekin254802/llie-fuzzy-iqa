@@ -1,0 +1,269 @@
+{
+  "data": {
+    "images": 2425,
+    "scenes": 485,
+    "methods": 5,
+    "folds": 5
+  },
+  "main_preprocessing": "pooled, matching paper Table2",
+  "rows": [
+    {
+      "model": "Hand-tuned (Mamdani)",
+      "lpips": {
+        "mean": 0.5297114077322931,
+        "SD": 0.025836494756337303,
+        "folds": [
+          0.4947383969938513,
+          0.5495513587838062,
+          0.5556705437636138,
+          0.5020676648857765,
+          0.5465290742344173
+        ]
+      },
+      "niqe": {
+        "mean": 0.14082919508218694,
+        "SD": 0.06850774018980858,
+        "folds": [
+          0.06493387112555925,
+          0.13495800984637135,
+          0.11254108749404201,
+          0.12231823130506705,
+          0.26939477563989506
+        ]
+      }
+    },
+    {
+      "model": "FR-uncalibrated",
+      "lpips": {
+        "mean": 0.6142759728286973,
+        "SD": 0.0331204912839462,
+        "folds": [
+          0.6421615413032216,
+          0.6608798977272525,
+          0.5986852723276671,
+          0.5681277721488486,
+          0.6015253806364966
+        ]
+      },
+      "niqe": {
+        "mean": 0.1146373558490209,
+        "SD": 0.06012022888383465,
+        "folds": [
+          0.09611320965947649,
+          0.11732823413216067,
+          0.07513806876628187,
+          0.056773564694084726,
+          0.22783370199310074
+        ]
+      }
+    },
+    {
+      "model": "FR-calibrated",
+      "lpips": {
+        "mean": 0.7638353313838901,
+        "SD": 0.02953823936417289,
+        "folds": [
+          0.7782818099092573,
+          0.8144826781341192,
+          0.7524415403339033,
+          0.7340682835335515,
+          0.739902345008619
+        ]
+      },
+      "niqe": {
+        "mean": 0.33667478298012293,
+        "SD": 0.04607153493145752,
+        "folds": [
+          0.35680963820741174,
+          0.34660921072538614,
+          0.27821784640071073,
+          0.294794179192811,
+          0.4069430403742948
+        ]
+      }
+    },
+    {
+      "model": "NR-uncalibrated",
+      "lpips": {
+        "mean": 0.5621853835896493,
+        "SD": 0.04095946501586269,
+        "folds": [
+          0.5985351261147678,
+          0.5797596705754823,
+          0.48398380416814335,
+          0.561132441666943,
+          0.5875158754229098
+        ]
+      },
+      "niqe": {
+        "mean": 0.15274088107556444,
+        "SD": 0.05209688269596162,
+        "folds": [
+          0.17447304008326905,
+          0.09471500023448186,
+          0.14616300983870167,
+          0.10796156900824666,
+          0.24039178621312293
+        ]
+      }
+    },
+    {
+      "model": "NR-free",
+      "lpips": {
+        "mean": 0.7533963025713348,
+        "SD": 0.021025000608222415,
+        "folds": [
+          0.7650437977624835,
+          0.7457277789098327,
+          0.7192240870064777,
+          0.7544888797409699,
+          0.7824969694369109
+        ]
+      },
+      "niqe": {
+        "mean": 0.4251977697469254,
+        "SD": 0.04513330307781447,
+        "folds": [
+          0.4136181930992464,
+          0.4062593893481997,
+          0.38458160845554806,
+          0.4082642459085344,
+          0.5132654119230984
+        ]
+      }
+    }
+  ],
+  "optional_training_only": {
+    "status": "COMPUTED",
+    "rows": [
+      {
+        "model": "FR-uncalibrated",
+        "lpips": {
+          "mean": 0.6143710039436214,
+          "SD": 0.0337116700477347,
+          "folds": [
+            0.6436948927498122,
+            0.6610943885083935,
+            0.5991769850084637,
+            0.567256044454115,
+            0.6006327089973232
+          ]
+        },
+        "niqe": {
+          "mean": 0.11473072401849656,
+          "SD": 0.06008084806335144,
+          "folds": [
+            0.0968374589181181,
+            0.11774690778953699,
+            0.0757364812072186,
+            0.05579536517718403,
+            0.22753740700042505
+          ]
+        }
+      },
+      {
+        "model": "NR-uncalibrated",
+        "lpips": {
+          "mean": 0.5613521351113444,
+          "SD": 0.04095742432369437,
+          "folds": [
+            0.5944486243744113,
+            0.5803950125653218,
+            0.4821358978898556,
+            0.5628957057290688,
+            0.5868854349980642
+          ]
+        },
+        "niqe": {
+          "mean": 0.15094681027786722,
+          "SD": 0.05244346763811955,
+          "folds": [
+            0.1702102724928168,
+            0.0916125059956109,
+            0.14349531059305878,
+            0.10884739158007124,
+            0.24056857072777837
+          ]
+        }
+      }
+    ],
+    "new_consequent_fits": 0
+  },
+  "bootstrap": {
+    "B": 2000,
+    "seed": 20261018,
+    "unit": "whole scene, all5 outputs retained, original fold identity preserved",
+    "estimand": "fold_mean_SRCC",
+    "target": "negative LPIPS",
+    "interval": "95% percentile, unadjusted, outside the paper Holm family",
+    "contrasts": [
+      {
+        "model": "FR-calibrated",
+        "comparator": "FR-uncalibrated",
+        "contrast": "FR-calibrated minus FR-uncalibrated",
+        "target": "negative LPIPS",
+        "estimand": "fold_mean_SRCC",
+        "difference": 0.14955935855519276,
+        "ci95": [
+          0.13236782073172088,
+          0.16712910737992778
+        ],
+        "B": 2000,
+        "seed": 20261018,
+        "interval": "95% percentile, unadjusted",
+        "Holm_family_member": false,
+        "models_refitted": false
+      },
+      {
+        "model": "NR-free",
+        "comparator": "NR-uncalibrated",
+        "contrast": "NR-free minus NR-uncalibrated",
+        "target": "negative LPIPS",
+        "estimand": "fold_mean_SRCC",
+        "difference": 0.19121091898168568,
+        "ci95": [
+          0.1681579261588015,
+          0.21244036676648928
+        ],
+        "B": 2000,
+        "seed": 20261018,
+        "interval": "95% percentile, unadjusted",
+        "Holm_family_member": false,
+        "models_refitted": false
+      },
+      {
+        "model": "FR-uncalibrated",
+        "comparator": "Hand-tuned (Mamdani)",
+        "contrast": "FR-uncalibrated minus Hand-tuned (Mamdani)",
+        "target": "negative LPIPS",
+        "estimand": "fold_mean_SRCC",
+        "difference": 0.08456456509640428,
+        "ci95": [
+          0.06262300015743809,
+          0.10846379360435802
+        ],
+        "B": 2000,
+        "seed": 20261018,
+        "interval": "95% percentile, unadjusted",
+        "Holm_family_member": false,
+        "models_refitted": false
+      }
+    ]
+  },
+  "arithmetic_differences": {
+    "FR_calibrated_minus_Hand_tuned": 0.23412392365159707,
+    "FR_uncalibrated_minus_Hand_tuned": 0.0845645650964042,
+    "FR_calibrated_minus_FR_uncalibrated": 0.14955935855519287,
+    "NR_free_minus_NR_uncalibrated": 0.19121091898168552
+  },
+  "orientation_caveat": "Feature orientation signs are derived from LPIPS, so the uncalibrated models are uncalibrated in their consequents but not fully target-free.",
+  "interpretation_limit": "Hand-tuned to uncalibrated combines changes in orientations, memberships, inference and rule consequents; it does not isolate TSK structure alone.",
+  "consequent_rule": "theta_r=100*(l1+l2+l3)/6 in the public COMBOS order",
+  "DE_fits": 10,
+  "uncalibrated_consequent_fits": 0,
+  "source": {
+    "scoring": "analysis/reference_free_fuzzy.py",
+    "bootstrap": "analysis/studies/support.py",
+    "reproduction": "analysis/studies/uncalibrated_rules.py"
+  }
+}
