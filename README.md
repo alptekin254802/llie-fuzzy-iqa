@@ -111,6 +111,7 @@ raw-image downloads. Model fitting uses scene-disjoint five-fold splits.
 | Primary figures and fold-mean table | `python -m analysis.make_figures`; `results/figures_numbers.csv` |
 | NR-mono fold validation and near-tie sensitivity | `python -m analysis.validate_monotone`; `results/monotone_validation.json` |
 | NR-free and NR-mono calibration | `python -m analysis.reference_free_fuzzy --output calibration_run` |
+| Fixed versus fitted rule values | `python -B -m analysis.studies.uncalibrated_rules --output uncalibrated_run --with-calibration`; [results](results/studies/uncalibrated_rules/results.json) |
 | Within-method figure | `analysis.make_figures`: classical out-of-fold predictions; Zero-DCE and SCI scored by the unchanged classical deployment fit |
 | NR-mono rule heatmap | `analysis.make_figures`: frozen product-model consequents, affinely displayed on a relative 0–100 scale |
 | Scene-clustered paired statistics | `python -m analysis.significance_tests`; `results/significance_tests.json` |
