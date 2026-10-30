@@ -1,0 +1,114 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-30T13:04:35.366090+00:00",
+  "fast_sha256": "8083233c35f28aea78cdc3486e212ecd19417656fd68464549d1382090d228a4",
+  "root_plan_sha256": "c6aca869e86778ea19e264191c416e875f74526cb0b4696a7119443f4994f937",
+  "amendment1_sha256": "56c25cdbd48371e2c08cd79a21ce70a9fbb27c25c0c48398b916551f2fe157b6",
+  "cases": [
+    {
+      "case": "black",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "white",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "gray127",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "dark63",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "channel_grid",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "checker",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "random_uint8",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "random_float32",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "impulse",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "quantisation_below",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "quantisation_above",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "srgb_thresholds",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    },
+    {
+      "case": "noncontiguous",
+      "candidates": 9,
+      "selectors": 5,
+      "feature_error": 0
+    }
+  ],
+  "synthetic_images": 13,
+  "candidate_byte_checks": 117,
+  "selection_output_checks": 65,
+  "image_score_tie_set_checks": 39,
+  "artificial_tie_fixtures": 104,
+  "membership_boundary_feature_rows": 117,
+  "max_feature_error": 0.0,
+  "max_score_error": {
+    "NR-free": 0.0,
+    "NR-mono": 0.0,
+    "Linear3": 1.7763568394002505e-15
+  },
+  "all_input_buffers_unchanged": true,
+  "A_B_A_state_independence": true,
+  "returned_outputs_survive_later_calls": true,
+  "invalid_input_rejections": 5,
+  "default_correctness_only_control": true,
+  "full1977_image_verification_not_duplicated": true,
+  "timing_run": false,
+  "quality_read": false,
+  "training_run": false,
+  "scientific_blocker_found": false,
+  "limits": [
+    "This audit tests exact output/prediction semantics on synthetic boundaries and arrays, not the full1977realinput population; rootfullverifier is required.",
+    "This isnot a performance result or proof of arbitrary worstcase latency."
+  ],
+  "hashes": {}
+}

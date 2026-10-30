@@ -1,0 +1,9 @@
+{
+  "status": "PENDING",
+  "kind": "capture",
+  "round": 1,
+  "utc": "2026-10-30T13:58:58.343184+00:00",
+  "freeze_sha256": "204f6cda7218551876f472d58a97db41a02d2463111666f125ade07e128dc5a1",
+  "rows": 0,
+  "finished_utc": "2026-10-30T13:59:07.504661+00:00"
+}

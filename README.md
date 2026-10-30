@@ -190,3 +190,14 @@ The code license is in `LICENSE`; retained SQUARE-LOL scores carry the attributi
 obtained separately under the terms of their respective providers.
 
 Full protocols, implementation details and supplementary caveats are collected in [Technical notes](docs/TECHNICAL_NOTES.md).
+
+
+## CLAHE parameter selection
+
+[Parameter-selection studies](results/studies/parameter_selection/README.md)
+include the four-task screen and frozen CLAHE confirmation on unused LOL-v2
+pairs. NR-mono improves LPIPS over fixed, linear and RF selectors in the synthetic
+confirmation; the complete comparator results are included. The
+[exact implementation](results/studies/clahe_runtime/README.md) and
+[live camera timings](results/studies/clahe_live/README.md) provide reproduction
+commands and per-frame timing records without camera images.

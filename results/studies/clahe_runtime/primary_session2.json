@@ -1,0 +1,51 @@
+{
+  "boundary": "primary",
+  "session": 2,
+  "pid": 15448,
+  "start_utc": "2026-10-30T13:13:39.704038+00:00",
+  "end_utc": "2026-10-30T13:14:48.929631+00:00",
+  "elapsed_seconds": 69.44999860000098,
+  "calls": 2400,
+  "checksum": 14423.623540956527,
+  "raw_sha256": "0a59046e5287405203ac70e872ce3b5d1f984ad01041713046dd29e68f6561f1",
+  "code_freeze_sha256": "46d00fb7b3333a0c805333718f0ba8c0543146faaacd24bd2052e7ee35a8ae2b",
+  "system": {
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "opencv_threads": 1,
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "libscipy_openblas64_-63c857e738469261263c764a36be9436.dll",
+        "version": "0.3.31.188.0",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "vcomp",
+        "filepath": "vcomp140.dll",
+        "version": null
+      }
+    ],
+    "cpu_before": 0.5,
+    "cpu_after": 5.7,
+    "available_ram_bytes": 14147969024
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "camera": {
+    "index": 0,
+    "backend": "DSHOW",
+    "fourcc": "MJPG",
+    "width": 640,
+    "height": 480,
+    "fps_requested": 30,
+    "exposure": -6,
+    "controls": {
+      "AUTO_EXPOSURE": 0.25,
+      "GAIN": 0,
+      "AUTO_WB": 0,
+      "WB_TEMPERATURE": 4600,
+      "AUTOFOCUS": 0,
+      "FOCUS": 1,
+      "BRIGHTNESS": 0,
+      "CONTRAST": 32,
+      "SATURATION": 64,
+      "GAMMA": 100,
+      "SHARPNESS": 4,
+      "BACKLIGHT": 1
+    },
+    "settle_discard_frames": 12,
+    "set_order": "width, height, FPS, FOURCC LAST, then controls and exposure",
+    "verification": "All set returns true AND DSHOW/640x480/MJPG readbacks and fps within 0.01 of 30; exact camera controls control readbacks. AUTO_EXPOSURE getter=-1 is unsupported, manual response established by frozen prior image tests; AUTOFOCUS getter=2 is the previously verified manual flag. Verify after requests, settling, selftest, immediately before timing and after timing. On failure no session starts or completed session is invalid."
+  },
+  "gammas": [
+    0.2,
+    0.3,
+    0.4,
+    0.5,
+    0.6,
+    0.7,
+    0.8,
+    0.9,
+    1.0
+  ]
+}

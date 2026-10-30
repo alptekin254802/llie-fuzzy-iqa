@@ -1,0 +1,30 @@
+{
+  "kind": "linear",
+  "feature_order": [
+    "entropy",
+    "contrast",
+    "sharpness",
+    "brightness"
+  ],
+  "mean": [
+    6.05171800640371,
+    0.1294429957684878,
+    0.043346707117798755,
+    0.3536733636683505
+  ],
+  "scale": [
+    1.0813285262512484,
+    0.09196619251263494,
+    0.07870210316090649,
+    0.2836748608315224
+  ],
+  "coefficient": [
+    0.1986674555994009,
+    -0.08726612462795003,
+    -0.07762136021220707,
+    -0.043145310231393605
+  ],
+  "intercept": -0.43233099817023024,
+  "objective": "ordinary least squares on classical-five negative LPIPS; training-only standardisation",
+  "alpha": 0.0
+}

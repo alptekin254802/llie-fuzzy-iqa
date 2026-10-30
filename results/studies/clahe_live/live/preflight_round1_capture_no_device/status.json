@@ -1,0 +1,10 @@
+{
+  "status": "FAILED",
+  "kind": "capture",
+  "round": 1,
+  "utc": "2026-10-30T13:51:22.564990+00:00",
+  "freeze_sha256": "204f6cda7218551876f472d58a97db41a02d2463111666f125ade07e128dc5a1",
+  "error": "RuntimeError('DSHOW camera unavailable')",
+  "rows": 0,
+  "finished_utc": "2026-10-30T13:51:31.344949+00:00"
+}

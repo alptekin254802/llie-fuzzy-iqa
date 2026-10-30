@@ -1,0 +1,239 @@
+{
+  "status": "COMPLETE",
+  "kind": "gamma",
+  "round": 2,
+  "utc": "2026-10-30T14:06:14.593082+00:00",
+  "freeze_sha256": "204f6cda7218551876f472d58a97db41a02d2463111666f125ade07e128dc5a1",
+  "requests": [
+    {
+      "name": "FRAME_WIDTH",
+      "value": 640,
+      "accepted": true
+    },
+    {
+      "name": "FRAME_HEIGHT",
+      "value": 480,
+      "accepted": true
+    },
+    {
+      "name": "FPS",
+      "value": 30,
+      "accepted": true
+    },
+    {
+      "name": "FOURCC",
+      "value": 1196444237,
+      "accepted": true
+    },
+    {
+      "name": "AUTO_EXPOSURE",
+      "value": 0.25,
+      "accepted": true
+    },
+    {
+      "name": "GAIN",
+      "value": 0,
+      "accepted": true
+    },
+    {
+      "name": "AUTO_WB",
+      "value": 0,
+      "accepted": true
+    },
+    {
+      "name": "WB_TEMPERATURE",
+      "value": 4600,
+      "accepted": true
+    },
+    {
+      "name": "AUTOFOCUS",
+      "value": 0,
+      "accepted": true
+    },
+    {
+      "name": "FOCUS",
+      "value": 1,
+      "accepted": true
+    },
+    {
+      "name": "BRIGHTNESS",
+      "value": 0,
+      "accepted": true
+    },
+    {
+      "name": "CONTRAST",
+      "value": 32,
+      "accepted": true
+    },
+    {
+      "name": "SATURATION",
+      "value": 64,
+      "accepted": true
+    },
+    {
+      "name": "GAMMA",
+      "value": 100,
+      "accepted": true
+    },
+    {
+      "name": "SHARPNESS",
+      "value": 4,
+      "accepted": true
+    },
+    {
+      "name": "BACKLIGHT",
+      "value": 1,
+      "accepted": true
+    },
+    {
+      "name": "EXPOSURE",
+      "value": -6,
+      "accepted": true
+    }
+  ],
+  "readback_initial": {
+    "AUTO_EXPOSURE": -1.0,
+    "GAIN": 0.0,
+    "AUTO_WB": 0.0,
+    "WB_TEMPERATURE": 4600.0,
+    "AUTOFOCUS": 2.0,
+    "FOCUS": 1.0,
+    "BRIGHTNESS": 0.0,
+    "CONTRAST": 32.0,
+    "SATURATION": 64.0,
+    "GAMMA": 100.0,
+    "SHARPNESS": 4.0,
+    "BACKLIGHT": 1.0,
+    "EXPOSURE": -6.0,
+    "FRAME_WIDTH": 640.0,
+    "FRAME_HEIGHT": 480.0,
+    "FPS": 30.00003000003,
+    "FOURCC": 1196444237.0,
+    "backend": "DSHOW"
+  },
+  "readback_settled": {
+    "AUTO_EXPOSURE": -1.0,
+    "GAIN": 0.0,
+    "AUTO_WB": 0.0,
+    "WB_TEMPERATURE": 4600.0,
+    "AUTOFOCUS": 2.0,
+    "FOCUS": 1.0,
+    "BRIGHTNESS": 0.0,
+    "CONTRAST": 32.0,
+    "SATURATION": 64.0,
+    "GAMMA": 100.0,
+    "SHARPNESS": 4.0,
+    "BACKLIGHT": 1.0,
+    "EXPOSURE": -6.0,
+    "FRAME_WIDTH": 640.0,
+    "FRAME_HEIGHT": 480.0,
+    "FPS": 30.00003000003,
+    "FOURCC": 1196444237.0,
+    "backend": "DSHOW"
+  },
+  "selftest_frames": 20,
+  "readback_selftest": {
+    "AUTO_EXPOSURE": -1.0,
+    "GAIN": 0.0,
+    "AUTO_WB": 0.0,
+    "WB_TEMPERATURE": 4600.0,
+    "AUTOFOCUS": 2.0,
+    "FOCUS": 1.0,
+    "BRIGHTNESS": 0.0,
+    "CONTRAST": 32.0,
+    "SATURATION": 64.0,
+    "GAMMA": 100.0,
+    "SHARPNESS": 4.0,
+    "BACKLIGHT": 1.0,
+    "EXPOSURE": -6.0,
+    "FRAME_WIDTH": 640.0,
+    "FRAME_HEIGHT": 480.0,
+    "FPS": 30.00003000003,
+    "FOURCC": 1196444237.0,
+    "backend": "DSHOW"
+  },
+  "readback_before_timing": {
+    "AUTO_EXPOSURE": -1.0,
+    "GAIN": 0.0,
+    "AUTO_WB": 0.0,
+    "WB_TEMPERATURE": 4600.0,
+    "AUTOFOCUS": 2.0,
+    "FOCUS": 1.0,
+    "BRIGHTNESS": 0.0,
+    "CONTRAST": 32.0,
+    "SATURATION": 64.0,
+    "GAMMA": 100.0,
+    "SHARPNESS": 4.0,
+    "BACKLIGHT": 1.0,
+    "EXPOSURE": -6.0,
+    "FRAME_WIDTH": 640.0,
+    "FRAME_HEIGHT": 480.0,
+    "FPS": 30.00003000003,
+    "FOURCC": 1196444237.0,
+    "backend": "DSHOW"
+  },
+  "environment": {
+    "pid": 40756,
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "cv2_threads": 1,
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "libscipy_openblas64_-63c857e738469261263c764a36be9436.dll",
+        "version": "0.3.31.188.0",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "vcomp",
+        "filepath": "vcomp140.dll",
+        "version": null
+      }
+    ],
+    "power": "Power Scheme GUID: 9897998c-92de-4669-853f-b7cd3ecb2790  (AMD Ryzen™ Balanced)"
+  },
+  "start_utc": "2026-10-30T14:06:36.980078+00:00",
+  "readback_final": {
+    "AUTO_EXPOSURE": -1.0,
+    "GAIN": 0.0,
+    "AUTO_WB": 0.0,
+    "WB_TEMPERATURE": 4600.0,
+    "AUTOFOCUS": 2.0,
+    "FOCUS": 1.0,
+    "BRIGHTNESS": 0.0,
+    "CONTRAST": 32.0,
+    "SATURATION": 64.0,
+    "GAMMA": 100.0,
+    "SHARPNESS": 4.0,
+    "BACKLIGHT": 1.0,
+    "EXPOSURE": -6.0,
+    "FRAME_WIDTH": 640.0,
+    "FRAME_HEIGHT": 480.0,
+    "FPS": 30.00003000003,
+    "FOURCC": 1196444237.0,
+    "backend": "DSHOW"
+  },
+  "cpu_after": 7.4,
+  "end_utc": "2026-10-30T14:07:44.868620+00:00",
+  "raw_sha256": "1869085b79efe2a27761a8d824a72abf2bcedc8f9bda602540e87b8c504c02bd",
+  "rows": 2000,
+  "finished_utc": "2026-10-30T14:07:45.243842+00:00"
+}

@@ -1,0 +1,21 @@
+{
+  "screen": {
+    "prediction_rows": 37730,
+    "max_prediction_error": 1.4210854715202004e-14
+  },
+  "confirmation": {
+    "prediction_rows": 8091,
+    "max_prediction_error": 1.4210854715202004e-14
+  },
+  "pixels": {
+    "images": 1977,
+    "candidate_checks": 17793,
+    "exact": true
+  },
+  "decision_rows": {
+    "screen_decisions": 48510,
+    "confirmation_decisions": 11687
+  },
+  "live_and_offline_summaries": "PASS",
+  "reference_only_classifications": 1589
+}

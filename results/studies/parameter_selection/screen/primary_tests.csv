@@ -1,0 +1,25 @@
+dataset,family,metric,contrast,comparator,mean,ci_low,ci_high,groups,p_raw,p_method,primary_domain,p_holm,strong_bounded_candidate
+LOL,clahe,lpips,NR-free minus training_fixed,training_fixed,0.00737931055900378,0.0039509950205020355,0.01065847465415562,234,5e-05,monte_carlo_sign_flip,development,0.0002,False
+LOL,denoise,lpips,NR-free minus training_fixed,training_fixed,0.019538977807997977,0.016525435729212317,0.022663618934810417,234,5e-05,monte_carlo_sign_flip,development,0.0002,False
+LOL,he_blend,lpips,NR-free minus training_fixed,training_fixed,0.0030380941704552388,2.8826321841367628e-05,0.006514151630978871,234,0.06275,monte_carlo_sign_flip,development,0.1255,False
+LOL,log,lpips,NR-free minus training_fixed,training_fixed,-5.448641457151845e-05,-0.005160110052104539,0.004978440051733854,234,0.9837,monte_carlo_sign_flip,development,0.9837,False
+LOLv2-real,clahe,lpips,NR-free minus training_fixed,training_fixed,-0.002339032789071401,-0.013962626457214355,0.01125655323266983,3,0.75,exact_sign_flip,external,1.0,False
+LOLv2-real,denoise,lpips,NR-free minus training_fixed,training_fixed,0.034703462074200296,0.018967747688293457,0.046168684959411566,3,0.25,exact_sign_flip,external,1.0,False
+LOLv2-real,he_blend,lpips,NR-free minus training_fixed,training_fixed,0.0022600392500559487,-0.01371040940284729,0.020490527153015137,3,1.0,exact_sign_flip,external,1.0,False
+LOLv2-real,log,lpips,NR-free minus training_fixed,training_fixed,0.003573982665936152,-0.0003502964973449707,0.009604211896657944,3,0.5,exact_sign_flip,external,1.0,False
+LOLv2-synthetic,clahe,lpips,NR-free minus training_fixed,training_fixed,-0.01555501383729279,-0.02731181858596392,-0.004679917203262451,100,0.01175,monte_carlo_sign_flip,external,0.10575,False
+LOLv2-synthetic,denoise,lpips,NR-free minus training_fixed,training_fixed,0.014362032664939762,0.008995742802275344,0.019895185734611,100,5e-05,monte_carlo_sign_flip,external,0.001,False
+LOLv2-synthetic,he_blend,lpips,NR-free minus training_fixed,training_fixed,0.0347636813391,0.020320643952349202,0.05055620567710139,100,5e-05,monte_carlo_sign_flip,external,0.001,False
+LOLv2-synthetic,log,lpips,NR-free minus training_fixed,training_fixed,0.08611955422908067,0.061838415157049895,0.11207820479944347,100,5e-05,monte_carlo_sign_flip,external,0.001,False
+LSRW-HF-exploratory,clahe,lpips,NR-free minus training_fixed,training_fixed,-0.0011265087127685547,-0.014123183123767376,0.014305466547608373,50,0.8827,monte_carlo_sign_flip,external,1.0,False
+LSRW-HF-exploratory,denoise,lpips,NR-free minus training_fixed,training_fixed,0.007006202340126038,-0.004843641340732574,0.01838628528267144,50,0.2436,monte_carlo_sign_flip,external,1.0,False
+LSRW-HF-exploratory,he_blend,lpips,NR-free minus training_fixed,training_fixed,0.03100563392043114,0.017481022078543903,0.04623898346349597,50,0.0001,monte_carlo_sign_flip,external,0.0011,False
+LSRW-HF-exploratory,log,lpips,NR-free minus training_fixed,training_fixed,0.05124487206339836,0.030736231923103333,0.07520805678144096,50,5e-05,monte_carlo_sign_flip,external,0.001,False
+SICE-author-underexposure,clahe,lpips,NR-free minus training_fixed,training_fixed,-0.04935139672058385,-0.06729452693607749,-0.031755966656818624,41,0.0001,monte_carlo_sign_flip,external,0.0011,True
+SICE-author-underexposure,denoise,lpips,NR-free minus training_fixed,training_fixed,0.037527821776343555,0.02741338119092511,0.04740752000361678,41,5e-05,monte_carlo_sign_flip,external,0.001,False
+SICE-author-underexposure,he_blend,lpips,NR-free minus training_fixed,training_fixed,0.011726216753808463,0.0029490236828966835,0.021355171669728872,41,0.01545,monte_carlo_sign_flip,external,0.1236,False
+SICE-author-underexposure,log,lpips,NR-free minus training_fixed,training_fixed,0.01589444479564341,0.002414587598930045,0.031778108860116165,41,0.03225,monte_carlo_sign_flip,external,0.22575,False
+SICE-replication,clahe,lpips,NR-free minus training_fixed,training_fixed,-0.011921302697434074,-0.01674518700565849,-0.006785808812646772,393,5e-05,monte_carlo_sign_flip,external,0.001,True
+SICE-replication,denoise,lpips,NR-free minus training_fixed,training_fixed,0.03431594793616057,0.029967511289826484,0.03905889649991581,393,5e-05,monte_carlo_sign_flip,external,0.001,False
+SICE-replication,he_blend,lpips,NR-free minus training_fixed,training_fixed,0.028088734122633022,0.022597881070985138,0.03386752111102636,393,5e-05,monte_carlo_sign_flip,external,0.001,False
+SICE-replication,log,lpips,NR-free minus training_fixed,training_fixed,0.022494477975838662,0.014157604632079223,0.030437024032493282,393,5e-05,monte_carlo_sign_flip,external,0.001,False

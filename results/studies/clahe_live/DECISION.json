@@ -1,0 +1,43 @@
+{
+  "utc": "2026-10-30T14:20:24.246606+00:00",
+  "status": "PASS",
+  "criteria": [
+    {
+      "session": 1,
+      "kind": "clahe",
+      "relative_fps": 0.9995565710506058,
+      "near30": true,
+      "p95_under_budget": true
+    },
+    {
+      "session": 2,
+      "kind": "clahe",
+      "relative_fps": 0.9976913276110269,
+      "near30": true,
+      "p95_under_budget": true
+    },
+    {
+      "session": 3,
+      "kind": "clahe",
+      "relative_fps": 1.0001876236448641,
+      "near30": true,
+      "p95_under_budget": true
+    }
+  ],
+  "two_workers_executed": false,
+  "reason": "All three serial sessions meet both preregistered criteria.",
+  "clahe_parameter_counts": {
+    "1.0": 412,
+    "1.5": 40,
+    "6.0": 21,
+    "8.0": 5377
+  },
+  "bypass_frames": 0,
+  "retained_clahe_frames": 5850,
+  "nominal_exceedance_percent": 1.7264957264957266,
+  "output_fps_fraction_of_capture": 0.9991440501230884,
+  "native_quality_tested": false,
+  "display_enabled": false,
+  "publication_integrated": false,
+  "results_sha256": "ac48e9ca7c008d32f4673537c59d58447a504ae2797041c95e5ea2783a53d39d"
+}

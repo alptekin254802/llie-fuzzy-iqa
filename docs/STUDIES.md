@@ -197,3 +197,15 @@ Run `python -B -m analysis.audit_derived` to recompute the seven added BRISQUE c
 [The targeted-removal control](../results/studies/targeted_overlap/README.md) refits NR-free without the 231 shared scenes and compares it with 20 equally sized random-removal fits. Run `python -B -m analysis.studies.targeted_overlap` to verify the stored summaries, or add `--out study_work/targeted_overlap_reproduction` to reproduce all fits. Source classification remains the verified normal-light classification; this study changes calibration membership only.
 
 The [training-method coverage control](../results/studies/method_coverage/README.md) extends Supplement S14: `python -B -m analysis.method_coverage summary` verifies the shipped summaries, and the linked instructions reproduce fitting and scene-bootstrap contrasts.
+
+
+## CLAHE selection and live timing
+
+- [Four-task screen and frozen confirmation](../results/studies/parameter_selection/README.md):
+  `python -B -m analysis.parameter_selection.analyse --part both` recomputes
+  means, intervals and paired tests. The guide also covers eligibility decided from normal-light references only and regeneration from locally obtained images.
+- [Exact runtime optimisation](../results/studies/clahe_runtime/README.md):
+  unchanged pixels, features and choices, with paired old/optimised timing.
+- [Live timing at 640 × 480](../results/studies/clahe_live/README.md):
+  `python -B -m realtime.clahe.summarize --output ../clahe_timing_check` recomputes
+  all session and pooled estimates from the shipped frame timings.

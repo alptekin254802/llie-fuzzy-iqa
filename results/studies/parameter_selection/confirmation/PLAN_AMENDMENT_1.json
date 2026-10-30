@@ -1,0 +1,11 @@
+{
+  "utc": "2026-10-30T11:45:08.353846+00:00",
+  "before_confirmation_quality": true,
+  "reason": "A stronger frozen classical random-forest control is needed to assess fuzzy-specific value; only outer-fold RF checkpoints exist. No confirmation quality has been opened.",
+  "changes": [
+    "Fit final RF3 and RF4 on all2425classicalLOL outputs only, target negativeLPIPS, same fixed recipe as earlier gamma study classical_matched:300trees,random_state42,max_depthNone,min_samples_leaf1,min_samples_split2,max_features1.0,bootstrapTrue,criterion squared_error,n_jobs1. No tuning or confirmation training.",
+    "Add both as auxiliary frozen predictions/decisions, preserving original five-model prediction and11selector decision files byteforbyte. Quality grid remainsall9CLAHE outputs.",
+    "Primary NR-mono comparisons include training_fixed,default,Linear3,Linear4,RF3,RF4 for each of two domains:Holm12, withsmall/missingdomain p=1. All other original rules unchanged.",
+    "Append RF controls to timing before any timingoutcome; do not remove original cases."
+  ]
+}

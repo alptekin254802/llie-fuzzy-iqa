@@ -42,3 +42,12 @@ results/studies/records/** -text whitespace=cr-at-eol
 # Keep recorded inference and figure-protocol hashes byte-stable.
 /results/lmm_extra/** -text whitespace=cr-at-eol
 /results/figure_protocols/** -text whitespace=cr-at-eol
+
+# Preserve parameter-selection and timing evidence hashes across platforms.
+/analysis/parameter_selection/** -text whitespace=cr-at-eol
+/realtime/clahe/** -text whitespace=cr-at-eol
+/results/studies/parameter_selection/** -text whitespace=cr-at-eol
+/results/studies/clahe_runtime/** -text whitespace=cr-at-eol
+/results/studies/clahe_live/** -text whitespace=cr-at-eol
+/parameter_selection.example.json -text whitespace=cr-at-eol
+/tests/test_parameter_selection.py -text whitespace=cr-at-eol

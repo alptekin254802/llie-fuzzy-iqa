@@ -1,0 +1,382 @@
+{
+  "record": "Distribution export of completed experiments; no new model selection or quality outcomes.",
+  "private_original_plans": {
+    "screen": "1380f2942f144dbac23c6100e8f8a623cc86c83706e25cdbc27b1314492144e9",
+    "confirmation": "3fffb9062636a99b0756b27e90baccf90823cbf6f6c2eeda4b9cd1a0e078b036",
+    "RF amendment": "fd4421e9e155a28e47eaad757f1bd41bdc93df5905f589b3b3a0dcc9aa335239",
+    "runtime": "c6aca869e86778ea19e264191c416e875f74526cb0b4696a7119443f4994f937",
+    "live": "066243f4298d242a3258f2f67149a6accf2617ab80e1014fedeaab4533475a34"
+  },
+  "source_records": [
+    {
+      "file": "results/studies/parameter_selection/screen/metrics.csv",
+      "source_sha256": "33ba917b84b25d96be2349c3e350c51be20b415f8acadcb3158c0d22ebb02cab",
+      "export_sha256": "33ba917b84b25d96be2349c3e350c51be20b415f8acadcb3158c0d22ebb02cab",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/screen/contrasts.csv",
+      "source_sha256": "714a65af959965688dece3d7e60ffeb4cf7b92bd449ad9a6c498e640a19fda8b",
+      "export_sha256": "714a65af959965688dece3d7e60ffeb4cf7b92bd449ad9a6c498e640a19fda8b",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/screen/primary_tests.csv",
+      "source_sha256": "1d1a10fc6046a379eef9a17ae7056474e1efe3eff279c3eb4f5efe0cb7660daf",
+      "export_sha256": "1d1a10fc6046a379eef9a17ae7056474e1efe3eff279c3eb4f5efe0cb7660daf",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/screen/group_scores.csv",
+      "source_sha256": "0136649f3d532b0557ce4b1bc373332f5a730b70405aaed345fedad454b5be7d",
+      "export_sha256": "a728efa71a00ecd4cfa06200d7f4de8d41a9dc2426cb2189d8093e7bbe9c922f",
+      "transformation": "Mean each selector within each reference group; pivot without rounding."
+    },
+    {
+      "file": "results/studies/parameter_selection/confirmation/metrics.csv",
+      "source_sha256": "7a147b69b4e2dea2da6eca5b68b12843e163e38152e7222e0c6cbc57eb60ecca",
+      "export_sha256": "7a147b69b4e2dea2da6eca5b68b12843e163e38152e7222e0c6cbc57eb60ecca",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/confirmation/contrasts.csv",
+      "source_sha256": "b2b6a37bff6ae7b6ff604d00378af566d0e85c887903e281ca33f8d08c6316da",
+      "export_sha256": "b2b6a37bff6ae7b6ff604d00378af566d0e85c887903e281ca33f8d08c6316da",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/confirmation/primary_tests.csv",
+      "source_sha256": "aa50f94e1e7820baf5faed75fb13db51f82aaff9b42affa82753555c023d38f7",
+      "export_sha256": "aa50f94e1e7820baf5faed75fb13db51f82aaff9b42affa82753555c023d38f7",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/confirmation/group_scores.csv",
+      "source_sha256": "39762dd76dd8243b14ce8da4a51bb8f0b9f3e0390397e76372533752381349d2",
+      "export_sha256": "0e336415fee98b2c12c91f33c492907fec4e2576311bb788b8d64d1cf1192da2",
+      "transformation": "Mean each selector within each reference group; pivot without rounding."
+    },
+    {
+      "file": "results/studies/parameter_selection/screen/secondary_contrasts.csv",
+      "source_sha256": "748f0bfbc4a1a8d0fedc0f5ad04a6eb78caff1d0071c3a1c6662901ef14202be",
+      "export_sha256": "748f0bfbc4a1a8d0fedc0f5ad04a6eb78caff1d0071c3a1c6662901ef14202be",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/controls.json",
+      "source_sha256": "f1083ed38dbb760d40b0a7a52a1c9a3db2548a0cf86e4ff1ca9dc0354eec7465",
+      "export_sha256": "f1083ed38dbb760d40b0a7a52a1c9a3db2548a0cf86e4ff1ca9dc0354eec7465",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/scopes.json",
+      "source_sha256": "114b2c7acdfd5cfc681186a18bf661b269a362077cfb767b77b3f1c353034d1b",
+      "export_sha256": "114b2c7acdfd5cfc681186a18bf661b269a362077cfb767b77b3f1c353034d1b",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/classical_training.csv",
+      "source_sha256": "7eadfbb024c760ca29e616298d718d4ad21b9f06b0f7d9b3a73c918bddc00d05",
+      "export_sha256": "7eadfbb024c760ca29e616298d718d4ad21b9f06b0f7d9b3a73c918bddc00d05",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/parameter_selection/screen/inputs.csv",
+      "source_sha256": "102aa34d6dd43ca96b9fbea558db34b16392bfbb6259d3177ccdc076c14e16dd",
+      "export_sha256": "4bd76472504f3105ea6bb6bbdef04bc892ae87465b84cab017ee329096540f78",
+      "transformation": "Portable dataset aliases replace local paths; all image IDs, groups and hashes retained. Descriptive metadata uses public study names."
+    },
+    {
+      "file": "results/studies/parameter_selection/confirmation/inputs.csv",
+      "source_sha256": "f21ad6d42360c4e90bfcca46b499dc159695b661bba76917904d53e3bf76a7aa",
+      "export_sha256": "a5ac7b2c4e35d55021fceaba3f0d7d47eb7f1418b7150af2b6447e117e8455ef",
+      "transformation": "Portable dataset aliases replace local paths; all image IDs, groups and hashes retained."
+    },
+    {
+      "file": "results/studies/parameter_selection/timing_inputs.csv",
+      "source_sha256": "a36cc9ce51c2c167abfe8cf223225b98278159995b2b62cc4f21ba1197ce2b23",
+      "export_sha256": "e4c098cb164a2dba4e96e521036ef9db916f52b0527eaa6da418f7256a9bfbe0",
+      "transformation": "Portable dataset aliases replace local paths; all image IDs, groups and hashes retained. Descriptive metadata uses public study names."
+    },
+    {
+      "file": "results/studies/clahe_runtime/primary_summary.csv",
+      "source_sha256": "1fd2c56f7e576e27095d8c55a1c8c7d198b81ce3ce4991e18601c793d2814e0f",
+      "export_sha256": "1fd2c56f7e576e27095d8c55a1c8c7d198b81ce3ce4991e18601c793d2814e0f",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/primary_ratios.csv",
+      "source_sha256": "b776407735c23cb97029f911e64b0c16cafffa3c176628974b5b6bec973a6ac9",
+      "export_sha256": "b776407735c23cb97029f911e64b0c16cafffa3c176628974b5b6bec973a6ac9",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/preprocessing_summary.csv",
+      "source_sha256": "0250c57cdb0f9bd44a77a41ef9b21ac275ea52f6539f0213ad56deea06d1256b",
+      "export_sha256": "0250c57cdb0f9bd44a77a41ef9b21ac275ea52f6539f0213ad56deea06d1256b",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/preprocessing_ratios.csv",
+      "source_sha256": "c1d246a0425c2725f6e6617f00ae1463e8a3cab9fcc1cfe7805cee0486619d20",
+      "export_sha256": "c1d246a0425c2725f6e6617f00ae1463e8a3cab9fcc1cfe7805cee0486619d20",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/primary_session1.csv",
+      "source_sha256": "9edca6885f6331422d8d69276b67805b523af71bf10931300b89c47111c0f11f",
+      "export_sha256": "9edca6885f6331422d8d69276b67805b523af71bf10931300b89c47111c0f11f",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/primary_session2.csv",
+      "source_sha256": "0a59046e5287405203ac70e872ce3b5d1f984ad01041713046dd29e68f6561f1",
+      "export_sha256": "0a59046e5287405203ac70e872ce3b5d1f984ad01041713046dd29e68f6561f1",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/primary_session3.csv",
+      "source_sha256": "4345a700fe59390fbbd20ad15af7194feb439ac442bb5348f79ac23c299a1d6f",
+      "export_sha256": "4345a700fe59390fbbd20ad15af7194feb439ac442bb5348f79ac23c299a1d6f",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/preprocessing_session1.csv",
+      "source_sha256": "8ce834eef2c0393784f661164abf945413577a024b452189488968383594fa03",
+      "export_sha256": "8ce834eef2c0393784f661164abf945413577a024b452189488968383594fa03",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/preprocessing_session2.csv",
+      "source_sha256": "0ebb5efeec37f3c4270a6c1e0d816b0075e8fc58e5097a87736fd976c4d21fe4",
+      "export_sha256": "0ebb5efeec37f3c4270a6c1e0d816b0075e8fc58e5097a87736fd976c4d21fe4",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_runtime/preprocessing_session3.csv",
+      "source_sha256": "b62896990ad7b03a16dbd486ebb5640afd1f7df41bb0dac355830d70cbe672a1",
+      "export_sha256": "b62896990ad7b03a16dbd486ebb5640afd1f7df41bb0dac355830d70cbe672a1",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/summary.csv",
+      "source_sha256": "e80c90b0906d6ba4415a6a55b49cae212e6776bd1cb429829fdd99b3e7cb524a",
+      "export_sha256": "e80c90b0906d6ba4415a6a55b49cae212e6776bd1cb429829fdd99b3e7cb524a",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round1_capture/frames.csv",
+      "source_sha256": "7162273e249303a4f6130a9dc01b4f8066fef7d998af023b02dfacb5f4e8bfe7",
+      "export_sha256": "7162273e249303a4f6130a9dc01b4f8066fef7d998af023b02dfacb5f4e8bfe7",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round1_clahe/frames.csv",
+      "source_sha256": "9965fff77341fc036c569e6ac117bb895410fba9e46be0641034983817b0c774",
+      "export_sha256": "9965fff77341fc036c569e6ac117bb895410fba9e46be0641034983817b0c774",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round1_gamma/frames.csv",
+      "source_sha256": "7d280354b0d1cfdbcff5e5c1c6208590cc092545c19759d1338d04a42356123b",
+      "export_sha256": "7d280354b0d1cfdbcff5e5c1c6208590cc092545c19759d1338d04a42356123b",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round2_capture/frames.csv",
+      "source_sha256": "1abbfda126869f46195f6b3e6b9927a2748217f7ac5034811e4c09b5505368ce",
+      "export_sha256": "1abbfda126869f46195f6b3e6b9927a2748217f7ac5034811e4c09b5505368ce",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round2_clahe/frames.csv",
+      "source_sha256": "095a0506c53b131649fa94e30e4beb28de990a19a4209c39c996df2628b8e20c",
+      "export_sha256": "095a0506c53b131649fa94e30e4beb28de990a19a4209c39c996df2628b8e20c",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round2_gamma/frames.csv",
+      "source_sha256": "1869085b79efe2a27761a8d824a72abf2bcedc8f9bda602540e87b8c504c02bd",
+      "export_sha256": "1869085b79efe2a27761a8d824a72abf2bcedc8f9bda602540e87b8c504c02bd",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round3_capture/frames.csv",
+      "source_sha256": "5390f065127040ddb5b37b63586298afeffe5f6ac4307502bd7fa6e47d7644d5",
+      "export_sha256": "5390f065127040ddb5b37b63586298afeffe5f6ac4307502bd7fa6e47d7644d5",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round3_clahe/frames.csv",
+      "source_sha256": "7c2219437b6cb5e68518e40019335ff2bc9a1a0edcd192db71d4904f03dcdecd",
+      "export_sha256": "7c2219437b6cb5e68518e40019335ff2bc9a1a0edcd192db71d4904f03dcdecd",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/live/round3_gamma/frames.csv",
+      "source_sha256": "3a1576aabf88d6a8195beee777be797fcac1a5f2861e7872664003196cfae681",
+      "export_sha256": "3a1576aabf88d6a8195beee777be797fcac1a5f2861e7872664003196cfae681",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/offline/summary.csv",
+      "source_sha256": "a654759c921b2c9b5b2a713ac4b21bd0c45c9bb040aaa52f5b51d889e07a92c1",
+      "export_sha256": "a654759c921b2c9b5b2a713ac4b21bd0c45c9bb040aaa52f5b51d889e07a92c1",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/offline/session1/frames.csv",
+      "source_sha256": "e2bcca018b3e21b9636beee7e4d1b207b76990adc97a6519318e6709b3261884",
+      "export_sha256": "e2bcca018b3e21b9636beee7e4d1b207b76990adc97a6519318e6709b3261884",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/offline/session2/frames.csv",
+      "source_sha256": "93acbdc35219eee0f77ae1072f9d4c887fb60853b0d261ed374e668a9fd500c1",
+      "export_sha256": "93acbdc35219eee0f77ae1072f9d4c887fb60853b0d261ed374e668a9fd500c1",
+      "transformation": "none"
+    },
+    {
+      "file": "results/studies/clahe_live/offline/session3/frames.csv",
+      "source_sha256": "9a5482709ec8b97944e57529231f6e9474e6a9268a4895cdfa4501325987836c",
+      "export_sha256": "9a5482709ec8b97944e57529231f6e9474e6a9268a4895cdfa4501325987836c",
+      "transformation": "none"
+    }
+  ],
+  "files": {
+    "analysis/parameter_selection/__init__.py": "c0008f245566b1750c6c33ffac44eebc31665f3e794b23d4f0c785be926a0b99",
+    "analysis/parameter_selection/analyse.py": "aff85ec512ce30e2c11874a4fd2354717ce6ecb54a6e46cce2a342f668b272e7",
+    "analysis/parameter_selection/assemble.py": "8e8d2bcd5f839de38cec2c48bfea082c1504ca9ef6b85a740d7a5a122e490f55",
+    "analysis/parameter_selection/candidates.py": "d9093e06d7831e4c61346d5e4191624ed9c565ac30c6b523cb661b9c1a1b3ab5",
+    "analysis/parameter_selection/classify.py": "01a62dc8dc4e5bf3641fc1e524b66346f7d7189b127c1e5bf9ed3869ec3658f8",
+    "analysis/parameter_selection/common.py": "72cc54b9c5ba638574707b8a44deadb234ff010c1040f56e487b11bf048c3ad9",
+    "analysis/parameter_selection/family_ops.py": "18fce89ae0df4c5aafe73a85f04c17aebfee9f5525e686e5c60b3aa4c02ce626",
+    "analysis/parameter_selection/run.py": "d26da3e2076ece74267503271a5095c5dd2e42b3b36ec833a4c6a45e3e40df4d",
+    "analysis/parameter_selection/scorers.py": "482a907073bf3c55470cb017936a9e941802c69a49b622f80fcc715a0bfe6ada",
+    "analysis/parameter_selection/verify.py": "ff860c3566fce28ae9da53532152e5e509d98050568d0d9023b00e8755c7418f",
+    "parameter_selection.example.json": "66501d2114ca86f645c092cc2b9c4f70b402681019b09dab7b21182e7ea7f825",
+    "realtime/clahe/__init__.py": "c0008f245566b1750c6c33ffac44eebc31665f3e794b23d4f0c785be926a0b99",
+    "realtime/clahe/benchmark.py": "d6d5cad319d61b945681748a1cea7a4f13428b3bc4797a5a8879f44e2f5f7893",
+    "realtime/clahe/core.py": "9931af94ed901e3bace64c7ee2d4bc6e503060bbec5ba7373498463a6248a5a8",
+    "realtime/clahe/fast.py": "f99dcea0443e2e960fe50a968fe42dae607ad25accc8169bcdebcc1e2bf3241e",
+    "realtime/clahe/live.py": "4d341ee9b46400ca59f8b5b03e431af4816de5987e9527c647d667dbffb9f5b3",
+    "realtime/clahe/offline.py": "9909a0164b445649ea1f9294189dfc5fc5912362fcec23e8ee090fbca260bd6c",
+    "realtime/clahe/summarize.py": "1d7615a87508d4f913acc70322177e85be3d91b87dfe882dd5a42dcfe669fcb4",
+    "results/studies/clahe_live/CAMERA.json": "7ebed1eff5fd78775a1803fc2f7dc2b0e702a8bf90ea2f854dece8b8966783ef",
+    "results/studies/clahe_live/DECISION.json": "b6b2bfa6586810af7e14bb3f69fd165172964299cba8562a0eda008c0ada557c",
+    "results/studies/clahe_live/live/preflight_round1_capture_load/status.json": "30914abdb4dd0132721128fcd8ea5a46ea5a29400f78d322c3c5899f42de7e3b",
+    "results/studies/clahe_live/live/preflight_round1_capture_no_device/status.json": "e703be466fe9de4ea0a3c36c20aaf2741e425fe425e0e76cc6b26dc638c0bd5b",
+    "results/studies/clahe_live/live/preflight_round3_gamma_load/status.json": "ad1f6e4535de5a90d766b9f19414153fa23bb4e1a51a56f7a1337c90c15e4f6d",
+    "results/studies/clahe_live/live/round1_capture/frames.csv": "7162273e249303a4f6130a9dc01b4f8066fef7d998af023b02dfacb5f4e8bfe7",
+    "results/studies/clahe_live/live/round1_capture/status.json": "7f78968e3860bbf4ed52ec9396e791bed4305adcbb06fe6a922d0af44db4aaf6",
+    "results/studies/clahe_live/live/round1_clahe/frames.csv": "9965fff77341fc036c569e6ac117bb895410fba9e46be0641034983817b0c774",
+    "results/studies/clahe_live/live/round1_clahe/status.json": "41f2fcb687d79db504b3ea1371ab89c13f93e9d765d4d0554fdd29fe07e0dc36",
+    "results/studies/clahe_live/live/round1_gamma/frames.csv": "7d280354b0d1cfdbcff5e5c1c6208590cc092545c19759d1338d04a42356123b",
+    "results/studies/clahe_live/live/round1_gamma/status.json": "1bbfbdfcf2af734edb315492ea1c772e6832e857cedd1e95e3d8cf7b054433eb",
+    "results/studies/clahe_live/live/round2_capture/frames.csv": "1abbfda126869f46195f6b3e6b9927a2748217f7ac5034811e4c09b5505368ce",
+    "results/studies/clahe_live/live/round2_capture/status.json": "d47441311f057f9b501e428f04bd81c5d1432257a615f961c0b388bb76a747dd",
+    "results/studies/clahe_live/live/round2_clahe/frames.csv": "095a0506c53b131649fa94e30e4beb28de990a19a4209c39c996df2628b8e20c",
+    "results/studies/clahe_live/live/round2_clahe/status.json": "c1eb61477e4c8c8bd6f92671f5173dc2b3da667b5fbe732a4cdad070d0a49770",
+    "results/studies/clahe_live/live/round2_gamma/frames.csv": "1869085b79efe2a27761a8d824a72abf2bcedc8f9bda602540e87b8c504c02bd",
+    "results/studies/clahe_live/live/round2_gamma/status.json": "2fc117fa55bfb4d7f0704e30705ca287ad63fea5e6414f0b41da956628c602a9",
+    "results/studies/clahe_live/live/round3_capture/frames.csv": "5390f065127040ddb5b37b63586298afeffe5f6ac4307502bd7fa6e47d7644d5",
+    "results/studies/clahe_live/live/round3_capture/status.json": "2380ab49f676ab8018590ca16220e6841af872cb9ea98e15b17066beb0968a95",
+    "results/studies/clahe_live/live/round3_clahe/frames.csv": "7c2219437b6cb5e68518e40019335ff2bc9a1a0edcd192db71d4904f03dcdecd",
+    "results/studies/clahe_live/live/round3_clahe/status.json": "7cdcca6eeb660d99783ab67c6cc9154216ad041404f57acc58eee4d7f7f47909",
+    "results/studies/clahe_live/live/round3_gamma/frames.csv": "3a1576aabf88d6a8195beee777be797fcac1a5f2861e7872664003196cfae681",
+    "results/studies/clahe_live/live/round3_gamma/status.json": "0deb7a7d41249a87a3a56331a722537e0e1785b4e1652ae6a7204eef5bb4eced",
+    "results/studies/clahe_live/live/summary.csv": "e80c90b0906d6ba4415a6a55b49cae212e6776bd1cb429829fdd99b3e7cb524a",
+    "results/studies/clahe_live/LIVE_ORDER.json": "1f5250e3d7b9fc1c611b88afebbd903fb282ad7029e2605d3e8f07a7de7bcc46",
+    "results/studies/clahe_live/offline/preflight_session1_attempt1/status.json": "3bac158556ca97c33fecdb5572c24350e23fabf74f1c178bbc7021e41348bc8b",
+    "results/studies/clahe_live/offline/preflight_session1_attempt2/status.json": "d1e60d17af96cf5593fa4073771892ec5e01c34317df48847f54a03ccc12216e",
+    "results/studies/clahe_live/offline/session1/frames.csv": "e2bcca018b3e21b9636beee7e4d1b207b76990adc97a6519318e6709b3261884",
+    "results/studies/clahe_live/offline/session1/status.json": "032fa96f9f0e2724c8493f9e388ed0cfd14c1b66a835823857e318eb3ce21121",
+    "results/studies/clahe_live/offline/session2/frames.csv": "93acbdc35219eee0f77ae1072f9d4c887fb60853b0d261ed374e668a9fd500c1",
+    "results/studies/clahe_live/offline/session2/status.json": "9945312de88c8ce8099cb8b9ccf0dda0c60073c51d465cd6edf0e677158d60da",
+    "results/studies/clahe_live/offline/session3/frames.csv": "9a5482709ec8b97944e57529231f6e9474e6a9268a4895cdfa4501325987836c",
+    "results/studies/clahe_live/offline/session3/status.json": "a1b9ed6670aeb58d889f28a85925267edc832a0245a55c2e35b2f72ef6643369",
+    "results/studies/clahe_live/offline/summary.csv": "a654759c921b2c9b5b2a713ac4b21bd0c45c9bb040aaa52f5b51d889e07a92c1",
+    "results/studies/clahe_live/PLAN.json": "7b11ebd22b45590ba2bc3229720e5b698f778808f159ef2e7bdc01992317b4e4",
+    "results/studies/clahe_live/README.md": "6cff50edcbfb281cad6e12553552fd3ca5e1a7af5aada86243534dc11d08f677",
+    "results/studies/clahe_live/RESULTS.json": "ac48e9ca7c008d32f4673537c59d58447a504ae2797041c95e5ea2783a53d39d",
+    "results/studies/clahe_live/verification.json": "840aa7557e203af3fc4a9f57d0d792bf0c73379e57ca829dc22b478b6015c9ee",
+    "results/studies/clahe_runtime/FAST_RESULT.json": "439c69dc84ec8f404fd3e7168e782830c5f7bb75f7a9ce9b5c92f68575ec2d3d",
+    "results/studies/clahe_runtime/FULL_RESULT.json": "0ad1a85a3801af0f563e8a7ca8d4a6e44344dd0f097733436a6eacc0e66fdac5",
+    "results/studies/clahe_runtime/NUMERIC_HAZARDS.json": "b921c442c02963ebeb7a3e9e5f4509361fbc96019b4e99c0d2150f9c47e34f01",
+    "results/studies/clahe_runtime/preprocessing_ratios.csv": "c1d246a0425c2725f6e6617f00ae1463e8a3cab9fcc1cfe7805cee0486619d20",
+    "results/studies/clahe_runtime/preprocessing_session1.csv": "8ce834eef2c0393784f661164abf945413577a024b452189488968383594fa03",
+    "results/studies/clahe_runtime/preprocessing_session1.json": "1792e3251172de7a20d99674dcdaf3f8173ce3fa9d76f3e83d9577a32082da4b",
+    "results/studies/clahe_runtime/preprocessing_session2.csv": "0ebb5efeec37f3c4270a6c1e0d816b0075e8fc58e5097a87736fd976c4d21fe4",
+    "results/studies/clahe_runtime/preprocessing_session2.json": "68ac81c3596ae2e2ca891e5dc7ec4978f15d9e3ca08490d2e6ee391de5ba2044",
+    "results/studies/clahe_runtime/preprocessing_session3.csv": "b62896990ad7b03a16dbd486ebb5640afd1f7df41bb0dac355830d70cbe672a1",
+    "results/studies/clahe_runtime/preprocessing_session3.json": "d73e10f6bcd47fc39256170997a3dba3ae48f10bd74e34d9b419ea3e53f7445c",
+    "results/studies/clahe_runtime/preprocessing_summary.csv": "0250c57cdb0f9bd44a77a41ef9b21ac275ea52f6539f0213ad56deea06d1256b",
+    "results/studies/clahe_runtime/primary_ratios.csv": "b776407735c23cb97029f911e64b0c16cafffa3c176628974b5b6bec973a6ac9",
+    "results/studies/clahe_runtime/primary_session1.csv": "9edca6885f6331422d8d69276b67805b523af71bf10931300b89c47111c0f11f",
+    "results/studies/clahe_runtime/primary_session1.json": "76616686f7f296badd830600381a4be11b5001e1badf01fec96812ce04abd9c9",
+    "results/studies/clahe_runtime/primary_session2.csv": "0a59046e5287405203ac70e872ce3b5d1f984ad01041713046dd29e68f6561f1",
+    "results/studies/clahe_runtime/primary_session2.json": "688c5e7b3138859644ab726870a112b58b12acaa10f307d3bab6819b474dd705",
+    "results/studies/clahe_runtime/primary_session3.csv": "4345a700fe59390fbbd20ad15af7194feb439ac442bb5348f79ac23c299a1d6f",
+    "results/studies/clahe_runtime/primary_session3.json": "12010401a27fe4534c80f8200869c2cc8ed00bcc1027aff12e0d5afc93c9cff4",
+    "results/studies/clahe_runtime/primary_summary.csv": "1fd2c56f7e576e27095d8c55a1c8c7d198b81ce3ce4991e18601c793d2814e0f",
+    "results/studies/clahe_runtime/README.md": "4c4b3d4938fa3d370d554e5e3e9a827f8a7a969d559df934ace4fb5e0f844e40",
+    "results/studies/parameter_selection/classical_training.csv": "7eadfbb024c760ca29e616298d718d4ad21b9f06b0f7d9b3a73c918bddc00d05",
+    "results/studies/parameter_selection/confirmation/contrasts.csv": "b2b6a37bff6ae7b6ff604d00378af566d0e85c887903e281ca33f8d08c6316da",
+    "results/studies/parameter_selection/confirmation/group_scores.csv": "0e336415fee98b2c12c91f33c492907fec4e2576311bb788b8d64d1cf1192da2",
+    "results/studies/parameter_selection/confirmation/inputs.csv": "a5ac7b2c4e35d55021fceaba3f0d7d47eb7f1418b7150af2b6447e117e8455ef",
+    "results/studies/parameter_selection/confirmation/metrics.csv": "7a147b69b4e2dea2da6eca5b68b12843e163e38152e7222e0c6cbc57eb60ecca",
+    "results/studies/parameter_selection/confirmation/parameter_counts.csv": "e953c17167412d41569b303a38914ef3798189b3f1689e8c211a9ea1272aff0f",
+    "results/studies/parameter_selection/confirmation/PLAN.json": "acb8ffc4395d57e8f6331c34030e1421636cf4ebb19f891fd76004c9e84a11e8",
+    "results/studies/parameter_selection/confirmation/PLAN_AMENDMENT_1.json": "3823363ad8516de880a46c478c88e97edbc482c536ce344f162e12ea816fff8c",
+    "results/studies/parameter_selection/confirmation/primary_tests.csv": "aa50f94e1e7820baf5faed75fb13db51f82aaff9b42affa82753555c023d38f7",
+    "results/studies/parameter_selection/confirmation/prior_references.csv": "d143631501f3b324fcc92f2be1c9d70b6d85e6aa304731eb5dfe48d6900cf157",
+    "results/studies/parameter_selection/confirmation/reference_classification.csv": "2e25cb26b7d25dbff8b5f5da86e6ff893cc7b25b18118a329d4ab27c28d9651d",
+    "results/studies/parameter_selection/confirmation/reference_groups.csv": "cee32dc2299f9fbe8f9ed39ba7cc7447b291d3fdccb64baf6ea3a0c79a91a500",
+    "results/studies/parameter_selection/controls.json": "f1083ed38dbb760d40b0a7a52a1c9a3db2548a0cf86e4ff1ca9dc0354eec7465",
+    "results/studies/parameter_selection/models/final/BrightnessCorrection_lam01.json": "cc2c556f3ee2ae4449b19685763db45a151b9017b4c05abeb747261c4301f824",
+    "results/studies/parameter_selection/models/final/Linear3.json": "9966764ecc1cfd63902675f16aa66aa17632be20fe68d5fa304a44ff5767faa8",
+    "results/studies/parameter_selection/models/final/Linear4.json": "b7a597df5153278d35ee90b472c27288f392ef374c2108025ee3cd40c8b4dbb9",
+    "results/studies/parameter_selection/models/final/NR-free.json": "ba2f32d009bc68682ff29687667fa9f5d028fe211d54d6cad0d6d477e59fa088",
+    "results/studies/parameter_selection/models/final/NR-mono.json": "5581c289786938796831dbfbc73c0186efce41c06143e08d7ea7e0eab7f099b7",
+    "results/studies/parameter_selection/models/outer0/BrightnessCorrection_lam01.json": "26a540a3f4d2ab9c7258f944e1e52fabdc82a01b053e7a9ff6cafd52c0b02c27",
+    "results/studies/parameter_selection/models/outer0/Linear3.json": "01f5acf14059dd2c8c70b230545349a5f623805e88a979b3a265458a4a06521b",
+    "results/studies/parameter_selection/models/outer0/Linear4.json": "3916efeb5a69a7dad2bbce5f04353ac49916417556fea9a024d3a373ba6db2a6",
+    "results/studies/parameter_selection/models/outer0/NR-free.json": "8802631edbe55e5f4eef4108404a7626c621ad4b8a220a4d48c1fd619f4632a8",
+    "results/studies/parameter_selection/models/outer0/NR-mono.json": "14f91e582e36e511eef3948d09be070124e319d23296f266cb998b6df469c2a0",
+    "results/studies/parameter_selection/models/outer1/BrightnessCorrection_lam01.json": "1fa7e988a0347928530889b5a1a993a13ac83df61fa59b0eda7d4266638f0fe6",
+    "results/studies/parameter_selection/models/outer1/Linear3.json": "795de9b9cf4eadb7ffe77ee230095ff11b76e10e1193caceae352d0cfc5b301a",
+    "results/studies/parameter_selection/models/outer1/Linear4.json": "31cd03de005a5f1c7138db11052496a7c21017492abf47b2846c9ec4f92bee1f",
+    "results/studies/parameter_selection/models/outer1/NR-free.json": "758255a6786ea6201bfd72c152f0fdd44a8aacea435d87f925334b431d2d7dfb",
+    "results/studies/parameter_selection/models/outer1/NR-mono.json": "347808bde5ec4fa4eb6ea746f3cf5cd2d35c271c3df3747178ba268cb9c481a8",
+    "results/studies/parameter_selection/models/outer2/BrightnessCorrection_lam01.json": "5afb087143838bb245395728aeefae3626db36d63759ea6072089916f1f7d078",
+    "results/studies/parameter_selection/models/outer2/Linear3.json": "ff291172ffd628ace3d4f2770b4796c4e4c65a7918b0f54335e5dd8c98709bac",
+    "results/studies/parameter_selection/models/outer2/Linear4.json": "caf204f92e909f108e7e230a9c80fd9a421e2da5504c7c1bacd7656502cf06e9",
+    "results/studies/parameter_selection/models/outer2/NR-free.json": "7a6390e9b535489e05cdd6aaf2e292e7876bf37076ad89660a874e617662025a",
+    "results/studies/parameter_selection/models/outer2/NR-mono.json": "bf7b725569605f992e6ae1abb518f1146745cdf4e4c67444b778297809c63812",
+    "results/studies/parameter_selection/models/outer3/BrightnessCorrection_lam01.json": "608a50d55b27e5447a7b54891e71815d3eeb9851b83290b4e34ac47c36f294f7",
+    "results/studies/parameter_selection/models/outer3/Linear3.json": "e9273006ae97a4b21d6e794f67126e02c0368c63d91c6f984c793ec76bbd413a",
+    "results/studies/parameter_selection/models/outer3/Linear4.json": "5465b66a0127174e1fb0e69a0b42c8425bf93bf44edb52e6658bb354af2bf743",
+    "results/studies/parameter_selection/models/outer3/NR-free.json": "4cce96a0fa26cbb69c57863f18cebcc0eef1ea7f5e1f996afe2515f6083eca35",
+    "results/studies/parameter_selection/models/outer3/NR-mono.json": "0aaac788285a2502a9a556fefd6867952a248c10fdbe701c1c0ec6ac1e2d4cd3",
+    "results/studies/parameter_selection/models/outer4/BrightnessCorrection_lam01.json": "187c8db0347817ced2fe0da46e919ebe1bdba574f4b9ebe43918f50ef5015e78",
+    "results/studies/parameter_selection/models/outer4/Linear3.json": "569373040b0f098c949572e7fcf6e48fed6494a9bcb310874320c64d21035c4e",
+    "results/studies/parameter_selection/models/outer4/Linear4.json": "3dfa483afece57e96783f6731a37cbcf1ae1ced59d6fe0625b422ee12a51d9a1",
+    "results/studies/parameter_selection/models/outer4/NR-free.json": "43ce5d13ed1ba0f151b0c94390b9d13688abdcc55c429a84ca8c0e289b7f89b1",
+    "results/studies/parameter_selection/models/outer4/NR-mono.json": "6426463ce16470530e36db0fadfb69ef4dbf246e5b82b94f60ccd9550c450b74",
+    "results/studies/parameter_selection/models.json": "5649de68b95812ce4e03887fda88f1a4e498da6f8e8563fa3c4bc890691a269d",
+    "results/studies/parameter_selection/README.md": "06a2de1cf03b4e137cc8521e649aae6adf6d427f10af15bed083d7cee5715d53",
+    "results/studies/parameter_selection/REPRODUCTION_CHECK.json": "19b79828f54b595a9258297f517d6574e7a15100bb0b3f0960033ae3e1c3de29",
+    "results/studies/parameter_selection/rf_settings.json": "06e0d132b8f0035402616630eb0628632bf977b3075391dba9cf2d8a590fa5f0",
+    "results/studies/parameter_selection/scopes.json": "114b2c7acdfd5cfc681186a18bf661b269a362077cfb767b77b3f1c353034d1b",
+    "results/studies/parameter_selection/screen/ADAPTATION.json": "128ed1d3d43169b6ef8c220ace7e4221306e0ee5a0bf536bdacdbeb85f5ba03e",
+    "results/studies/parameter_selection/screen/contrasts.csv": "714a65af959965688dece3d7e60ffeb4cf7b92bd449ad9a6c498e640a19fda8b",
+    "results/studies/parameter_selection/screen/group_scores.csv": "a728efa71a00ecd4cfa06200d7f4de8d41a9dc2426cb2189d8093e7bbe9c922f",
+    "results/studies/parameter_selection/screen/inputs.csv": "4bd76472504f3105ea6bb6bbdef04bc892ae87465b84cab017ee329096540f78",
+    "results/studies/parameter_selection/screen/metrics.csv": "33ba917b84b25d96be2349c3e350c51be20b415f8acadcb3158c0d22ebb02cab",
+    "results/studies/parameter_selection/screen/PLAN.json": "51b26c268cb3eb68075ccdaf294834716f85be4d3d966a632aaa5dd4b161489b",
+    "results/studies/parameter_selection/screen/primary_tests.csv": "1d1a10fc6046a379eef9a17ae7056474e1efe3eff279c3eb4f5efe0cb7660daf",
+    "results/studies/parameter_selection/screen/secondary_contrasts.csv": "748f0bfbc4a1a8d0fedc0f5ad04a6eb78caff1d0071c3a1c6662901ef14202be",
+    "results/studies/parameter_selection/timing_inputs.csv": "e4c098cb164a2dba4e96e521036ef9db916f52b0527eaa6da418f7256a9bfbe0",
+    "tests/test_parameter_selection.py": "481f7ddaa148a913d9bd7e80b3ba768576a95603c0ca4f745da4f228ce3b8189"
+  }
+}

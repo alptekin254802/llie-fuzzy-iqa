@@ -1,0 +1,17 @@
+{
+  "1": [
+    "capture",
+    "gamma",
+    "clahe"
+  ],
+  "2": [
+    "gamma",
+    "clahe",
+    "capture"
+  ],
+  "3": [
+    "clahe",
+    "capture",
+    "gamma"
+  ]
+}

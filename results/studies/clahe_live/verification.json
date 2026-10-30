@@ -1,0 +1,12 @@
+{
+  "status": "PASS",
+  "utc": "2026-10-30T13:42:50.076983+00:00",
+  "candidate_checks": 1872,
+  "selected_checks": 200,
+  "native_pixel_hash": "1d8eb126a56919fc007c0695934185d033f056b3d0ecec2006c272e5f00ac52d",
+  "rows_sha256": "d4707b3d461b28d85138fb6e1931d75f8e7662e7be5c7cb3463098b702fac6d3",
+  "plan_sha256": "066243f4298d242a3258f2f67149a6accf2617ab80e1014fedeaab4533475a34",
+  "core_sha256": "5f9619e29084727f0e17fab0e0e4bf524d549ba9e7ed8622af3e2a0c08b4f191",
+  "script_sha256": "b87a955b14c3b40954cf48f03213ce6ec93235a2fa22b239dcf351aea3328dff",
+  "images_saved": false
+}
