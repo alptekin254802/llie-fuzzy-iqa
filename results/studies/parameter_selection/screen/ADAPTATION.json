@@ -1,0 +1,333 @@
+[
+  {
+    "dataset": "LOL",
+    "family": "clahe",
+    "fraction_different_from_training_fixed": 0.8969072164948454,
+    "nr_free_parameter_counts": {
+      "0.5": 3,
+      "1.0": 3,
+      "1.5": 12,
+      "2.0": 59,
+      "3.0": 19,
+      "4.0": 50,
+      "6.0": 138,
+      "8.0": 201
+    }
+  },
+  {
+    "dataset": "LOL",
+    "family": "denoise",
+    "fraction_different_from_training_fixed": 0.9670103092783505,
+    "nr_free_parameter_counts": {
+      "0.0": 314,
+      "5.0": 98,
+      "10.0": 16,
+      "15.0": 11,
+      "25.0": 18,
+      "40.0": 28
+    }
+  },
+  {
+    "dataset": "LOL",
+    "family": "he_blend",
+    "fraction_different_from_training_fixed": 0.5690721649484536,
+    "nr_free_parameter_counts": {
+      "0.0": 4,
+      "0.125": 9,
+      "0.25": 64,
+      "0.375": 209,
+      "0.5": 187,
+      "0.625": 10,
+      "1.0": 2
+    }
+  },
+  {
+    "dataset": "LOL",
+    "family": "log",
+    "fraction_different_from_training_fixed": 0.6453608247422681,
+    "nr_free_parameter_counts": {
+      "2.0": 8,
+      "4.0": 6,
+      "8.0": 20,
+      "16.0": 49,
+      "32.0": 147,
+      "64.0": 172,
+      "128.0": 83
+    }
+  },
+  {
+    "dataset": "LOLv2-real",
+    "family": "clahe",
+    "fraction_different_from_training_fixed": 0.8888888888888888,
+    "nr_free_parameter_counts": {
+      "4.0": 1,
+      "6.0": 3,
+      "8.0": 5
+    }
+  },
+  {
+    "dataset": "LOLv2-real",
+    "family": "denoise",
+    "fraction_different_from_training_fixed": 1.0,
+    "nr_free_parameter_counts": {
+      "0.0": 7,
+      "25.0": 1,
+      "40.0": 1
+    }
+  },
+  {
+    "dataset": "LOLv2-real",
+    "family": "he_blend",
+    "fraction_different_from_training_fixed": 0.6666666666666666,
+    "nr_free_parameter_counts": {
+      "0.25": 4,
+      "0.375": 3,
+      "0.625": 2
+    }
+  },
+  {
+    "dataset": "LOLv2-real",
+    "family": "log",
+    "fraction_different_from_training_fixed": 1.0,
+    "nr_free_parameter_counts": {
+      "32.0": 4,
+      "128.0": 5
+    }
+  },
+  {
+    "dataset": "LOLv2-synthetic",
+    "family": "clahe",
+    "fraction_different_from_training_fixed": 0.9,
+    "nr_free_parameter_counts": {
+      "-1.0": 22,
+      "0.5": 8,
+      "1.0": 5,
+      "1.5": 10,
+      "2.0": 6,
+      "3.0": 10,
+      "4.0": 10,
+      "6.0": 9,
+      "8.0": 20
+    }
+  },
+  {
+    "dataset": "LOLv2-synthetic",
+    "family": "denoise",
+    "fraction_different_from_training_fixed": 0.91,
+    "nr_free_parameter_counts": {
+      "0.0": 22,
+      "5.0": 12,
+      "10.0": 9,
+      "15.0": 7,
+      "25.0": 8,
+      "40.0": 42
+    }
+  },
+  {
+    "dataset": "LOLv2-synthetic",
+    "family": "he_blend",
+    "fraction_different_from_training_fixed": 0.85,
+    "nr_free_parameter_counts": {
+      "0.0": 28,
+      "0.125": 9,
+      "0.25": 28,
+      "0.375": 15,
+      "0.5": 9,
+      "0.625": 4,
+      "0.75": 1,
+      "1.0": 6
+    }
+  },
+  {
+    "dataset": "LOLv2-synthetic",
+    "family": "log",
+    "fraction_different_from_training_fixed": 0.92,
+    "nr_free_parameter_counts": {
+      "0.0": 20,
+      "1.0": 3,
+      "2.0": 9,
+      "4.0": 7,
+      "8.0": 10,
+      "16.0": 6,
+      "32.0": 12,
+      "64.0": 8,
+      "128.0": 25
+    }
+  },
+  {
+    "dataset": "LSRW-HF-exploratory",
+    "family": "clahe",
+    "fraction_different_from_training_fixed": 0.88,
+    "nr_free_parameter_counts": {
+      "-1.0": 3,
+      "1.0": 6,
+      "1.5": 3,
+      "2.0": 7,
+      "3.0": 4,
+      "4.0": 6,
+      "6.0": 8,
+      "8.0": 13
+    }
+  },
+  {
+    "dataset": "LSRW-HF-exploratory",
+    "family": "denoise",
+    "fraction_different_from_training_fixed": 0.88,
+    "nr_free_parameter_counts": {
+      "0.0": 10,
+      "5.0": 13,
+      "10.0": 6,
+      "15.0": 6,
+      "25.0": 1,
+      "40.0": 14
+    }
+  },
+  {
+    "dataset": "LSRW-HF-exploratory",
+    "family": "he_blend",
+    "fraction_different_from_training_fixed": 0.78,
+    "nr_free_parameter_counts": {
+      "0.0": 6,
+      "0.125": 3,
+      "0.25": 13,
+      "0.375": 11,
+      "0.5": 9,
+      "0.625": 3,
+      "1.0": 5
+    }
+  },
+  {
+    "dataset": "LSRW-HF-exploratory",
+    "family": "log",
+    "fraction_different_from_training_fixed": 0.82,
+    "nr_free_parameter_counts": {
+      "0.0": 4,
+      "1.0": 1,
+      "2.0": 5,
+      "4.0": 2,
+      "8.0": 5,
+      "16.0": 4,
+      "32.0": 5,
+      "64.0": 9,
+      "128.0": 15
+    }
+  },
+  {
+    "dataset": "SICE-author-underexposure",
+    "family": "clahe",
+    "fraction_different_from_training_fixed": 0.975609756097561,
+    "nr_free_parameter_counts": {
+      "-1.0": 19,
+      "0.5": 3,
+      "1.0": 1,
+      "1.5": 4,
+      "2.0": 3,
+      "3.0": 1,
+      "4.0": 1,
+      "6.0": 2,
+      "8.0": 7
+    }
+  },
+  {
+    "dataset": "SICE-author-underexposure",
+    "family": "denoise",
+    "fraction_different_from_training_fixed": 0.926829268292683,
+    "nr_free_parameter_counts": {
+      "0.0": 3,
+      "5.0": 4,
+      "10.0": 3,
+      "15.0": 1,
+      "40.0": 30
+    }
+  },
+  {
+    "dataset": "SICE-author-underexposure",
+    "family": "he_blend",
+    "fraction_different_from_training_fixed": 0.9024390243902439,
+    "nr_free_parameter_counts": {
+      "0.0": 12,
+      "0.125": 9,
+      "0.25": 4,
+      "0.375": 4,
+      "0.5": 3,
+      "0.625": 3,
+      "0.75": 1,
+      "1.0": 5
+    }
+  },
+  {
+    "dataset": "SICE-author-underexposure",
+    "family": "log",
+    "fraction_different_from_training_fixed": 0.9512195121951219,
+    "nr_free_parameter_counts": {
+      "0.0": 3,
+      "4.0": 1,
+      "8.0": 1,
+      "16.0": 3,
+      "32.0": 8,
+      "64.0": 2,
+      "128.0": 23
+    }
+  },
+  {
+    "dataset": "SICE-replication",
+    "family": "clahe",
+    "fraction_different_from_training_fixed": 0.9491094147582697,
+    "nr_free_parameter_counts": {
+      "-1.0": 127,
+      "0.5": 32,
+      "1.0": 16,
+      "1.5": 29,
+      "2.0": 48,
+      "3.0": 43,
+      "4.0": 20,
+      "6.0": 26,
+      "8.0": 52
+    }
+  },
+  {
+    "dataset": "SICE-replication",
+    "family": "denoise",
+    "fraction_different_from_training_fixed": 0.9440203562340967,
+    "nr_free_parameter_counts": {
+      "0.0": 34,
+      "5.0": 52,
+      "10.0": 22,
+      "15.0": 14,
+      "25.0": 8,
+      "40.0": 263
+    }
+  },
+  {
+    "dataset": "SICE-replication",
+    "family": "he_blend",
+    "fraction_different_from_training_fixed": 0.8854961832061069,
+    "nr_free_parameter_counts": {
+      "0.0": 146,
+      "0.125": 66,
+      "0.25": 65,
+      "0.375": 45,
+      "0.5": 18,
+      "0.625": 6,
+      "0.75": 3,
+      "0.875": 4,
+      "1.0": 40
+    }
+  },
+  {
+    "dataset": "SICE-replication",
+    "family": "log",
+    "fraction_different_from_training_fixed": 0.9083969465648855,
+    "nr_free_parameter_counts": {
+      "0.0": 48,
+      "1.0": 27,
+      "2.0": 13,
+      "4.0": 19,
+      "8.0": 30,
+      "16.0": 31,
+      "32.0": 48,
+      "64.0": 36,
+      "128.0": 141
+    }
+  }
+]

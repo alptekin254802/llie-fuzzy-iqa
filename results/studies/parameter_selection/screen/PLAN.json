@@ -1,0 +1,104 @@
+{
+  "created_utc": "2026-10-30T10:48:35.512456+00:00",
+  "question": "Can frozen NR-free provide useful reference-free parameter selection beyond gamma?",
+  "primary_model": "Frozen NR-free: clean reference-group OOF on LOL; existing final on external images.",
+  "families": {
+    "clahe": {
+      "values": [
+        -1,
+        0.5,
+        1,
+        1.5,
+        2,
+        3,
+        4,
+        6,
+        8
+      ],
+      "meaning": "-1 exact input bypass, otherwise original LAB-L CLAHE clip limit, tile8x8",
+      "default": 2
+    },
+    "log": {
+      "values": [
+        0,
+        1,
+        2,
+        4,
+        8,
+        16,
+        32,
+        64,
+        128
+      ],
+      "meaning": "log1p(k*x)/log1p(k); k0 exact identity; float32 RGB",
+      "default": 16,
+      "original_log": "Original max-normalised log is a separate historical control, outside selection grid; its amplitude c cancels."
+    },
+    "he_blend": {
+      "values": [
+        0,
+        0.125,
+        0.25,
+        0.375,
+        0.5,
+        0.625,
+        0.75,
+        0.875,
+        1
+      ],
+      "meaning": "(1-alpha)*input+alpha*original per-channel histogram-equalised input; float32 sRGB",
+      "default": 1
+    },
+    "denoise": {
+      "values": [
+        0,
+        5,
+        10,
+        15,
+        25,
+        40
+      ],
+      "meaning": "Original gamma API1.5 then float32 RGB bilateral d5 sigmaSpace2 sigmaColor=value/255 BORDER_REFLECT_101; zero exact bypass of filter",
+      "default": 0
+    }
+  },
+  "data": {
+    "development": "LOL485,234 reference groups, existing5 outer folds; original natural low-light frames only. No new score fitting to parameter outputs.",
+    "external": [
+      "LOLv2-real clean9 images/3 groups",
+      "LOLv2-synthetic100",
+      "SICE-primary41",
+      "SICE-replication393",
+      "LSRW-HF-exploratory50"
+    ],
+    "preprocessing": "Existing256x256 bilinear float32 pipeline; features quantise truncation to uint8. Same inputs for all selectors. No added noise or synthetic exposure in this initial application study.",
+    "reuse": "All these datasets have previous gamma outcomes. New parameter outcomes are unseen but evidence is exploratory, not a new blind dataset test. LSRW mirror and SICE fusion-reference limitations retained."
+  },
+  "selectors": [
+    "NR-free primary",
+    "NR-mono product54constraints, classical-only group-train OOF; final released model externally",
+    "BrightnessCorrection_lam01 fixed previously selected gamma-trained correction",
+    "classical-only Linear3",
+    "classical-only Linear4",
+    "max entropy",
+    "brightness closest0.45",
+    "training-selected brightness target from0.1..0.8 step0.05",
+    "training-best constant parameter per family",
+    "declared family default",
+    "raw input control",
+    "LPIPS oracle bound"
+  ],
+  "fits": "Only clean OOF NR-mono and classical Linear3/4 are fit. Features, signs, quantiles and normalisation train-only. No model/hyperparameter search. Fixed and brightness-target tuning uses each outer training group, then all LOL for external.",
+  "weights": "Equal reference-group weights; average files within groups. Train constants minimise group-mean LPIPS; deterministic ties nearest default then smaller value.",
+  "decision_ties": "Max scores within1e-9; closest declared default then smaller numeric parameter. No reference at decision time.",
+  "quality": [
+    "LPIPS-Alex all candidates",
+    "PSNR all candidates",
+    "SSIM all candidates",
+    "LPIPS-VGG and DISTS union of selected outputs and controls after choices freeze"
+  ],
+  "analysis": "Per dataset/family complete selector table. Paired2000 reference-group bootstrap seed20261030. Report mean,95%CI and differences NR-free minus constant/default/entropy/Linear3/Linear4; lower LPIPS favours NR-free. Test20 primary external NR-free-vs-trainingconstant comparisons(4families x5datasets) with Holm. LOL4 comparisons separate development family. No guarantee of perceptual benefit from proxy alone.",
+  "success": "Report any effect honestly. Strong bounded application candidate requires improvement>=0.005 LPIPS and adjusted p<0.05 versus training-bestconstant in at least one predeclared family/domain; compare strongest simple selector and independent metrics before any manuscript claim. Failure elsewhere stays visible. No requirement to win every dataset. Tiny effects below0.005 can be valid but are not a strong practical-effect claim.",
+  "planned_timing": "After evaluations, time all4 search families on one CPU thread including generation/features/selection;3 independent sessions, all retained. No camera-FPS claim.",
+  "record": "Distribution copy of the plan fixed before the four-family outcomes; original SHA-256 in PUBLIC_EXPORT.json."
+}

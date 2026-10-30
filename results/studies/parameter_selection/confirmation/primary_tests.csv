@@ -1,0 +1,13 @@
+dataset,metric,model,comparator,contrast,mean,ci_low,ci_high,groups,p_raw,p_method,n_below_confirmatory_minimum,p_holm,positive_lpips_comparison
+LOLv2-real-unseen-pairs,lpips,NR-mono,Linear3,NR-mono minus Linear3,0.0,0.0,0.0,2,1.0,exact_sign_flip,True,1.0,False
+LOLv2-real-unseen-pairs,lpips,NR-mono,Linear4,NR-mono minus Linear4,0.0,0.0,0.0,2,1.0,exact_sign_flip,True,1.0,False
+LOLv2-real-unseen-pairs,lpips,NR-mono,RF3,NR-mono minus RF3,0.0,0.0,0.0,2,1.0,exact_sign_flip,True,1.0,False
+LOLv2-real-unseen-pairs,lpips,NR-mono,RF4,NR-mono minus RF4,0.0,0.0,0.0,2,1.0,exact_sign_flip,True,1.0,False
+LOLv2-real-unseen-pairs,lpips,NR-mono,default,NR-mono minus default,-0.05085685849189758,-0.06003302335739136,-0.04168069362640381,2,1.0,exact_sign_flip,True,1.0,False
+LOLv2-real-unseen-pairs,lpips,NR-mono,training_fixed,NR-mono minus training_fixed,-0.02328440546989441,-0.026736795902252197,-0.01983201503753662,2,1.0,exact_sign_flip,True,1.0,False
+LOLv2-synthetic-unseen-pairs,lpips,NR-mono,Linear3,NR-mono minus Linear3,-0.024165631409135257,-0.02891968174921862,-0.01971289089800218,889,5e-05,monte_carlo_sign_flip,False,0.0006000000000000001,True
+LOLv2-synthetic-unseen-pairs,lpips,NR-mono,Linear4,NR-mono minus Linear4,-0.022110835916212896,-0.026867741165856576,-0.017725612789484663,889,5e-05,monte_carlo_sign_flip,False,0.0006000000000000001,True
+LOLv2-synthetic-unseen-pairs,lpips,NR-mono,RF3,NR-mono minus RF3,-0.01109070729577434,-0.014312020397830976,-0.008124721869569656,889,5e-05,monte_carlo_sign_flip,False,0.0006000000000000001,True
+LOLv2-synthetic-unseen-pairs,lpips,NR-mono,RF4,NR-mono minus RF4,-0.010487208434635159,-0.014309690527801787,-0.006695157145930476,889,5e-05,monte_carlo_sign_flip,False,0.0006000000000000001,True
+LOLv2-synthetic-unseen-pairs,lpips,NR-mono,default,NR-mono minus default,-0.01869439458918702,-0.021717931261245285,-0.015602936074926013,889,5e-05,monte_carlo_sign_flip,False,0.0006000000000000001,True
+LOLv2-synthetic-unseen-pairs,lpips,NR-mono,training_fixed,NR-mono minus training_fixed,-0.03328971687496898,-0.03745267575710679,-0.02869365338883777,889,5e-05,monte_carlo_sign_flip,False,0.0006000000000000001,True

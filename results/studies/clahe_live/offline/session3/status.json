@@ -1,0 +1,46 @@
+{
+  "status": "COMPLETE",
+  "start_utc": "2026-10-30T13:50:23.660667+00:00",
+  "end_utc": "2026-10-30T13:50:41.271944+00:00",
+  "calls": 900,
+  "environment": {
+    "pid": 16536,
+    "platform": "Windows-10-10.0.19045-SP0",
+    "numpy": "2.4.4",
+    "opencv": "4.13.0",
+    "cv2_threads": 1,
+    "threadpools": [
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "libscipy_openblas64_-63c857e738469261263c764a36be9436.dll",
+        "version": "0.3.31.188.0",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "blas",
+        "internal_api": "openblas",
+        "num_threads": 1,
+        "prefix": "libscipy_openblas",
+        "filepath": "libscipy_openblas-64eda39e79589aedb16f58e5547eb599.dll",
+        "version": "0.3.30",
+        "threading_layer": "pthreads",
+        "architecture": "Haswell"
+      },
+      {
+        "user_api": "openmp",
+        "internal_api": "openmp",
+        "num_threads": 1,
+        "prefix": "vcomp",
+        "filepath": "vcomp140.dll",
+        "version": null
+      }
+    ],
+    "power": "Power Scheme GUID: 9897998c-92de-4669-853f-b7cd3ecb2790  (AMD Ryzen™ Balanced)"
+  },
+  "raw_sha256": "9a5482709ec8b97944e57529231f6e9474e6a9268a4895cdfa4501325987836c",
+  "freeze_sha256": "204f6cda7218551876f472d58a97db41a02d2463111666f125ade07e128dc5a1"
+}

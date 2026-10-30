@@ -1,0 +1,27 @@
+{
+  "utc": "2026-10-30T13:37:49.853700+00:00",
+  "question": "Can frozen NR-mono choose among nine CLAHE candidates every frame and produce native 640x480 output within a 30fps camera loop?",
+  "unchanged": [
+    "NR-mono weights",
+    "candidate grid [-1,.5,1,1.5,2,3,4,6,8]",
+    "256x256 uint8 bilinear selection input",
+    "exact implementation exact exposed roundtrip and tie rule",
+    "all previous studies and publication repositories"
+  ],
+  "native_output": "Use chosen clip on original-size frame, 8x8 tiles. Output BGR8 must equal original float32 exposed(raw,1) then original apply_clahe then quantisation and RGB2BGR. Precompute exhaustive256-entry pointwise exposure/quantisation LUT only for native-output application; selection still calls frozen exact implementation. Native fullres quality NOT inferred from earlier256 results.",
+  "correctness": "All100 frozen LOL timing inputs at600x400 and separately resized640x480, all9 native parameters versus original implementation; serial selected params and256 outputs equal frozen exact implementation. If two-worker branch used, same candidates/features/choices/native outputs must match serial. Add synthetic boundaries. Any mismatch stops measurement.",
+  "offline": "Three separate sequential processes; same100 inputs at640x480,3repeats; randomised paired selection-only/fullres/gamma;20warmups percase. Report full distributions, no exclusions. Seed20261101+session. No image decoding in measurement.",
+  "live": "Same frozen gamma timing DSHOW MJPG640x48030fps/exposure-6 andcontrols. Three rounds, capture-only/gamma/CLAHE-serial Latin-square order, fresh camera/process for eachcase;2000frames,first50 warmup,12settle;20 untimed equalityframes. Displaydisabled; NOimages/audio/video retained. Raw timing andparameterCSV only. Gamma uses unchanged kernel andtiehistory. CLAHE everyframe, frozenfixedtie.",
+  "camera_checks": "Allsetreturns andsupportedreadbacks exact; previously established AUTO_EXPOSURE=-1 getter unsupported andAUTOFOCUS=2 manual preserved. Failure stops; preservepartialCSV; no result-dependent session replacement.",
+  "load": "Fixed5second CPUload <=10percent before each measuredofflineprocess and beforecamera+afterselftest forlive. RecordotherPythonprocesses; do notkill. Blockedcheck yields pending withoutmeasurement; resumeonly afterloadcause resolved, retainattempts.",
+  "measures": [
+    "processing median,p95,p99,max,nominal33.333ms exceedance",
+    "cap.read wait+transport+decode combined",
+    "host captureintervals",
+    "host output intervals andthroughput",
+    "historical processing>hostcaptureinterval count"
+  ],
+  "interpretation": "No sensor timestamps: cannot establish photon-to-output latency, absolute dropped-frame count orabsenceofbufferstaleness. Nominalbudgetexceedance isnot a droppedframe. No livequalityclaim; no tuningcamerasettingstoimprovequality.",
+  "criterion": "Report per-session. Practicalnear30fps ifeachliveCLAHEround outputFPS >=98percent contemporaneouscapture-only and >=29fps; p95processing<1000/30 separately. All spikes retained; not worstcaseguarantee.",
+  "fallback": "Afterseriallivecompleted, ifeithercriterionfails, implementexacttwo-worker candidate generation+features, OpenCV/BLASone thread each. Freezeamendment/code andverifybefore3offline+3live two-worker sessions, paired withfresh capture-only. No N-frame reuse orsmallergrid inthisstudy."
+}

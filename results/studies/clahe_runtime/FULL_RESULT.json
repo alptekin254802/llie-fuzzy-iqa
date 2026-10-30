@@ -1,0 +1,19 @@
+{
+  "status": "PASS",
+  "start_utc": "2026-10-30T13:02:22.506144+00:00",
+  "end_utc": "2026-10-30T13:09:02.538475+00:00",
+  "plan_sha256": "c6aca869e86778ea19e264191c416e875f74526cb0b4696a7119443f4994f937",
+  "implementation_sha256": "8083233c35f28aea78cdc3486e212ecd19417656fd68464549d1382090d228a4",
+  "script_sha256": "7c46b172dafcfc00229b519f0cbc896d92d36797510ab7a85facb44a845fdee6",
+  "source_manifests": {},
+  "images": 1977,
+  "candidate_bytes_checked": 17793,
+  "feature_values_checked": 53379,
+  "deployed_choices_checked": 9885,
+  "prior_frozen_external_choices_checked": 4476,
+  "max_score_error": 2.220446049250313e-16,
+  "quality_models_rerun": false,
+  "input_changes": 0,
+  "rows_sha256": "7e897b049effbfcdd087fb9fba4ec8dd102c1bd2a1a4f81853cd928a619d4315",
+  "elapsed_seconds": 399.15778349999164
+}

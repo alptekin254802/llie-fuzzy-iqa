@@ -1,0 +1,20 @@
+{
+  "utc": "2026-10-30T11:25:55.058679+00:00",
+  "stage": "Confirmation after exploratory application screening",
+  "selection_disclosure": "CLAHE and existing final NR-mono selected after seeing the four-family study; this is not the original primary-model test. No new model or CLAHE parameter fit.",
+  "eligibility_before_outcomes": "All locally available LOLv2 Real Train689 and Synthetic Train900 pairs not documented as previously evaluated scenes; exclude known247SQUARE RealTrain identities and normal-reference thumbnail correlations>=0.9 with LOL485, SQUARE normal references and both original LOLv2Test100 sets. Reference-only classifier freezes exclusions/groups before any new enhancement score/quality. No minimum/maximum brightness or quality-based exclusion.",
+  "within_pool_groups": "Same equalised48x32 grayscale correlation>=.9 connected components; retain all eligible files and weight groups equally. Subsets named unseen_pairs, not the official benchmark test split.",
+  "primary_model": "Existing released NR-mono; code/hash from models.json final.",
+  "family": "CLAHE identical9choices [-1,.5,1,1.5,2,3,4,6,8]; -1 exactbypass;default2; LAB-L tile8x8.",
+  "preprocessing": "Existing256bilinearfloat32+exposed(low,1) pipeline, no additional synthetic exposure/noise.",
+  "frozen_controls": "From completed LOL-only CONTROL_FREEZE: clip4 trainingconstant; brightness target.15. No updates from new images. NR-free, BrightnessCorrection_lam01, Linear3, Linear4, maxentropy,brightness.45,brightness_tuned all unchanged. Test-bestconstant andperimageLPIPSoracle descriptive only.",
+  "metrics": [
+    "LPIPS-Alex",
+    "LPIPS-VGG",
+    "DISTS",
+    "PSNR",
+    "SSIM"
+  ],
+  "analysis": "Equal reference-group means; 2,000 bootstrap draws, seed 20261030 plus sorted-domain index. NR-mono compared with training-fixed, default, Linear3, Linear4, RF3 and RF4 in two domains: Holm correction across 12 sign-flip tests. Domains with fewer than 20 groups remain descriptive and contribute p=1.",
+  "interpretation": "A confirmed domain-specific useful CLAHE selector requires >=.005 LPIPS gain vs both trainingfixed anddefault withHolm p<.05, and consistent gain on at least one ofVGG/DISTS. Linear comparisons assess additional fuzzy value separately. PSNR/SSIM tradeoffs explicitly reported; nohuman-quality or universalgeneralisation claim."
+}

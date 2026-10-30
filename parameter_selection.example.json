@@ -1,0 +1,9 @@
+{
+  "data_roots": {
+    "lol_preprocessed": "path/to/preprocessed",
+    "lol_native": "path/to/our485",
+    "lolv2_archive": "path/to/LOL-v2.zip",
+    "lsrw": "path/to/LSRW",
+    "sice": "path/to/SICE"
+  }
+}
